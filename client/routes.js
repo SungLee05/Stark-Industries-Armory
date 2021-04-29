@@ -2,12 +2,26 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome} from './components'
+
+import {
+  Navbar,
+  Login,
+  Signup,
+  LandingPage,
+  Products,
+  SingleProduct,
+  GuestShoppingCart,
+  UserDashboard,
+  AdminDashboard,
+  AllUsers,
+  UserProfile,
+  OrderConfirmation,
+  OrderHistory,
+  UserShoppingCart
+} from './components'
+
 import {me} from './store'
 
-/**
- * COMPONENT
- */
 class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData()
@@ -15,33 +29,86 @@ class Routes extends Component {
 
   render() {
     const {isLoggedIn} = this.props
+    const {admin} = this.props
 
     return (
-      <Switch>
-        {/* Routes placed here are available to all visitors */}
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        {isLoggedIn && (
-          <Switch>
-            {/* Routes placed here are only available after logging in */}
-            <Route path="/home" component={UserHome} />
-          </Switch>
-        )}
-        {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
-      </Switch>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/allproducts" component={Products} />
+          <Route exact path="/product/:id" component={SingleProduct} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route
+            exact
+            path="/guest/shoppingcart"
+            component={GuestShoppingCart}
+          />
+
+          {admin && (
+            <Switch>
+              <Route exact path="/home" component={UserDashboard} />
+              <Route exact path="/users" component={AllUsers} />
+              <Route exact path="/admin" component={AdminDashboard} />
+              <Route exact path="/allproducts" component={Products} />
+              <Route exact path="/product/:id" component={SingleProduct} />
+              <Route exact path="/user/:id" component={UserProfile} />
+              <Route
+                exact
+                path="/user/:id/orderhistory"
+                component={OrderHistory}
+              />
+              <Route
+                exact
+                path="/user/:id/shoppingcart"
+                component={UserShoppingCart}
+              />
+              <Route
+                exact
+                path="/orderconfirmation"
+                component={OrderConfirmation}
+              />
+            </Switch>
+          )}
+
+          {isLoggedIn && (
+            <Switch>
+              {/* Routes placed here are only available after logging in */}
+              <Route exact path="/home" component={UserDashboard} />
+              <Route exact path="/allproducts" component={Products} />
+              <Route exact path="/product/:id" component={SingleProduct} />
+              <Route exact path="/user/:id" component={UserProfile} />
+              <Route
+                exact
+                path="/user/:id/orderhistory"
+                component={OrderHistory}
+              />
+              <Route
+                exact
+                path="/user/:id/shoppingcart"
+                component={UserShoppingCart}
+              />
+              <Route
+                exact
+                path="/orderconfirmation"
+                component={OrderConfirmation}
+              />
+              {/* <Route exact path="/users" component={AllUsers} /> */}
+            </Switch>
+          )}
+
+          <Route component={Login} />
+        </Switch>
+      </div>
     )
   }
 }
 
-/**
- * CONTAINER
- */
 const mapState = state => {
   return {
-    // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
-    // Otherwise, state.user will be an empty object, and state.user.id will be falsey
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
+    admin: !!state.user.admin
   }
 }
 
@@ -53,13 +120,8 @@ const mapDispatch = dispatch => {
   }
 }
 
-// The `withRouter` wrapper makes sure that updates are not blocked
-// when the url changes
 export default withRouter(connect(mapState, mapDispatch)(Routes))
 
-/**
- * PROP TYPES
- */
 Routes.propTypes = {
   loadInitialData: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
