@@ -6,17 +6,17 @@ import {
   createProductThunk,
   updateProductThunk
 } from '../store/adminDashboard'
-import Modal from '../components/modal/Modal'
+import CreateModal from '../components/modal/CreateModal'
 import UpdateModal from '../components/modal/UpdateModal'
 
-const AdminDashboard = prop => {
+const AdminDashboard = props => {
   const {
     adminFetchProducts,
     creatingProduct,
     deletingProduct,
     updatingProduct,
     products
-  } = prop
+  } = props
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
@@ -86,7 +86,7 @@ const AdminDashboard = prop => {
         </button>
       </div>
 
-      <Modal {...configModal}>
+      <CreateModal {...configModal}>
         <div>
           <form onSubmit={handleSubmit}>
             <h2>Add New Product</h2>
@@ -140,7 +140,7 @@ const AdminDashboard = prop => {
             <button type="submit">Add product</button>
           </form>
         </div>
-      </Modal>
+      </CreateModal>
 
       <UpdateModal {...configUpdateModal}>
         <div>

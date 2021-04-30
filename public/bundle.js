@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/adminDashboard */ "./client/store/adminDashboard.js");
-/* harmony import */ var _components_modal_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/modal/Modal */ "./client/components/modal/Modal.js");
+/* harmony import */ var _components_modal_CreateModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/modal/CreateModal */ "./client/components/modal/CreateModal.js");
 /* harmony import */ var _components_modal_UpdateModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/modal/UpdateModal */ "./client/components/modal/UpdateModal.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -138,12 +138,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var AdminDashboard = function AdminDashboard(prop) {
-  var adminFetchProducts = prop.adminFetchProducts,
-      creatingProduct = prop.creatingProduct,
-      deletingProduct = prop.deletingProduct,
-      updatingProduct = prop.updatingProduct,
-      products = prop.products;
+var AdminDashboard = function AdminDashboard(props) {
+  var adminFetchProducts = props.adminFetchProducts,
+      creatingProduct = props.creatingProduct,
+      deletingProduct = props.deletingProduct,
+      updatingProduct = props.updatingProduct,
+      products = props.products;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState2 = _slicedToArray(_useState, 2),
@@ -240,7 +240,7 @@ var AdminDashboard = function AdminDashboard(prop) {
     onClick: function onClick() {
       return toggleModal();
     }
-  }, "Add New products")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_modal_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], configModal, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  }, "Add New products")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_modal_CreateModal__WEBPACK_IMPORTED_MODULE_3__["default"], configModal, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: handleSubmit
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Add New Product"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     style: {
@@ -396,13 +396,37 @@ var mapDispatch = function mapDispatch(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_allUsers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/allUsers */ "./client/store/allUsers.js");
 
 
-var AllUsers = function AllUsers() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ALL USER PAGE"));
+
+
+var AllUsers = function AllUsers(props) {
+  var allUsers = props.allUsers;
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    dispatch(Object(_store_allUsers__WEBPACK_IMPORTED_MODULE_2__["fetchUsersThunk"])());
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ALL USER PAGE"), allUsers.map(function (user) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: user.id
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "email: ", user.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "admin: ", user.admin === true ? 'Yes' : 'No'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      onClick: function onClick() {
+        return dispatch(Object(_store_allUsers__WEBPACK_IMPORTED_MODULE_2__["deleteUserThunk"])(user));
+      }
+    }, "DELETE"));
+  }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (AllUsers);
+var mapState = function mapState(state) {
+  return {
+    allUsers: state.allUsers.users
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapState)(AllUsers));
 
 /***/ }),
 
@@ -1111,10 +1135,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./client/components/modal/Modal.js":
-/*!******************************************!*\
-  !*** ./client/components/modal/Modal.js ***!
-  \******************************************/
+/***/ "./client/components/modal/CreateModal.js":
+/*!************************************************!*\
+  !*** ./client/components/modal/CreateModal.js ***!
+  \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1124,7 +1148,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var Modal = function Modal(_ref) {
+var CreateModal = function CreateModal(_ref) {
   var hideModal = _ref.hideModal,
       toggleModal = _ref.toggleModal,
       children = _ref.children;
@@ -1136,7 +1160,7 @@ var Modal = function Modal(_ref) {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, children)));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Modal);
+/* harmony default export */ __webpack_exports__["default"] = (CreateModal);
 
 /***/ }),
 
@@ -1789,6 +1813,157 @@ function allProductsReducer() {
 
 /***/ }),
 
+/***/ "./client/store/allUsers.js":
+/*!**********************************!*\
+  !*** ./client/store/allUsers.js ***!
+  \**********************************/
+/*! exports provided: setUsers, fetchUsersThunk, deleteUser, deleteUserThunk, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setUsers", function() { return setUsers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUsersThunk", function() { return fetchUsersThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteUser", function() { return deleteUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteUserThunk", function() { return deleteUserThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return allUsers; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var SET_USERS = 'SET_USERS';
+var DELETE_USER = 'DELETE_USER';
+var UPDATE_ADMIN_RIGHTS = 'UPDATE_ADMIN_RIGHTS';
+var setUsers = function setUsers(users) {
+  return {
+    type: SET_USERS,
+    users: users
+  };
+};
+var fetchUsersThunk = function fetchUsersThunk() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(dispatch) {
+        var _ref2, data;
+
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/users');
+
+              case 3:
+                _ref2 = _context.sent;
+                data = _ref2.data;
+                dispatch(setUsers(data));
+                _context.next = 11;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+                console.error(_context.t0);
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 8]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  );
+};
+var deleteUser = function deleteUser(user) {
+  return {
+    type: DELETE_USER,
+    user: user
+  };
+};
+var deleteUserThunk = function deleteUserThunk(user) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref3 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(dispatch) {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/api/users/".concat(user.id));
+
+              case 3:
+                dispatch(deleteUser(user));
+                _context2.next = 9;
+                break;
+
+              case 6:
+                _context2.prev = 6;
+                _context2.t0 = _context2["catch"](0);
+                console.log(_context2.t0);
+
+              case 9:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 6]]);
+      }));
+
+      return function (_x2) {
+        return _ref3.apply(this, arguments);
+      };
+    }()
+  );
+};
+var initialState = {
+  users: []
+};
+function allUsers() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case SET_USERS:
+      return _objectSpread({}, state, {
+        users: action.users
+      });
+
+    case DELETE_USER:
+      return _objectSpread({}, state, {
+        users: state.users.filter(function (user) {
+          return user.id !== action.user.id;
+        })
+      });
+
+    default:
+      return state;
+  }
+}
+
+/***/ }),
+
 /***/ "./client/store/guestShoppingCart.js":
 /*!*******************************************!*\
   !*** ./client/store/guestShoppingCart.js ***!
@@ -2059,7 +2234,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _singleproduct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./singleproduct */ "./client/store/singleproduct.js");
 /* harmony import */ var _allProducts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./allProducts */ "./client/store/allProducts.js");
 /* harmony import */ var _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./guestShoppingCart */ "./client/store/guestShoppingCart.js");
-/* harmony import */ var _adminDashboard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./adminDashboard */ "./client/store/adminDashboard.js");
+/* harmony import */ var _allUsers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./allUsers */ "./client/store/allUsers.js");
+/* harmony import */ var _adminDashboard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./adminDashboard */ "./client/store/adminDashboard.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "me", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["me"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["auth"]; });
@@ -2076,7 +2252,7 @@ __webpack_require__.r(__webpack_exports__);
 // import orderHistoryReducer from './orderHistory'
 
  // import userShoppingCartReducer from './userShoppingCart'
-// import allUsers from './allUsers'
+
 
 
 var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
@@ -2086,8 +2262,8 @@ var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   // userProfile,
   // orderHistoryReducer,
   guestShoppingCartReducer: _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__["default"],
-  // allUsers,
-  adminDashboardReducer: _adminDashboard__WEBPACK_IMPORTED_MODULE_8__["default"] // userShoppingCartReducer
+  allUsers: _allUsers__WEBPACK_IMPORTED_MODULE_8__["default"],
+  adminDashboardReducer: _adminDashboard__WEBPACK_IMPORTED_MODULE_9__["default"] // userShoppingCartReducer
 
 });
 var middleware = Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_3__["composeWithDevTools"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], Object(redux_logger__WEBPACK_IMPORTED_MODULE_1__["createLogger"])({

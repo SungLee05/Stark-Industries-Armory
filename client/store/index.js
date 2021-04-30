@@ -9,7 +9,7 @@ import allProductsReducer from './allProducts'
 // import orderHistoryReducer from './orderHistory'
 import guestShoppingCartReducer from './guestShoppingCart'
 // import userShoppingCartReducer from './userShoppingCart'
-// import allUsers from './allUsers'
+import allUsers from './allUsers'
 import adminDashboardReducer from './adminDashboard'
 
 const reducer = combineReducers({
@@ -19,7 +19,7 @@ const reducer = combineReducers({
   // userProfile,
   // orderHistoryReducer,
   guestShoppingCartReducer,
-  // allUsers,
+  allUsers,
   adminDashboardReducer
   // userShoppingCartReducer
 })

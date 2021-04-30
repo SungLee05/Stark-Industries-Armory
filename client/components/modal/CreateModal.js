@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Modal = ({hideModal, toggleModal, children}) => {
+const CreateModal = ({hideModal, toggleModal, children}) => {
   if (hideModal) return null
 
   return (
@@ -13,4 +13,4 @@ const Modal = ({hideModal, toggleModal, children}) => {
   )
 }
 
-export default Modal
+export default CreateModal
