@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/adminDashboard */ "./client/store/adminDashboard.js");
-/* harmony import */ var _store_allProducts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/allProducts */ "./client/store/allProducts.js");
+/* harmony import */ var _components_modal_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/modal/Modal */ "./client/components/modal/Modal.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -163,17 +163,104 @@ var AdminDashboard = function AdminDashboard(prop) {
       imageUrl = _useState8[0],
       setImageUrl = _useState8[1];
 
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState10 = _slicedToArray(_useState9, 2),
+      hideModal = _useState10[0],
+      setHideModal = _useState10[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     adminFetchProducts();
   }, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ADMIN DASHBOARD PAGE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "PRODUCT LIST"), products.map(function (product) {
+
+  var toggleModal = function toggleModal() {
+    return setHideModal(!hideModal);
+  };
+
+  var configModal = {
+    hideModal: hideModal,
+    toggleModal: toggleModal
+  };
+
+  var resetForm = function resetForm() {
+    setHideModal(true);
+    setName('');
+    setImageUrl('');
+    setPrice(0);
+    setDescription('');
+  };
+
+  var handleSubmit = function handleSubmit(event) {
+    event.preventDefault();
+    creatingProduct({
+      name: name,
+      price: price,
+      imageUrl: imageUrl,
+      description: description
+    });
+    resetForm();
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ADMIN DASHBOARD PAGE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "PRODUCT LIST"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    onClick: function onClick() {
+      return toggleModal();
+    }
+  }, "Add New products")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_modal_Modal__WEBPACK_IMPORTED_MODULE_3__["default"], configModal, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Add New Product"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    style: {
+      height: '2.2rem'
+    },
+    label: "Product Name",
+    type: "text",
+    value: name,
+    onChange: function onChange(event) {
+      return setName(event.target.value);
+    }
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Image Url"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    style: {
+      height: '2.2rem'
+    },
+    label: "Product Image URL",
+    type: "url",
+    value: imageUrl,
+    onChange: function onChange(event) {
+      return setImageUrl(event.target.value);
+    }
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    style: {
+      height: '2.2rem'
+    },
+    label: "USD",
+    type: "number",
+    min: "0.00",
+    max: "1000000.00",
+    step: "0.01",
+    value: price,
+    onChange: function onChange(event) {
+      return setPrice(event.target.value);
+    }
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    style: {
+      width: '30rem',
+      height: '15rem'
+    },
+    label: "Product Description",
+    type: "text",
+    value: description,
+    onChange: function onChange(event) {
+      setDescription(event.target.value);
+    }
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit"
+  }, "Add product")))), products.map(function (product) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: product.id
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       src: product.imageUrl,
       alt: "product-img",
       height: "150"
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "$", product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       type: "button",
       onClick: function onClick() {
         return deletingProduct(product);
@@ -930,6 +1017,54 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+/***/ }),
+
+/***/ "./client/components/modal/Modal.js":
+/*!******************************************!*\
+  !*** ./client/components/modal/Modal.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ "./client/components/modal/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Modal = function Modal(_ref) {
+  var hideModal = _ref.hideModal,
+      toggleModal = _ref.toggleModal,
+      children = _ref.children;
+  if (hideModal) return null;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modalOverlay",
+    onClick: function onClick() {
+      return toggleModal();
+    }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modalWrap"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal"
+  }, children)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Modal);
+
+/***/ }),
+
+/***/ "./client/components/modal/styles.css":
+/*!********************************************!*\
+  !*** ./client/components/modal/styles.css ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 
 
