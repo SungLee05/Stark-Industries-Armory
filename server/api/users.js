@@ -33,14 +33,17 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
-router.put('/:id', async (req, res, next) => {
-  const userId = req.params.id
+router.put('/', async (req, res, next) => {
+  const userId = req.body.user.id
+  const adminRight = req.body.adminRight
   try {
     const user = await User.findByPk(userId)
     if (!user) {
       res.sendStatus(404)
     } else {
-      await user.update(req.body)
+      await user.update({
+        admin: adminRight
+      })
       res.json(user)
     }
   } catch (err) {

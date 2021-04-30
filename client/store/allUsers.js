@@ -18,7 +18,6 @@ export const fetchUsersThunk = () => {
     }
   }
 }
-
 export const deleteUser = user => ({
   type: DELETE_USER,
   user
@@ -33,6 +32,20 @@ export const deleteUserThunk = user => {
     }
   }
 }
+export const updateAdminRights = user => ({
+  type: UPDATE_ADMIN_RIGHTS,
+  user
+})
+export const updateAdminRightsThunk = (user, adminRight) => {
+  return async dispatch => {
+    try {
+      const adminUpdate = await axios.put(`/api/users`, {user, adminRight})
+      dispatch(updateAdminRights(adminUpdate.data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
 
 const initialState = {
   users: []
@@ -42,6 +55,13 @@ export default function allUsers(state = initialState, action) {
   switch (action.type) {
     case SET_USERS:
       return {...state, users: action.users}
+    case UPDATE_ADMIN_RIGHTS:
+      return {
+        ...state,
+        users: state.users.map(
+          user => (user.id === action.user.id ? action.user : user)
+        )
+      }
     case DELETE_USER:
       return {
         ...state,

@@ -405,6 +405,11 @@ __webpack_require__.r(__webpack_exports__);
 var AllUsers = function AllUsers(props) {
   var allUsers = props.allUsers;
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+
+  var updateAdminRight = function updateAdminRight(user, adminRight) {
+    dispatch(Object(_store_allUsers__WEBPACK_IMPORTED_MODULE_2__["updateAdminRightsThunk"])(user, adminRight));
+  };
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     dispatch(Object(_store_allUsers__WEBPACK_IMPORTED_MODULE_2__["fetchUsersThunk"])());
   }, []);
@@ -416,7 +421,12 @@ var AllUsers = function AllUsers(props) {
       onClick: function onClick() {
         return dispatch(Object(_store_allUsers__WEBPACK_IMPORTED_MODULE_2__["deleteUserThunk"])(user));
       }
-    }, "DELETE"));
+    }, "DELETE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      onClick: function onClick() {
+        updateAdminRight(user, !user.admin);
+      }
+    }, "Update Admin Rights"));
   }));
 };
 
@@ -1817,7 +1827,7 @@ function allProductsReducer() {
 /*!**********************************!*\
   !*** ./client/store/allUsers.js ***!
   \**********************************/
-/*! exports provided: setUsers, fetchUsersThunk, deleteUser, deleteUserThunk, default */
+/*! exports provided: setUsers, fetchUsersThunk, deleteUser, deleteUserThunk, updateAdminRights, updateAdminRightsThunk, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1826,6 +1836,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUsersThunk", function() { return fetchUsersThunk; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteUser", function() { return deleteUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteUserThunk", function() { return deleteUserThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateAdminRights", function() { return updateAdminRights; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateAdminRightsThunk", function() { return updateAdminRightsThunk; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return allUsers; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
@@ -1937,6 +1949,56 @@ var deleteUserThunk = function deleteUserThunk(user) {
     }()
   );
 };
+var updateAdminRights = function updateAdminRights(user) {
+  return {
+    type: UPDATE_ADMIN_RIGHTS,
+    user: user
+  };
+};
+var updateAdminRightsThunk = function updateAdminRightsThunk(user, adminRight) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref4 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee3(dispatch) {
+        var adminUpdate;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                _context3.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("/api/users", {
+                  user: user,
+                  adminRight: adminRight
+                });
+
+              case 3:
+                adminUpdate = _context3.sent;
+                dispatch(updateAdminRights(adminUpdate.data));
+                _context3.next = 10;
+                break;
+
+              case 7:
+                _context3.prev = 7;
+                _context3.t0 = _context3["catch"](0);
+                console.log(_context3.t0);
+
+              case 10:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 7]]);
+      }));
+
+      return function (_x3) {
+        return _ref4.apply(this, arguments);
+      };
+    }()
+  );
+};
 var initialState = {
   users: []
 };
@@ -1948,6 +2010,13 @@ function allUsers() {
     case SET_USERS:
       return _objectSpread({}, state, {
         users: action.users
+      });
+
+    case UPDATE_ADMIN_RIGHTS:
+      return _objectSpread({}, state, {
+        users: state.users.map(function (user) {
+          return user.id === action.user.id ? action.user : user;
+        })
       });
 
     case DELETE_USER:
