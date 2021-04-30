@@ -24,8 +24,6 @@ const initialState = {
   all: []
 }
 
-// Take a look at app/redux/index.js to see where this reducer is
-// added to the Redux store with combineReducers
 export default function allProductsReducer(state = initialState, action) {
   switch (action.type) {
     case SET_PRODUCTS:

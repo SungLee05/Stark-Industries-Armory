@@ -21,10 +21,6 @@ const GuestShoppingCart = props => {
 
   const guestCart = products
 
-  let total = guestCart
-    .reduce((acc, product) => acc + product.price * product.quantity, 0)
-    .toFixed(2)
-
   const roundDecimal = num => {
     return Number(num).toFixed(2)
   }
@@ -67,7 +63,15 @@ const GuestShoppingCart = props => {
               </div>
             ))}
             <div>
-              <div>TOTAL: ${total}</div>
+              <div>
+                TOTAL: $
+                {guestCart
+                  .reduce(
+                    (acc, product) => acc + product.price * product.quantity,
+                    0
+                  )
+                  .toFixed(2)}
+              </div>
               <Link to="/orderconfirmation">
                 <button type="submit" onClick={() => checkout()}>
                   Place Your Order
