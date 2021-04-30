@@ -178,9 +178,6 @@ var GuestShoppingCart = function GuestShoppingCart(props) {
       deleteFromCart = props.deleteFromCart,
       checkout = props.checkout;
   var guestCart = products;
-  var total = guestCart.reduce(function (acc, product) {
-    return acc + product.price * product.quantity;
-  }, 0).toFixed(2);
 
   var roundDecimal = function roundDecimal(num) {
     return Number(num).toFixed(2);
@@ -211,7 +208,9 @@ var GuestShoppingCart = function GuestShoppingCart(props) {
         return deleteFromCart(product.id);
       }
     }, "Remove From Cart"));
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "TOTAL: $", total), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "TOTAL: $", guestCart.reduce(function (acc, product) {
+    return acc + product.price * product.quantity;
+  }, 0).toFixed(2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/orderconfirmation"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
@@ -1188,9 +1187,7 @@ var fetchProducts = function fetchProducts() {
   );
 };
 var initialState = {
-  all: [] // Take a look at app/redux/index.js to see where this reducer is
-  // added to the Redux store with combineReducers
-
+  all: []
 };
 function allProductsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -45402,7 +45399,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
