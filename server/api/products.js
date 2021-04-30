@@ -37,8 +37,8 @@ router.post('/', async (req, res, next) => {
   }
 })
 
-router.put('/:productId', async (req, res, next) => {
-  const productId = req.params.productId
+router.put('/', async (req, res, next) => {
+  const productId = req.body.productId
   try {
     const product = await Product.findByPk(productId)
     if (!product) {

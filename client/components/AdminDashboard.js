@@ -7,6 +7,7 @@ import {
   updateProductThunk
 } from '../store/adminDashboard'
 import Modal from '../components/modal/Modal'
+import UpdateModal from '../components/modal/UpdateModal'
 
 const AdminDashboard = prop => {
   const {
@@ -22,6 +23,8 @@ const AdminDashboard = prop => {
   const [description, setDescription] = useState('')
   const [imageUrl, setImageUrl] = useState('')
   const [hideModal, setHideModal] = useState(true)
+  const [hideUpdateModal, setHideUpdateModal] = useState(true)
+  const [productId, setProductId] = useState(0)
 
   useEffect(() => {
     adminFetchProducts()
@@ -33,12 +36,20 @@ const AdminDashboard = prop => {
     toggleModal
   }
 
+  const toggleUpdateModal = () => setHideUpdateModal(!hideUpdateModal)
+  const configUpdateModal = {
+    hideUpdateModal,
+    toggleUpdateModal
+  }
+
   const resetForm = () => {
     setHideModal(true)
+    setHideUpdateModal(true)
     setName('')
     setImageUrl('')
     setPrice(0)
     setDescription('')
+    setProductId(0)
   }
 
   const handleSubmit = event => {
@@ -48,6 +59,18 @@ const AdminDashboard = prop => {
       price,
       imageUrl,
       description
+    })
+    resetForm()
+  }
+
+  const handleSubmitForUpdate = event => {
+    event.preventDefault()
+    updatingProduct({
+      name,
+      price,
+      imageUrl,
+      description,
+      productId
     })
     resetForm()
   }
@@ -119,6 +142,62 @@ const AdminDashboard = prop => {
         </div>
       </Modal>
 
+      <UpdateModal {...configUpdateModal}>
+        <div>
+          <form onSubmit={handleSubmitForUpdate}>
+            <h2>Update Product</h2>
+            <div>
+              <label>name</label>
+              <input
+                style={{height: '2.2rem'}}
+                label="Product Name"
+                type="text"
+                value={name}
+                onChange={event => setName(event.target.value)}
+              />
+            </div>
+            <div>
+              <label>Image Url</label>
+              <input
+                style={{height: '2.2rem'}}
+                label="Product Image URL"
+                type="url"
+                value={imageUrl}
+                onChange={event => setImageUrl(event.target.value)}
+              />
+            </div>
+            <div>
+              <label>Price</label>
+              <input
+                style={{height: '2.2rem'}}
+                label="USD"
+                type="number"
+                min="0.00"
+                max="1000000.00"
+                step="0.01"
+                value={price}
+                onChange={event => setPrice(event.target.value)}
+              />
+            </div>
+            <br />
+            <div>
+              <label>Description</label>
+              <input
+                style={{width: '30rem', height: '15rem'}}
+                label="Product Description"
+                type="text"
+                value={description}
+                onChange={event => {
+                  setDescription(event.target.value)
+                }}
+              />
+            </div>
+            <br />
+            <button type="submit">Update Product</button>
+          </form>
+        </div>
+      </UpdateModal>
+
       {products.map(product => (
         <div key={product.id}>
           <img src={product.imageUrl} alt="product-img" height="150" />
@@ -128,6 +207,18 @@ const AdminDashboard = prop => {
           <button type="button" onClick={() => deletingProduct(product)}>
             DELETE
           </button>
+
+          <div>
+            <button
+              type="button"
+              onClick={() => {
+                setProductId(product.id)
+                toggleUpdateModal()
+              }}
+            >
+              Update products
+            </button>
+          </div>
         </div>
       ))}
     </div>

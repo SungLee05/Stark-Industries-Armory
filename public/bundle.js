@@ -123,6 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/adminDashboard */ "./client/store/adminDashboard.js");
 /* harmony import */ var _components_modal_Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/modal/Modal */ "./client/components/modal/Modal.js");
+/* harmony import */ var _components_modal_UpdateModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/modal/UpdateModal */ "./client/components/modal/UpdateModal.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -130,6 +131,7 @@ function _nonIterableRest() { throw new TypeError("Invalid attempt to destructur
 function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -168,6 +170,16 @@ var AdminDashboard = function AdminDashboard(prop) {
       hideModal = _useState10[0],
       setHideModal = _useState10[1];
 
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState12 = _slicedToArray(_useState11, 2),
+      hideUpdateModal = _useState12[0],
+      setHideUpdateModal = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState14 = _slicedToArray(_useState13, 2),
+      productId = _useState14[0],
+      setProductId = _useState14[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     adminFetchProducts();
   }, []);
@@ -181,12 +193,23 @@ var AdminDashboard = function AdminDashboard(prop) {
     toggleModal: toggleModal
   };
 
+  var toggleUpdateModal = function toggleUpdateModal() {
+    return setHideUpdateModal(!hideUpdateModal);
+  };
+
+  var configUpdateModal = {
+    hideUpdateModal: hideUpdateModal,
+    toggleUpdateModal: toggleUpdateModal
+  };
+
   var resetForm = function resetForm() {
     setHideModal(true);
+    setHideUpdateModal(true);
     setName('');
     setImageUrl('');
     setPrice(0);
     setDescription('');
+    setProductId(0);
   };
 
   var handleSubmit = function handleSubmit(event) {
@@ -196,6 +219,18 @@ var AdminDashboard = function AdminDashboard(prop) {
       price: price,
       imageUrl: imageUrl,
       description: description
+    });
+    resetForm();
+  };
+
+  var handleSubmitForUpdate = function handleSubmitForUpdate(event) {
+    event.preventDefault();
+    updatingProduct({
+      name: name,
+      price: price,
+      imageUrl: imageUrl,
+      description: description,
+      productId: productId
     });
     resetForm();
   };
@@ -253,7 +288,55 @@ var AdminDashboard = function AdminDashboard(prop) {
     }
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit"
-  }, "Add product")))), products.map(function (product) {
+  }, "Add product")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_modal_UpdateModal__WEBPACK_IMPORTED_MODULE_4__["default"], configUpdateModal, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmitForUpdate
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Update Product"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    style: {
+      height: '2.2rem'
+    },
+    label: "Product Name",
+    type: "text",
+    value: name,
+    onChange: function onChange(event) {
+      return setName(event.target.value);
+    }
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Image Url"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    style: {
+      height: '2.2rem'
+    },
+    label: "Product Image URL",
+    type: "url",
+    value: imageUrl,
+    onChange: function onChange(event) {
+      return setImageUrl(event.target.value);
+    }
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    style: {
+      height: '2.2rem'
+    },
+    label: "USD",
+    type: "number",
+    min: "0.00",
+    max: "1000000.00",
+    step: "0.01",
+    value: price,
+    onChange: function onChange(event) {
+      return setPrice(event.target.value);
+    }
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    style: {
+      width: '30rem',
+      height: '15rem'
+    },
+    label: "Product Description",
+    type: "text",
+    value: description,
+    onChange: function onChange(event) {
+      setDescription(event.target.value);
+    }
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit"
+  }, "Update Product")))), products.map(function (product) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: product.id
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -265,7 +348,13 @@ var AdminDashboard = function AdminDashboard(prop) {
       onClick: function onClick() {
         return deletingProduct(product);
       }
-    }, "DELETE"));
+    }, "DELETE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      onClick: function onClick() {
+        setProductId(product.id);
+        toggleUpdateModal();
+      }
+    }, "Update products")));
   }));
 };
 
@@ -1033,9 +1122,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ "./client/components/modal/styles.css");
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-
 
 
 var Modal = function Modal(_ref) {
@@ -1044,29 +1130,42 @@ var Modal = function Modal(_ref) {
       children = _ref.children;
   if (hideModal) return null;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modalOverlay",
     onClick: function onClick() {
       return toggleModal();
     }
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modalWrap"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modal"
-  }, children)));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, children)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Modal);
 
 /***/ }),
 
-/***/ "./client/components/modal/styles.css":
-/*!********************************************!*\
-  !*** ./client/components/modal/styles.css ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./client/components/modal/UpdateModal.js":
+/*!************************************************!*\
+  !*** ./client/components/modal/UpdateModal.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
+var UpdateModal = function UpdateModal(_ref) {
+  var hideUpdateModal = _ref.hideUpdateModal,
+      toggleUpdateModal = _ref.toggleUpdateModal,
+      children = _ref.children;
+  if (hideUpdateModal) return null;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    onClick: function onClick() {
+      return toggleUpdateModal();
+    }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, children)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UpdateModal);
 
 /***/ }),
 
@@ -1529,7 +1628,7 @@ var updateProductThunk = function updateProductThunk(product) {
               case 0:
                 _context4.prev = 0;
                 _context4.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("/api/products/".concat(product.id), product);
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("/api/products", product);
 
               case 3:
                 updated = _context4.sent;
