@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import {
   adminFetchProductsThunk,
@@ -13,8 +13,14 @@ const AdminDashboard = prop => {
     adminFetchProducts,
     creatingProduct,
     deletingProduct,
-    updatingProduct
+    updatingProduct,
+    products
   } = prop
+
+  const [name, setName] = useState('')
+  const [price, setPrice] = useState(0)
+  const [description, setDescription] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
 
   useEffect(() => {
     adminFetchProducts()
@@ -23,8 +29,18 @@ const AdminDashboard = prop => {
   return (
     <div>
       <h1>ADMIN DASHBOARD PAGE</h1>
-      <p>user profile list</p>
-      <div>UPDATE TEST</div>
+      <h2>PRODUCT LIST</h2>
+      {products.map(product => (
+        <div key={product.id}>
+          <img src={product.imageUrl} alt="product-img" height="150" />
+          <div>{product.name}</div>
+          <div>{product.price}</div>
+          <div>{product.description}</div>
+          <button type="button" onClick={() => deletingProduct(product)}>
+            DELETE
+          </button>
+        </div>
+      ))}
     </div>
   )
 }

@@ -34,20 +34,32 @@ export const adminFetchProductsThunk = () => {
 }
 export const deleteProductThunk = product => {
   return async dispatch => {
-    await axios.delete(`/api/products/${product.id}`)
-    dispatch(deletingProduct(product))
+    try {
+      await axios.delete(`/api/products/${product.id}`)
+      dispatch(deletingProduct(product))
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 }
 export const createProductThunk = product => {
   return async dispatch => {
-    const created = await axios.post('/api/products', product)
-    dispatch(creatingProduct(created.data))
+    try {
+      const created = await axios.post('/api/products', product)
+      dispatch(creatingProduct(created.data))
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 }
 export const updateProductThunk = product => {
   return async dispatch => {
-    const updated = await axios.put(`/api/products/${product.id}`, product)
-    dispatch(updatingProduct(updated.data))
+    try {
+      const updated = await axios.put(`/api/products/${product.id}`, product)
+      dispatch(updatingProduct(updated.data))
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 }
 

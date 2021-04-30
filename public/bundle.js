@@ -123,6 +123,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/adminDashboard */ "./client/store/adminDashboard.js");
 /* harmony import */ var _store_allProducts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/allProducts */ "./client/store/allProducts.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -132,11 +140,46 @@ var AdminDashboard = function AdminDashboard(prop) {
   var adminFetchProducts = prop.adminFetchProducts,
       creatingProduct = prop.creatingProduct,
       deletingProduct = prop.deletingProduct,
-      updatingProduct = prop.updatingProduct;
+      updatingProduct = prop.updatingProduct,
+      products = prop.products;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      name = _useState2[0],
+      setName = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      price = _useState4[0],
+      setPrice = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      description = _useState6[0],
+      setDescription = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      imageUrl = _useState8[0],
+      setImageUrl = _useState8[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     adminFetchProducts();
   }, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ADMIN DASHBOARD PAGE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "user profile list"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "UPDATE TEST"));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ADMIN DASHBOARD PAGE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "PRODUCT LIST"), products.map(function (product) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: product.id
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: product.imageUrl,
+      alt: "product-img",
+      height: "150"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, product.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      onClick: function onClick() {
+        return deletingProduct(product);
+      }
+    }, "DELETE"));
+  }));
 };
 
 var mapState = function mapState(state) {
@@ -1268,18 +1311,26 @@ var deleteProductThunk = function deleteProductThunk(product) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                _context2.prev = 0;
+                _context2.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/api/products/".concat(product.id));
 
-              case 2:
-                dispatch(deletingProduct(product));
-
               case 3:
+                dispatch(deletingProduct(product));
+                _context2.next = 9;
+                break;
+
+              case 6:
+                _context2.prev = 6;
+                _context2.t0 = _context2["catch"](0);
+                console.log(_context2.t0.message);
+
+              case 9:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, null, [[0, 6]]);
       }));
 
       return function (_x2) {
@@ -1300,19 +1351,27 @@ var createProductThunk = function createProductThunk(product) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.next = 2;
+                _context3.prev = 0;
+                _context3.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/products', product);
 
-              case 2:
+              case 3:
                 created = _context3.sent;
                 dispatch(creatingProduct(created.data));
+                _context3.next = 10;
+                break;
 
-              case 4:
+              case 7:
+                _context3.prev = 7;
+                _context3.t0 = _context3["catch"](0);
+                console.log(_context3.t0.message);
+
+              case 10:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3);
+        }, _callee3, null, [[0, 7]]);
       }));
 
       return function (_x3) {
@@ -1333,19 +1392,27 @@ var updateProductThunk = function updateProductThunk(product) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                _context4.next = 2;
+                _context4.prev = 0;
+                _context4.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("/api/products/".concat(product.id), product);
 
-              case 2:
+              case 3:
                 updated = _context4.sent;
                 dispatch(updatingProduct(updated.data));
+                _context4.next = 10;
+                break;
 
-              case 4:
+              case 7:
+                _context4.prev = 7;
+                _context4.t0 = _context4["catch"](0);
+                console.log(_context4.t0.message);
+
+              case 10:
               case "end":
                 return _context4.stop();
             }
           }
-        }, _callee4);
+        }, _callee4, null, [[0, 7]]);
       }));
 
       return function (_x4) {
