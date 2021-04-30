@@ -10,7 +10,7 @@ import allProductsReducer from './allProducts'
 import guestShoppingCartReducer from './guestShoppingCart'
 // import userShoppingCartReducer from './userShoppingCart'
 // import allUsers from './allUsers'
-// import dashboardReducer from './adminDashboard'
+import adminDashboardReducer from './adminDashboard'
 
 const reducer = combineReducers({
   user,
@@ -18,9 +18,9 @@ const reducer = combineReducers({
   allProductsReducer,
   // userProfile,
   // orderHistoryReducer,
-  guestShoppingCartReducer
+  guestShoppingCartReducer,
   // allUsers,
-  // dashboardReducer,
+  adminDashboardReducer
   // userShoppingCartReducer
 })
 

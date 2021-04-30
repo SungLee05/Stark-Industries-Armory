@@ -120,13 +120,49 @@ var App = function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/adminDashboard */ "./client/store/adminDashboard.js");
+/* harmony import */ var _store_allProducts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/allProducts */ "./client/store/allProducts.js");
 
 
-var AdminDashboard = function AdminDashboard() {
+
+
+
+var AdminDashboard = function AdminDashboard(prop) {
+  var adminFetchProducts = prop.adminFetchProducts,
+      creatingProduct = prop.creatingProduct,
+      deletingProduct = prop.deletingProduct,
+      updatingProduct = prop.updatingProduct;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    adminFetchProducts();
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ADMIN DASHBOARD PAGE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "user profile list"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "UPDATE TEST"));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (AdminDashboard);
+var mapState = function mapState(state) {
+  return {
+    products: state.adminDashboardReducer.all
+  };
+};
+
+var mapDispatch = function mapDispatch(dispatch) {
+  return {
+    adminFetchProducts: function adminFetchProducts() {
+      return dispatch(Object(_store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__["adminFetchProductsThunk"])());
+    },
+    creatingProduct: function creatingProduct(product) {
+      dispatch(Object(_store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__["createProductThunk"])(product));
+    },
+    deletingProduct: function deletingProduct(product) {
+      dispatch(Object(_store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__["deleteProductThunk"])(product));
+    },
+    updatingProduct: function updatingProduct(product) {
+      return dispatch(Object(_store_adminDashboard__WEBPACK_IMPORTED_MODULE_2__["updateProductThunk"])(product));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapState, mapDispatch)(AdminDashboard));
 
 /***/ }),
 
@@ -1111,6 +1147,252 @@ socket.on('connect', function () {
 
 /***/ }),
 
+/***/ "./client/store/adminDashboard.js":
+/*!****************************************!*\
+  !*** ./client/store/adminDashboard.js ***!
+  \****************************************/
+/*! exports provided: adminSetProducts, deletingProduct, creatingProduct, updatingProduct, adminFetchProductsThunk, deleteProductThunk, createProductThunk, updateProductThunk, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adminSetProducts", function() { return adminSetProducts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletingProduct", function() { return deletingProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "creatingProduct", function() { return creatingProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatingProduct", function() { return updatingProduct; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adminFetchProductsThunk", function() { return adminFetchProductsThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteProductThunk", function() { return deleteProductThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createProductThunk", function() { return createProductThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateProductThunk", function() { return updateProductThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return adminDashboardReducer; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var DELETE_PRODUCT = 'DELETE_PRODUCT';
+var UPDATE_PRODUCT = 'UPDATE_PRODUCT';
+var CREATE_PRODUCT = 'CREATE_PRODUCT';
+var SET_PRODUCTS = 'SET_PRODUCT';
+var adminSetProducts = function adminSetProducts(products) {
+  return {
+    type: SET_PRODUCTS,
+    products: products
+  };
+};
+var deletingProduct = function deletingProduct(product) {
+  return {
+    type: DELETE_PRODUCT,
+    product: product
+  };
+};
+var creatingProduct = function creatingProduct(product) {
+  return {
+    type: CREATE_PRODUCT,
+    product: product
+  };
+};
+var updatingProduct = function updatingProduct(product) {
+  return {
+    type: UPDATE_PRODUCT,
+    product: product
+  };
+};
+var adminFetchProductsThunk = function adminFetchProductsThunk() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(dispatch) {
+        var _ref2, data;
+
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/products');
+
+              case 3:
+                _ref2 = _context.sent;
+                data = _ref2.data;
+                dispatch(adminSetProducts(data));
+                _context.next = 11;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+                console.error(_context.t0);
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 8]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  );
+};
+var deleteProductThunk = function deleteProductThunk(product) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref3 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(dispatch) {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/api/products/".concat(product.id));
+
+              case 2:
+                dispatch(deletingProduct(product));
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function (_x2) {
+        return _ref3.apply(this, arguments);
+      };
+    }()
+  );
+};
+var createProductThunk = function createProductThunk(product) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref4 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee3(dispatch) {
+        var created;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/products', product);
+
+              case 2:
+                created = _context3.sent;
+                dispatch(creatingProduct(created.data));
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      return function (_x3) {
+        return _ref4.apply(this, arguments);
+      };
+    }()
+  );
+};
+var updateProductThunk = function updateProductThunk(product) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref5 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee4(dispatch) {
+        var updated;
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("/api/products/".concat(product.id), product);
+
+              case 2:
+                updated = _context4.sent;
+                dispatch(updatingProduct(updated.data));
+
+              case 4:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      return function (_x4) {
+        return _ref5.apply(this, arguments);
+      };
+    }()
+  );
+};
+var initialState = {
+  all: []
+};
+function adminDashboardReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case SET_PRODUCTS:
+      return _objectSpread({}, state, {
+        all: action.products
+      });
+
+    case UPDATE_PRODUCT:
+      return _objectSpread({}, state, {
+        all: state.all.map(function (product) {
+          return product.id === action.product.id ? action.product : product;
+        })
+      });
+
+    case CREATE_PRODUCT:
+      return _objectSpread({}, state, {
+        all: [].concat(_toConsumableArray(state.all), [action.product])
+      });
+
+    case DELETE_PRODUCT:
+      return _objectSpread({}, state, {
+        all: state.all.filter(function (product) {
+          return product.id !== action.product.id;
+        })
+      });
+
+    default:
+      return state;
+  }
+}
+
+/***/ }),
+
 /***/ "./client/store/allProducts.js":
 /*!*************************************!*\
   !*** ./client/store/allProducts.js ***!
@@ -1476,6 +1758,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _singleproduct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./singleproduct */ "./client/store/singleproduct.js");
 /* harmony import */ var _allProducts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./allProducts */ "./client/store/allProducts.js");
 /* harmony import */ var _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./guestShoppingCart */ "./client/store/guestShoppingCart.js");
+/* harmony import */ var _adminDashboard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./adminDashboard */ "./client/store/adminDashboard.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "me", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["me"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["auth"]; });
@@ -1493,7 +1776,7 @@ __webpack_require__.r(__webpack_exports__);
 
  // import userShoppingCartReducer from './userShoppingCart'
 // import allUsers from './allUsers'
-// import dashboardReducer from './adminDashboard'
+
 
 var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   user: _user__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -1501,9 +1784,9 @@ var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   allProductsReducer: _allProducts__WEBPACK_IMPORTED_MODULE_6__["default"],
   // userProfile,
   // orderHistoryReducer,
-  guestShoppingCartReducer: _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__["default"] // allUsers,
-  // dashboardReducer,
-  // userShoppingCartReducer
+  guestShoppingCartReducer: _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__["default"],
+  // allUsers,
+  adminDashboardReducer: _adminDashboard__WEBPACK_IMPORTED_MODULE_8__["default"] // userShoppingCartReducer
 
 });
 var middleware = Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_3__["composeWithDevTools"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], Object(redux_logger__WEBPACK_IMPORTED_MODULE_1__["createLogger"])({
@@ -45399,7 +45682,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
