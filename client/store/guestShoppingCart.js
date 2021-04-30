@@ -48,13 +48,6 @@ export const addProductToCartThunk = product => {
         // checking id to see if product is not in the cart
         if (!productArray.includes(product.id)) {
           cart.push(product)
-        } else {
-          // if product is in the cart...loop through to increase quantity
-          // for (let i = 0; i < cart.length; i++) {
-          //   if (product.id === cart[i].id) {
-          //     cart[i].orderQuantity++
-          //   }
-          // }
         }
       } else {
         cart = []
@@ -62,7 +55,6 @@ export const addProductToCartThunk = product => {
       }
       localStorage.setItem('shoppingCart', JSON.stringify(cart))
       dispatch(addProductToCart(cart))
-      // localStorage.clear()
     } catch (err) {
       console.log(err)
     }
@@ -73,7 +65,7 @@ export const increaseProductQtyThunk = productId => {
     try {
       let cart = JSON.parse(localStorage.getItem('shoppingCart'))
       cart.filter(item => {
-        //filter through cart to see and increase the quantity of the product
+        // filter through cart to see and increase the quantity of the product
         if (productId === item.id) {
           return (item.quantity += 1)
         }
@@ -90,7 +82,7 @@ export const decreaseProductQtyThunk = productId => {
     try {
       let cart = JSON.parse(localStorage.getItem('shoppingCart'))
       cart.filter(item => {
-        //filter through cart to see and decrease the quantity of the product
+        // filter through cart to see and decrease the quantity of the product
         if (productId === item.id && item.quantity !== 1) {
           return (item.quantity -= 1)
         }
@@ -108,7 +100,7 @@ export const deletingFromCart = productId => {
     try {
       let cart = JSON.parse(localStorage.getItem('shoppingCart'))
       let newCart = cart.filter(item => {
-        //filter through cart and return items that are not the product
+        // filter through cart and return items that are not the product
         if (productId !== item.id) return item
       })
       localStorage.setItem('shoppingCart', JSON.stringify(newCart))
@@ -124,7 +116,6 @@ export const guestCartCheckout = () => {
       let cart = []
       localStorage.setItem('shoppingCart', JSON.stringify(cart))
       dispatch(deleteFromCart(cart))
-      // localStorage.clear()
     } catch (err) {
       console.log(err)
     }

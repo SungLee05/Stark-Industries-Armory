@@ -1344,12 +1344,6 @@ var addProductToCartThunk = function addProductToCartThunk(product) {
 
         if (!productArray.includes(product.id)) {
           cart.push(product);
-        } else {// if product is in the cart...loop through to increase quantity
-          // for (let i = 0; i < cart.length; i++) {
-          //   if (product.id === cart[i].id) {
-          //     cart[i].orderQuantity++
-          //   }
-          // }
         }
       } else {
         cart = [];
@@ -1357,7 +1351,7 @@ var addProductToCartThunk = function addProductToCartThunk(product) {
       }
 
       localStorage.setItem('shoppingCart', JSON.stringify(cart));
-      dispatch(addProductToCart(cart)); // localStorage.clear()
+      dispatch(addProductToCart(cart));
     } catch (err) {
       console.log(err);
     }
@@ -1368,7 +1362,7 @@ var increaseProductQtyThunk = function increaseProductQtyThunk(productId) {
     try {
       var cart = JSON.parse(localStorage.getItem('shoppingCart'));
       cart.filter(function (item) {
-        //filter through cart to see and increase the quantity of the product
+        // filter through cart to see and increase the quantity of the product
         if (productId === item.id) {
           return item.quantity += 1;
         }
@@ -1385,7 +1379,7 @@ var decreaseProductQtyThunk = function decreaseProductQtyThunk(productId) {
     try {
       var cart = JSON.parse(localStorage.getItem('shoppingCart'));
       cart.filter(function (item) {
-        //filter through cart to see and decrease the quantity of the product
+        // filter through cart to see and decrease the quantity of the product
         if (productId === item.id && item.quantity !== 1) {
           return item.quantity -= 1;
         }
@@ -1402,7 +1396,7 @@ var deletingFromCart = function deletingFromCart(productId) {
     try {
       var cart = JSON.parse(localStorage.getItem('shoppingCart'));
       var newCart = cart.filter(function (item) {
-        //filter through cart and return items that are not the product
+        // filter through cart and return items that are not the product
         if (productId !== item.id) return item;
       });
       localStorage.setItem('shoppingCart', JSON.stringify(newCart));
@@ -1417,7 +1411,7 @@ var guestCartCheckout = function guestCartCheckout() {
     try {
       var cart = [];
       localStorage.setItem('shoppingCart', JSON.stringify(cart));
-      dispatch(deleteFromCart(cart)); // localStorage.clear()
+      dispatch(deleteFromCart(cart));
     } catch (err) {
       console.log(err);
     }
