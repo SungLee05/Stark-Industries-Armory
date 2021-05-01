@@ -14,15 +14,7 @@ router.get('/', adminAuth, async (req, res, next) => {
   }
 })
 
-// router.post('/', async (req, res, next) => {
-//   try {
-//     const user = await User.create(req.body)
-//     res.json(user)
-//   } catch (err) {
-//     next(err)
-//   }
-// })
-
+// **this API route causes issue with GET request for users/cart.
 // router.get('/:id', async (req, res, next) => {
 //   const userId = req.params.id
 //   try {
@@ -33,34 +25,43 @@ router.get('/', adminAuth, async (req, res, next) => {
 //   }
 // })
 
-// router.put('/', async (req, res, next) => {
-//   const userId = req.body.user.id
-//   const adminRight = req.body.adminRight
-//   try {
-//     const user = await User.findByPk(userId)
-//     if (!user) {
-//       res.sendStatus(404)
-//     } else {
-//       await user.update({
-//         admin: adminRight,
-//       })
-//       res.json(user)
-//     }
-//   } catch (err) {
-//     next(err)
-//   }
-// })
+router.delete('/:id', async (req, res, next) => {
+  const userId = req.params.id
+  try {
+    await User.destroy({
+      where: {
+        id: userId
+      }
+    })
+    res.status(204).end()
+  } catch (err) {
+    next(err)
+  }
+})
 
-// router.delete('/:id', async (req, res, next) => {
-//   const userId = req.params.id
-//   try {
-//     await User.destroy({
-//       where: {
-//         id: userId,
-//       },
-//     })
-//     res.status(204).end()
-//   } catch (err) {
-//     next(err)
-//   }
-// })
+router.post('/', async (req, res, next) => {
+  try {
+    const user = await User.create(req.body)
+    res.json(user)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.put('/', async (req, res, next) => {
+  const userId = req.body.user.id
+  const adminRight = req.body.adminRight
+  try {
+    const user = await User.findByPk(userId)
+    if (!user) {
+      res.sendStatus(404)
+    } else {
+      await user.update({
+        admin: adminRight
+      })
+      res.json(user)
+    }
+  } catch (err) {
+    next(err)
+  }
+})

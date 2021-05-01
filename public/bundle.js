@@ -1098,7 +1098,7 @@ var UserShoppingCart = function UserShoppingCart(props) {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    loadUserCart();
+    loadUserCart(userId);
   }, [loadUserCart]);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "USER SHOPPING CART"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !userCart.length || !userCart ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shopping Cart Is Empty!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, userCart.map(function (product) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1144,8 +1144,8 @@ var mapState = function mapState(state) {
 
 var mapDispatch = function mapDispatch(dispatch) {
   return {
-    loadUserCart: function loadUserCart() {
-      dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__["getUserShoppingCart"])());
+    loadUserCart: function loadUserCart(userId) {
+      dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__["getUserShoppingCart"])(userId));
     },
     increaseQty: function increaseQty(productId, orderId, userId) {
       dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__["increaseProductQtyUserThunk"])(productId, orderId, userId));
@@ -3168,7 +3168,7 @@ function userShoppingCartReducer() {
       {
         var addedProducts = state.userCart.map(function add(product) {
           if (product.id === action.productId) {
-            product.Orders[0].OrderHistory.quantity++;
+            product.orders[0].orderHistory.quantity++;
             return product;
           } else {
             return product;
@@ -3182,8 +3182,8 @@ function userShoppingCartReducer() {
     case DECREASE_PRODUCT_QTY_USER:
       {
         var subtractedProduct = state.userCart.map(function subtract(product) {
-          if (product.id === action.productId && product.Orders[0].OrderHistory.quantity > 1) {
-            product.Orders[0].OrderHistory.quantity--;
+          if (product.id === action.productId && product.orders[0].orderHistory.quantity > 1) {
+            product.orders[0].orderHistory.quantity--;
             return product;
           } else {
             return product;

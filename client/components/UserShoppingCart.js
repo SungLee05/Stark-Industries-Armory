@@ -28,7 +28,7 @@ const UserShoppingCart = props => {
 
   useEffect(
     () => {
-      loadUserCart()
+      loadUserCart(userId)
     },
     [loadUserCart]
   )
@@ -108,8 +108,8 @@ const mapState = state => {
 }
 const mapDispatch = dispatch => {
   return {
-    loadUserCart: () => {
-      dispatch(getUserShoppingCart())
+    loadUserCart: userId => {
+      dispatch(getUserShoppingCart(userId))
     },
     increaseQty: (productId, orderId, userId) => {
       dispatch(increaseProductQtyUserThunk(productId, orderId, userId))

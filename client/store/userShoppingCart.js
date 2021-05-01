@@ -107,7 +107,7 @@ export default function userShoppingCartReducer(state = initialState, action) {
     case INCREASE_PRODUCT_QTY_USER: {
       const addedProducts = state.userCart.map(function add(product) {
         if (product.id === action.productId) {
-          product.Orders[0].OrderHistory.quantity++
+          product.orders[0].orderHistory.quantity++
           return product
         } else {
           return product
@@ -119,9 +119,9 @@ export default function userShoppingCartReducer(state = initialState, action) {
       const subtractedProduct = state.userCart.map(function subtract(product) {
         if (
           product.id === action.productId &&
-          product.Orders[0].OrderHistory.quantity > 1
+          product.orders[0].orderHistory.quantity > 1
         ) {
-          product.Orders[0].OrderHistory.quantity--
+          product.orders[0].orderHistory.quantity--
           return product
         } else {
           return product
