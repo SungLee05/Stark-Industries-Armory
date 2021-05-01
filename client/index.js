@@ -6,19 +6,21 @@ import history from './history'
 import store from './store'
 import App from './app'
 import {loadStripe} from '@stripe/stripe-js'
-import {Element} from '@stripe/react-stripe-js'
+import {Elements} from '@stripe/react-stripe-js'
 
 // establishes socket connection
 import './socket'
 
-const stripe = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
+const stripe = loadStripe(
+  'pk_test_51IFsCyF8Oat62uvTXBKuxWngn5AJoyQk4aA7nTNOST7Y1CONvcFzaYbUZuvM1G5XjxoZHxl3z1ADsSR3lnNVFtlt00k8XT8AHB'
+)
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Element stripe={stripe}>
+      <Elements stripe={stripe}>
         <App />
-      </Element>
+      </Elements>
     </Router>
   </Provider>,
   document.getElementById('app')

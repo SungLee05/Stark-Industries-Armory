@@ -71,10 +71,15 @@ const Checkout = ({
         <CardElement options={CARD_ELEMENT_OPTIONS} />
       </label>
       <div>
-        <button type="button" disabled={isPaymentLoading} onClick={payMoney}>
+        <button
+          type="button"
+          variant="outlined"
+          disabled={isPaymentLoading}
+          onClick={payMoney}
+        >
           {isPaymentLoading ? 'Loading...' : 'Complete Order'}
         </button>
-        <button type="button" onClick={cancel}>
+        <button type="button" variant="outlined" onClick={cancel}>
           Cancel Order
         </button>
       </div>

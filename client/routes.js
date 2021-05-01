@@ -14,9 +14,11 @@ import {
   AdminDashboard,
   AllUsers,
   UserProfile,
-  OrderConfirmation,
   OrderHistory,
-  UserShoppingCart
+  UserShoppingCart,
+  Checkout,
+  PostCheckout,
+  StripeFailure
 } from './components'
 
 import {me} from './store'
@@ -62,11 +64,9 @@ class Routes extends Component {
                 path="/user/:id/shoppingcart"
                 component={UserShoppingCart}
               />
-              <Route
-                exact
-                path="/orderconfirmation"
-                component={OrderConfirmation}
-              />
+              <Route exact path="/checkout" component={Checkout} />
+              <Route exact path="/thank-you" component={PostCheckout} />
+              <Route exact path="/stripe-failure" component={StripeFailure} />
             </Switch>
           )}
 
@@ -86,11 +86,9 @@ class Routes extends Component {
                 path="/user/:id/shoppingcart"
                 component={UserShoppingCart}
               />
-              <Route
-                exact
-                path="/orderconfirmation"
-                component={OrderConfirmation}
-              />
+              <Route exact path="/checkout" component={Checkout} />
+              <Route exact path="/thank-you" component={PostCheckout} />
+              <Route exact path="/stripe-failure" component={StripeFailure} />
             </Switch>
           )}
 

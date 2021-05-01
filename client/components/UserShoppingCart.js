@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
-import {useHistory} from 'react-router-dom'
 import {
   getUserShoppingCart,
   increaseProductQtyUserThunk,
   decreaseProductQtyUserThunk,
-  deletingFromUserCart,
-  userCartCheckout
+  deletingFromUserCart
 } from '../store/userShoppingCart'
 import {me} from '../store'
 
@@ -16,7 +14,9 @@ import {Elements} from '@stripe/react-stripe-js'
 import axios from 'axios'
 import Modal from 'react-modal'
 
-const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
+const stripePromise = loadStripe(
+  'pk_test_51IFsCyF8Oat62uvTXBKuxWngn5AJoyQk4aA7nTNOST7Y1CONvcFzaYbUZuvM1G5XjxoZHxl3z1ADsSR3lnNVFtlt00k8XT8AHB'
+)
 
 Modal.setAppElement('#app')
 
@@ -26,14 +26,11 @@ const UserShoppingCart = props => {
     increaseQty,
     decreaseQty,
     deleteFromUserCart,
-    userCheckout,
     products,
     user
   } = props
-
   const [paymentOpen, setPaymentOpen] = useState(false)
   const [clientSecret, setClientSecret] = useState('')
-  const history = useHistory()
 
   const userCart = products
   const userId = props.match.params.id
@@ -50,12 +47,11 @@ const UserShoppingCart = props => {
   )
 
   const startCheckout = async total => {
-    const {data: clientSecret} = await axios.post('/stripe/secret', {
+    const {data: clientSecrets} = await axios.post('/stripe/secret', {
       total: Math.round(total * 100)
     })
-    setClientSecret(clientSecret)
+    setClientSecret(clientSecrets)
     setPaymentOpen(true)
-    userCheckout(userId)
   }
 
   const hideCheckout = () => {
@@ -63,20 +59,20 @@ const UserShoppingCart = props => {
   }
 
   const pushToThankYouPage = total => {
-    history.push('/thank-you', total)
+    props.history.push('/thank-you', total)
   }
 
-  const handleStripe = async (cart, user) => {
+  const handleStripe = async (cart, userInfo) => {
     const stripe = await stripePromise
     const {data} = await axios.post('/stripe/create-session', {
       cart,
-      user
+      userInfo
     })
     const result = await stripe.redirectToCheckout({
       sessionId: data.id
     })
     if (result.error) {
-      history.push('/stripe-failure', result.error.message)
+      props.history.push('/stripe-failure', result.error.message)
     }
   }
   return (
@@ -223,8 +219,7 @@ const mapDispatch = dispatch => {
     },
     deleteFromUserCart: (productId, userId) => {
       dispatch(deletingFromUserCart(productId, userId))
-    },
-    userCheckout: userId => dispatch(userCartCheckout(userId))
+    }
   }
 }
 export default connect(mapState, mapDispatch)(UserShoppingCart)

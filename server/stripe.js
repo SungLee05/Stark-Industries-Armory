@@ -1,6 +1,9 @@
 const router = require('express').Router()
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = require('stripe')(
+  'sk_test_51IFsCyF8Oat62uvTtFpfEVHttFDwk7RxH7yZYGbwjkzLU9IWDow1zIHxRRBdUsKp6zFz10Rfiop78GFsIhuRthtV00JqwSur7H'
+)
 const chalk = require('chalk')
+module.exports = router
 
 const urlBase =
   process.env.NODE_ENV !== 'production'
@@ -41,13 +44,8 @@ router.post('/create-session', async (req, res, next) => {
 router.post('/webhook', async (req, res, next) => {
   const sig = req.headers['stripe-signature']
   const endpointSecret = ''
-  let event
   try {
-    event = stripe.webhooks.constructEvent(
-      req.body.rawBody,
-      sig,
-      endpointSecret
-    )
+    await stripe.webhooks.constructEvent(req.body.rawBody, sig, endpointSecret)
   } catch (err) {
     next(err)
   }
@@ -56,7 +54,7 @@ router.post('/webhook', async (req, res, next) => {
 router.post('/secret', async (req, res, next) => {
   const {total} = req.body
   try {
-    const paymentIntent = await stripe.paymentIntents.creat({
+    const paymentIntent = await stripe.paymentIntents.create({
       amount: total,
       currency: 'usd',
       payment_method_types: ['card'],
