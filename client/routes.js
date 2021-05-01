@@ -91,7 +91,6 @@ class Routes extends Component {
                 path="/orderconfirmation"
                 component={OrderConfirmation}
               />
-              {/* <Route exact path="/users" component={AllUsers} /> */}
             </Switch>
           )}
 

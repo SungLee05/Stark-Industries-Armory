@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import {
   getUserShoppingCart,
   increaseProductQtyUserThunk,
@@ -8,6 +8,17 @@ import {
   deletingFromUserCart,
   userCartCheckout
 } from '../store/userShoppingCart'
+import {me} from '../store'
+
+import Checkout from './Checkout'
+import {loadStripe} from '@stripe/stripe-js'
+import {Elements} from '@stripe/react-stripe-js'
+import axios from 'axios'
+import Modal from 'react-modal'
+
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
+
+Modal.setAppElement('#app')
 
 const UserShoppingCart = props => {
   const {
@@ -16,8 +27,13 @@ const UserShoppingCart = props => {
     decreaseQty,
     deleteFromUserCart,
     userCheckout,
-    products
+    products,
+    user
   } = props
+
+  const [paymentOpen, setPaymentOpen] = useState(false)
+  const [clientSecret, setClientSecret] = useState('')
+  const history = useHistory()
 
   const userCart = products
   const userId = props.match.params.id
@@ -33,6 +49,36 @@ const UserShoppingCart = props => {
     [loadUserCart]
   )
 
+  const startCheckout = async total => {
+    const {data: clientSecret} = await axios.post('/stripe/secret', {
+      total: Math.round(total * 100)
+    })
+    setClientSecret(clientSecret)
+    setPaymentOpen(true)
+    userCheckout(userId)
+  }
+
+  const hideCheckout = () => {
+    setPaymentOpen(false)
+  }
+
+  const pushToThankYouPage = total => {
+    history.push('/thank-you', total)
+  }
+
+  const handleStripe = async (cart, user) => {
+    const stripe = await stripePromise
+    const {data} = await axios.post('/stripe/create-session', {
+      cart,
+      user
+    })
+    const result = await stripe.redirectToCheckout({
+      sessionId: data.id
+    })
+    if (result.error) {
+      history.push('/stripe-failure', result.error.message)
+    }
+  }
   return (
     <div>
       <h1>USER SHOPPING CART</h1>
@@ -88,11 +134,65 @@ const UserShoppingCart = props => {
                   )
                   .toFixed(2)}
               </div>
-              <Link to="/orderconfirmation">
-                <button type="submit" onClick={() => userCheckout(userId)}>
-                  Place Your Order
-                </button>
-              </Link>
+              <button
+                type="submit"
+                onClick={() =>
+                  startCheckout(
+                    userCart
+                      .reduce(
+                        (acc, product) =>
+                          acc +
+                          product.price *
+                            product.orders[0].orderHistory.quantity,
+                        0
+                      )
+                      .toFixed(2)
+                  )
+                }
+              >
+                Place Your Order
+              </button>
+              <Modal
+                isOpen={paymentOpen}
+                onRequestClose={hideCheckout}
+                style={{
+                  overlay: {
+                    backgroundColor: 'rgba(41, 41, 41, 0.728)'
+                  },
+                  content: {
+                    position: 'fixed',
+                    top: '50%',
+                    left: '50%',
+                    margin: '-15vh 0px 0px -30vw',
+                    backgroundColor: 'rgba(255, 255, 255)',
+                    border: '3px solid #d2b041',
+                    borderRadius: '15px',
+                    width: '60vw',
+                    height: '30vh'
+                  }
+                }}
+              >
+                {paymentOpen && (
+                  <Elements stripe={stripePromise}>
+                    <Checkout
+                      user={user}
+                      cart={products}
+                      total={userCart
+                        .reduce(
+                          (acc, product) =>
+                            acc +
+                            product.price *
+                              product.orders[0].orderHistory.quantity,
+                          0
+                        )
+                        .toFixed(2)}
+                      clientSecret={clientSecret}
+                      cancel={hideCheckout}
+                      pushToThankYouPage={pushToThankYouPage}
+                    />
+                  </Elements>
+                )}
+              </Modal>
             </div>
           </div>
         )}
@@ -103,11 +203,15 @@ const UserShoppingCart = props => {
 
 const mapState = state => {
   return {
-    products: state.userShoppingCartReducer.userCart
+    products: state.userShoppingCartReducer.userCart,
+    user: state.user
   }
 }
 const mapDispatch = dispatch => {
   return {
+    loadInitialData: () => {
+      dispatch(me())
+    },
     loadUserCart: userId => {
       dispatch(getUserShoppingCart(userId))
     },

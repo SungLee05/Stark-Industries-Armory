@@ -29,7 +29,7 @@ router.post('/create-session', async (req, res, next) => {
       }),
       mode: 'payment',
       success_url: urlBase + 'thank-you',
-      cancel_url: urlBase + 'cart'
+      cancel_url: urlBase + 'user/:id/shoppingcart'
     })
 
     res.json({id: session.id})
