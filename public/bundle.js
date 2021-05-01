@@ -755,7 +755,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var OrderConfirmation = function OrderConfirmation() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ORDER CONFIRMATION PAGE"));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your Order is Confirmed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Thank You For Choosing Stark Industries!"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (OrderConfirmation);
