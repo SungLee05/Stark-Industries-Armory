@@ -774,19 +774,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ "./node_modules/dateformat/lib/dateformat.js");
-/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(dateformat__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _store_orderHistory__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/orderHistory */ "./client/store/orderHistory.js");
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! dateformat */ "./node_modules/dateformat/lib/dateformat.js");
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(dateformat__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _store_orderHistory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/orderHistory */ "./client/store/orderHistory.js");
 
 
 
 
 
-var OrderHistory = function OrderHistory() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ORDER HISTORY PAGE"));
+var OrderHistory = function OrderHistory(props) {
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+  var history = props.history;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    dispatch(Object(_store_orderHistory__WEBPACK_IMPORTED_MODULE_3__["getOrderHistory"])(props.match.params.id));
+  }, [_store_orderHistory__WEBPACK_IMPORTED_MODULE_3__["getOrderHistory"]]);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "ORDER HISTORY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !history.length ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "You have not purchased any of our products.") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, history.map(function (order) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: order.id
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Purchase Date: ", dateformat__WEBPACK_IMPORTED_MODULE_2___default()(order.updatedAt, 'fullDate')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, order.products.map(function (product) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: product.id
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Name: ", product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Price: $", product.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Quantity: ", product.orderHistory.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: product.imageUrl,
+        height: "300"
+      }));
+    })));
+  }))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (OrderHistory);
+var mapState = function mapState(state) {
+  return {
+    history: state.orderHistoryReducer.history
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapState)(OrderHistory));
 
 /***/ }),
 
@@ -2398,10 +2420,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user */ "./client/store/user.js");
 /* harmony import */ var _singleproduct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./singleproduct */ "./client/store/singleproduct.js");
 /* harmony import */ var _allProducts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./allProducts */ "./client/store/allProducts.js");
-/* harmony import */ var _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./guestShoppingCart */ "./client/store/guestShoppingCart.js");
-/* harmony import */ var _userShoppingCart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./userShoppingCart */ "./client/store/userShoppingCart.js");
-/* harmony import */ var _allUsers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./allUsers */ "./client/store/allUsers.js");
-/* harmony import */ var _adminDashboard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./adminDashboard */ "./client/store/adminDashboard.js");
+/* harmony import */ var _orderHistory__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./orderHistory */ "./client/store/orderHistory.js");
+/* harmony import */ var _guestShoppingCart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./guestShoppingCart */ "./client/store/guestShoppingCart.js");
+/* harmony import */ var _userShoppingCart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./userShoppingCart */ "./client/store/userShoppingCart.js");
+/* harmony import */ var _allUsers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./allUsers */ "./client/store/allUsers.js");
+/* harmony import */ var _adminDashboard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./adminDashboard */ "./client/store/adminDashboard.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "me", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["me"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["auth"]; });
@@ -2415,7 +2438,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // import userProfile from './userprofile'
-// import orderHistoryReducer from './orderHistory'
+
 
 
 
@@ -2426,11 +2449,11 @@ var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   productReducer: _singleproduct__WEBPACK_IMPORTED_MODULE_5__["default"],
   allProductsReducer: _allProducts__WEBPACK_IMPORTED_MODULE_6__["default"],
   // userProfile,
-  // orderHistoryReducer,
-  guestShoppingCartReducer: _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__["default"],
-  allUsers: _allUsers__WEBPACK_IMPORTED_MODULE_9__["default"],
-  adminDashboardReducer: _adminDashboard__WEBPACK_IMPORTED_MODULE_10__["default"],
-  userShoppingCartReducer: _userShoppingCart__WEBPACK_IMPORTED_MODULE_8__["default"]
+  orderHistoryReducer: _orderHistory__WEBPACK_IMPORTED_MODULE_7__["default"],
+  guestShoppingCartReducer: _guestShoppingCart__WEBPACK_IMPORTED_MODULE_8__["default"],
+  allUsers: _allUsers__WEBPACK_IMPORTED_MODULE_10__["default"],
+  adminDashboardReducer: _adminDashboard__WEBPACK_IMPORTED_MODULE_11__["default"],
+  userShoppingCartReducer: _userShoppingCart__WEBPACK_IMPORTED_MODULE_9__["default"]
 });
 var middleware = Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_3__["composeWithDevTools"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], Object(redux_logger__WEBPACK_IMPORTED_MODULE_1__["createLogger"])({
   collapsed: true
