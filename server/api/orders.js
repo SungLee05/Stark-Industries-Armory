@@ -2,13 +2,12 @@ const router = require('express').Router()
 const {Order, Product, OrderHistory} = require('../db/models')
 
 router.get('/cart', async (req, res, next) => {
-  const userId = req.user.id
   try {
     const order = await Product.findAll({
       include: {
         model: Order,
         where: {
-          userId: userId,
+          userId: req.user.id,
           processed: false
         }
       }
@@ -20,8 +19,8 @@ router.get('/cart', async (req, res, next) => {
 })
 
 router.put('/cart/:action', async (req, res, next) => {
-  const productId = req.body.productId
-  const orderId = req.body.orderId
+  const productId = req.body.ProductId
+  const orderId = req.body.OrderId
   try {
     const orderItem = await OrderHistory.findOne({
       where: {
@@ -42,7 +41,7 @@ router.put('/cart/:action', async (req, res, next) => {
 })
 
 router.post('/cart', async (req, res, next) => {
-  const productId = req.body.productId
+  const productId = req.body.ProductId.id
   const userId = req.user.id
   try {
     const currentProduct = await Product.findByPk(productId)

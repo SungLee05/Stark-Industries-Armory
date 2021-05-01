@@ -29,7 +29,6 @@ const Products = props => {
             <img src={product.imageUrl} height="200" />
             <h4>{product.name}</h4>
             <h4>{(product.price * 1).toFixed(2)}</h4>
-
             <p>{product.description}</p>
           </Link>
         </div>

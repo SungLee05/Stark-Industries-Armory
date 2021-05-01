@@ -5,6 +5,7 @@ const OrderHistory = require('./orderhistory')
 
 User.hasMany(Order)
 Order.belongsTo(User)
+
 Order.belongsToMany(Product, {through: OrderHistory})
 Product.belongsToMany(Order, {through: OrderHistory})
 

@@ -699,7 +699,9 @@ var Navbar = function Navbar(_ref) {
     to: "/allproducts"
   }, "ALL PRODUCTS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: "/user/".concat(userId, "/orderhistory")
-  }, "Order History"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Order History"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    to: "/user/".concat(userId, "/shoppingcart")
+  }, "SHOPPING CART"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#",
     onClick: handleClick
   }, "Logout")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
@@ -712,7 +714,7 @@ var Navbar = function Navbar(_ref) {
     to: "/signup"
   }, "SIGN UP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: "/guest/shoppingcart"
-  }, "GUEST CART"))));
+  }, "SHOPPING CART"))));
 };
 
 var mapState = function mapState(state) {
@@ -960,6 +962,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_singleProduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/singleProduct */ "./client/store/singleProduct.js");
 /* harmony import */ var _store_guestShoppingCart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/guestShoppingCart */ "./client/store/guestShoppingCart.js");
+/* harmony import */ var _store_userShoppingCart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/userShoppingCart */ "./client/store/userShoppingCart.js");
+
 
 
 
@@ -968,6 +972,7 @@ __webpack_require__.r(__webpack_exports__);
 var SingleProduct = function SingleProduct(props) {
   var fetchSingleProduct = props.fetchSingleProduct,
       addProductToGuestCart = props.addProductToGuestCart,
+      addProductToUserCart = props.addProductToUserCart,
       userId = props.userId,
       product = props.product;
   var singleProduct = product.single;
@@ -987,7 +992,7 @@ var SingleProduct = function SingleProduct(props) {
   }, "ORDER") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     onClick: function onClick() {
-      return console.log('userCart clicked!');
+      return addProductToUserCart(singleProduct);
     }
   }, "ORDER")));
 };
@@ -1006,6 +1011,9 @@ var mapDispatch = function mapDispatch(dispatch) {
     },
     addProductToGuestCart: function addProductToGuestCart(product) {
       return dispatch(Object(_store_guestShoppingCart__WEBPACK_IMPORTED_MODULE_3__["addProductToCartThunk"])(product));
+    },
+    addProductToUserCart: function addProductToUserCart(product) {
+      return dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_4__["addProductToUserCartThunk"])(product));
     }
   };
 };
@@ -1067,13 +1075,94 @@ var UserProfile = function UserProfile() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/userShoppingCart */ "./client/store/userShoppingCart.js");
 
 
-var UserShoppingCart = function UserShoppingCart() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "USER SHOPPING CART"));
+
+
+
+var UserShoppingCart = function UserShoppingCart(props) {
+  var loadUserCart = props.loadUserCart,
+      increaseQty = props.increaseQty,
+      decreaseQty = props.decreaseQty,
+      deleteFromUserCart = props.deleteFromUserCart,
+      userCheckout = props.userCheckout,
+      products = props.products;
+  var userCart = products;
+  var userId = props.match.params.id;
+
+  var roundDecimal = function roundDecimal(num) {
+    return Number(num).toFixed(2);
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    loadUserCart();
+  }, [loadUserCart]);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "USER SHOPPING CART"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !userCart.length || !userCart ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shopping Cart Is Empty!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, userCart.map(function (product) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: product.id
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: product.imageUrl,
+      height: "150"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Quantity: ", product.orders[0].orderHistory.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Price: $", roundDecimal(product.price * product.quantity)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      value: "increment",
+      onClick: function onClick() {
+        return increaseQty(product.id, product.orders[0].id);
+      }
+    }, "+"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      value: "decrement",
+      onClick: function onClick() {
+        return decreaseQty(product.id, product.orders[0].id, userId);
+      }
+    }, "-"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      onClick: function onClick() {
+        return deleteFromUserCart(product.id, userId);
+      }
+    }, "Remove From Cart"));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "TOTAL: $", userCart.reduce(function (acc, product) {
+    return acc + product.price * product.orders[0].orderHistory.quantity;
+  }, 0).toFixed(2)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/orderconfirmation"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "submit",
+    onClick: function onClick() {
+      return userCheckout(userId);
+    }
+  }, "Place Your Order"))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (UserShoppingCart);
+var mapState = function mapState(state) {
+  return {
+    products: state.userShoppingCartReducer.userCart
+  };
+};
+
+var mapDispatch = function mapDispatch(dispatch) {
+  return {
+    loadUserCart: function loadUserCart() {
+      dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__["getUserShoppingCart"])());
+    },
+    increaseQty: function increaseQty(productId, orderId, userId) {
+      dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__["increaseProductQtyUserThunk"])(productId, orderId, userId));
+    },
+    decreaseQty: function decreaseQty(productId, orderId, userId) {
+      dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__["decreaseProductQtyUserThunk"])(productId, orderId, userId));
+    },
+    deleteFromUserCart: function deleteFromUserCart(productId, userId) {
+      dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__["deletingFromUserCart"])(productId, userId));
+    },
+    userCheckout: function userCheckout(userId) {
+      return dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_3__["userCartCheckout"])(userId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapState, mapDispatch)(UserShoppingCart));
 
 /***/ }),
 
@@ -2303,8 +2392,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _singleproduct__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./singleproduct */ "./client/store/singleproduct.js");
 /* harmony import */ var _allProducts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./allProducts */ "./client/store/allProducts.js");
 /* harmony import */ var _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./guestShoppingCart */ "./client/store/guestShoppingCart.js");
-/* harmony import */ var _allUsers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./allUsers */ "./client/store/allUsers.js");
-/* harmony import */ var _adminDashboard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./adminDashboard */ "./client/store/adminDashboard.js");
+/* harmony import */ var _userShoppingCart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./userShoppingCart */ "./client/store/userShoppingCart.js");
+/* harmony import */ var _allUsers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./allUsers */ "./client/store/allUsers.js");
+/* harmony import */ var _adminDashboard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./adminDashboard */ "./client/store/adminDashboard.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "me", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["me"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return _user__WEBPACK_IMPORTED_MODULE_4__["auth"]; });
@@ -2320,7 +2410,7 @@ __webpack_require__.r(__webpack_exports__);
  // import userProfile from './userprofile'
 // import orderHistoryReducer from './orderHistory'
 
- // import userShoppingCartReducer from './userShoppingCart'
+
 
 
 
@@ -2331,9 +2421,9 @@ var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   // userProfile,
   // orderHistoryReducer,
   guestShoppingCartReducer: _guestShoppingCart__WEBPACK_IMPORTED_MODULE_7__["default"],
-  allUsers: _allUsers__WEBPACK_IMPORTED_MODULE_8__["default"],
-  adminDashboardReducer: _adminDashboard__WEBPACK_IMPORTED_MODULE_9__["default"] // userShoppingCartReducer
-
+  allUsers: _allUsers__WEBPACK_IMPORTED_MODULE_9__["default"],
+  adminDashboardReducer: _adminDashboard__WEBPACK_IMPORTED_MODULE_10__["default"],
+  userShoppingCartReducer: _userShoppingCart__WEBPACK_IMPORTED_MODULE_8__["default"]
 });
 var middleware = Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_3__["composeWithDevTools"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], Object(redux_logger__WEBPACK_IMPORTED_MODULE_1__["createLogger"])({
   collapsed: true
@@ -2717,6 +2807,410 @@ var logout = function logout() {
       return state;
   }
 });
+
+/***/ }),
+
+/***/ "./client/store/userShoppingCart.js":
+/*!******************************************!*\
+  !*** ./client/store/userShoppingCart.js ***!
+  \******************************************/
+/*! exports provided: setUserCart, addProductToUserCart, increaseProductQtyUser, decreaseProductQtyUser, deleteFromUserCart, userCheckout, getUserShoppingCart, addProductToUserCartThunk, increaseProductQtyUserThunk, decreaseProductQtyUserThunk, deletingFromUserCart, userCartCheckout, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setUserCart", function() { return setUserCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addProductToUserCart", function() { return addProductToUserCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "increaseProductQtyUser", function() { return increaseProductQtyUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decreaseProductQtyUser", function() { return decreaseProductQtyUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFromUserCart", function() { return deleteFromUserCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userCheckout", function() { return userCheckout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserShoppingCart", function() { return getUserShoppingCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addProductToUserCartThunk", function() { return addProductToUserCartThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "increaseProductQtyUserThunk", function() { return increaseProductQtyUserThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decreaseProductQtyUserThunk", function() { return decreaseProductQtyUserThunk; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletingFromUserCart", function() { return deletingFromUserCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userCartCheckout", function() { return userCartCheckout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return userShoppingCartReducer; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var SET_USER_CART = 'SET_USER_CART';
+var ADD_PRODUCT_TO_USER_CART = 'ADD_PRODUCT_TO_USER_CART';
+var INCREASE_PRODUCT_QTY_USER = 'INCREASE_PRODUCT_QTY_USER';
+var DECREASE_PRODUCT_QTY_USER = 'DECREASE_PRODUCT_QTY_USER';
+var DELETE_FROM_USER_CART = 'DELETE_FROM_USER_CART';
+var USER_CHECKOUT = 'USER_CHECKOUT';
+var setUserCart = function setUserCart(products) {
+  return {
+    type: SET_USER_CART,
+    products: products
+  };
+};
+var addProductToUserCart = function addProductToUserCart(userCart) {
+  return {
+    type: ADD_PRODUCT_TO_USER_CART,
+    userCart: userCart
+  };
+};
+var increaseProductQtyUser = function increaseProductQtyUser(productId) {
+  return {
+    type: INCREASE_PRODUCT_QTY_USER,
+    productId: productId
+  };
+};
+var decreaseProductQtyUser = function decreaseProductQtyUser(productId) {
+  return {
+    type: DECREASE_PRODUCT_QTY_USER,
+    productId: productId
+  };
+};
+var deleteFromUserCart = function deleteFromUserCart(productId) {
+  return {
+    type: DELETE_FROM_USER_CART,
+    productId: productId
+  };
+};
+var userCheckout = function userCheckout() {
+  return {
+    type: USER_CHECKOUT
+  };
+};
+var getUserShoppingCart = function getUserShoppingCart() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee(dispatch) {
+        var data;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/users/cart");
+
+              case 3:
+                data = _context.sent;
+                dispatch(setUserCart(data.data));
+                _context.next = 10;
+                break;
+
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 7]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  );
+};
+var addProductToUserCartThunk = function addProductToUserCartThunk(ProductId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref2 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee2(dispatch) {
+        var _ref3, data;
+
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/users/cart', {
+                  ProductId: ProductId
+                });
+
+              case 3:
+                _ref3 = _context2.sent;
+                data = _ref3.data;
+                dispatch(addProductToUserCart(data));
+                _context2.next = 11;
+                break;
+
+              case 8:
+                _context2.prev = 8;
+                _context2.t0 = _context2["catch"](0);
+                console.log(_context2.t0);
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 8]]);
+      }));
+
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }()
+  );
+};
+var increaseProductQtyUserThunk = function increaseProductQtyUserThunk(ProductId, OrderId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref4 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee3(dispatch) {
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                _context3.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('/api/users/cart/increment', {
+                  ProductId: ProductId,
+                  OrderId: OrderId
+                });
+
+              case 3:
+                dispatch(increaseProductQtyUser(ProductId));
+                _context3.next = 9;
+                break;
+
+              case 6:
+                _context3.prev = 6;
+                _context3.t0 = _context3["catch"](0);
+                console.log(_context3.t0);
+
+              case 9:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 6]]);
+      }));
+
+      return function (_x3) {
+        return _ref4.apply(this, arguments);
+      };
+    }()
+  );
+};
+var decreaseProductQtyUserThunk = function decreaseProductQtyUserThunk(ProductId, OrderId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref5 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee4(dispatch) {
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                _context4.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('/api/users/cart/decrement', {
+                  ProductId: ProductId,
+                  OrderId: OrderId
+                });
+
+              case 3:
+                dispatch(decreaseProductQtyUser(ProductId));
+                _context4.next = 9;
+                break;
+
+              case 6:
+                _context4.prev = 6;
+                _context4.t0 = _context4["catch"](0);
+                console.log(_context4.t0);
+
+              case 9:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[0, 6]]);
+      }));
+
+      return function (_x4) {
+        return _ref5.apply(this, arguments);
+      };
+    }()
+  );
+};
+var deletingFromUserCart = function deletingFromUserCart(ProductId) {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref6 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee5(dispatch) {
+        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.prev = 0;
+                _context5.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"]("/api/users/cart/".concat(ProductId));
+
+              case 3:
+                dispatch(deleteFromUserCart(ProductId));
+                _context5.next = 9;
+                break;
+
+              case 6:
+                _context5.prev = 6;
+                _context5.t0 = _context5["catch"](0);
+                console.log(_context5.t0);
+
+              case 9:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, null, [[0, 6]]);
+      }));
+
+      return function (_x5) {
+        return _ref6.apply(this, arguments);
+      };
+    }()
+  );
+};
+var userCartCheckout = function userCartCheckout() {
+  return (
+    /*#__PURE__*/
+    function () {
+      var _ref7 = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee6(dispatch) {
+        var _ref8, data;
+
+        return regeneratorRuntime.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                _context6.prev = 0;
+                _context6.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put("/api/users/checkout");
+
+              case 3:
+                _ref8 = _context6.sent;
+                data = _ref8.data;
+                dispatch(userCheckout(data));
+                _context6.next = 11;
+                break;
+
+              case 8:
+                _context6.prev = 8;
+                _context6.t0 = _context6["catch"](0);
+                console.log(_context6.t0);
+
+              case 11:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6, null, [[0, 8]]);
+      }));
+
+      return function (_x6) {
+        return _ref7.apply(this, arguments);
+      };
+    }()
+  );
+};
+var initialState = {
+  userCart: []
+};
+function userShoppingCartReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case SET_USER_CART:
+      return _objectSpread({}, state, {
+        userCart: _toConsumableArray(action.products)
+      });
+
+    case ADD_PRODUCT_TO_USER_CART:
+      return _objectSpread({}, state, {
+        userCart: [].concat(_toConsumableArray(state.userCart), [action.userCart])
+      });
+
+    case INCREASE_PRODUCT_QTY_USER:
+      {
+        var addedProducts = state.userCart.map(function add(product) {
+          if (product.id === action.productId) {
+            product.Orders[0].OrderHistory.quantity++;
+            return product;
+          } else {
+            return product;
+          }
+        });
+        return _objectSpread({}, state, {
+          userCart: addedProducts
+        });
+      }
+
+    case DECREASE_PRODUCT_QTY_USER:
+      {
+        var subtractedProduct = state.userCart.map(function subtract(product) {
+          if (product.id === action.productId && product.Orders[0].OrderHistory.quantity > 1) {
+            product.Orders[0].OrderHistory.quantity--;
+            return product;
+          } else {
+            return product;
+          }
+        });
+        return _objectSpread({}, state, {
+          userCart: subtractedProduct
+        });
+      }
+
+    case DELETE_FROM_USER_CART:
+      {
+        var deletedCart = state.userCart.filter(function (product) {
+          return product.id !== action.productId;
+        });
+        return _objectSpread({}, state, {
+          userCart: deletedCart
+        });
+      }
+
+    case USER_CHECKOUT:
+      return initialState;
+
+    default:
+      return state;
+  }
+}
 
 /***/ }),
 

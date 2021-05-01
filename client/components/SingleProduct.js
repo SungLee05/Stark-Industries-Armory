@@ -2,9 +2,16 @@ import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {fetchProduct} from '../store/singleProduct'
 import {addProductToCartThunk} from '../store/guestShoppingCart'
+import {addProductToUserCartThunk} from '../store/userShoppingCart'
 
 const SingleProduct = props => {
-  const {fetchSingleProduct, addProductToGuestCart, userId, product} = props
+  const {
+    fetchSingleProduct,
+    addProductToGuestCart,
+    addProductToUserCart,
+    userId,
+    product
+  } = props
   const singleProduct = product.single
 
   useEffect(() => {
@@ -33,7 +40,7 @@ const SingleProduct = props => {
         ) : (
           <button
             type="submit"
-            onClick={() => console.log('userCart clicked!')}
+            onClick={() => addProductToUserCart(singleProduct)}
           >
             ORDER
           </button>
@@ -53,7 +60,9 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     fetchSingleProduct: id => dispatch(fetchProduct(id)),
-    addProductToGuestCart: product => dispatch(addProductToCartThunk(product))
+    addProductToGuestCart: product => dispatch(addProductToCartThunk(product)),
+    addProductToUserCart: product =>
+      dispatch(addProductToUserCartThunk(product))
   }
 }
 
