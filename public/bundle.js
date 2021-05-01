@@ -336,7 +336,7 @@ var AdminDashboard = function AdminDashboard(props) {
     }
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit"
-  }, "Update Product")))), products.map(function (product) {
+  }, "Update Product")))), !products ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading...") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, products.map(function (product) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: product.id
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -355,7 +355,7 @@ var AdminDashboard = function AdminDashboard(props) {
         toggleUpdateModal();
       }
     }, "Update products")));
-  }));
+  })));
 };
 
 var mapState = function mapState(state) {

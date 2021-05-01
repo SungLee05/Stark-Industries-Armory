@@ -198,29 +198,35 @@ const AdminDashboard = props => {
         </div>
       </UpdateModal>
 
-      {products.map(product => (
-        <div key={product.id}>
-          <img src={product.imageUrl} alt="product-img" height="150" />
-          <div>{product.name}</div>
-          <div>${product.price}</div>
-          <div>{product.description}</div>
-          <button type="button" onClick={() => deletingProduct(product)}>
-            DELETE
-          </button>
+      {!products ? (
+        <div>Loading...</div>
+      ) : (
+        <div>
+          {products.map(product => (
+            <div key={product.id}>
+              <img src={product.imageUrl} alt="product-img" height="150" />
+              <div>{product.name}</div>
+              <div>${product.price}</div>
+              <div>{product.description}</div>
+              <button type="button" onClick={() => deletingProduct(product)}>
+                DELETE
+              </button>
 
-          <div>
-            <button
-              type="button"
-              onClick={() => {
-                setProductId(product.id)
-                toggleUpdateModal()
-              }}
-            >
-              Update products
-            </button>
-          </div>
+              <div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setProductId(product.id)
+                    toggleUpdateModal()
+                  }}
+                >
+                  Update products
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   )
 }
