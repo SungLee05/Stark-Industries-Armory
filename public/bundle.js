@@ -1051,27 +1051,6 @@ var mapDispatch = function mapDispatch(dispatch) {
 
 /***/ }),
 
-/***/ "./client/components/UserDashboard.js":
-/*!********************************************!*\
-  !*** ./client/components/UserDashboard.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var UserDashboard = function UserDashboard() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "USER DASHBOARD PAGE"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (UserDashboard);
-
-/***/ }),
-
 /***/ "./client/components/UserProfile.js":
 /*!******************************************!*\
   !*** ./client/components/UserProfile.js ***!
@@ -1083,13 +1062,31 @@ var UserDashboard = function UserDashboard() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store_user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/user */ "./client/store/user.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! dateformat */ "./node_modules/dateformat/lib/dateformat.js");
+/* harmony import */ var dateformat__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(dateformat__WEBPACK_IMPORTED_MODULE_3__);
 
 
-var UserProfile = function UserProfile() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "USER PROFILE PAGE"));
+
+
+
+var UserProfile = function UserProfile(props) {
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
+  var user = props.user;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    dispatch(Object(_store_user__WEBPACK_IMPORTED_MODULE_1__["me"])());
+  }, []);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "USER PROFILE PAGE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Welcome, ", user.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Member since: ", dateformat__WEBPACK_IMPORTED_MODULE_3___default()(user.createdAt, 'mmm yyyy')));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (UserProfile);
+var mapState = function mapState(state) {
+  return {
+    user: state.user
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapState)(UserProfile));
 
 /***/ }),
 
@@ -1199,7 +1196,7 @@ var mapDispatch = function mapDispatch(dispatch) {
 /*!************************************!*\
   !*** ./client/components/index.js ***!
   \************************************/
-/*! exports provided: Navbar, Signup, LandingPage, Products, Login, GuestShoppingCart, SingleProduct, UserDashboard, AdminDashboard, AllUsers, UserProfile, OrderHistory, UserShoppingCart, OrderConfirmation */
+/*! exports provided: Navbar, Signup, LandingPage, Products, Login, GuestShoppingCart, SingleProduct, AdminDashboard, AllUsers, UserProfile, OrderHistory, UserShoppingCart, OrderConfirmation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1225,27 +1222,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SingleProduct__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SingleProduct */ "./client/components/SingleProduct.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SingleProduct", function() { return _SingleProduct__WEBPACK_IMPORTED_MODULE_6__["default"]; });
 
-/* harmony import */ var _UserDashboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./UserDashboard */ "./client/components/UserDashboard.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserDashboard", function() { return _UserDashboard__WEBPACK_IMPORTED_MODULE_7__["default"]; });
+/* harmony import */ var _AdminDashboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AdminDashboard */ "./client/components/AdminDashboard.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AdminDashboard", function() { return _AdminDashboard__WEBPACK_IMPORTED_MODULE_7__["default"]; });
 
-/* harmony import */ var _AdminDashboard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./AdminDashboard */ "./client/components/AdminDashboard.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AdminDashboard", function() { return _AdminDashboard__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+/* harmony import */ var _AllUsers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./AllUsers */ "./client/components/AllUsers.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AllUsers", function() { return _AllUsers__WEBPACK_IMPORTED_MODULE_8__["default"]; });
 
-/* harmony import */ var _AllUsers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./AllUsers */ "./client/components/AllUsers.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AllUsers", function() { return _AllUsers__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+/* harmony import */ var _UserProfile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./UserProfile */ "./client/components/UserProfile.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserProfile", function() { return _UserProfile__WEBPACK_IMPORTED_MODULE_9__["default"]; });
 
-/* harmony import */ var _UserProfile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./UserProfile */ "./client/components/UserProfile.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserProfile", function() { return _UserProfile__WEBPACK_IMPORTED_MODULE_10__["default"]; });
+/* harmony import */ var _OrderHistory__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./OrderHistory */ "./client/components/OrderHistory.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OrderHistory", function() { return _OrderHistory__WEBPACK_IMPORTED_MODULE_10__["default"]; });
 
-/* harmony import */ var _OrderHistory__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./OrderHistory */ "./client/components/OrderHistory.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OrderHistory", function() { return _OrderHistory__WEBPACK_IMPORTED_MODULE_11__["default"]; });
+/* harmony import */ var _UserShoppingCart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./UserShoppingCart */ "./client/components/UserShoppingCart.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserShoppingCart", function() { return _UserShoppingCart__WEBPACK_IMPORTED_MODULE_11__["default"]; });
 
-/* harmony import */ var _UserShoppingCart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./UserShoppingCart */ "./client/components/UserShoppingCart.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserShoppingCart", function() { return _UserShoppingCart__WEBPACK_IMPORTED_MODULE_12__["default"]; });
-
-/* harmony import */ var _OrderConfirmation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./OrderConfirmation */ "./client/components/OrderConfirmation.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OrderConfirmation", function() { return _OrderConfirmation__WEBPACK_IMPORTED_MODULE_13__["default"]; });
-
+/* harmony import */ var _OrderConfirmation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./OrderConfirmation */ "./client/components/OrderConfirmation.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OrderConfirmation", function() { return _OrderConfirmation__WEBPACK_IMPORTED_MODULE_12__["default"]; });
 
 
 
@@ -1463,7 +1456,7 @@ function (_Component) {
       }), admin && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/home",
-        component: _components__WEBPACK_IMPORTED_MODULE_4__["UserDashboard"]
+        component: _components__WEBPACK_IMPORTED_MODULE_4__["UserProfile"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/users",
@@ -1482,10 +1475,6 @@ function (_Component) {
         component: _components__WEBPACK_IMPORTED_MODULE_4__["SingleProduct"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
-        path: "/user/:id",
-        component: _components__WEBPACK_IMPORTED_MODULE_4__["UserProfile"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-        exact: true,
         path: "/user/:id/orderhistory",
         component: _components__WEBPACK_IMPORTED_MODULE_4__["OrderHistory"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
@@ -1499,7 +1488,7 @@ function (_Component) {
       })), isLoggedIn && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/home",
-        component: _components__WEBPACK_IMPORTED_MODULE_4__["UserDashboard"]
+        component: _components__WEBPACK_IMPORTED_MODULE_4__["UserProfile"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/allproducts",
@@ -1508,10 +1497,6 @@ function (_Component) {
         exact: true,
         path: "/product/:id",
         component: _components__WEBPACK_IMPORTED_MODULE_4__["SingleProduct"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-        exact: true,
-        path: "/user/:id",
-        component: _components__WEBPACK_IMPORTED_MODULE_4__["UserProfile"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/user/:id/orderhistory",
@@ -2437,7 +2422,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import userProfile from './userprofile'
 
 
 
@@ -2448,7 +2432,6 @@ var reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   user: _user__WEBPACK_IMPORTED_MODULE_4__["default"],
   productReducer: _singleproduct__WEBPACK_IMPORTED_MODULE_5__["default"],
   allProductsReducer: _allProducts__WEBPACK_IMPORTED_MODULE_6__["default"],
-  // userProfile,
   orderHistoryReducer: _orderHistory__WEBPACK_IMPORTED_MODULE_7__["default"],
   guestShoppingCartReducer: _guestShoppingCart__WEBPACK_IMPORTED_MODULE_8__["default"],
   allUsers: _allUsers__WEBPACK_IMPORTED_MODULE_10__["default"],

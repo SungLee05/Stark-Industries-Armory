@@ -11,7 +11,6 @@ import {
   Products,
   SingleProduct,
   GuestShoppingCart,
-  UserDashboard,
   AdminDashboard,
   AllUsers,
   UserProfile,
@@ -48,12 +47,11 @@ class Routes extends Component {
 
           {admin && (
             <Switch>
-              <Route exact path="/home" component={UserDashboard} />
+              <Route exact path="/home" component={UserProfile} />
               <Route exact path="/users" component={AllUsers} />
               <Route exact path="/admin" component={AdminDashboard} />
               <Route exact path="/allproducts" component={Products} />
               <Route exact path="/product/:id" component={SingleProduct} />
-              <Route exact path="/user/:id" component={UserProfile} />
               <Route
                 exact
                 path="/user/:id/orderhistory"
@@ -75,10 +73,9 @@ class Routes extends Component {
           {isLoggedIn && (
             <Switch>
               {/* Routes placed here are only available after logging in */}
-              <Route exact path="/home" component={UserDashboard} />
+              <Route exact path="/home" component={UserProfile} />
               <Route exact path="/allproducts" component={Products} />
               <Route exact path="/product/:id" component={SingleProduct} />
-              <Route exact path="/user/:id" component={UserProfile} />
               <Route
                 exact
                 path="/user/:id/orderhistory"
