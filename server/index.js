@@ -48,7 +48,7 @@ const createApp = () => {
   app.use('/auth', require('./auth'))
   app.use('/api', require('./api'))
   app.use('/stripe', require('./stripe'))
-  // app.use('/nodejs-email', require('./nodejs-email'))
+  app.use('/nodemailer', require('./nodemailer'))
 
   app.use(express.static(path.join(__dirname, '..', 'public')))
   app.use((req, res, next) => {

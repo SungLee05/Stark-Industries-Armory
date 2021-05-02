@@ -545,18 +545,31 @@ var Checkout = function Checkout(_ref) {
               paymentResult = _context.sent;
               setPaymentLoading(false);
 
-              if (paymentResult.error) {
-                alert(paymentResult.error.message);
-              } else if (paymentResult.paymentIntent.status === 'succeeded') {
-                userCheckout(user.id);
-                pushToThankYouPage(total); // await axios.post('/nodejs-email', {
-                //   email: user.email,
-                //   total,
-                //   cart
-                // })
+              if (!paymentResult.error) {
+                _context.next = 12;
+                break;
               }
 
-            case 9:
+              alert(paymentResult.error.message);
+              _context.next = 17;
+              break;
+
+            case 12:
+              if (!(paymentResult.paymentIntent.status === 'succeeded')) {
+                _context.next = 17;
+                break;
+              }
+
+              userCheckout(user.id);
+              pushToThankYouPage(total);
+              _context.next = 17;
+              return axios__WEBPACK_IMPORTED_MODULE_4___default.a.post('/nodemailer', {
+                email: user.email,
+                total: total,
+                cart: cart
+              });
+
+            case 17:
             case "end":
               return _context.stop();
           }
@@ -1514,7 +1527,7 @@ var UserShoppingCart = function UserShoppingCart(props) {
     stripe: stripePromise
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Checkout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     user: user,
-    cart: products,
+    cart: userCart,
     total: userCart.reduce(function (acc, product) {
       return acc + product.price * product.orders[0].orderHistory.quantity;
     }, 0).toFixed(2),
@@ -50127,7 +50140,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

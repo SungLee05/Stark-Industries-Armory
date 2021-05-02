@@ -56,11 +56,11 @@ const Checkout = ({
     } else if (paymentResult.paymentIntent.status === 'succeeded') {
       userCheckout(user.id)
       pushToThankYouPage(total)
-      // await axios.post('/nodejs-email', {
-      //   email: user.email,
-      //   total,
-      //   cart
-      // })
+      await axios.post('/nodemailer', {
+        email: user.email,
+        total,
+        cart
+      })
     }
   }
 

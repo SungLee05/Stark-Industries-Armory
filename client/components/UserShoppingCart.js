@@ -172,7 +172,7 @@ const UserShoppingCart = props => {
                   <Elements stripe={stripePromise}>
                     <Checkout
                       user={user}
-                      cart={products}
+                      cart={userCart}
                       total={userCart
                         .reduce(
                           (acc, product) =>
