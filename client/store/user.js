@@ -1,6 +1,7 @@
 import axios from 'axios'
 import history from '../history'
 import {addProductToUserCartThunk} from './userShoppingCart'
+import {guestCartCheckout} from './guestShoppingCart'
 
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
@@ -30,8 +31,13 @@ export const auth = (email, password, method, guestCart) => async dispatch => {
   try {
     dispatch(getUser(res.data))
     const userId = res.data.id
-    if (guestCart && guestCart.length) {
+
+    console.log('guestCart type--->', typeof guestCart)
+    console.log('guestCart-->', guestCart)
+
+    if (guestCart !== null) {
       migrateGuestCart(dispatch, userId, guestCart)
+      dispatch(guestCartCheckout())
     }
     history.push('/home')
   } catch (dispatchOrHistoryErr) {
@@ -45,13 +51,20 @@ async function migrateGuestCart(dispatch, userId, guestCart) {
   })
 
   await Promise.all(guestCartItems)
-  window.localStorage.removeItem('shoppingCart')
+  window.localStorage.clear()
 }
 
 export const logout = () => async dispatch => {
   try {
     await axios.post('/auth/logout')
-    dispatch(removeUser())
+    dispatch(removeUser(), guestCartCheckout())
+    window.localStorage.clear()
+
+    console.log(
+      'logging out guestCart-->',
+      window.localStorage.getItem('shoppingCart')
+    )
+
     history.push('/login')
   } catch (err) {
     console.error(err)

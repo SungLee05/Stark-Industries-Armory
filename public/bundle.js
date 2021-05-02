@@ -649,7 +649,7 @@ var GuestShoppingCart = function GuestShoppingCart(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     loadGuestShoppingCart();
   }, []);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "GUEST SHOPPING CART PAGE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !guestCart.length || !guestCart ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shopping Cart Is Empty!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, guestCart.map(function (product) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "GUEST SHOPPING CART PAGE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !guestCart ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shopping Cart Is Empty!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, guestCart.map(function (product) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: product.id
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -3159,9 +3159,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _history__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../history */ "./client/history.js");
 /* harmony import */ var _userShoppingCart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./userShoppingCart */ "./client/store/userShoppingCart.js");
+/* harmony import */ var _guestShoppingCart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./guestShoppingCart */ "./client/store/guestShoppingCart.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -3259,9 +3263,12 @@ var auth = function auth(email, password, method, guestCart) {
                 try {
                   dispatch(getUser(res.data));
                   userId = res.data.id;
+                  console.log('guestCart type--->', _typeof(guestCart));
+                  console.log('guestCart-->', guestCart);
 
-                  if (guestCart && guestCart.length) {
+                  if (guestCart !== null) {
                     migrateGuestCart(dispatch, userId, guestCart);
+                    dispatch(Object(_guestShoppingCart__WEBPACK_IMPORTED_MODULE_3__["guestCartCheckout"])());
                   }
 
                   _history__WEBPACK_IMPORTED_MODULE_1__["default"].push('/home');
@@ -3304,7 +3311,7 @@ function _migrateGuestCart() {
             return Promise.all(guestCartItems);
 
           case 3:
-            window.localStorage.removeItem('shoppingCart');
+            window.localStorage.clear();
 
           case 4:
           case "end":
@@ -3332,22 +3339,24 @@ var logout = function logout() {
                 return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/auth/logout');
 
               case 3:
-                dispatch(removeUser());
+                dispatch(removeUser(), Object(_guestShoppingCart__WEBPACK_IMPORTED_MODULE_3__["guestCartCheckout"])());
+                window.localStorage.clear();
+                console.log('logging out guestCart-->', window.localStorage.getItem('shoppingCart'));
                 _history__WEBPACK_IMPORTED_MODULE_1__["default"].push('/login');
-                _context3.next = 10;
+                _context3.next = 12;
                 break;
 
-              case 7:
-                _context3.prev = 7;
+              case 9:
+                _context3.prev = 9;
                 _context3.t0 = _context3["catch"](0);
                 console.error(_context3.t0);
 
-              case 10:
+              case 12:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, null, [[0, 7]]);
+        }, _callee3, null, [[0, 9]]);
       }));
 
       return function (_x6) {

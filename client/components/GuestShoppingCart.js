@@ -33,7 +33,7 @@ const GuestShoppingCart = props => {
     <div>
       <h1>GUEST SHOPPING CART PAGE</h1>
       <div>
-        {!guestCart.length || !guestCart ? (
+        {!guestCart ? (
           <div>Shopping Cart Is Empty!</div>
         ) : (
           <div>
