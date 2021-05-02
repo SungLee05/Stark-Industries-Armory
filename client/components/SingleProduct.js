@@ -40,7 +40,7 @@ const SingleProduct = props => {
         ) : (
           <button
             type="submit"
-            onClick={() => addProductToUserCart(singleProduct)}
+            onClick={() => addProductToUserCart(singleProduct, userId)}
           >
             ORDER
           </button>
@@ -61,8 +61,8 @@ const mapDispatch = dispatch => {
   return {
     fetchSingleProduct: id => dispatch(fetchProduct(id)),
     addProductToGuestCart: product => dispatch(addProductToCartThunk(product)),
-    addProductToUserCart: product =>
-      dispatch(addProductToUserCartThunk(product))
+    addProductToUserCart: (product, userId) =>
+      dispatch(addProductToUserCartThunk(product, userId))
   }
 }
 

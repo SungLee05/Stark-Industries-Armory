@@ -84,8 +84,8 @@ const UserShoppingCart = props => {
           <div>Shopping Cart Is Empty!</div>
         ) : (
           <div>
-            {userCart.map(product => (
-              <div key={product.id}>
+            {userCart.map((product, idx) => (
+              <div key={Math.random()}>
                 <h4>{product.name}</h4>
                 <img src={product.imageUrl} height="150" />
                 <h4>Quantity: {product.orders[0].orderHistory.quantity}</h4>

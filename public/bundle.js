@@ -759,7 +759,8 @@ var Login = function Login(props) {
   var name = props.name,
       displayName = props.displayName,
       authDispatch = props.authDispatch,
-      error = props.error;
+      error = props.error,
+      guestCart = props.guestCart;
 
   var handleSubmit =
   /*#__PURE__*/
@@ -776,9 +777,10 @@ var Login = function Login(props) {
               formName = evt.target.name;
               email = evt.target.email.value;
               password = evt.target.password.value;
-              authDispatch(email, password, formName);
+              _context.next = 6;
+              return authDispatch(email, password, formName, guestCart);
 
-            case 5:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -820,14 +822,15 @@ var mapState = function mapState(state) {
   return {
     name: 'login',
     displayName: 'Login',
-    error: state.user.error
+    error: state.user.error,
+    guestCart: state.guestShoppingCartReducer.cart
   };
 };
 
 var mapDispatch = function mapDispatch(dispatch) {
   return {
-    authDispatch: function authDispatch(email, password, formName) {
-      dispatch(Object(_store__WEBPACK_IMPORTED_MODULE_2__["auth"])(email, password, formName));
+    authDispatch: function authDispatch(email, password, formName, guestCart) {
+      dispatch(Object(_store__WEBPACK_IMPORTED_MODULE_2__["auth"])(email, password, formName, guestCart));
     }
   };
 };
@@ -1092,7 +1095,8 @@ var Signup = function Signup(props) {
   var name = props.name,
       displayName = props.displayName,
       authDispatch = props.authDispatch,
-      error = props.error;
+      error = props.error,
+      guestCart = props.guestCart;
 
   var handleSubmit =
   /*#__PURE__*/
@@ -1109,9 +1113,10 @@ var Signup = function Signup(props) {
               formName = evt.target.name;
               email = evt.target.email.value;
               password = evt.target.password.value;
-              authDispatch(email, password, formName);
+              _context.next = 6;
+              return authDispatch(email, password, formName, guestCart);
 
-            case 5:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -1151,14 +1156,15 @@ var mapState = function mapState(state) {
   return {
     name: 'signup',
     displayName: 'Sign Up',
-    error: state.user.error
+    error: state.user.error,
+    guestCart: state.guestShoppingCartReducer.cart
   };
 };
 
 var mapDispatch = function mapDispatch(dispatch) {
   return {
-    authDispatch: function authDispatch(email, password, formName) {
-      dispatch(Object(_store__WEBPACK_IMPORTED_MODULE_2__["auth"])(email, password, formName));
+    authDispatch: function authDispatch(email, password, formName, guestCart) {
+      dispatch(Object(_store__WEBPACK_IMPORTED_MODULE_2__["auth"])(email, password, formName, guestCart));
     }
   };
 };
@@ -1211,7 +1217,7 @@ var SingleProduct = function SingleProduct(props) {
   }, "ORDER") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "submit",
     onClick: function onClick() {
-      return addProductToUserCart(singleProduct);
+      return addProductToUserCart(singleProduct, userId);
     }
   }, "ORDER")));
 };
@@ -1231,8 +1237,8 @@ var mapDispatch = function mapDispatch(dispatch) {
     addProductToGuestCart: function addProductToGuestCart(product) {
       return dispatch(Object(_store_guestShoppingCart__WEBPACK_IMPORTED_MODULE_3__["addProductToCartThunk"])(product));
     },
-    addProductToUserCart: function addProductToUserCart(product) {
-      return dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_4__["addProductToUserCartThunk"])(product));
+    addProductToUserCart: function addProductToUserCart(product, userId) {
+      return dispatch(Object(_store_userShoppingCart__WEBPACK_IMPORTED_MODULE_4__["addProductToUserCartThunk"])(product, userId));
     }
   };
 };
@@ -1471,9 +1477,9 @@ var UserShoppingCart = function UserShoppingCart(props) {
     };
   }();
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "USER SHOPPING CART"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !userCart.length || !userCart ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shopping Cart Is Empty!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, userCart.map(function (product) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "USER SHOPPING CART"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, !userCart.length || !userCart ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Shopping Cart Is Empty!") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, userCart.map(function (product, idx) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: product.id
+      key: Math.random()
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, product.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       src: product.imageUrl,
       height: "150"
@@ -3152,9 +3158,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _history__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../history */ "./client/history.js");
+/* harmony import */ var _userShoppingCart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./userShoppingCart */ "./client/store/userShoppingCart.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -3216,14 +3224,14 @@ var me = function me() {
     }()
   );
 };
-var auth = function auth(email, password, method) {
+var auth = function auth(email, password, method, guestCart) {
   return (
     /*#__PURE__*/
     function () {
       var _ref2 = _asyncToGenerator(
       /*#__PURE__*/
       regeneratorRuntime.mark(function _callee2(dispatch) {
-        var res;
+        var res, userId;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -3250,6 +3258,12 @@ var auth = function auth(email, password, method) {
               case 9:
                 try {
                   dispatch(getUser(res.data));
+                  userId = res.data.id;
+
+                  if (guestCart && guestCart.length) {
+                    migrateGuestCart(dispatch, userId, guestCart);
+                  }
+
                   _history__WEBPACK_IMPORTED_MODULE_1__["default"].push('/home');
                 } catch (dispatchOrHistoryErr) {
                   console.error(dispatchOrHistoryErr);
@@ -3269,6 +3283,39 @@ var auth = function auth(email, password, method) {
     }()
   );
 };
+
+function migrateGuestCart(_x3, _x4, _x5) {
+  return _migrateGuestCart.apply(this, arguments);
+}
+
+function _migrateGuestCart() {
+  _migrateGuestCart = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee4(dispatch, userId, guestCart) {
+    var guestCartItems;
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            guestCartItems = guestCart.map(function (product) {
+              return dispatch(Object(_userShoppingCart__WEBPACK_IMPORTED_MODULE_2__["addProductToUserCartThunk"])(product, userId));
+            });
+            _context4.next = 3;
+            return Promise.all(guestCartItems);
+
+          case 3:
+            window.localStorage.removeItem('shoppingCart');
+
+          case 4:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _migrateGuestCart.apply(this, arguments);
+}
+
 var logout = function logout() {
   return (
     /*#__PURE__*/
@@ -3303,7 +3350,7 @@ var logout = function logout() {
         }, _callee3, null, [[0, 7]]);
       }));
 
-      return function (_x3) {
+      return function (_x6) {
         return _ref3.apply(this, arguments);
       };
     }()
@@ -3452,7 +3499,7 @@ var getUserShoppingCart = function getUserShoppingCart() {
     }()
   );
 };
-var addProductToUserCartThunk = function addProductToUserCartThunk(ProductId) {
+var addProductToUserCartThunk = function addProductToUserCartThunk(Product, userId) {
   return (
     /*#__PURE__*/
     function () {
@@ -3468,7 +3515,8 @@ var addProductToUserCartThunk = function addProductToUserCartThunk(ProductId) {
                 _context2.prev = 0;
                 _context2.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/users/cart', {
-                  ProductId: ProductId
+                  Product: Product,
+                  userId: userId
                 });
 
               case 3:
@@ -50140,7 +50188,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

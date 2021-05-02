@@ -3,14 +3,14 @@ import {connect} from 'react-redux'
 import {auth} from '../store'
 
 const Signup = props => {
-  const {name, displayName, authDispatch, error} = props
+  const {name, displayName, authDispatch, error, guestCart} = props
 
   const handleSubmit = async evt => {
     evt.preventDefault()
     const formName = evt.target.name
     const email = evt.target.email.value
     const password = evt.target.password.value
-    authDispatch(email, password, formName)
+    await authDispatch(email, password, formName, guestCart)
   }
 
   return (
@@ -47,14 +47,15 @@ const mapState = state => {
   return {
     name: 'signup',
     displayName: 'Sign Up',
-    error: state.user.error
+    error: state.user.error,
+    guestCart: state.guestShoppingCartReducer.cart
   }
 }
 
 const mapDispatch = dispatch => {
   return {
-    authDispatch: (email, password, formName) => {
-      dispatch(auth(email, password, formName))
+    authDispatch: (email, password, formName, guestCart) => {
+      dispatch(auth(email, password, formName, guestCart))
     }
   }
 }

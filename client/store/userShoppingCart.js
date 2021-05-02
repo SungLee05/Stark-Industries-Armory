@@ -41,11 +41,12 @@ export const getUserShoppingCart = () => {
     }
   }
 }
-export const addProductToUserCartThunk = ProductId => {
+export const addProductToUserCartThunk = (Product, userId) => {
   return async dispatch => {
     try {
       const {data} = await axios.post('/api/users/cart', {
-        ProductId: ProductId
+        Product: Product,
+        userId: userId
       })
       dispatch(addProductToUserCart(data))
     } catch (err) {

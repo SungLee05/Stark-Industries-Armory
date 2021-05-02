@@ -41,8 +41,8 @@ router.put('/cart/:action', async (req, res, next) => {
 })
 
 router.post('/cart', async (req, res, next) => {
-  const productId = req.body.ProductId.id
-  const userId = req.user.id
+  const productId = req.body.Product.id
+  const userId = req.body.userId
   try {
     const currentProduct = await Product.findByPk(productId)
     const currentOrder = await Order.findOrCreate({
@@ -61,8 +61,9 @@ router.post('/cart', async (req, res, next) => {
         orderId: currentOrder[0].id
       }
     })
-    if (req.body.quantity) {
-      const newQuantity = req.body.quantity + orderItem.quantity - 1
+
+    if (req.body.Product.quantity > 0) {
+      const newQuantity = orderItem.quantity + req.body.Product.quantity
       await orderItem.update({quantity: newQuantity})
     }
     res.json(newProduct)
