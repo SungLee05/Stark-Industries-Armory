@@ -32,9 +32,6 @@ export const auth = (email, password, method, guestCart) => async dispatch => {
     dispatch(getUser(res.data))
     const userId = res.data.id
 
-    console.log('guestCart type--->', typeof guestCart)
-    console.log('guestCart-->', guestCart)
-
     if (guestCart !== null) {
       migrateGuestCart(dispatch, userId, guestCart)
       dispatch(guestCartCheckout())
@@ -59,12 +56,6 @@ export const logout = () => async dispatch => {
     await axios.post('/auth/logout')
     dispatch(removeUser(), guestCartCheckout())
     window.localStorage.clear()
-
-    console.log(
-      'logging out guestCart-->',
-      window.localStorage.getItem('shoppingCart')
-    )
-
     history.push('/login')
   } catch (err) {
     console.error(err)

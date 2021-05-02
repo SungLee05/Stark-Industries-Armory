@@ -3160,8 +3160,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _history__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../history */ "./client/history.js");
 /* harmony import */ var _userShoppingCart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./userShoppingCart */ "./client/store/userShoppingCart.js");
 /* harmony import */ var _guestShoppingCart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./guestShoppingCart */ "./client/store/guestShoppingCart.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -3263,8 +3261,6 @@ var auth = function auth(email, password, method, guestCart) {
                 try {
                   dispatch(getUser(res.data));
                   userId = res.data.id;
-                  console.log('guestCart type--->', _typeof(guestCart));
-                  console.log('guestCart-->', guestCart);
 
                   if (guestCart !== null) {
                     migrateGuestCart(dispatch, userId, guestCart);
@@ -3341,22 +3337,21 @@ var logout = function logout() {
               case 3:
                 dispatch(removeUser(), Object(_guestShoppingCart__WEBPACK_IMPORTED_MODULE_3__["guestCartCheckout"])());
                 window.localStorage.clear();
-                console.log('logging out guestCart-->', window.localStorage.getItem('shoppingCart'));
                 _history__WEBPACK_IMPORTED_MODULE_1__["default"].push('/login');
-                _context3.next = 12;
+                _context3.next = 11;
                 break;
 
-              case 9:
-                _context3.prev = 9;
+              case 8:
+                _context3.prev = 8;
                 _context3.t0 = _context3["catch"](0);
                 console.error(_context3.t0);
 
-              case 12:
+              case 11:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, null, [[0, 9]]);
+        }, _callee3, null, [[0, 8]]);
       }));
 
       return function (_x6) {
