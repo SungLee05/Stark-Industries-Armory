@@ -4,7 +4,6 @@ import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import {
-  Navbar,
   Login,
   Signup,
   LandingPage,
@@ -34,7 +33,6 @@ class Routes extends Component {
 
     return (
       <div>
-        <Navbar />
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/allproducts" component={Products} />

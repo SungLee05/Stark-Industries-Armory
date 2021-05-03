@@ -49,6 +49,7 @@ export const addProductToUserCartThunk = (Product, userId) => {
         userId: userId
       })
       dispatch(addProductToUserCart(data))
+      dispatch(getUserShoppingCart())
     } catch (err) {
       console.log(err)
     }
