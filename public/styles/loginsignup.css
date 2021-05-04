@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap');
 
 .login-BG {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
     url('../ironman-login-WP.jpeg');
   position: relative;
   width: 100%;
@@ -12,7 +12,7 @@
   background-size: cover;
 }
 .signup-BG {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)),
     url('../ironman-register-WP.jpg');
   position: relative;
   width: 100%;

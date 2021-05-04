@@ -82,3 +82,45 @@
   color: rgba(128, 12, 12, 0.6);
   transition: 0.3s ease-in-out;
 }
+
+.block div {
+  position: relative;
+  overflow: hidden;
+  float: right;
+  clear: both;
+}
+.block div:before,
+.block div:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgb(147, 0, 0);
+}
+.block div:before {
+  /* animation-delay: 30s; */
+  animation: reveal 4s ease forwards;
+}
+.block div:after {
+  background-color: #fff;
+  /* animation-delay: 30s; */
+  animation: base 3.5s ease forwards;
+}
+@keyframes reveal {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(111%);
+  }
+}
+@keyframes base {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
