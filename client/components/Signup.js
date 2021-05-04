@@ -18,7 +18,7 @@ const Signup = props => {
 
   return (
     <>
-      <div className="login-BG">
+      <div className="signup-BG">
         <div className="formWrap">
           <div className="login-wrap">
             <h2>REGISTER</h2>
