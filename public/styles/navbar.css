@@ -49,5 +49,5 @@
 }
 .link-style:hover::after {
   width: 100%;
-  transition: ease-in-out width 0.2s;
+  transition: ease-in-out width 0.4s;
 }
