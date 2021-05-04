@@ -27,16 +27,41 @@ const Navbar = ({
   )
 
   return (
-    <div>
-      <h1>STARK INDUSTRIES ARMORY</h1>
-      <nav>
+    <div className="navbar-BG">
+      <nav className="navbar-container">
+        <Link to="/allproducts" className="link-container">
+          <div className="logo-container">
+            <img
+              src="/starkIndustriesLogo.png"
+              style={{width: '10rem'}}
+              alt="company-logo"
+            />
+          </div>
+        </Link>
         {isLoggedIn ? (
-          <div>
-            <Link to="/home">My Account</Link>
-            {admin ? <Link to="/admin"> Admin</Link> : <span />}
-            {admin ? <Link to="/users">All Users</Link> : <span />}
-            <Link to="/allproducts">ALL PRODUCTS</Link>
-            <Link to={`/user/${userId}/orderhistory`}>Order History</Link>
+          <div className="link-container">
+            <Link to="/" className="link-style">
+              HOME
+            </Link>
+            <Link to="/profile" className="link-style">
+              PROFILE
+            </Link>
+            {admin ? (
+              <Link to="/admin" className="link-style">
+                ADMIN
+              </Link>
+            ) : null}
+            {admin ? (
+              <Link to="/users" className="link-style">
+                ALL USERS
+              </Link>
+            ) : null}
+            <Link to="/allproducts" className="link-style">
+              ARMORY
+            </Link>
+            <Link to={`/user/${userId}/orderhistory`} className="link-style">
+              ORDER HISTORY
+            </Link>
 
             <IconButton
               component={Link}
@@ -44,12 +69,12 @@ const Navbar = ({
               aria-label="Show cart items"
               color="inherit"
               style={{
-                fontSize: '2rem',
+                fontSize: '0.5rem',
                 padding: '0 0',
                 alignSelf: 'center',
-                marginBottom: '0.4rem',
-                marginRight: '0.5rem'
+                margin: '0 0'
               }}
+              className="link-style"
             >
               <Badge
                 badgeContent={userCart.reduce(
@@ -61,24 +86,34 @@ const Navbar = ({
               >
                 <ShoppingCart
                   style={{
-                    fontSize: '2rem',
+                    fontSize: '1.5rem',
                     padding: '0 0'
                   }}
                 />
               </Badge>
             </IconButton>
 
-            <a href="#" onClick={handleClick}>
-              Logout
+            <a href="#" onClick={handleClick} className="link-style">
+              LOGOUT
             </a>
           </div>
         ) : (
-          <div>
-            <Link to="/">HOME</Link>
-            <Link to="/allproducts">All PRODUCTS</Link>
-            <Link to="/login">LOG IN</Link>
-            <Link to="/signup">SIGN UP</Link>
-            <Link to="/guest/shoppingcart">SHOPPING CART</Link>
+          <div className="link-container">
+            <Link to="/" className="link-style">
+              HOME
+            </Link>
+            <Link to="/allproducts" className="link-style">
+              ARMORY
+            </Link>
+            <Link to="/guest/shoppingcart" className="link-style">
+              SHOPPING CART
+            </Link>
+            <Link to="/signup" className="link-style">
+              REGISTER
+            </Link>
+            <Link to="/login" className="link-style">
+              LOGIN
+            </Link>
           </div>
         )}
       </nav>

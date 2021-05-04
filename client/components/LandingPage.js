@@ -1,9 +1,12 @@
 import React from 'react'
+import Intro from './main/Intro'
+import Directory from './main/Directory'
 
 const LandingPage = () => {
   return (
     <div>
-      <h1>LANDING PAGE</h1>
+      <Intro />
+      <Directory />
     </div>
   )
 }

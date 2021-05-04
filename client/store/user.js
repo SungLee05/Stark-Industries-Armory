@@ -36,7 +36,7 @@ export const auth = (email, password, method, guestCart) => async dispatch => {
       migrateGuestCart(dispatch, userId, guestCart)
       dispatch(guestCartCheckout())
     }
-    history.push('/home')
+    history.push('/profile')
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }
