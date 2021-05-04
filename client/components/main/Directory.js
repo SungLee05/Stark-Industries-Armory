@@ -5,7 +5,7 @@ const Directory = () => {
   return (
     <div className="directory">
       <div className="wrap">
-        <img src="/directoryphoto.jpeg" className="item" />
+        <img src="/starkindustriescompound.png" className="item" />
         <Link to="/allproducts" id="robotics-link">
           <div id="robotic-link-text">Armory</div>
         </Link>
