@@ -66,7 +66,12 @@ const Login = props => {
             <div className="socialSignin">
               <div className="row">
                 <a href="/auth/google">
-                  <FcGoogle className="social-icons" />
+                  <FcGoogle
+                    className="social-icons"
+                    style={{
+                      backgroundColor: 'rgb(255,255,255)'
+                    }}
+                  />
                 </a>
 
                 <GrFacebookOption
