@@ -1,6 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {auth} from '../store'
+import {FcGoogle} from 'react-icons/fc'
+import {GrFacebookOption} from 'react-icons/gr'
+import {FaTwitter} from 'react-icons/fa'
 
 const Signup = props => {
   const {name, displayName, authDispatch, error, guestCart} = props
@@ -59,9 +62,24 @@ const Signup = props => {
               </div>
               {error && error.response && <div> {error.response.data} </div>}
             </form>
-            <a id="GOOGLE" href="/auth/google">
-              {displayName} with Google
-            </a>
+
+            <div className="socialSignin">
+              <div className="row">
+                <a href="/auth/google">
+                  <FcGoogle className="social-icons" />
+                </a>
+
+                <GrFacebookOption
+                  className="social-icons"
+                  style={{backgroundColor: 'rgb(60,83,154)'}}
+                />
+
+                <FaTwitter
+                  className="social-icons"
+                  style={{backgroundColor: 'rgb(65,170,241)'}}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
