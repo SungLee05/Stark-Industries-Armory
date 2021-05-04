@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap');
 
-#login-BG {
+.login-BG {
   background: url('../ironmanwallpaper.jpeg');
   position: relative;
   width: 100%;
@@ -61,21 +61,21 @@ h2 {
   justify-content: center;
   margin-top: 2rem;
 }
-#loginBtn {
+.loginBtn {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 0.9rem;
   color: white;
   font-weight: 300;
   text-transform: uppercase;
-  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
-  border-radius: 1.5rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
   background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   padding: 0.5rem;
   width: 64%;
 }
-#loginBtn:hover {
+.loginBtn:hover {
   background-color: white;
   color: black;
   transition: ease-in-out 0.1s;

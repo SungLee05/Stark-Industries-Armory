@@ -15,7 +15,7 @@ const Login = props => {
 
   return (
     <div>
-      <div id="login-BG">
+      <div className="login-BG">
         <div className="formWrap">
           <div className="login-wrap">
             <h2>LogIn</h2>
@@ -53,7 +53,7 @@ const Login = props => {
                 />
               </div>
               <div className="loginBtn-container">
-                <button type="submit" id="loginBtn">
+                <button type="submit" className="loginBtn">
                   {displayName}
                 </button>
               </div>
