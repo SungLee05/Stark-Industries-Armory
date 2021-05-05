@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap');
 
 .all-products-container {
+  background-color: rgba(0, 0, 0, 0.249);
   margin-top: 10vh;
   height: 90vh;
 }
@@ -44,7 +46,7 @@
   padding: 0 1rem 0 1rem;
 }
 .product-name {
-  font-size: 3rem;
+  font-size: 3.5rem;
   background: -webkit-linear-gradient(rgb(247, 199, 0), rgba(179, 0, 0, 0.619));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -56,5 +58,12 @@
   color: white;
   font-family: 'Bebas Neue', cursive;
   z-index: 10;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.3rem;
+}
+
+.sort-selector {
+  margin: 0.5rem 2rem 0.5rem 2rem;
+  background-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  color: white;
 }

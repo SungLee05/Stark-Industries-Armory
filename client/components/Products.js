@@ -14,7 +14,7 @@ const Products = props => {
     <>
       <div className="all-products-container">
         <div>
-          <select>
+          <select className="sort-selector">
             <option value="all">All Products</option>
             <option value="alpha_asc">Name (A-Z)</option>
             <option value="alpha_desc">Name (Z-A)</option>
