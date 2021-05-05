@@ -2,9 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 import {Swiper, SwiperSlide} from 'swiper/react'
-import SwiperCore, {EffectCoverflow} from 'swiper'
+import SwiperCore, {EffectCoverflow, Pagination} from 'swiper'
 
-SwiperCore.use([EffectCoverflow])
+SwiperCore.use([EffectCoverflow, Pagination])
 
 const ProductCard = props => {
   const {products} = props
@@ -15,6 +15,7 @@ const ProductCard = props => {
         effect="coverflow"
         grabCursor="true"
         centeredSlides="true"
+        pagination={{clickable: true}}
         spaceBetween={2}
         slidesPerView={4}
         loop="true"
