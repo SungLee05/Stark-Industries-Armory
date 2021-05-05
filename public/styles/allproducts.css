@@ -67,3 +67,13 @@
   font-family: 'Poppins', sans-serif;
   color: white;
 }
+
+.swiper-button-next {
+  color: white;
+}
+.swiper-button-prev {
+  color: white;
+}
+.swiper-pagination-bullet {
+  --swiper-theme-color: white;
+}

@@ -1,0 +1,29 @@
+.single-product-container {
+  height: 90vh;
+  width: 100%;
+  margin-top: 10vh;
+}
+.order-btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.247);
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 10rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(0.5rem);
+}
+.order-btn:hover {
+  background-color: white;
+  color: black;
+  transition: ease-in-out 0.1s;
+  cursor: pointer;
+  padding: 0.5rem;
+}

@@ -19,19 +19,27 @@ const SingleProduct = props => {
   }, [])
 
   return (
-    <div>
-      <h1>SINGLE PRODUCT PAGE</h1>
-
-      <img src={singleProduct.imageUrl} height="200" />
-      <div className="singletext">
-        Name: {singleProduct.name}
-        <br />
-        Price: {singleProduct.price}
-        <br />
-        Description: {singleProduct.description}
-        <br />
+    <div className="single-product-container">
+      <img
+        src={
+          singleProduct.singleInfoImageUrl
+            ? singleProduct.singleInfoImageUrl
+            : singleProduct.imageUrl
+        }
+        height="200"
+      />
+      <div>
+        <div className="product-name">
+          {singleProduct.name}
+          <br />
+          Price: ${singleProduct.price}
+          <br />
+          Description: {singleProduct.description}
+          <br />
+        </div>
         {!userId ? (
           <button
+            className="order-btn"
             type="submit"
             onClick={() => addProductToGuestCart(singleProduct)}
           >
@@ -39,6 +47,7 @@ const SingleProduct = props => {
           </button>
         ) : (
           <button
+            className="order-btn"
             type="submit"
             onClick={() => addProductToUserCart(singleProduct, userId)}
           >
