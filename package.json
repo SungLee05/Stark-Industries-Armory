@@ -57,6 +57,8 @@
     "faker": "^5.5.3",
     "gsap": "^3.6.1",
     "history": "^4.9.0",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
     "morgan": "^1.9.1",
     "node-sass": "^4.14.1",
     "nodemailer": "^6.6.0",
