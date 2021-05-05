@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .all-products-container {
   margin-top: 10vh;
   height: 90vh;
@@ -39,7 +41,20 @@
 }
 .product-name .product-price {
   margin: 0 auto;
+  padding: 0 1rem 0 1rem;
 }
 .product-name {
   font-size: 3rem;
+  background: -webkit-linear-gradient(rgb(247, 199, 0), rgba(179, 0, 0, 0.619));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  z-index: 10;
+  letter-spacing: 0.2rem;
 }

@@ -14,7 +14,7 @@ const ProductCard = props => {
         effect="coverflow"
         grabCursor="true"
         centeredSlides="true"
-        spaceBetween={0}
+        spaceBetween={2}
         slidesPerView={4}
         loop="true"
         coverflowEffect={{
@@ -35,7 +35,7 @@ const ProductCard = props => {
                 className="product-img"
               />
               <div className="product-price">
-                {(product.price * 1).toFixed(2)}
+                ${(product.price * 1).toFixed(2)}
               </div>
             </Link>
           </SwiperSlide>
