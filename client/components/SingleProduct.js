@@ -26,16 +26,17 @@ const SingleProduct = props => {
             ? singleProduct.singleInfoImageUrl
             : singleProduct.imageUrl
         }
-        height="200"
+        className="single-product-img"
       />
       <div>
-        <div className="product-name">
-          {singleProduct.name}
-          <br />
-          Price: ${singleProduct.price}
-          <br />
-          Description: {singleProduct.description}
-          <br />
+        <div className="single-product-info-container">
+          <div className="single-product-name">{singleProduct.name}</div>
+          <div className="single-product-price">
+            Price: ${singleProduct.price}
+          </div>
+          <div className="single-product-desc">
+            Description: {singleProduct.description}
+          </div>
         </div>
         {!userId ? (
           <button

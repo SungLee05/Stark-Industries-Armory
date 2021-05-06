@@ -2,10 +2,14 @@
   height: 90vh;
   width: 100%;
   margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .order-btn {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-left: 2.5rem;
   font-size: 0.9rem;
   color: white;
   font-weight: 300;
@@ -26,4 +30,31 @@
   transition: ease-in-out 0.1s;
   cursor: pointer;
   padding: 0.5rem;
+}
+
+.single-product-img {
+  height: 35rem;
+  margin-top: 3rem;
+}
+
+.single-product-info-container {
+  font-size: 3.5rem;
+  background: -webkit-linear-gradient(rgb(247, 199, 0), rgba(179, 0, 0, 0.619));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Bebas Neue', cursive;
+  height: 30rem;
+  width: 30rem;
+  margin-left: 2.5rem;
+  margin-top: 3rem;
+}
+
+.single-product-name {
+  font-size: 7.5rem;
+}
+.single-product-price {
+  font-size: 1.6rem;
+}
+.single-product-desc {
+  font-size: 1.6rem;
 }
