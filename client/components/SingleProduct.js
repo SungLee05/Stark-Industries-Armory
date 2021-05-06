@@ -20,14 +20,18 @@ const SingleProduct = props => {
 
   return (
     <div className="single-product-container">
-      <img
-        src={
-          singleProduct.singleInfoImageUrl
-            ? singleProduct.singleInfoImageUrl
-            : singleProduct.imageUrl
-        }
-        className="single-product-img"
-      />
+      <div className="product-img-container">
+        <div className="product-img-card">
+          <img
+            src={
+              singleProduct.singleInfoImageUrl
+                ? singleProduct.singleInfoImageUrl
+                : singleProduct.imageUrl
+            }
+            className="single-product-img"
+          />
+        </div>
+      </div>
       <div>
         <div className="single-product-info-container">
           <div className="single-product-name">{singleProduct.name}</div>
