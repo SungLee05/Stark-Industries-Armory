@@ -2,9 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 import {Swiper, SwiperSlide} from 'swiper/react'
-import SwiperCore, {EffectCoverflow, Pagination, Navigation} from 'swiper'
+import SwiperCore, {EffectCoverflow, Pagination} from 'swiper'
 
-SwiperCore.use([EffectCoverflow, Pagination, Navigation])
+SwiperCore.use([EffectCoverflow, Pagination])
 
 const ProductCard = props => {
   const {products} = props
@@ -15,10 +15,6 @@ const ProductCard = props => {
         effect="coverflow"
         grabCursor="true"
         centeredSlides="true"
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }}
         pagination={{
           clickable: true,
           bulletClass: `swiper-pagination-bullet`,

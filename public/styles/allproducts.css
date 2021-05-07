@@ -68,12 +68,10 @@
   color: white;
 }
 
-.swiper-button-next {
-  color: white;
-}
-.swiper-button-prev {
-  color: white;
-}
-.swiper-pagination-bullet {
+.swiper-pagination .swiper-pagination-bullet {
   --swiper-theme-color: white;
+  color: white;
+  background: white;
+  background-color: white;
+  opacity: 1;
 }
