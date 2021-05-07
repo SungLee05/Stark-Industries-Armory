@@ -8,6 +8,9 @@ import {
 } from '../store/userShoppingCart'
 import {me} from '../store'
 
+import {CgMathPlus, CgMathMinus} from 'react-icons/cg'
+import {AiOutlineClose} from 'react-icons/ai'
+
 import Checkout from './Checkout'
 import {loadStripe} from '@stripe/stripe-js'
 import {Elements} from '@stripe/react-stripe-js'
@@ -76,9 +79,7 @@ const UserShoppingCart = props => {
     }
   }
   return (
-    <div>
-      <h1>USER SHOPPING CART</h1>
-
+    <div className="cart-main-container">
       <div>
         {!userCart.length || !userCart ? (
           <div>Shopping Cart Is Empty!</div>
@@ -86,45 +87,62 @@ const UserShoppingCart = props => {
           <div>
             {userCart.map(product => (
               <div key={Math.random()} className="cart-info-container">
-                <img src={product.imageUrl} height="150" />
-                <h4>{product.name}</h4>
-                <h4>Quantity: {product.orders[0].orderHistory.quantity}</h4>
+                <div className="cart-glass-container">
+                  <div className="cart-img-wrapper">
+                    <img src={product.singleInfoImageUrl} height="150" />
+                  </div>
 
-                <div className="increment-decrement-container">
+                  <div className="cart-name-wrapper">
+                    <h4>{product.name}</h4>
+                  </div>
+
+                  <div className="cart-quantity-container">
+                    <div style={{padding: '1rem', width: '1rem'}}>
+                      {product.orders[0].orderHistory.quantity}
+                    </div>
+
+                    <div className="increment-decrement-container">
+                      <button
+                        className="cart-btn"
+                        type="button"
+                        value="increment"
+                        onClick={() =>
+                          increaseQty(product.id, product.orders[0].id)
+                        }
+                      >
+                        <CgMathPlus />
+                      </button>
+                      <button
+                        className="cart-btn"
+                        type="button"
+                        value="decrement"
+                        onClick={() =>
+                          decreaseQty(product.id, product.orders[0].id, userId)
+                        }
+                      >
+                        <CgMathMinus />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="cart-price-wrapper">
+                    <div>${roundDecimal(product.price * product.quantity)}</div>
+                  </div>
+                </div>
+                <div className="remove-btn-container">
                   <button
+                    className="cart-btn"
                     type="button"
-                    value="increment"
-                    onClick={() =>
-                      increaseQty(product.id, product.orders[0].id)
-                    }
+                    onClick={() => deleteFromUserCart(product.id, userId)}
                   >
-                    +
-                  </button>
-                  <button
-                    type="button"
-                    value="decrement"
-                    onClick={() =>
-                      decreaseQty(product.id, product.orders[0].id, userId)
-                    }
-                  >
-                    -
+                    <AiOutlineClose />
                   </button>
                 </div>
-
-                <h4>
-                  Price: ${roundDecimal(product.price * product.quantity)}
-                </h4>
-
-                <button
-                  type="button"
-                  onClick={() => deleteFromUserCart(product.id, userId)}
-                >
-                  Remove From Cart
-                </button>
               </div>
             ))}
-            <div>
-              <div>
+
+            <div className="cart-subtotal-container">
+              <div className="cart-subtotal-wrapper">
                 TOTAL: $
                 {userCart
                   .reduce(
@@ -151,8 +169,9 @@ const UserShoppingCart = props => {
                   )
                 }
               >
-                Place Your Order
+                Checkout
               </button>
+
               <Modal
                 isOpen={paymentOpen}
                 onRequestClose={hideCheckout}
