@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
+import Tilt from 'react-tilt'
 import {fetchProduct} from '../store/singleProduct'
 import {addProductToCartThunk} from '../store/guestShoppingCart'
 import {addProductToUserCartThunk} from '../store/userShoppingCart'
@@ -21,7 +22,16 @@ const SingleProduct = props => {
   return (
     <div className="single-product-container">
       <div className="product-img-container">
-        <div className="product-img-card">
+        <Tilt
+          options={{
+            max: 30,
+            speed: 2000,
+            transition: true,
+            easing: 'cubic-bezier(.03,.98,.52,.99)'
+          }}
+          className="product-img-card"
+          style={{padding: 0}}
+        >
           <img
             src={
               singleProduct.singleInfoImageUrl
@@ -30,18 +40,20 @@ const SingleProduct = props => {
             }
             className="single-product-img"
           />
-        </div>
+        </Tilt>
       </div>
+
       <div>
         <div className="single-product-info-container">
           <div className="single-product-name">{singleProduct.name}</div>
-          <div className="single-product-price">
-            Price: ${singleProduct.price}
-          </div>
           <div className="single-product-desc">
             Description: {singleProduct.description}
           </div>
         </div>
+        <div className="single-product-price">
+          Price: ${singleProduct.price}
+        </div>
+
         {!userId ? (
           <button
             className="order-btn"

@@ -19,9 +19,11 @@ const ProductCard = props => {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         }}
-        pagination={{clickable: true, bulletClass: `swiper-pagination-bullet`}}
-        dynamicBullets="true"
-        dynamicMainBullets={4}
+        pagination={{
+          clickable: true,
+          bulletClass: `swiper-pagination-bullet`,
+          dynamicBullets: true
+        }}
         spaceBetween={2}
         slidesPerView={4}
         loop="true"
