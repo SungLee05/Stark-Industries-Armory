@@ -84,31 +84,36 @@ const UserShoppingCart = props => {
           <div>Shopping Cart Is Empty!</div>
         ) : (
           <div>
-            {userCart.map((product, idx) => (
-              <div key={Math.random()}>
-                <h4>{product.name}</h4>
+            {userCart.map(product => (
+              <div key={Math.random()} className="cart-info-container">
                 <img src={product.imageUrl} height="150" />
+                <h4>{product.name}</h4>
                 <h4>Quantity: {product.orders[0].orderHistory.quantity}</h4>
+
+                <div className="increment-decrement-container">
+                  <button
+                    type="button"
+                    value="increment"
+                    onClick={() =>
+                      increaseQty(product.id, product.orders[0].id)
+                    }
+                  >
+                    +
+                  </button>
+                  <button
+                    type="button"
+                    value="decrement"
+                    onClick={() =>
+                      decreaseQty(product.id, product.orders[0].id, userId)
+                    }
+                  >
+                    -
+                  </button>
+                </div>
+
                 <h4>
                   Price: ${roundDecimal(product.price * product.quantity)}
                 </h4>
-
-                <button
-                  type="button"
-                  value="increment"
-                  onClick={() => increaseQty(product.id, product.orders[0].id)}
-                >
-                  +
-                </button>
-                <button
-                  type="button"
-                  value="decrement"
-                  onClick={() =>
-                    decreaseQty(product.id, product.orders[0].id, userId)
-                  }
-                >
-                  -
-                </button>
 
                 <button
                   type="button"
