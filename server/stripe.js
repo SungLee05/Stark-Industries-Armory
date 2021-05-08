@@ -8,7 +8,7 @@ module.exports = router
 const urlBase =
   process.env.NODE_ENV !== 'production'
     ? 'http://localhost:8080/'
-    : 'https://stark-industries-armory.herokuapp.com/'
+    : 'https://starkindustriesarmory.herokuapp.com/'
 
 router.post('/create-session', async (req, res, next) => {
   console.log(chalk.bgMagenta('HERE'))

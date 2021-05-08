@@ -89,8 +89,7 @@ class Routes extends Component {
               <Route exact path="/stripe-failure" component={StripeFailure} />
             </Switch>
           )}
-
-          <Route component={Login} />
+          <Route component={LandingPage} />
         </Switch>
       </div>
     )

@@ -10,21 +10,19 @@ if (!process.env.FACEBOOK_APP_ID || !process.env.FACEBOOK_APP_SECRET) {
   const facebookConfig = {
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: process.env.FACEBOOK_CALLBACK
+    callbackURL: process.env.FACEBOOK_CALLBACK,
+    profileFields: ['emails']
   }
   const strategy = new FacebookStrategy(
     facebookConfig,
     (accessToken, refreshToken, profile, done) => {
       const facebookId = profile.id
       const email = profile.emails[0].value
-      const imgUrl = profile.photos[0].value
-      const firstName = profile.name.givenName
-      const lastName = profile.name.familyName
-      const fullName = profile.displayName
-
       User.findOrCreate({
-        where: {facebookId},
-        defaults: {email, imgUrl, firstName, lastName, fullName}
+        where: {
+          facebookId
+        },
+        defaults: {email}
       })
         .then(([user]) => done(null, user))
         .catch(done)
@@ -33,10 +31,7 @@ if (!process.env.FACEBOOK_APP_ID || !process.env.FACEBOOK_APP_SECRET) {
 
   passport.use(strategy)
 
-  router.get(
-    '/',
-    passport.authenticate('facebook', {scope: ['email', 'profile']})
-  )
+  router.get('/', passport.authenticate('facebook'))
 
   router.get(
     '/callback',
