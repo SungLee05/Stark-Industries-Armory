@@ -14,17 +14,6 @@ router.get('/', adminAuth, async (req, res, next) => {
   }
 })
 
-// **this API route causes issue with GET request for users/cart.
-// router.get('/:id', async (req, res, next) => {
-//   const userId = req.params.id
-//   try {
-//     const user = await User.findByPk(userId)
-//     res.json(user)
-//   } catch (err) {
-//     next(err)
-//   }
-// })
-
 router.delete('/:id', async (req, res, next) => {
   const userId = req.params.id
   try {
