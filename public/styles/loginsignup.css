@@ -149,6 +149,7 @@ select:-webkit-autofill:focus {
   margin: 0.5rem auto 0;
   font-family: 'Poppins', sans-serif;
 }
+
 .row {
   display: flex;
   justify-content: center;
@@ -163,6 +164,7 @@ select:-webkit-autofill:focus {
   border-radius: 50%;
   margin-left: 0.8rem;
   margin-right: 0.8rem;
+  color: white;
 }
 .social-icons:before {
   width: 0;
