@@ -35,7 +35,7 @@ const Navbar = ({
   return (
     <div className="navbar-BG">
       <nav className="navbar-container">
-        <Link to="/allproducts" className="link-container">
+        <Link to="/allproducts" className="logo-link-container">
           <div className="logo-container">
             <img
               src="/starkIndustriesLogo.png"
