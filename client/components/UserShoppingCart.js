@@ -83,8 +83,8 @@ const UserShoppingCart = props => {
   }
   return (
     <>
-      <div id="ironman-gif-container">
-        <img id="ironman" src="/ironmangif.gif" alt="ironman" />
+      <div className="ironman-gif-container">
+        <img className="ironman" src="/ironmangif.gif" alt="ironman" />
       </div>
       <div className="cart-main-container">
         <div>

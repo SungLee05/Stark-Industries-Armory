@@ -9,6 +9,10 @@ import {
   getGuestShoppingCart
 } from '../store/guestShoppingCart'
 
+import {CgMathPlus, CgMathMinus} from 'react-icons/cg'
+import {AiOutlineClose} from 'react-icons/ai'
+import {BsChevronDoubleLeft} from 'react-icons/bs'
+
 const GuestShoppingCart = props => {
   const {
     products,
@@ -30,58 +34,108 @@ const GuestShoppingCart = props => {
   }, [])
 
   return (
-    <div>
-      <h1>GUEST SHOPPING CART PAGE</h1>
-      <div>
-        {!guestCart ? (
-          <div>Shopping Cart Is Empty!</div>
-        ) : (
-          <div>
-            {guestCart.map(product => (
-              <div key={product.id}>
-                <h4>{product.name}</h4>
-                <img src={product.imageUrl} height="150" />
-                <h4>Quantity: {product.quantity}</h4>
-                <h4>Price: ${roundDecimal(product.price)}</h4>
-
-                <button type="button" onClick={() => addToCart(product.id)}>
-                  +
-                </button>
-                <button
-                  type="button"
-                  onClick={() => subtractFromCart(product.id)}
-                >
-                  -
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => deleteFromCart(product.id)}
-                >
-                  Remove From Cart
-                </button>
-              </div>
-            ))}
-            <div>
-              <div>
-                TOTAL: $
-                {guestCart
-                  .reduce(
-                    (acc, product) => acc + product.price * product.quantity,
-                    0
-                  )
-                  .toFixed(2)}
-              </div>
-              <Link to="/orderconfirmation">
-                <button type="submit" onClick={() => checkout()}>
-                  Place Your Order
-                </button>
-              </Link>
-            </div>
-          </div>
-        )}
+    <>
+      <div className="ironman-gif-container">
+        <img className="ironman" src="/ironmangif.gif" alt="ironman" />
       </div>
-    </div>
+      <div className="cart-main-container">
+        <div>
+          {!guestCart || guestCart.length === 0 ? (
+            <div>Shopping Cart Is Empty!</div>
+          ) : (
+            <div>
+              {guestCart.map(product => (
+                <div key={Math.random()} className="cart-info-container">
+                  <div className="cart-glass-container">
+                    <div className="cart-img-wrapper">
+                      <img src={product.singleInfoImageUrl} height="150" />
+                    </div>
+
+                    <div className="cart-name-wrapper">
+                      <div className="cart-fullname">{product.fullName}</div>
+                    </div>
+
+                    <div className="cart-quantity-container">
+                      <div style={{padding: '1rem', width: '1rem'}}>
+                        {product.quantity}
+                      </div>
+
+                      <div className="increment-decrement-container">
+                        <button
+                          className="cart-btn"
+                          type="button"
+                          value="increment"
+                          onClick={() => addToCart(product.id)}
+                        >
+                          <CgMathPlus />
+                        </button>
+
+                        <button
+                          className="cart-btn"
+                          type="button"
+                          value="decrement"
+                          onClick={() => subtractFromCart(product.id)}
+                        >
+                          <CgMathMinus />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="cart-price-wrapper">
+                      <div>
+                        ${roundDecimal(product.price * product.quantity)}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="remove-btn-container">
+                    <button
+                      className="cart-btn"
+                      type="button"
+                      onClick={() => deleteFromCart(product.id)}
+                    >
+                      <AiOutlineClose />
+                    </button>
+                  </div>
+                </div>
+              ))}
+
+              <div className="cart-subtotal-container">
+                <div className="cart-subtotal-wrapper">
+                  <Link className="cart-back-link" to="/allproducts">
+                    <BsChevronDoubleLeft />
+                    <div className="cart-back-btn">Back to Armory</div>
+                  </Link>
+                  <div style={{marginRight: '2rem'}}>TOTAL :</div>
+
+                  <div style={{width: '10rem', textAlign: 'end'}}>
+                    $
+                    {guestCart
+                      .reduce(
+                        (acc, product) =>
+                          acc + product.price * product.quantity,
+                        0
+                      )
+                      .toFixed(2)}
+                  </div>
+                </div>
+                <button
+                  className="checkout-btn"
+                  type="submit"
+                  onClick={() => checkout()}
+                >
+                  <Link
+                    to="/orderconfirmation"
+                    style={{textDecoration: 'none', color: 'black'}}
+                  >
+                    Checkout
+                  </Link>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </>
   )
 }
 const mapState = state => {
