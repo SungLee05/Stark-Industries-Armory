@@ -12,10 +12,11 @@ const UserProfile = props => {
   }, [])
 
   return (
-    <div>
-      <h1>USER PROFILE PAGE</h1>
-      <div>Welcome, {user.email}</div>
-      <div>Member since: {dateFormat(user.createdAt, 'mmm yyyy')}</div>
+    <div className="profile-main-container">
+      <div className="profile-info-container">
+        <div>Welcome, {user.email}</div>
+        <div>Member since {dateFormat(user.createdAt, 'mmm yyyy')}</div>
+      </div>
     </div>
   )
 }
