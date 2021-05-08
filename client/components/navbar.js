@@ -83,11 +83,15 @@ const Navbar = ({
               className="link-style"
             >
               <Badge
-                badgeContent={userCart.reduce(
-                  (quantity, product) =>
-                    quantity + product.orders[0].orderHistory.quantity,
-                  0
-                )}
+                badgeContent={
+                  !userCart || !userCart.length
+                    ? 0
+                    : userCart.reduce(
+                        (quantity, product) =>
+                          quantity + product.orders[0].orderHistory.quantity,
+                        0
+                      )
+                }
                 color="secondary"
               >
                 <ShoppingCart
@@ -125,10 +129,14 @@ const Navbar = ({
               className="link-style"
             >
               <Badge
-                badgeContent={guestCart.reduce(
-                  (quantity, product) => quantity + product.quantity,
-                  0
-                )}
+                badgeContent={
+                  !guestCart || !guestCart.length
+                    ? 0
+                    : guestCart.reduce(
+                        (quantity, product) => quantity + product.quantity,
+                        0
+                      )
+                }
                 color="secondary"
               >
                 <ShoppingCart

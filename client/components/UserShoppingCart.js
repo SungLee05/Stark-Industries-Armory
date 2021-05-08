@@ -89,7 +89,9 @@ const UserShoppingCart = props => {
       <div className="cart-main-container">
         <div>
           {!userCart.length || !userCart ? (
-            <div>Shopping Cart Is Empty!</div>
+            <div className="cart-empty-container">
+              <div className="cart-empty">There are no orders to fulfill.</div>
+            </div>
           ) : (
             <div>
               {userCart.map(product => (

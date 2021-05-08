@@ -39,17 +39,17 @@
 }
 
 .single-product-name {
-  font-size: 7.5rem;
-  line-height: 7.5rem;
+  font-size: 5rem;
+  line-height: 4.5rem;
 }
 .single-product-price {
   margin: 0 0 0 3rem;
-  font-size: 3rem;
+  font-size: 2rem;
   color: rgba(255, 255, 255, 0.619);
   font-family: 'Bebas Neue', cursive;
 }
 .single-product-desc {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .product-img-container {
@@ -110,4 +110,39 @@
 
 .text-container {
   margin: 2rem 0 2rem 20rem;
+}
+
+.single-product-back-link-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.single-product-cart-back-link {
+  color: #e8e8e8e4;
+  margin-right: 21rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+
+.single-product-cart-back-link,
+.single-product-cart-back-link:link,
+.single-product-cart-back-link:visited,
+.single-product-cart-back-link:active {
+  text-decoration: none;
+}
+
+.single-product-cart-back-link:hover {
+  color: rgb(253, 212, 132);
+}
+
+.single-product-cart-back-link svg {
+  padding: 4px;
+}
+.single-product-cart-back-btn {
+  width: 8rem;
+  z-index: 2;
 }

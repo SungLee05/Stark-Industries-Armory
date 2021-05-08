@@ -5,6 +5,9 @@ import {fetchProduct} from '../store/singleProduct'
 import {addProductToCartThunk} from '../store/guestShoppingCart'
 import {addProductToUserCartThunk} from '../store/userShoppingCart'
 
+import {Link} from 'react-router-dom'
+import {BsChevronDoubleLeft} from 'react-icons/bs'
+
 const SingleProduct = props => {
   const {
     fetchSingleProduct,
@@ -77,6 +80,15 @@ const SingleProduct = props => {
                 ORDER
               </button>
             )}
+
+            <div className="single-product-back-link-container">
+              <Link className="single-product-cart-back-link" to="/allproducts">
+                <BsChevronDoubleLeft />
+                <div className="single-product-cart-back-btn">
+                  Back to Armory
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

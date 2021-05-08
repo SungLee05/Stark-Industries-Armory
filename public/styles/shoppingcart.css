@@ -120,10 +120,7 @@
 }
 
 .cart-subtotal-wrapper svg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto 0;
+  padding: 4px;
   z-index: 2;
 }
 .cart-subtotal-wrapper a {
@@ -137,7 +134,7 @@
 }
 .cart-back-link {
   color: #e8e8e8e4;
-  margin-right: 1rem;
+  margin-right: 25.8rem;
   z-index: 2;
 }
 
@@ -153,8 +150,6 @@
 }
 
 .cart-back-btn {
-  margin-right: 23rem;
-  margin-left: 1rem;
   z-index: 2;
 }
 
