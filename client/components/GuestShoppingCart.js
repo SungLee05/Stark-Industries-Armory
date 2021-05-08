@@ -41,7 +41,9 @@ const GuestShoppingCart = props => {
       <div className="cart-main-container">
         <div>
           {!guestCart || guestCart.length === 0 ? (
-            <div>Shopping Cart Is Empty!</div>
+            <div className="cart-empty-container">
+              <div className="cart-empty">There are no orders to fulfill.</div>
+            </div>
           ) : (
             <div>
               {guestCart.map(product => (
@@ -118,18 +120,18 @@ const GuestShoppingCart = props => {
                       .toFixed(2)}
                   </div>
                 </div>
-                <button
-                  className="checkout-btn"
-                  type="submit"
-                  onClick={() => checkout()}
+                <Link
+                  to="/orderconfirmation"
+                  style={{textDecoration: 'none', color: 'black', zIndex: 3}}
                 >
-                  <Link
-                    to="/orderconfirmation"
-                    style={{textDecoration: 'none', color: 'black'}}
+                  <button
+                    className="checkout-btn"
+                    type="submit"
+                    onClick={() => checkout()}
                   >
                     Checkout
-                  </Link>
-                </button>
+                  </button>
+                </Link>
               </div>
             </div>
           )}
