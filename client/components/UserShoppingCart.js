@@ -160,15 +160,20 @@ const UserShoppingCart = props => {
                     <BsChevronDoubleLeft />
                     <div className="cart-back-btn">Back to Armory</div>
                   </Link>
-                  TOTAL: $
-                  {userCart
-                    .reduce(
-                      (acc, product) =>
-                        acc +
-                        product.price * product.orders[0].orderHistory.quantity,
-                      0
-                    )
-                    .toFixed(2)}
+                  <div style={{marginRight: '2rem'}}>TOTAL :</div>
+
+                  <div style={{width: '10rem', textAlign: 'end'}}>
+                    $
+                    {userCart
+                      .reduce(
+                        (acc, product) =>
+                          acc +
+                          product.price *
+                            product.orders[0].orderHistory.quantity,
+                        0
+                      )
+                      .toFixed(2)}
+                  </div>
                 </div>
                 <button
                   className="checkout-btn"

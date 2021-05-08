@@ -118,6 +118,7 @@
   align-items: flex-end;
   padding-bottom: 1rem;
   z-index: 2;
+  font-size: 1.1rem;
 }
 
 .cart-subtotal-wrapper svg {
@@ -154,7 +155,7 @@
 }
 
 .cart-back-btn {
-  margin-right: 24rem;
+  margin-right: 20rem;
   margin-left: 1rem;
   z-index: 2;
 }
