@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
+
 import {
   getUserShoppingCart,
   increaseProductQtyUserThunk,
@@ -10,6 +12,7 @@ import {me} from '../store'
 
 import {CgMathPlus, CgMathMinus} from 'react-icons/cg'
 import {AiOutlineClose} from 'react-icons/ai'
+import {BsChevronDoubleLeft} from 'react-icons/bs'
 
 import Checkout from './Checkout'
 import {loadStripe} from '@stripe/stripe-js'
@@ -97,7 +100,7 @@ const UserShoppingCart = props => {
                     </div>
 
                     <div className="cart-name-wrapper">
-                      <h4>{product.name}</h4>
+                      <div className="cart-fullname">{product.fullName}</div>
                     </div>
 
                     <div className="cart-quantity-container">
@@ -153,6 +156,10 @@ const UserShoppingCart = props => {
 
               <div className="cart-subtotal-container">
                 <div className="cart-subtotal-wrapper">
+                  <Link className="cart-back-link" to="/allproducts">
+                    <BsChevronDoubleLeft />
+                    <div className="cart-back-btn">Back to Armory</div>
+                  </Link>
                   TOTAL: $
                   {userCart
                     .reduce(
@@ -164,6 +171,7 @@ const UserShoppingCart = props => {
                     .toFixed(2)}
                 </div>
                 <button
+                  className="checkout-btn"
                   type="submit"
                   onClick={() =>
                     startCheckout(

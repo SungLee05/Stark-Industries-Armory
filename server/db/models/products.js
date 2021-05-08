@@ -9,6 +9,13 @@ const Product = db.define('product', {
       notEmpty: true
     }
   },
+  fullName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
   price: {
     type: Sequelize.DECIMAL(10, 2),
     allowNull: false,
