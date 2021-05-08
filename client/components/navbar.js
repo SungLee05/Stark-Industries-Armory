@@ -6,6 +6,7 @@ import {logout} from '../store'
 import {IconButton, Badge} from '@material-ui/core'
 import {ShoppingCart} from '@material-ui/icons'
 import {getUserShoppingCart} from '../store/userShoppingCart'
+import {getGuestShoppingCart} from '../store/guestShoppingCart'
 
 const Navbar = ({
   handleClick,
@@ -13,17 +14,22 @@ const Navbar = ({
   userId,
   admin,
   loadUserCart,
-  products
+  loadGuestCart,
+  products,
+  guestProducts
 }) => {
   const userCart = products
+  const guestCart = guestProducts
 
   useEffect(
     () => {
       if (userId) {
         loadUserCart(userId)
+      } else {
+        loadGuestCart()
       }
     },
-    [loadUserCart]
+    [loadUserCart, loadGuestCart]
   )
 
   return (
@@ -105,9 +111,35 @@ const Navbar = ({
             <Link to="/allproducts" className="link-style">
               ARMORY
             </Link>
-            <Link to="/guest/shoppingcart" className="link-style">
-              SHOPPING CART
-            </Link>
+            <IconButton
+              component={Link}
+              to="/guest/shoppingcart"
+              aria-label="Show cart items"
+              color="inherit"
+              style={{
+                fontSize: '0.5rem',
+                padding: '0 0',
+                alignSelf: 'center',
+                margin: '0 0'
+              }}
+              className="link-style"
+            >
+              <Badge
+                badgeContent={guestCart.reduce(
+                  (quantity, product) => quantity + product.quantity,
+                  0
+                )}
+                color="secondary"
+              >
+                <ShoppingCart
+                  style={{
+                    fontSize: '1.5rem',
+                    padding: '0 0'
+                  }}
+                />
+              </Badge>
+            </IconButton>
+
             <Link to="/signup" className="link-style">
               REGISTER
             </Link>
@@ -124,6 +156,7 @@ const Navbar = ({
 const mapState = state => {
   return {
     products: state.userShoppingCartReducer.userCart,
+    guestProducts: state.guestShoppingCartReducer.cart,
     isLoggedIn: !!state.user.id,
     userId: state.user.id,
     admin: !!state.user.admin
@@ -137,6 +170,9 @@ const mapDispatch = dispatch => {
     },
     loadUserCart: userId => {
       dispatch(getUserShoppingCart(userId))
+    },
+    loadGuestCart: () => {
+      dispatch(getGuestShoppingCart())
     }
   }
 }
