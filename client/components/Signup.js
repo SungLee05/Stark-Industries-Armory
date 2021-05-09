@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {auth} from '../store'
 import {FcGoogle} from 'react-icons/fc'
 import {GrFacebookOption} from 'react-icons/gr'
-import {FaTwitter} from 'react-icons/fa'
+import {ImGithub} from 'react-icons/im'
 
 const Signup = props => {
   const {name, displayName, authDispatch, error, guestCart} = props
@@ -81,10 +81,10 @@ const Signup = props => {
                   />
                 </a>
 
-                <a href="/auth/twitter">
-                  <FaTwitter
-                    className="social-icons"
-                    style={{backgroundColor: 'rgb(65,170,241)'}}
+                <a href="/auth/github">
+                  <ImGithub
+                    className="social-icons-github"
+                    style={{backgroundColor: 'transparent'}}
                   />
                 </a>
               </div>

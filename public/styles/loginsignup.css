@@ -169,3 +169,17 @@ select:-webkit-autofill:focus {
 .social-icons:before {
   width: 0;
 }
+
+.social-icons-github {
+  width: 1.799rem;
+  height: 1.799rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  color: white;
+}
+.social-icons-github:before {
+  width: 0;
+}

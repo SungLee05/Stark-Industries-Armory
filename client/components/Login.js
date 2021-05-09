@@ -81,7 +81,7 @@ const Login = props => {
                   />
                 </a>
 
-                <a href="/auth/twitter">
+                <a href="/auth/github">
                   <FaTwitter
                     className="social-icons"
                     style={{backgroundColor: 'rgb(65,170,241)'}}
