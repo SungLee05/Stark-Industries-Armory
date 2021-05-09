@@ -81,10 +81,12 @@ const Signup = props => {
                   />
                 </a>
 
-                <FaTwitter
-                  className="social-icons"
-                  style={{backgroundColor: 'rgb(65,170,241)'}}
-                />
+                <a href="/auth/twitter">
+                  <FaTwitter
+                    className="social-icons"
+                    style={{backgroundColor: 'rgb(65,170,241)'}}
+                  />
+                </a>
               </div>
             </div>
           </div>

@@ -30,6 +30,9 @@ const User = db.define('user', {
   facebookId: {
     type: Sequelize.STRING
   },
+  twitterId: {
+    type: Sequelize.STRING
+  },
   admin: {
     type: Sequelize.BOOLEAN,
     allowNull: false,

@@ -30,9 +30,7 @@ if (!process.env.FACEBOOK_APP_ID || !process.env.FACEBOOK_APP_SECRET) {
   )
 
   passport.use(strategy)
-
   router.get('/', passport.authenticate('facebook'))
-
   router.get(
     '/callback',
     passport.authenticate('facebook', {
