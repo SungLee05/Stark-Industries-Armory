@@ -23,8 +23,8 @@
   height: 10rem;
   background: linear-gradient(
     150deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(164, 164, 164, 0.5)
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1)
   );
   box-sizing: border-box;
   overflow: hidden;
@@ -50,11 +50,7 @@
   font-size: 1.3rem;
 }
 .cart-fullname {
-  background: -webkit-linear-gradient(
-    300deg,
-    rgb(247, 199, 0),
-    rgba(179, 0, 0, 0.619)
-  );
+  background: rgba(70, 190, 200, 0.6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -84,7 +80,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 7rem;
+  margin-left: 8.65rem;
   width: 10rem;
   font-size: 1.3rem;
 }
@@ -98,6 +94,11 @@
   padding: 0.3rem 0.3rem;
   margin: 0.2rem;
   background-color: #e8e8e8e4;
+}
+.cart-btn:hover {
+  background: rgba(70, 190, 200, 0.6);
+  color: #e8e8e8e4;
+  cursor: pointer;
 }
 
 .cart-subtotal-container {
@@ -116,7 +117,8 @@
   align-items: flex-end;
   padding-bottom: 1rem;
   z-index: 2;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 300;
 }
 
 .cart-subtotal-wrapper svg {
@@ -134,7 +136,7 @@
 }
 .cart-back-link {
   color: #e8e8e8e4;
-  margin-right: 25.8rem;
+  margin-right: 25.4rem;
   z-index: 2;
 }
 
@@ -156,11 +158,11 @@
 .checkout-btn {
   margin: 0.5rem 14px 3rem 0;
   font-size: 0.9rem;
-  color: black;
+  color: #e8e8e8e4;
   font-weight: bolder;
   text-transform: uppercase;
   border-radius: 1rem;
-  background: rgb(253, 212, 132);
+  background: rgba(70, 190, 200, 0.6);
   cursor: pointer;
   padding: 0.3rem;
   width: 8rem;
@@ -168,7 +170,7 @@
   z-index: 2;
 }
 .checkout-btn:hover {
-  background-color: white;
+  background-color: #e8e8e8e4;
   color: black;
   transition: ease-in-out 0.1s;
   cursor: pointer;

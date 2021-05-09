@@ -23,6 +23,29 @@
   letter-spacing: 0.2rem;
 }
 
+.modal-container button {
+  margin: 0.5rem 14px 3rem 0;
+  font-size: 0.8rem;
+  color: black;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  background: white;
+  cursor: pointer;
+  padding: 0.3rem;
+  width: 8rem;
+  border: transparent;
+  z-index: 2;
+}
+
+.modal-container button:hover {
+  background-color: rgb(253, 212, 132);
+  color: black;
+  transition: ease-in-out 0.1s;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
 .StripeElement {
   margin: 1rem 0;
 }
