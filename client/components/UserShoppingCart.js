@@ -164,7 +164,7 @@ const UserShoppingCart = props => {
                   </Link>
                   <div style={{marginRight: '2rem'}}>TOTAL :</div>
 
-                  <div style={{width: '10rem', textAlign: 'end'}}>
+                  <div style={{width: '10rem', textAlign: 'center'}}>
                     $
                     {userCart
                       .reduce(
@@ -198,22 +198,15 @@ const UserShoppingCart = props => {
                 </button>
 
                 <Modal
+                  className="modal-container"
                   isOpen={paymentOpen}
                   onRequestClose={hideCheckout}
                   style={{
                     overlay: {
-                      backgroundColor: 'rgba(41, 41, 41, 0.728)'
+                      backgroundColor: 'transparent'
                     },
                     content: {
-                      position: 'fixed',
-                      top: '50%',
-                      left: '50%',
-                      margin: '-15vh 0px 0px -30vw',
-                      backgroundColor: 'rgba(255, 255, 255)',
-                      border: '3px solid #d2b041',
-                      borderRadius: '15px',
-                      width: '60vw',
-                      height: '30vh'
+                      backgroundColor: 'rgba(70,190,200,0.25)'
                     }
                   }}
                 >

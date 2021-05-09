@@ -1,0 +1,28 @@
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  width: 40vw;
+  height: 35vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(0.5rem);
+  padding: 3rem;
+}
+
+.modal-container label {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+
+.StripeElement {
+  margin: 1rem 0;
+}

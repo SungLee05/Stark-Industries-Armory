@@ -7,17 +7,17 @@ import axios from 'axios'
 const CARD_ELEMENT_OPTIONS = {
   style: {
     base: {
-      color: '#32325d',
-      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      color: '#e8e8e8e4',
+      fontFamily: '"Poppins", sans-serif',
       fontSmoothing: 'antialiased',
-      fontSize: '16px',
+      fontSize: '18px',
       '::placeholder': {
         color: '#aab7c4'
       }
     },
     invalid: {
-      color: '#fa755a',
-      iconColor: '#fa755a'
+      color: 'rgb(253, 212, 132)',
+      iconColor: 'rgb(253, 212, 132)'
     }
   }
 }
@@ -67,7 +67,7 @@ const Checkout = ({
   return (
     <div>
       <label>
-        Enter Card Details
+        Payment Method
         <CardElement options={CARD_ELEMENT_OPTIONS} />
       </label>
       <div>
@@ -77,10 +77,10 @@ const Checkout = ({
           disabled={isPaymentLoading}
           onClick={payMoney}
         >
-          {isPaymentLoading ? 'Loading...' : 'Complete Order'}
+          {isPaymentLoading ? 'Loading...' : 'Confirm Order'}
         </button>
         <button type="button" variant="outlined" onClick={cancel}>
-          Cancel Order
+          Cancel
         </button>
       </div>
     </div>
