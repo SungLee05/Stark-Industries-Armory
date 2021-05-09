@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {auth} from '../store'
 import {FcGoogle} from 'react-icons/fc'
 import {GrFacebookOption} from 'react-icons/gr'
-import {ImGithub} from 'react-icons/im'
+import {FaGithub} from 'react-icons/fa'
 
 const Signup = props => {
   const {name, displayName, authDispatch, error, guestCart} = props
@@ -82,9 +82,9 @@ const Signup = props => {
                 </a>
 
                 <a href="/auth/github">
-                  <ImGithub
-                    className="social-icons-github"
-                    style={{backgroundColor: 'transparent'}}
+                  <FaGithub
+                    className="social-icons"
+                    style={{backgroundColor: 'white', color: 'black'}}
                   />
                 </a>
               </div>
