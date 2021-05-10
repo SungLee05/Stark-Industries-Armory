@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {me} from '../store/user'
 import {connect, useDispatch} from 'react-redux'
 import dateFormat from 'dateformat'
+import Fade from 'react-reveal/Fade'
 
 const UserProfile = props => {
   const dispatch = useDispatch()
@@ -13,10 +14,12 @@ const UserProfile = props => {
 
   return (
     <div className="profile-main-container">
-      <div className="profile-info-container">
-        <div>Welcome, {user.email}</div>
-        <div>Member since {dateFormat(user.createdAt, 'mmm yyyy')}</div>
-      </div>
+      <Fade>
+        <div className="profile-info-container">
+          <div>Welcome, {user.email}</div>
+          <div>Member since {dateFormat(user.createdAt, 'mmm yyyy')}</div>
+        </div>
+      </Fade>
     </div>
   )
 }

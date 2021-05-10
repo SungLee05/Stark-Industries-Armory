@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import Fade from 'react-reveal/Fade'
+
 import {
   increaseProductQtyThunk,
   decreaseProductQtyThunk,
@@ -43,7 +45,11 @@ const GuestShoppingCart = props => {
         <div>
           {!guestCart || guestCart.length === 0 ? (
             <div className="cart-empty-container">
-              <div className="cart-empty">There are no orders to fulfill.</div>
+              <Fade bottom delay={1100}>
+                <div className="cart-empty">
+                  There are no orders to fulfill.
+                </div>
+              </Fade>
             </div>
           ) : (
             <div>

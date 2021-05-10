@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 
 import {

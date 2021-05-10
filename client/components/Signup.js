@@ -62,7 +62,13 @@ const Signup = props => {
                     {displayName}
                   </button>
                 </div>
-                {error && error.response && <div> {error.response.data} </div>}
+                {error &&
+                  error.response && (
+                    <div style={{textAlign: 'center'}}>
+                      {' '}
+                      {error.response.data}{' '}
+                    </div>
+                  )}
               </form>
 
               <div className="socialSignin">
