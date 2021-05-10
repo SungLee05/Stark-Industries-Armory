@@ -1,8 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Flip from 'react-reveal/Flip'
 import Fade from 'react-reveal/Fade'
-import Slide from 'react-reveal/Slide'
 
 import {Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore, {EffectCoverflow, Pagination} from 'swiper'
@@ -49,11 +47,11 @@ const ProductCard = props => {
                   className="product-img"
                 />
               </Fade>
-              <Flip left ssrFadeout={true} delay={500}>
+              <Fade bottom ssrFadeout={true} distance="50%" delay={1250}>
                 <div className="product-price">
                   {accounting.formatMoney((product.price * 1).toFixed(2))}
                 </div>
-              </Flip>
+              </Fade>
             </Link>
           </SwiperSlide>
         ))}
