@@ -64,7 +64,7 @@ const SingleProduct = props => {
                 <Flip
                   ssrReveal={true}
                   bottom
-                  cascade
+                  cascade={true}
                   duration={1500}
                   delay={1300}
                 >
@@ -77,7 +77,13 @@ const SingleProduct = props => {
                   <Flip ssrReveal={true} top delay={1150}>
                     Description:{' '}
                   </Flip>
-                  <Flip ssrReveal={true} bottom cascade delay={1200}>
+                  <Flip
+                    ssrReveal={true}
+                    bottom
+                    cascade={true}
+                    duration={1100}
+                    delay={1200}
+                  >
                     {singleProduct.description}
                   </Flip>
                 </div>
@@ -90,7 +96,7 @@ const SingleProduct = props => {
                 <Flip
                   ssrReveal={true}
                   bottom
-                  cascade
+                  cascade={true}
                   duration={1500}
                   delay={1400}
                 >

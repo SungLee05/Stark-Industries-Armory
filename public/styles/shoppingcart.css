@@ -5,6 +5,7 @@
   color: #e8e8e8e4;
   position: absolute;
   top: 10%;
+  z-index: 2;
 }
 .cart-info-container {
   display: flex;
@@ -29,7 +30,7 @@
   box-sizing: border-box;
   overflow: hidden;
   backdrop-filter: blur(0.3rem);
-  z-index: 1;
+  z-index: 3;
   margin-left: 190px;
 }
 

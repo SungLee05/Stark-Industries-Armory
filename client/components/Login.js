@@ -4,6 +4,7 @@ import {auth} from '../store'
 import {FcGoogle} from 'react-icons/fc'
 import {GrFacebookOption} from 'react-icons/gr'
 import {FaGithub} from 'react-icons/fa'
+import Fade from 'react-reveal/Fade'
 
 const Login = props => {
   const {name, displayName, authDispatch, error, guestCart} = props
@@ -20,76 +21,78 @@ const Login = props => {
     <div>
       <div className="login-BG">
         <div className="formWrap">
-          <div className="login-wrap">
-            <h2>LogIn</h2>
-            <form
-              onSubmit={handleSubmit}
-              name={name}
-              className="form-container"
-            >
-              <div>
-                <label
-                  htmlFor="email"
-                  style={{fontSize: '1rem', marginLeft: '2rem'}}
-                >
-                  Email
-                </label>
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="Email"
-                  className="formInput"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  style={{fontSize: '1rem', marginLeft: '2rem'}}
-                >
-                  Password
-                </label>
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  className="formInput"
-                />
-              </div>
-              <div className="loginBtn-container">
-                <button type="submit" className="loginBtn">
-                  {displayName}
-                </button>
-              </div>
-              {error && error.response && <div> {error.response.data} </div>}
-            </form>
-
-            <div className="socialSignin">
-              <div className="row">
-                <a href="/auth/google">
-                  <FcGoogle
-                    className="social-icons"
-                    style={{
-                      backgroundColor: 'rgb(255,255,255)'
-                    }}
+          <Fade top cascade>
+            <div className="login-wrap">
+              <h2>LogIn</h2>
+              <form
+                onSubmit={handleSubmit}
+                name={name}
+                className="form-container"
+              >
+                <div>
+                  <label
+                    htmlFor="email"
+                    style={{fontSize: '1rem', marginLeft: '2rem'}}
+                  >
+                    Email
+                  </label>
+                  <input
+                    name="email"
+                    type="text"
+                    placeholder="Email"
+                    className="formInput"
                   />
-                </a>
-
-                <a href="/auth/facebook">
-                  <GrFacebookOption
-                    className="social-icons"
-                    style={{backgroundColor: 'rgb(60,83,154)'}}
+                </div>
+                <div>
+                  <label
+                    htmlFor="password"
+                    style={{fontSize: '1rem', marginLeft: '2rem'}}
+                  >
+                    Password
+                  </label>
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    className="formInput"
                   />
-                </a>
+                </div>
+                <div className="loginBtn-container">
+                  <button type="submit" className="loginBtn">
+                    {displayName}
+                  </button>
+                </div>
+                {error && error.response && <div> {error.response.data} </div>}
+              </form>
 
-                <a href="/auth/github">
-                  <FaGithub
-                    className="social-icons"
-                    style={{backgroundColor: 'white', color: 'black'}}
-                  />
-                </a>
+              <div className="socialSignin">
+                <div className="row">
+                  <a href="/auth/google">
+                    <FcGoogle
+                      className="social-icons"
+                      style={{
+                        backgroundColor: 'rgb(255,255,255)'
+                      }}
+                    />
+                  </a>
+
+                  <a href="/auth/facebook">
+                    <GrFacebookOption
+                      className="social-icons"
+                      style={{backgroundColor: 'rgb(60,83,154)'}}
+                    />
+                  </a>
+
+                  <a href="/auth/github">
+                    <FaGithub
+                      className="social-icons"
+                      style={{backgroundColor: 'white', color: 'black'}}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </Fade>
         </div>
       </div>
     </div>

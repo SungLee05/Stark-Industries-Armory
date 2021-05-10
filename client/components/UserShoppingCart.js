@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import Slide from 'react-reveal/Slide'
+import Fade from 'react-reveal/Fade'
 
 import {
   getUserShoppingCart,
@@ -91,7 +93,11 @@ const UserShoppingCart = props => {
         <div>
           {!userCart.length || !userCart ? (
             <div className="cart-empty-container">
-              <div className="cart-empty">There are no orders to fulfill.</div>
+              <Fade bottom delay={1100}>
+                <div className="cart-empty">
+                  There are no orders to fulfill.
+                </div>
+              </Fade>
             </div>
           ) : (
             <div>
@@ -147,6 +153,7 @@ const UserShoppingCart = props => {
                       </div>
                     </div>
                   </div>
+
                   <div className="remove-btn-container">
                     <button
                       className="cart-btn"
