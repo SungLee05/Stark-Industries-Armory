@@ -13,6 +13,7 @@ import {me} from '../store'
 import {CgMathPlus, CgMathMinus} from 'react-icons/cg'
 import {AiOutlineClose} from 'react-icons/ai'
 import {BsChevronDoubleLeft} from 'react-icons/bs'
+import accounting from 'accounting'
 
 import Checkout from './Checkout'
 import {loadStripe} from '@stripe/stripe-js'
@@ -20,9 +21,7 @@ import {Elements} from '@stripe/react-stripe-js'
 import axios from 'axios'
 import Modal from 'react-modal'
 
-const stripePromise = loadStripe(
-  'pk_test_51IFsCyF8Oat62uvTXBKuxWngn5AJoyQk4aA7nTNOST7Y1CONvcFzaYbUZuvM1G5XjxoZHxl3z1ADsSR3lnNVFtlt00k8XT8AHB'
-)
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
 
 Modal.setAppElement('#app')
 
@@ -140,7 +139,9 @@ const UserShoppingCart = props => {
 
                     <div className="cart-price-wrapper">
                       <div>
-                        ${roundDecimal(product.price * product.quantity)}
+                        {accounting.formatMoney(
+                          roundDecimal(product.price * product.quantity)
+                        )}
                       </div>
                     </div>
                   </div>
@@ -165,16 +166,17 @@ const UserShoppingCart = props => {
                   <div style={{marginRight: '2rem'}}>TOTAL :</div>
 
                   <div style={{width: '10rem', textAlign: 'center'}}>
-                    $
-                    {userCart
-                      .reduce(
-                        (acc, product) =>
-                          acc +
-                          product.price *
-                            product.orders[0].orderHistory.quantity,
-                        0
-                      )
-                      .toFixed(2)}
+                    {accounting.formatMoney(
+                      userCart
+                        .reduce(
+                          (acc, product) =>
+                            acc +
+                            product.price *
+                              product.orders[0].orderHistory.quantity,
+                          0
+                        )
+                        .toFixed(2)
+                    )}
                   </div>
                 </div>
                 <button

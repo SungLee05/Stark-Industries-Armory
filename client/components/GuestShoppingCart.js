@@ -12,6 +12,7 @@ import {
 import {CgMathPlus, CgMathMinus} from 'react-icons/cg'
 import {AiOutlineClose} from 'react-icons/ai'
 import {BsChevronDoubleLeft} from 'react-icons/bs'
+import accounting from 'accounting'
 
 const GuestShoppingCart = props => {
   const {
@@ -85,7 +86,9 @@ const GuestShoppingCart = props => {
 
                     <div className="cart-price-wrapper">
                       <div>
-                        ${roundDecimal(product.price * product.quantity)}
+                        {accounting.formatMoney(
+                          roundDecimal(product.price * product.quantity)
+                        )}
                       </div>
                     </div>
                   </div>
@@ -109,15 +112,16 @@ const GuestShoppingCart = props => {
                   </Link>
                   <div style={{marginRight: '2rem'}}>TOTAL :</div>
 
-                  <div style={{width: '10rem', textAlign: 'end'}}>
-                    $
-                    {guestCart
-                      .reduce(
-                        (acc, product) =>
-                          acc + product.price * product.quantity,
-                        0
-                      )
-                      .toFixed(2)}
+                  <div style={{width: '10rem', textAlign: 'center'}}>
+                    {accounting.formatMoney(
+                      guestCart
+                        .reduce(
+                          (acc, product) =>
+                            acc + product.price * product.quantity,
+                          0
+                        )
+                        .toFixed(2)
+                    )}
                   </div>
                 </div>
                 <Link

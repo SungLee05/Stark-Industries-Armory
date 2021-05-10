@@ -7,6 +7,7 @@ import {addProductToUserCartThunk} from '../store/userShoppingCart'
 
 import {Link} from 'react-router-dom'
 import {BsChevronDoubleLeft} from 'react-icons/bs'
+import accounting from 'accounting'
 
 const SingleProduct = props => {
   const {
@@ -60,7 +61,7 @@ const SingleProduct = props => {
               </div>
             </div>
             <div className="single-product-price">
-              Price: ${singleProduct.price}
+              Price: {accounting.formatMoney(singleProduct.price)}
             </div>
 
             {!userId ? (

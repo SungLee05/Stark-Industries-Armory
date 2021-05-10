@@ -1,8 +1,5 @@
 const router = require('express').Router()
-const stripe = require('stripe')(
-  'sk_test_51IFsCyF8Oat62uvTtFpfEVHttFDwk7RxH7yZYGbwjkzLU9IWDow1zIHxRRBdUsKp6zFz10Rfiop78GFsIhuRthtV00JqwSur7H'
-)
-const chalk = require('chalk')
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 module.exports = router
 
 const urlBase =
@@ -11,8 +8,6 @@ const urlBase =
     : 'https://starkindustriesarmory.herokuapp.com/'
 
 router.post('/create-session', async (req, res, next) => {
-  console.log(chalk.bgMagenta('HERE'))
-
   try {
     const {cart, user} = req.body
 

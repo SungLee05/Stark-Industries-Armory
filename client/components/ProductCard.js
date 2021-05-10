@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore, {EffectCoverflow, Pagination} from 'swiper'
 
+import accounting from 'accounting'
+
 SwiperCore.use([EffectCoverflow, Pagination])
 
 const ProductCard = props => {
@@ -41,7 +43,7 @@ const ProductCard = props => {
                 className="product-img"
               />
               <div className="product-price">
-                ${(product.price * 1).toFixed(2)}
+                {accounting.formatMoney((product.price * 1).toFixed(2))}
               </div>
             </Link>
           </SwiperSlide>
