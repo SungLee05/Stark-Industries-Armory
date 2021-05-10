@@ -8,7 +8,7 @@
 }
 
 .products-container {
-  height: 80vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -59,13 +59,6 @@
   font-family: 'Bebas Neue', cursive;
   z-index: 10;
   letter-spacing: 0.3rem;
-}
-
-.sort-selector {
-  margin: 0.5rem 2rem 0.5rem 2rem;
-  background-color: transparent;
-  font-family: 'Poppins', sans-serif;
-  color: white;
 }
 
 .swiper-pagination .swiper-pagination-bullet {

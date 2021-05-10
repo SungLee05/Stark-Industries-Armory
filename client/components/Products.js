@@ -13,16 +13,6 @@ const Products = props => {
   return (
     <>
       <div className="all-products-container">
-        <div>
-          {/* <select className="sort-selector">
-            <option value="all">All Products</option>
-            <option value="alpha_asc">Name (A-Z)</option>
-            <option value="alpha_desc">Name (Z-A)</option>
-            <option value="price_asc">Price (Low-High)</option>
-            <option value="price_desc">Price (High-Low)</option>
-          </select> */}
-        </div>
-        <br />
         <ProductCard products={products} />
       </div>
     </>

@@ -11,7 +11,9 @@ import {Elements} from '@stripe/react-stripe-js'
 // establishes socket connection
 import './socket'
 
-const stripe = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
+const stripe = loadStripe(
+  'pk_test_51IFsCyF8Oat62uvTXBKuxWngn5AJoyQk4aA7nTNOST7Y1CONvcFzaYbUZuvM1G5XjxoZHxl3z1ADsSR3lnNVFtlt00k8XT8AHB'
+)
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,5 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Flip from 'react-reveal/Flip'
+import Fade from 'react-reveal/Fade'
+import Slide from 'react-reveal/Slide'
 
 import {Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore, {EffectCoverflow, Pagination} from 'swiper'
@@ -36,15 +39,21 @@ const ProductCard = props => {
         {products.map(product => (
           <SwiperSlide key={product.id}>
             <Link to={`/product/${product.id}`} className="product-container">
-              <div className="product-name">{product.name}</div>
-              <img
-                src={product.imageUrl}
-                height="300"
-                className="product-img"
-              />
-              <div className="product-price">
-                {accounting.formatMoney((product.price * 1).toFixed(2))}
-              </div>
+              <Fade top ssrFadeout={true} delay={1000}>
+                <div className="product-name">{product.name}</div>
+              </Fade>
+              <Fade big ssrFadeout={true} delay={1500}>
+                <img
+                  src={product.imageUrl}
+                  height="300"
+                  className="product-img"
+                />
+              </Fade>
+              <Flip left ssrFadeout={true} delay={500}>
+                <div className="product-price">
+                  {accounting.formatMoney((product.price * 1).toFixed(2))}
+                </div>
+              </Flip>
             </Link>
           </SwiperSlide>
         ))}

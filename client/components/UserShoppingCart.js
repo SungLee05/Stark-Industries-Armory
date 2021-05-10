@@ -21,7 +21,9 @@ import {Elements} from '@stripe/react-stripe-js'
 import axios from 'axios'
 import Modal from 'react-modal'
 
-const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
+const stripePromise = loadStripe(
+  'pk_test_51IFsCyF8Oat62uvTXBKuxWngn5AJoyQk4aA7nTNOST7Y1CONvcFzaYbUZuvM1G5XjxoZHxl3z1ADsSR3lnNVFtlt00k8XT8AHB'
+)
 
 Modal.setAppElement('#app')
 
