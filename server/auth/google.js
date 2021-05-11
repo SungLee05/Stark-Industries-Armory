@@ -29,12 +29,10 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
   )
 
   passport.use(strategy)
-
   router.get(
     '/',
-    passport.authenticate('google', {scope: ['email', 'profile']})
+    passport.authenticate('google', {scope: ['profile', 'email']})
   )
-
   router.get(
     '/callback',
     passport.authenticate('google', {
