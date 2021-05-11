@@ -31,7 +31,7 @@
   overflow: hidden;
   backdrop-filter: blur(0.3rem);
   z-index: 3;
-  margin-left: 190px;
+  margin-left: 8rem;
 }
 
 .cart-img-wrapper {
@@ -60,7 +60,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin-left: 6rem;
+  margin-left: 7.9rem;
   font-size: 1.3rem;
 }
 .increment-decrement-container {
@@ -212,4 +212,13 @@
   padding-bottom: 1rem;
   font-weight: 300;
   letter-spacing: 0.4rem;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 1000ms ease-in;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
 }

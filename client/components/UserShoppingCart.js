@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
+import Flip from 'react-reveal/Flip'
 
 import {
   getUserShoppingCart,
@@ -221,24 +222,26 @@ const UserShoppingCart = props => {
                   }}
                 >
                   {paymentOpen && (
-                    <Elements stripe={stripePromise}>
-                      <Checkout
-                        user={user}
-                        cart={userCart}
-                        total={userCart
-                          .reduce(
-                            (acc, product) =>
-                              acc +
-                              product.price *
-                                product.orders[0].orderHistory.quantity,
-                            0
-                          )
-                          .toFixed(2)}
-                        clientSecret={clientSecret}
-                        cancel={hideCheckout}
-                        pushToThankYouPage={pushToThankYouPage}
-                      />
-                    </Elements>
+                    <Flip top delay={1500}>
+                      <Elements stripe={stripePromise}>
+                        <Checkout
+                          user={user}
+                          cart={userCart}
+                          total={userCart
+                            .reduce(
+                              (acc, product) =>
+                                acc +
+                                product.price *
+                                  product.orders[0].orderHistory.quantity,
+                              0
+                            )
+                            .toFixed(2)}
+                          clientSecret={clientSecret}
+                          cancel={hideCheckout}
+                          pushToThankYouPage={pushToThankYouPage}
+                        />
+                      </Elements>
+                    </Flip>
                   )}
                 </Modal>
               </div>
