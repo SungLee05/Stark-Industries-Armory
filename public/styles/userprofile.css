@@ -15,3 +15,139 @@
   font-weight: 300;
   letter-spacing: 0.4rem;
 }
+
+#hud3-container {
+  width: 11rem;
+  height: 11rem;
+  overflow: hidden;
+  position: absolute;
+  left: 32%;
+  top: 74%;
+  z-index: 2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hud3-container img {
+  height: 12rem;
+}
+
+#hud13-container {
+  width: 7rem;
+  height: 7rem;
+  overflow: hidden;
+  position: absolute;
+  left: 40%;
+  top: 63%;
+  z-index: 5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hud13-container img {
+  height: 7rem;
+}
+
+#hud4-container {
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  position: absolute;
+  left: 70%;
+  top: 15%;
+  z-index: 5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hud4-container img {
+  height: 18rem;
+}
+
+#hud14-container {
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  position: absolute;
+  left: 78.5%;
+  top: 19.5%;
+  z-index: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hud14-container img {
+  height: 26rem;
+}
+
+#hud1-container {
+  width: 9rem;
+  height: 9rem;
+  overflow: hidden;
+  position: absolute;
+  left: 62.1%;
+  top: 26.1%;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+#hud1-container img {
+  height: 26rem;
+}
+
+#hud9-container {
+  width: 10rem;
+  height: 30rem;
+  overflow: hidden;
+  position: absolute;
+  left: 80%;
+  top: 45%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hud9-container img {
+  height: 22rem;
+}
+
+#hud5-container {
+  width: 20rem;
+  height: 20rem;
+  overflow: hidden;
+  position: absolute;
+  left: 56%;
+  top: 15%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+#hud5-container img {
+  height: 20rem;
+}
+
+#hud8-container {
+  width: 9rem;
+  height: 9rem;
+  overflow: hidden;
+  position: absolute;
+  left: 62.1%;
+  top: 70.6%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+#hud8-container img {
+  height: 14rem;
+  margin-bottom: 1rem;
+}

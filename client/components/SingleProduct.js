@@ -29,7 +29,7 @@ const SingleProduct = props => {
   return (
     <>
       <div id="jarvis-container">
-        <img src="/jarvisGIF2.gif" alt="jarvis" id="jarvis" />
+        <img src="/gifs/jarvisGIF2.gif" alt="jarvis" id="jarvis" />
       </div>
       <div className="single-product-container">
         <Fade ssrReveal={true} duration={2000} delay={1100}>
