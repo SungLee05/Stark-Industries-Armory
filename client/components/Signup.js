@@ -19,91 +19,93 @@ const Signup = props => {
 
   return (
     <>
-      <div className="signup-BG">
-        <div className="formWrap">
-          <Fade bottom cascade>
-            <div className="login-wrap">
-              <h2>REGISTER</h2>
-              <form
-                onSubmit={handleSubmit}
-                name={name}
-                className="form-container"
-              >
-                <div>
-                  <label
-                    htmlFor="email"
-                    style={{fontSize: '1rem', marginLeft: '2rem'}}
-                  >
-                    Email
-                  </label>
-                  <input
-                    name="email"
-                    type="text"
-                    placeholder="Email"
-                    className="formInput"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    style={{fontSize: '1rem', marginLeft: '2rem'}}
-                  >
-                    Password
-                  </label>
-                  <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    className="formInput"
-                  />
-                </div>
-                <div className="loginBtn-container">
-                  <button type="submit" className="loginBtn">
-                    {displayName}
-                  </button>
-                </div>
-                {error &&
-                  error.response && (
-                    <div style={{textAlign: 'center'}}>
-                      {' '}
-                      {error.response.data}{' '}
-                    </div>
-                  )}
-              </form>
-
-              <div className="socialSignin">
-                <div className="row">
-                  <a href="/auth/google">
-                    <FcGoogle
-                      className="social-icons"
-                      style={{
-                        backgroundColor: 'rgb(255,255,255)'
-                      }}
+      <Fade bottom cascade>
+        <div className="signup-BG">
+          <div className="formWrap">
+            <Fade bottom cascade>
+              <div className="login-wrap">
+                <h2>REGISTER</h2>
+                <form
+                  onSubmit={handleSubmit}
+                  name={name}
+                  className="form-container"
+                >
+                  <div>
+                    <label
+                      htmlFor="email"
+                      style={{fontSize: '1rem', marginLeft: '2rem'}}
+                    >
+                      Email
+                    </label>
+                    <input
+                      name="email"
+                      type="text"
+                      placeholder="Email"
+                      className="formInput"
                     />
-                  </a>
-
-                  <a href="/auth/facebook">
-                    <GrFacebookOption
-                      className="social-icons"
-                      style={{
-                        backgroundColor: 'rgb(60,83,154)',
-                        color: 'white'
-                      }}
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="password"
+                      style={{fontSize: '1rem', marginLeft: '2rem'}}
+                    >
+                      Password
+                    </label>
+                    <input
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                      className="formInput"
                     />
-                  </a>
+                  </div>
+                  <div className="loginBtn-container">
+                    <button type="submit" className="loginBtn">
+                      {displayName}
+                    </button>
+                  </div>
+                  {error &&
+                    error.response && (
+                      <div style={{textAlign: 'center'}}>
+                        {' '}
+                        {error.response.data}{' '}
+                      </div>
+                    )}
+                </form>
 
-                  <a href="/auth/github">
-                    <FaGithub
-                      className="social-icons"
-                      style={{backgroundColor: 'white', color: 'black'}}
-                    />
-                  </a>
+                <div className="socialSignin">
+                  <div className="row">
+                    <a href="/auth/google">
+                      <FcGoogle
+                        className="social-icons"
+                        style={{
+                          backgroundColor: 'rgb(255,255,255)'
+                        }}
+                      />
+                    </a>
+
+                    <a href="/auth/facebook">
+                      <GrFacebookOption
+                        className="social-icons"
+                        style={{
+                          backgroundColor: 'rgb(60,83,154)',
+                          color: 'white'
+                        }}
+                      />
+                    </a>
+
+                    <a href="/auth/github">
+                      <FaGithub
+                        className="social-icons"
+                        style={{backgroundColor: 'white', color: 'black'}}
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Fade>
+            </Fade>
+          </div>
         </div>
-      </div>
+      </Fade>
     </>
   )
 }
