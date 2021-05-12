@@ -2,7 +2,10 @@ import React, {useEffect} from 'react'
 import {me} from '../store/user'
 import {connect, useDispatch} from 'react-redux'
 import dateFormat from 'dateformat'
+import Clock from './clock/Clock'
+
 import Fade from 'react-reveal/Fade'
+import Pulse from 'react-reveal/Pulse'
 
 const UserProfile = props => {
   const dispatch = useDispatch()
@@ -17,53 +20,38 @@ const UserProfile = props => {
       <div id="hud4-container">
         <img src="/gifs/hud4.gif" alt="hud2" />
       </div>
-
-      <div id="hud8-container">
-        <img src="/gifs/hud8.gif" alt="hud" id="hud8" />
-      </div>
-
-      <div id="hud14-container">
-        <img src="/gifs/hud14.gif" alt="hud2" />
-      </div>
-
       <div id="hud1-container">
         <img src="/gifs/hud1.gif" alt="hud2" />
       </div>
-
-      <div id="hud3-container">
-        <img src="/gifs/hud3.gif" alt="hud2" />
-      </div>
-
       <div id="hud5-container">
         <img src="/gifs/hud5.gif" alt="hud2" />
       </div>
+      <div id="hud14-container">
+        <img src="/gifs/hud14.gif" alt="hud2" />
+      </div>
+      <div id="hud14-copy-container">
+        <img src="/gifs/hud14.gif" alt="hud2" />
+      </div>
 
-      <div>
+      <div id="hud6-container">
         <img src="/gifs/hud6.gif" alt="hud2" />
       </div>
-
-      <div>
+      <div id="hud7-container">
         <img src="/gifs/hud7.gif" alt="hud2" />
       </div>
-
       <div id="hud9-container">
         <img src="/gifs/hud9.gif" alt="hud2" />
       </div>
-
-      <div>
-        <img src="/gifs/hud10.gif" alt="hud2" />
+      <div id="hud10-container">
+        <Pulse duration={5000} forever>
+          <img src="/gifs/hud10.gif" alt="hud2" />
+        </Pulse>
       </div>
-
-      <div>
-        <img src="/gifs/hud11.gif" alt="hud2" />
-      </div>
-
-      <div>
-        <img src="/gifs/hud12.gif" alt="hud2" />
-      </div>
-
       <div id="hud13-container">
         <img src="/gifs/hud13.gif" alt="hud2" />
+      </div>
+      <div id="profile-clock">
+        <Clock />
       </div>
 
       <Fade>
