@@ -1,7 +1,7 @@
 #hex-main-container {
   position: absolute;
-  top: 33%;
-  left: 14%;
+  top: 30%;
+  left: 18%;
   transform: perspective(190px) rotateY(25deg) rotateX(-15deg);
   z-index: 5;
   transition: 1s;
@@ -78,68 +78,10 @@
 
 #hex-icon {
   color: black;
-  font-size: 2rem;
+  font-size: 1rem;
   position: relative;
-  top: 4.1rem;
-  right: -0.3rem;
+  top: 3.5rem;
+  right: -0.5rem;
   z-index: 10;
   transition: 1s ease-in-out;
-}
-
-/* iron man face */
-#hex-item-6:before,
-#hex-item-2:before {
-  content: '';
-  height: 0;
-  width: 4rem;
-  border-top: 3.5rem solid rgb(234, 244, 247);
-  border-left: 2rem solid transparent;
-  border-right: 2rem solid transparent;
-  position: absolute;
-  top: 3.5rem;
-  left: -2rem;
-  z-index: 3;
-  transition: 0.7s cubic-bezier(0.38, 0, 0.39, 1);
-}
-
-#hex-item-4:before,
-#hex-item-1:before {
-  content: '';
-  height: 0;
-  width: 4rem;
-  border-top: 3.5rem solid #fbca03;
-  border-left: 2rem solid transparent;
-  border-right: 2rem solid transparent;
-  position: absolute;
-  top: 3.5rem;
-  left: -2rem;
-  z-index: 3;
-  transition: 0.7s cubic-bezier(0.38, 0, 0.39, 1);
-}
-
-#hex-item-6,
-#hex-item-7,
-#hex-item-2,
-#hex-item-4,
-#hex-item-3,
-#hex-item-5,
-#hex-item-11,
-#hex-item-12,
-#hex-item-1 {
-  height: 0;
-  width: 4rem;
-  border-bottom: 3.5rem solid #fbca03;
-  border-left: 2rem solid transparent;
-  border-right: 2rem solid transparent;
-  position: absolute;
-  top: 0;
-  z-index: 3;
-  transition: 0.7s cubic-bezier(0.38, 0, 0.39, 1);
-}
-
-#hex-item-7:before,
-#hex-item-8:before,
-#hex-item-9:before,
-#hex-item-10:before {
-  display: none;
 }
