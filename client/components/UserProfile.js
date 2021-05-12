@@ -3,6 +3,7 @@ import {me} from '../store/user'
 import {connect, useDispatch} from 'react-redux'
 import dateFormat from 'dateformat'
 import Clock from './clock/Clock'
+import HexagonMenu from './hexmenu/HexagonMenu'
 
 import Fade from 'react-reveal/Fade'
 import Pulse from 'react-reveal/Pulse'
@@ -32,7 +33,6 @@ const UserProfile = props => {
       <div id="hud14-copy-container">
         <img src="/gifs/hud14.gif" alt="hud2" />
       </div>
-
       <div id="hud6-container">
         <img src="/gifs/hud6.gif" alt="hud2" />
       </div>
@@ -50,9 +50,16 @@ const UserProfile = props => {
       <div id="hud13-container">
         <img src="/gifs/hud13.gif" alt="hud2" />
       </div>
+
+      <div id="hud17-container">
+        <img src="/gifs/hud17.gif" alt="hud17" />
+      </div>
+
       <div id="profile-clock">
         <Clock />
       </div>
+
+      <HexagonMenu />
 
       <Fade>
         <div className="profile-info-container">

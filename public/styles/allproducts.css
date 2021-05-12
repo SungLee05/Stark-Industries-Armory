@@ -24,7 +24,7 @@
 }
 .product-img {
   width: 70%;
-  height: 75%;
+  height: 70%;
   -webkit-box-reflect: below 0px
     linear-gradient(transparent, transparent, #0006);
 }
@@ -67,4 +67,8 @@
   background: white;
   background-color: white;
   opacity: 1;
+}
+
+.swiper-pagination {
+  margin-bottom: 4rem;
 }
