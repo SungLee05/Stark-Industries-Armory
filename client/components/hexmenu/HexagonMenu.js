@@ -5,6 +5,7 @@ import {RiLogoutBoxRFill} from 'react-icons/Ri'
 import {FaSkull, FaHistory} from 'react-icons/fa'
 import {AiFillStar} from 'react-icons/ai'
 import {SiGoogleanalytics} from 'react-icons/si'
+import {CgMenuRound} from 'react-icons/cg'
 
 const HexagonMenu = () => {
   let open = false
@@ -13,7 +14,8 @@ const HexagonMenu = () => {
     if (open === false) {
       document.getElementById('hex-main-container').style.transform =
         'perspective(700px) rotateY(-15deg) rotateX(55deg) translate(15rem, 4rem)'
-      document.getElementById('hex-icon').style.transform = `rotate(45deg)`
+      document.getElementById('hex-icon').style.transform =
+        'rotate(90deg) translate(.5rem, -5.5rem)'
       document.getElementById('hex-menus').style.transform = 'scale(1)'
 
       // 1st layer
@@ -71,8 +73,9 @@ const HexagonMenu = () => {
       <div id="hex-main-container">
         <div className="hex-container" onClick={() => expand()}>
           <div className="hex-toggle" id="hex-toggle" />
-          <div className="hex-toggle-cover" id="hex-toggle-cover">
-            <div id="hex-icon">ICON</div>
+          <div className="hex-toggle-cover" id="hex-toggle-cover" />
+          <div id="hex-icon">
+            <CgMenuRound />
           </div>
         </div>
 

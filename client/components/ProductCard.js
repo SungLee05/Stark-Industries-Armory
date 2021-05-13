@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
 
 import {Swiper, SwiperSlide} from 'swiper/react'
-import SwiperCore, {EffectCoverflow, Pagination} from 'swiper'
+import SwiperCore, {EffectCoverflow, Pagination, Autoplay, A11y} from 'swiper'
 
 import accounting from 'accounting'
 
-SwiperCore.use([EffectCoverflow, Pagination])
+SwiperCore.use([EffectCoverflow, Pagination, Autoplay, A11y])
 
 const ProductCard = props => {
   const {products} = props
@@ -18,6 +18,11 @@ const ProductCard = props => {
         effect="coverflow"
         grabCursor="true"
         centeredSlides="true"
+        freeModeMomentumRatio={5}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false
+        }}
         pagination={{
           clickable: true,
           bulletClass: `swiper-pagination-bullet`,

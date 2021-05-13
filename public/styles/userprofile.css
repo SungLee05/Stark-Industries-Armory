@@ -121,11 +121,10 @@
   position: absolute;
   left: 79.5%;
   top: 36%;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: sepia(1);
 }
 #hud9-container img {
   height: 28rem;
@@ -143,7 +142,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  filter: sepia(1);
   transform: perspective(500px) rotateY(20deg) rotateX(40deg);
 }
 #hud10-container img {
@@ -251,8 +249,8 @@
   align-items: center;
   transform: perspective(200px) rotateY(-17deg) rotateX(0deg);
   color: rgb(255, 255, 255);
-  font-size: 5rem;
+  font-size: 6rem;
   text-align: start;
-  text-shadow: 10px 0px 15px rgb(200 150 60);
+  text-shadow: 12px 0px 15px #67c7eb;
   font-family: 'Orbitron', sans-serif;
 }
