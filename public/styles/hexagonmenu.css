@@ -1,7 +1,7 @@
 #hex-main-container {
   position: absolute;
-  top: 30%;
-  left: 18%;
+  top: 22%;
+  left: 14%;
   transform: perspective(190px) rotateY(25deg) rotateX(-15deg);
   z-index: 5;
   transition: 1s;
@@ -27,22 +27,47 @@
 .hex-toggle {
   height: 0;
   width: 4rem;
-  border-bottom: 3.5rem solid #fbca03;
+  border-bottom: 3.5rem solid rgba(20, 20, 20, 0.7);
   border-left: 2rem solid transparent;
   border-right: 2rem solid transparent;
   position: absolute;
   top: 0;
+  z-index: 6;
 }
 .hex-toggle:before {
   content: '';
   height: 0;
   width: 4rem;
-  border-top: 3.5rem solid #fbca03;
+  border-top: 3.5rem solid rgba(20, 20, 20, 0.7);
   border-left: 2rem solid transparent;
   border-right: 2rem solid transparent;
   position: absolute;
   top: 3.5rem;
   left: -2rem;
+  z-index: 6;
+}
+
+.hex-toggle-cover {
+  height: 0;
+  width: 4rem;
+  border-bottom: 3.5rem solid #4b0908;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+.hex-toggle-cover:before {
+  content: '';
+  height: 0;
+  width: 4rem;
+  border-top: 3.5rem solid #4b0908;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  position: absolute;
+  top: 3.5rem;
+  left: -2rem;
+  z-index: 5;
 }
 
 .hex-items {
@@ -77,11 +102,84 @@
 }
 
 #hex-icon {
-  color: black;
+  color: white;
   font-size: 1rem;
   position: relative;
   top: 3.5rem;
   right: -0.5rem;
   z-index: 10;
   transition: 1s ease-in-out;
+}
+
+#hex-item-7,
+#hex-item-8,
+#hex-item-9,
+#hex-item-10,
+#hex-item-11,
+#hex-item-12 {
+  height: 0;
+  width: 3rem;
+  border-bottom: 2.625rem solid #fbca03;
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  transition: 0.7s cubic-bezier(0.38, 0, 0.39, 1);
+}
+#hex-item-7:before,
+#hex-item-8:before,
+#hex-item-9:before,
+#hex-item-10:before,
+#hex-item-11:before,
+#hex-item-12:before {
+  content: '';
+  height: 0;
+  width: 3rem;
+  border-top: 2.625rem solid #fbca03;
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  position: absolute;
+  top: 2.625rem;
+  left: -1.5rem;
+  z-index: 3;
+  transition: 0.7s cubic-bezier(0.38, 0, 0.39, 1);
+}
+
+#order-history-icon,
+#profile-logout-icon,
+#profile-delete-icon,
+#profile-favorite-icon,
+#profile-analytics-icon {
+  z-index: 5;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  top: -3rem;
+  left: -1rem;
+  filter: opacity(0.5);
+}
+
+#profile-logout-icon {
+  transform: perspective(100px) rotateX(20deg);
+}
+
+#ironman-icon {
+  width: 2.5rem;
+  height: 3.5rem;
+  z-index: 5;
+  position: absolute;
+  top: -3rem;
+  left: -0.7rem;
+  filter: opacity(0.5);
+}
+
+#order-history-icon:hover,
+#profile-logout-icon:hover,
+#profile-delete-icon:hover,
+#profile-favorite-icon:hover,
+#ironman-icon:hover,
+#profile-analytics-icon:hover {
+  filter: opacity(1);
 }
