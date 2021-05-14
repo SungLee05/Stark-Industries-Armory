@@ -3,7 +3,7 @@
 <img src='public/starkindustriesLOGO.jpg'>
 <p>Stark-Industries-Armory designs, manufactures, and delivers advanced pseudo-armor. This is an eCommerce website that mirrors a real-world online shopping experience.
 
-<h5><strong>Web App Features:</strong></h5>
+<h1><strong>Web App Features:</strong></h1>
 <li>Registration and Login system with authorized admin routes and features (add, edit, and delete products; view user info; delete user; authorize admin rights to user;)</li>
 <li>Passport OAuth that allows users to register/login with Google, Facebook and Github</li>
 <li>*Fully functioning cart system for guests and users (add products to cart, remove products from cart, increase/decrease quantity of products)</li>
