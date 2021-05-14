@@ -35,7 +35,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  filter: sepia(1);
   transform: perspective(100px) rotateY(-10deg) rotateX(-23deg);
 }
 #hud1-container img {
@@ -179,7 +178,6 @@
   justify-content: center;
   align-items: center;
   transform: perspective(200px) rotateY(-10deg) rotateX(-16deg);
-  filter: sepia(1);
 }
 #hud14-container img {
   height: 28rem;
@@ -197,43 +195,140 @@
   justify-content: center;
   align-items: center;
   transform: perspective(200px) rotateY(-20deg) rotateX(-16deg);
-  filter: sepia(1);
 }
 #hud14-copy-container img {
   height: 12rem;
 }
 
-#hud17-container {
+#hud21-container {
   width: 12rem;
   height: 12rem;
   overflow: hidden;
   position: absolute;
-  left: 11%;
-  top: 8%;
+  left: 7%;
+  top: 18%;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: perspective(130px) rotateY(30deg) rotateX(-15deg);
+  transform: perspective(50px) rotateY(4deg) rotateX(0deg);
+  opacity: 0.8;
 }
-#hud17-container img {
-  height: 18rem;
+#hud21-container img {
+  height: 16rem;
 }
 
-#hud25-container {
-  width: 20rem;
-  height: 20rem;
+#hud33-container {
+  width: 12rem;
+  height: 8rem;
   overflow: hidden;
   position: absolute;
-  left: 64%;
-  top: 35%;
+  left: 12%;
+  top: 40%;
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: perspective(65px) rotateY(10deg) rotateX(0deg) skew(0deg, -15deg);
+  opacity: 0.8;
+}
+#hud33-container img {
+  height: 15rem;
+}
+
+#hud34-container {
+  width: 1rem;
+  height: 24rem;
+  overflow: hidden;
+  position: absolute;
+  left: 3.75%;
+  top: 0%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.4;
+}
+
+#hud34-container img {
+  height: 24rem;
+  transform: rotate(90deg);
+}
+
+#hud38-container {
+  width: 15rem;
+  height: 14rem;
+  overflow: hidden;
+  position: absolute;
+  left: 20%;
+  top: 43%;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: perspective(200px) rotateY(20deg) rotateX(50deg);
+  opacity: 0.9;
   border-radius: 50%;
-  transform: perspective(200px) rotateY(-20deg) rotateX(-16deg);
-  filter: sepia(1);
+}
+#hud38-container img {
+  height: 22rem;
+}
+
+#hud40-container {
+  width: 12rem;
+  height: 10rem;
+  overflow: hidden;
+  position: absolute;
+  left: 7%;
+  top: 4%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transform: perspective(80px) rotateY(7deg) rotateX(0deg) skew(0deg, 10deg);
+  opacity: 0.8;
+}
+#hud40-container img {
+  height: 10rem;
+}
+
+#hud43-container {
+  width: 24rem;
+  height: 10rem;
+  overflow: hidden;
+  position: absolute;
+  left: 19%;
+  top: 7%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: perspective(100px) rotateY(2deg) rotateX(0deg);
+  opacity: 0.8;
+}
+#hud43-container img {
+  height: 10rem;
+  width: 24rem;
+}
+
+#hud44-container {
+  width: 24rem;
+  height: 15rem;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: -1%;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: perspective(86px) rotateY(-10deg) rotateX(-4deg);
+  opacity: 0.9;
+}
+
+#hud44-container img {
+  height: 12rem;
+  width: 24rem;
 }
 
 #profile-clock {

@@ -1,8 +1,8 @@
 #hex-main-container {
   position: absolute;
-  top: 22%;
-  left: 14%;
-  transform: perspective(190px) rotateY(25deg) rotateX(-15deg);
+  top: 75%;
+  left: 15%;
+  transform: perspective(140px) rotateY(15deg) rotateX(40deg) translate(0px);
   z-index: 5;
   transition: 1s;
 }
@@ -195,7 +195,7 @@
 #profile-delete-icon:hover,
 #profile-favorite-icon:hover,
 #profile-analytics-icon:hover {
-  color: rgb(47, 43, 54);
+  color: #fbca03;
   filter: opacity(1) drop-shadow(-0.25rem 1.9rem 0.2rem rgba(0, 0, 0, 0.5));
   transition: ease-out;
 }
