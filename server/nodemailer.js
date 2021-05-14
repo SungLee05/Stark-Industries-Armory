@@ -10,7 +10,7 @@ router.post('/', async (req, res, next) => {
       service: 'gmail',
       auth: {
         user: 'starkindustriesarmory@gmail.com',
-        pass: process.env.GMAIL_PASSWORD
+        pass: process.env.EMAIL_PW
       }
     })
 

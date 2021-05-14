@@ -1,24 +1,95 @@
-<h1>Stark-Industries-Armory</h1>
+## Stark Industries Armory
+
 <img src='public/starkindustriesLOGO.jpg'>
 <p>Stark-Industries-Armory designs, manufactures, and delivers advanced pseudo-armor. This is an eCommerce website that mirrors a real-world online shopping experience.
 
-<h5>Features:<h5>
+<h5>Web App Features:</h5>
+*Registration and Login system with authorized admin routes and features (add, edit, and delete products; view user info; delete user; authorize admin rights to user;)
+*Passport OAuth that allows users to register/login with Google, Facebook and Github
+*Fully functioning cart system for guests and users (add products to cart, remove products from cart, increase/decrease quantity of products)
+*Persistent cart system that allows guests to merge their guest cart with user cart once registered
+*Fully operative checkout system powered by Stripe (test card # 4242-4242-4242-4242 / any EXP & CVV )
+*Order history view that allows users to monitor their purchase activity
+*Confirmation emailer enabled through Nodemailer
 
-Quick Heroku deployment
+## Checkout my heroku deployed web app below!
 
-Set up the Heroku command line tools and install Yarn if you haven't already (npm install -g yarn)
-heroku login
-Add a git remote for heroku:
-If you're creating a new app...
+<a href="https://starkindustriesarmory.herokuapp.com/"> Stark Industries Armory</a>
 
-heroku create or heroku create your-app-name if you have a name in mind.
-heroku addons:create heroku-postgresql:hobby-dev to add postgres
-npm run deploy-heroku. This will create a new branch and compile and commit your frontend JS to it, then push that branch to Heroku.
-heroku run npm run seed to seed the database
-If you already have a Heroku app...
+Stark Industries Armory Landing Page<br/>
+<img src="/images/LandingPage.png" width="800"><br/>
+Registration & Login Page<br/>
+<img src="/images/RegistrationPage.png" width="800"><br/>
+<img src="/images/LoginPage.png" width="800"><br/>
+User Profile Page<br/>
+<img src="/images/UserProfilePage.png" width="800"><br/>
+All Products Page<br/>
+<img src="/images/AllProductsPage.png" width="800"><br/>
+Single Product Page<br/>
+<img src="/images/SingleProductPage.png" width="800"><br/>
+User Cart Page<br/>
+<img src="/images/EmptyCart.png" width="800"><br/>
+<img src="/images/UserCart.png" width="800"><br/>
+Checkout Feature<br/>
+<img src="/images/CheckoutFeature.png" width="800"><br/>
 
-heroku git:remote your-app-name You'll need to be a collaborator on the app.
-Afterwards,
+## TECHSTACK
 
-To deploy: npm run deploy-heroku
-To re-seed: heroku run npm run seed
+Below is a non-exhaustive list of technologies used throughout the project.
+
+<div>
+<h5>Front End: React, Redux, HTML, CSS</h5></div>
+<div><h5>Back End: NodeJS, Express, PostgreSQL, Firebase</h5></div>
+<div><h5>API: Stripe, Nodemailer, Passport, Faker, </h5></div>
+<div><h5>UI/UX: Swiper, Gsap, React-Icons, React-Reveal, React-Tilt</h5></div>
+
+## SETUP
+
+Customize Stark Industries Armory at your own will! Follow the steps below:
+
+```
+git clone https://github.com/SungLee05/Stark-Industries-Armory.git
+cd Stark-Industries-Armory
+npm install
+npm run start-dev
+```
+
+Following dotENVs will need to be set in order for OAuth, Stripe and Nodemailer to work. Create your accounts and collect API keys, client ids/secrets and implement them as needed.
+
+```
+process.env.GOOGLE_CLIENT_ID
+process.env.GOOGLE_CLIENT_SECRET
+process.env.GOOGLE_CALLBACK
+process.env.FACEBOOK_APP_ID
+process.env.FACEBOOK_APP_SECRET
+process.env.FACEBOOK_CALLBACK
+process.env.GITHUB_CLIENT_ID
+process.env.GITHUB_CLIENT_SECRET
+process.env.GITHUB_CALLBACK
+process.env.STRIPE_PUBLISHABLE_KEY
+process.env.STRIPE_SECRET_KEY
+process.env.EMAIL_PW
+```
+
+## CONTACT
+
+If you have any questions or would like to get in touch, please see my contact info below. Otherwise, thank you for stopping by and GO TEAM IRON MAN!
+
+<table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>GitHub</th>
+          <th>LinkedIn</th>
+          <th>E-Mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style={{textAlign: center}}>Sung Lee</td>
+          <td style={{textAlign: center}}><a href="https://github.com/SungLee05">Sung Lee</a></td>
+          <td style={{textAlign: center}}><a href="https://linkedin.com/in/sungyonglee">Sung Lee</a></td>
+          <td style={{textAlign: center}}>sungyonglee414@gmail.com</td>
+        </tr>
+      </tbody>
+  </table>

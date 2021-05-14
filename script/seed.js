@@ -9,10 +9,10 @@ async function seed() {
   function generateUsers() {
     let users = [
       User.create({
-        name: 'admin',
-        email: 'admin@email.com',
+        name: 'user2',
+        email: 'user2@email.com',
         password: '123123',
-        admin: true
+        admin: false
       }),
       User.create({
         name: 'user',
