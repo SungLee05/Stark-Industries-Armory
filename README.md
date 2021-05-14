@@ -3,14 +3,15 @@
 <img src='public/starkindustriesLOGO.jpg'>
 <p>Stark-Industries-Armory designs, manufactures, and delivers advanced pseudo-armor. This is an eCommerce website that mirrors a real-world online shopping experience.
 
-<h1><strong>Web App Features:</strong></h1>
+## Web App Features
+
 <li>Registration and Login system with authorized admin routes and features (add, edit, and delete products; view user info; delete user; authorize admin rights to user;)</li>
 <li>Passport OAuth that allows users to register/login with Google, Facebook and Github</li>
-<li>*Fully functioning cart system for guests and users (add products to cart, remove products from cart, increase/decrease quantity of products)</li>
-<li>*Persistent cart system that allows guests to merge their guest cart with user cart once registered</li>
-<li>*Fully operative checkout system powered by Stripe (test card # 4242-4242-4242-4242 / any EXP & CVV)</li>
-<li>*Order history view that allows users to monitor their purchase activity</li>
-<li>*Confirmation emailer enabled through Nodemailer</li>
+<li>Fully functioning cart system for guests and users (add products to cart, remove products from cart, increase/decrease quantity of products)</li>
+<li>Persistent cart system that allows guests to merge their guest cart with user cart once registered</li>
+<li>Fully operative checkout system powered by Stripe (test card # 4242-4242-4242-4242 / any EXP & CVV)</li>
+<li>Order history view that allows users to monitor their purchase activity</li>
+<li>Confirmation emailer enabled through Nodemailer</li>
 
 ## Checkout my heroku deployed web app below!
 
