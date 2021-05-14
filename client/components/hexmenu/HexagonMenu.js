@@ -13,7 +13,7 @@ const HexagonMenu = () => {
   const expand = () => {
     if (open === false) {
       document.getElementById('hex-main-container').style.transform =
-        'perspective(700px) rotateY(-15deg) rotateX(55deg) translate(15rem, 4rem)'
+        'perspective(200px) rotateY(0deg) rotateX(15deg) translate(5rem, -10rem)'
       document.getElementById('hex-icon').style.transform =
         'rotate(90deg) translate(.5rem, -5.5rem)'
       document.getElementById('hex-menus').style.transform = 'scale(1)'
