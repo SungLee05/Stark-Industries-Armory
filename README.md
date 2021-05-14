@@ -3,35 +3,35 @@
 <img src='public/starkindustriesLOGO.jpg'>
 <p>Stark-Industries-Armory designs, manufactures, and delivers advanced pseudo-armor. This is an eCommerce website that mirrors a real-world online shopping experience.
 
-<h5>Web App Features:</h5>
-*Registration and Login system with authorized admin routes and features (add, edit, and delete products; view user info; delete user; authorize admin rights to user;)
-*Passport OAuth that allows users to register/login with Google, Facebook and Github
-*Fully functioning cart system for guests and users (add products to cart, remove products from cart, increase/decrease quantity of products)
-*Persistent cart system that allows guests to merge their guest cart with user cart once registered
-*Fully operative checkout system powered by Stripe (test card # 4242-4242-4242-4242 / any EXP & CVV )
-*Order history view that allows users to monitor their purchase activity
-*Confirmation emailer enabled through Nodemailer
+<h5><strong>Web App Features:</strong></h5>
+<li>Registration and Login system with authorized admin routes and features (add, edit, and delete products; view user info; delete user; authorize admin rights to user;)</li>
+<li>Passport OAuth that allows users to register/login with Google, Facebook and Github</li>
+<li>*Fully functioning cart system for guests and users (add products to cart, remove products from cart, increase/decrease quantity of products)</li>
+<li>*Persistent cart system that allows guests to merge their guest cart with user cart once registered</li>
+<li>*Fully operative checkout system powered by Stripe (test card # 4242-4242-4242-4242 / any EXP & CVV)</li>
+<li>*Order history view that allows users to monitor their purchase activity</li>
+<li>*Confirmation emailer enabled through Nodemailer</li>
 
 ## Checkout my heroku deployed web app below!
 
 <a href="https://starkindustriesarmory.herokuapp.com/"> Stark Industries Armory</a>
 
 Stark Industries Armory Landing Page<br/>
-<img src="/images/LandingPage.png" width="800"><br/>
+<img src="/public/images/LandingPage.png" width="800"><br/>
 Registration & Login Page<br/>
-<img src="/images/RegistrationPage.png" width="800"><br/>
-<img src="/images/LoginPage.png" width="800"><br/>
+<img src="/public/images/RegistrationPage.png" width="800"><br/>
+<img src="/public/images/LoginPage.png" width="800"><br/>
 User Profile Page<br/>
-<img src="/images/UserProfilePage.png" width="800"><br/>
+<img src="/public/images/UserProfilePage.png" width="800"><br/>
 All Products Page<br/>
-<img src="/images/AllProductsPage.png" width="800"><br/>
+<img src="/public/images/AllProductsPage.png" width="800"><br/>
 Single Product Page<br/>
-<img src="/images/SingleProductPage.png" width="800"><br/>
+<img src="/public/images/SingleProductPage.png" width="800"><br/>
 User Cart Page<br/>
-<img src="/images/EmptyCart.png" width="800"><br/>
-<img src="/images/UserCart.png" width="800"><br/>
+<img src="/public/images/EmptyCart.png" width="800"><br/>
+<img src="/public/images/UserCart.png" width="800"><br/>
 Checkout Feature<br/>
-<img src="/images/CheckoutFeature.png" width="800"><br/>
+<img src="/public/images/CheckoutFeature.png" width="800"><br/>
 
 ## TECHSTACK
 
