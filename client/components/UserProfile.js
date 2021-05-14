@@ -70,6 +70,10 @@ const UserProfile = props => {
         <img src="/gifs/hud40.gif" alt="hud40" />
       </div>
 
+      <div id="hud42-container">
+        <img src="/gifs/hud42.gif" alt="hud42" />
+      </div>
+
       <div id="hud43-container">
         <img src="/gifs/hud43.gif" alt="hud43" />
       </div>

@@ -1,8 +1,8 @@
 #hex-main-container {
   position: absolute;
-  top: 75%;
-  left: 15%;
-  transform: perspective(140px) rotateY(15deg) rotateX(40deg) translate(0px);
+  top: 85%;
+  left: 29%;
+  transform: perspective(140px) rotateY(15deg) rotateX(25deg) translate(0px);
   z-index: 5;
   transition: 1s;
 }
