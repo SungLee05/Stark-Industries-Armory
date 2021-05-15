@@ -5,7 +5,7 @@ const UnderConstruction = () => {
     <div className="under-construction-container">
       <div className="under-construction-wrapper">
         <h1>
-          Sorry! <br />
+          SORRY! <br />
           PAGE UNDER CONSTRUCTION :(
         </h1>
       </div>
