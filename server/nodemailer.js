@@ -31,7 +31,7 @@ router.post('/', async (req, res, next) => {
           .join('')}
           <hr />
         <h4>Total: $${total}</h4>
-        <a href='https://starkindustriesarmory.herokuapp.com'>Shop Again</a>
+        <a href='https://www.starkindustriesarmory.com'>Shop Again</a>
       `
     }
 

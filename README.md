@@ -13,9 +13,9 @@
 <li>Order history view that allows users to monitor their purchase activity</li>
 <li>Confirmation emailer enabled through Nodemailer</li>
 
-## Checkout my heroku deployed web app below!
+## Checkout my deployed web app (via Heroku) below!
 
-<a href="https://starkindustriesarmory.herokuapp.com/"> Stark Industries Armory</a>
+<a href="https://www.starkindustriesarmory.com/"> Stark Industries Armory</a>
 
 Stark Industries Armory Landing Page<br/>
 <img src="/public/images/LandingPage.png" width="800"><br/>

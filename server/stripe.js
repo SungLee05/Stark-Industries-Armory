@@ -5,7 +5,7 @@ module.exports = router
 const urlBase =
   process.env.NODE_ENV !== 'production'
     ? 'http://localhost:8080/'
-    : 'https://starkindustriesarmory.herokuapp.com/'
+    : 'https://www.starkindustriesarmory.com/'
 
 router.post('/create-session', async (req, res, next) => {
   try {
