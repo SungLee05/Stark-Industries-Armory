@@ -13,10 +13,10 @@ const HexagonMenu = () => {
   const expand = () => {
     if (open === false) {
       document.getElementById('hex-main-container').style.transform =
-        'perspective(200px) rotateY(0deg) rotateX(15deg) translate(5rem, -10rem)'
+        'perspective(300px) rotateY(0deg) rotateX(-5deg) translate(-5rem, -10rem)'
       document.getElementById('hex-icon').style.transform =
         'rotate(90deg) translate(.5rem, -5.5rem)'
-      document.getElementById('hex-menus').style.transform = 'scale(1)'
+      document.getElementById('hex-icon').style.color = '#fbca03'
 
       // 1st layer
       document.getElementById('hex-item-1').style.transform =
@@ -45,12 +45,14 @@ const HexagonMenu = () => {
       document.getElementById('hex-item-12').style.transform =
         'translate(8.5rem, -4.5rem)'
 
+      document.getElementById('second-layer-container').style.display =
+        'contents'
+
       open = true
     } else {
-      document.getElementById('hex-main-container').style.transform =
-        'perspective(140px) rotateY(15deg) rotateX(25deg) translate(0px)'
+      document.getElementById('hex-main-container').style.transform = ''
       document.getElementById('hex-icon').style.transform = `rotate(0deg)`
-      document.getElementById('hex-menus').style.transform = 'scale(0.7)'
+      document.getElementById('hex-icon').style.color = '#ffffff'
 
       document.getElementById('hex-item-1').style.transform = 'translateY(0)'
       document.getElementById('hex-item-2').style.transform = 'translate(0)'
@@ -64,6 +66,9 @@ const HexagonMenu = () => {
       document.getElementById('hex-item-10').style.transform = 'translate(0)'
       document.getElementById('hex-item-11').style.transform = 'translate(0)'
       document.getElementById('hex-item-12').style.transform = 'translate(0)'
+
+      document.getElementById('second-layer-container').style.display = 'none'
+
       open = false
     }
   }
@@ -72,8 +77,6 @@ const HexagonMenu = () => {
     <>
       <div id="hex-main-container">
         <div className="hex-container" onClick={() => expand()}>
-          <div className="hex-toggle" id="hex-toggle" />
-          <div className="hex-toggle-cover" id="hex-toggle-cover" />
           <div id="hex-icon">
             <CgMenuRound />
           </div>
@@ -87,44 +90,41 @@ const HexagonMenu = () => {
           <div className="hex-items" id="hex-item-5" />
           <div className="hex-items" id="hex-item-6" />
 
-          <div className="hex-items" id="hex-item-7">
-            <a className="hex-link" href="#">
-              <FaHistory id="order-history-icon" />
-            </a>
-          </div>
-
-          <div className="hex-items" id="hex-item-8">
-            <a className="hex-link" href="#">
-              <RiLogoutBoxRFill id="profile-logout-icon" />
-            </a>
-          </div>
-
-          <div className="hex-items" id="hex-item-9">
-            <a className="hex-link" href="#">
-              <img
-                src="/ironmanicon.png"
-                alt="ironman-icon"
-                id="ironman-icon"
-              />
-            </a>
-          </div>
-
-          <div className="hex-items" id="hex-item-10">
-            <a className="hex-link" href="#">
-              <AiFillStar id="profile-favorite-icon" />
-            </a>
-          </div>
-
-          <div className="hex-items" id="hex-item-11">
-            <a className="hex-link" href="#">
-              <FaSkull id="profile-delete-icon" />
-            </a>
-          </div>
-
-          <div className="hex-items" id="hex-item-12">
-            <a className="hex-link" href="#">
-              <SiGoogleanalytics id="profile-analytics-icon" />
-            </a>
+          <div id="second-layer-container">
+            <div className="hex-items" id="hex-item-7">
+              <a className="hex-link" href="#">
+                <FaHistory id="order-history-icon" />
+              </a>
+            </div>
+            <div className="hex-items" id="hex-item-8">
+              <a className="hex-link" href="#">
+                <RiLogoutBoxRFill id="profile-logout-icon" />
+              </a>
+            </div>
+            <div className="hex-items" id="hex-item-9">
+              <a className="hex-link" href="#">
+                <img
+                  src="/ironmanicon.png"
+                  alt="ironman-icon"
+                  id="ironman-icon"
+                />
+              </a>
+            </div>
+            <div className="hex-items" id="hex-item-10">
+              <a className="hex-link" href="#">
+                <AiFillStar id="profile-favorite-icon" />
+              </a>
+            </div>
+            <div className="hex-items" id="hex-item-11">
+              <a className="hex-link" href="#">
+                <FaSkull id="profile-delete-icon" />
+              </a>
+            </div>
+            <div className="hex-items" id="hex-item-12">
+              <a className="hex-link" href="#">
+                <SiGoogleanalytics id="profile-analytics-icon" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
