@@ -17,7 +17,8 @@ import {
   UserShoppingCart,
   Checkout,
   PostCheckout,
-  StripeFailure
+  StripeFailure,
+  UnderConstruction
 } from './components'
 
 import {me} from './store'
@@ -43,6 +44,11 @@ class Routes extends Component {
             exact
             path="/guest/shoppingcart"
             component={GuestShoppingCart}
+          />
+          <Route
+            exact
+            path="/underconstruction"
+            component={UnderConstruction}
           />
 
           {admin && (

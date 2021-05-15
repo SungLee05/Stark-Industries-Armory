@@ -13,3 +13,6 @@ export {default as UserShoppingCart} from './UserShoppingCart'
 export {default as Checkout} from './Checkout'
 export {default as PostCheckout} from './PostCheckout'
 export {default as StripeFailure} from './StripeFailure'
+export {
+  default as UnderConstruction
+} from './underconstruction/UnderConstruction'

@@ -125,20 +125,23 @@ const HexagonMenu = ({user}) => {
                 />
               </Link>
             </div>
+
             <div className="hex-items" id="hex-item-10">
-              <a className="hex-link" href="#">
+              <Link to="/underconstruction" className="hex-link">
                 <AiFillStar id="profile-favorite-icon" />
-              </a>
+              </Link>
             </div>
+
             <div className="hex-items" id="hex-item-11">
-              <a className="hex-link" href="#">
+              <Link to="/underconstruction" className="hex-link">
                 <FaSkull id="profile-delete-icon" />
-              </a>
+              </Link>
             </div>
+
             <div className="hex-items" id="hex-item-12">
-              <a className="hex-link" href="#">
+              <Link to="/underconstruction" className="hex-link">
                 <SiGoogleanalytics id="profile-analytics-icon" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
