@@ -1,14 +1,18 @@
 /* eslint-disable max-statements */
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import {logout} from '../../store'
+
 import {RiLogoutBoxRFill} from 'react-icons/Ri'
 import {FaSkull, FaHistory} from 'react-icons/fa'
 import {AiFillStar} from 'react-icons/ai'
 import {SiGoogleanalytics} from 'react-icons/si'
 
-const HexagonMenu = () => {
-  let open = false
+const HexagonMenu = ({user}) => {
+  const dispatch = useDispatch()
 
+  let open = false
   const expand = () => {
     if (open === false) {
       document.getElementById('hex-main-container').style.transform =
@@ -97,23 +101,29 @@ const HexagonMenu = () => {
 
           <div id="second-layer-container">
             <div className="hex-items" id="hex-item-7">
-              <a className="hex-link" href="#">
+              <Link to={`/user/${user.id}/orderhistory`} className="hex-link">
                 <FaHistory id="order-history-icon" />
-              </a>
+              </Link>
             </div>
             <div className="hex-items" id="hex-item-8">
-              <a className="hex-link" href="#">
+              <a
+                className="hex-link"
+                href="#"
+                onClick={() => {
+                  dispatch(logout())
+                }}
+              >
                 <RiLogoutBoxRFill id="profile-logout-icon" />
               </a>
             </div>
             <div className="hex-items" id="hex-item-9">
-              <a className="hex-link" href="#">
+              <Link to="/allproducts" className="hex-link">
                 <img
                   src="/ironmanicon.png"
                   alt="ironman-icon"
                   id="ironman-icon"
                 />
-              </a>
+              </Link>
             </div>
             <div className="hex-items" id="hex-item-10">
               <a className="hex-link" href="#">

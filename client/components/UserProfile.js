@@ -54,7 +54,7 @@ const UserProfile = props => {
       <div id="profile-clock">
         <Clock />
       </div>
-      <HexagonMenu />
+      <HexagonMenu user={user} />
       <div className="profile-info-wrapper">
         <Fade>
           <div className="profile-info-container">
