@@ -13,7 +13,7 @@ const HexagonMenu = () => {
   const expand = () => {
     if (open === false) {
       document.getElementById('hex-main-container').style.transform =
-        'perspective(300px) rotateY(0deg) rotateX(-5deg) translate(-5rem, -10rem)'
+        'perspective(200px) rotateY(0deg) rotateX(10deg) translate(-5rem, -10rem)'
       document.getElementById('hex-icon').style.transform =
         'rotate(90deg) translate(.5rem, -5.5rem)'
       document.getElementById('hex-icon').style.color = '#fbca03'
@@ -33,20 +33,24 @@ const HexagonMenu = () => {
 
       // 2nd layer
       document.getElementById('hex-item-7').style.transform =
-        'translate(1.25rem, -8.25rem)'
+        'translate(0.25rem, -7.75rem)'
       document.getElementById('hex-item-8').style.transform =
-        'translate(-6rem, -4.25rem)'
+        'translate(-7rem, -3.75rem)'
       document.getElementById('hex-item-9').style.transform =
-        'translate(8.75rem,3.75rem)'
+        'translate(7.25rem, 4rem)'
       document.getElementById('hex-item-10').style.transform =
-        'translate(1.25rem, 7.75rem)'
+        'translate(0.15rem, 8.25rem)'
       document.getElementById('hex-item-11').style.transform =
-        'translate(-6rem, 3.75rem)'
+        'translate(-7rem, 4rem)'
       document.getElementById('hex-item-12').style.transform =
-        'translate(8.5rem, -4.5rem)'
+        'translate(7.25rem, -3.75rem)'
 
-      document.getElementById('second-layer-container').style.display =
-        'contents'
+      document.getElementById('hex-item-7').style.zIndex = '3'
+      document.getElementById('hex-item-8').style.zIndex = '3'
+      document.getElementById('hex-item-9').style.zIndex = '3'
+      document.getElementById('hex-item-10').style.zIndex = '3'
+      document.getElementById('hex-item-11').style.zIndex = '3'
+      document.getElementById('hex-item-12').style.zIndex = '3'
 
       open = true
     } else {
@@ -67,7 +71,14 @@ const HexagonMenu = () => {
       document.getElementById('hex-item-11').style.transform = 'translate(0)'
       document.getElementById('hex-item-12').style.transform = 'translate(0)'
 
-      document.getElementById('second-layer-container').style.display = 'none'
+      document.getElementById('hex-item-7').style.zIndex = '-1'
+      document.getElementById('hex-item-8').style.zIndex = '-1'
+      document.getElementById('hex-item-9').style.zIndex = '-1'
+      document.getElementById('hex-item-10').style.zIndex = '-1'
+      document.getElementById('hex-item-11').style.zIndex = '-1'
+      document.getElementById('hex-item-12').style.zIndex = '-1'
+
+      // document.getElementById('second-layer-container').style.zIndex = '-1'
 
       open = false
     }

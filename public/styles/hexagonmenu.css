@@ -82,7 +82,8 @@
   border-right: 1.5rem solid transparent;
   position: absolute;
   top: 0;
-  z-index: 3;
+  left: 10%;
+  z-index: -1;
   transition: 0.7s cubic-bezier(0.38, 0, 0.39, 1);
 }
 #hex-item-7:before,
@@ -100,7 +101,7 @@
   position: absolute;
   top: 2.625rem;
   left: -1.5rem;
-  z-index: 3;
+  z-index: -1;
   transition: 0.7s cubic-bezier(0.38, 0, 0.39, 1);
 }
 
@@ -109,19 +110,13 @@
 #profile-delete-icon,
 #profile-favorite-icon,
 #profile-analytics-icon {
-  z-index: 5;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   position: absolute;
   width: 3rem;
   height: 3rem;
   top: -3rem;
   left: -1rem;
-  filter: opacity(0.5) drop-shadow(-0.25rem 1.9rem 0.2rem rgba(0, 0, 0, 1));
-}
-
-#profile-logout-icon {
-  transform: perspective(100px) rotateX(20deg);
-  filter: opacity(0.5) drop-shadow(-0.25rem 1.9rem 0.2rem rgba(0, 0, 0, 1));
+  filter: opacity(1) drop-shadow(0.1rem 2rem 0.2rem rgba(0, 0, 0, 0.6));
 }
 
 #ironman-icon {
@@ -131,10 +126,10 @@
   position: absolute;
   top: -3rem;
   left: -0.7rem;
-  filter: opacity(0.5) drop-shadow(-0.25rem 1.9rem 0.2rem rgba(0, 0, 0, 1));
+  filter: opacity(1) drop-shadow(0.1rem 2rem 0.2rem rgba(0, 0, 0, 0.6));
 }
 #ironman-icon:hover {
-  filter: opacity(1) drop-shadow(-0.25rem 1.9rem 0.2rem rgba(0, 0, 0, 0.5));
+  filter: opacity(1) drop-shadow(0.1rem 2rem 0.2rem rgba(0, 0, 0, 0.6));
   background-color: #fbca03;
   border-bottom: transparent;
   border-radius: 40%;
@@ -147,10 +142,10 @@
 #profile-favorite-icon:hover,
 #profile-analytics-icon:hover {
   color: #fbca03;
-  filter: opacity(1) drop-shadow(-0.25rem 1.9rem 0.2rem rgba(0, 0, 0, 0.5));
+  filter: opacity(1) drop-shadow(-0.25rem 1.9rem 0.2rem rgba(0, 0, 0, 0.8));
   transition: ease-out;
 }
 
-#second-layer-container {
-  display: none;
-}
+/* #second-layer-container {
+  z-index: -1
+} */
