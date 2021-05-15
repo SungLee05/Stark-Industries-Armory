@@ -5,7 +5,6 @@ import {RiLogoutBoxRFill} from 'react-icons/Ri'
 import {FaSkull, FaHistory} from 'react-icons/fa'
 import {AiFillStar} from 'react-icons/ai'
 import {SiGoogleanalytics} from 'react-icons/si'
-import {CgMenuRound} from 'react-icons/cg'
 
 const HexagonMenu = () => {
   let open = false
@@ -14,9 +13,7 @@ const HexagonMenu = () => {
     if (open === false) {
       document.getElementById('hex-main-container').style.transform =
         'perspective(200px) rotateY(0deg) rotateX(10deg) translate(-5rem, -10rem)'
-      document.getElementById('hex-icon').style.transform =
-        'rotate(90deg) translate(.5rem, -5.5rem)'
-      document.getElementById('hex-icon').style.color = '#fbca03'
+      document.getElementById('hex-icon').style.transform = 'rotate(120deg)'
 
       // 1st layer
       document.getElementById('hex-item-1').style.transform =
@@ -56,7 +53,6 @@ const HexagonMenu = () => {
     } else {
       document.getElementById('hex-main-container').style.transform = ''
       document.getElementById('hex-icon').style.transform = `rotate(0deg)`
-      document.getElementById('hex-icon').style.color = '#ffffff'
 
       document.getElementById('hex-item-1').style.transform = 'translateY(0)'
       document.getElementById('hex-item-2').style.transform = 'translate(0)'
@@ -78,8 +74,6 @@ const HexagonMenu = () => {
       document.getElementById('hex-item-11').style.zIndex = '-1'
       document.getElementById('hex-item-12').style.zIndex = '-1'
 
-      // document.getElementById('second-layer-container').style.zIndex = '-1'
-
       open = false
     }
   }
@@ -89,7 +83,7 @@ const HexagonMenu = () => {
       <div id="hex-main-container">
         <div className="hex-container" onClick={() => expand()}>
           <div id="hex-icon">
-            <CgMenuRound />
+            <img src="/images/arc-reactor.png" id="profile-arc-reactor" />
           </div>
         </div>
 

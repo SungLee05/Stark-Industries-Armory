@@ -18,7 +18,7 @@
   right: 0;
   cursor: pointer;
   z-index: 5;
-  opacity: 0.6;
+  opacity: 0.75;
 }
 .hex-menu {
   z-index: -1;
@@ -28,7 +28,7 @@
 .hex-items {
   height: 0;
   width: 4rem;
-  border-bottom: 3.5rem solid rgba(50, 190, 255, 0.7);
+  border-bottom: 3.5rem solid #6a0c0b;
   border-left: 2rem solid transparent;
   border-right: 2rem solid transparent;
   position: absolute;
@@ -40,7 +40,7 @@
   content: '';
   height: 0;
   width: 4rem;
-  border-top: 3.5rem solid rgba(50, 190, 255, 0.7);
+  border-top: 3.5rem solid #6a0c0b;
   border-left: 2rem solid transparent;
   border-right: 2rem solid transparent;
   position: absolute;
@@ -57,16 +57,16 @@
 }
 
 #hex-icon {
-  color: #ffffff;
-  font-size: 5rem;
-  position: relative;
-  top: 0.25rem;
-  right: -1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   z-index: 10;
   transition: 1s ease-in-out;
   height: 0;
   width: 0;
-  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #hex-item-7,
@@ -142,10 +142,26 @@
 #profile-favorite-icon:hover,
 #profile-analytics-icon:hover {
   color: #fbca03;
-  filter: opacity(1) drop-shadow(-0.25rem 1.9rem 0.2rem rgba(0, 0, 0, 0.8));
+  filter: opacity(1) drop-shadow(0.1rem 2rem 0.2rem rgba(0, 0, 0, 0.6));
   transition: ease-out;
 }
 
-/* #second-layer-container {
-  z-index: -1
-} */
+#profile-arc-reactor {
+  height: 5rem;
+  animation: reactor-light;
+  animation-duration: 3s;
+  -moz-animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes reactor-light {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.75);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
