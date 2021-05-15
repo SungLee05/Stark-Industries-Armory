@@ -36,13 +36,10 @@ Checkout Feature<br/>
 
 ## TECHSTACK
 
-Below is a non-exhaustive list of technologies used throughout the project.
-
-<div>
-<h5>Front End: React, Redux, HTML, CSS</h5></div>
-<div><h5>Back End: NodeJS, Express, PostgreSQL, Firebase</h5></div>
-<div><h5>API: Stripe, Nodemailer, Passport, Faker, </h5></div>
-<div><h5>UI/UX: Swiper, Gsap, React-Icons, React-Reveal, React-Tilt</h5></div>
+<div><h5><strong>Front End:</strong> React, Redux, HTML, CSS</h5></div>
+<div><h5><strong>Back End:</strong> NodeJS, Express, PostgreSQL, Firebase</h5></div>
+<div><h5><strong>API:</strong> Stripe, Nodemailer, Passport, Faker, </h5></div>
+<div><h5><strong>UI/UX:</strong> Swiper, Gsap, React-Icons, React-Reveal, React-Tilt</h5></div>
 
 ## SETUP
 
