@@ -1,0 +1,6 @@
+diff a/public/bundle.js b/public/bundle.js	(rejected hunks)
+@@ -1845 +1844,0 @@ var UserProfile = function UserProfile(props) {
+-      console.log('messageList->', _jarvisMessages__WEBPACK_IMPORTED_MODULE_6__["jarvisMessageList"]);
+@@ -1847 +1846 @@ var UserProfile = function UserProfile(props) {
+-    }, 8000);
++    }, 10000);

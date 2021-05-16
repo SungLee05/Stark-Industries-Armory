@@ -5,7 +5,6 @@ import dateFormat from 'dateformat'
 import Clock from './clock/Clock'
 import HexagonMenu from './hexmenu/HexagonMenu'
 import {jarvisMessageList} from '../jarvisMessages'
-
 import Fade from 'react-reveal/Fade'
 
 const UserProfile = props => {
@@ -64,9 +63,16 @@ const UserProfile = props => {
         <img src="/gifs/hud44.gif" alt="hud44" />
       </div>
 
-      <div className="jarvis-msg-container">
-        <div>{message}</div>
-      </div>
+      <Fade delay={4000}>
+        <div className="jarvis-msg-container">
+          <img
+            src="/images/jarvis-word-box.png"
+            alt="hud-word-box"
+            className="jarvis-word-box"
+          />
+          <div className="jarvis-msg">{message}</div>
+        </div>
+      </Fade>
 
       <div id="profile-clock">
         <Clock />
