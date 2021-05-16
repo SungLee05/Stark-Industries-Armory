@@ -22,7 +22,7 @@ const UserProfile = props => {
         currentMsgIdx = 0
       }
       setMessage(jarvisMessageList[currentMsgIdx])
-    }, 10000)
+    }, 5000)
 
     return () => clearInterval(msgIteration)
   }, [])
@@ -83,7 +83,7 @@ const UserProfile = props => {
       <div className="profile-info-wrapper">
         <Fade>
           <div className="profile-info-container">
-            <div>Welcome, {user.email}</div>
+            <div>{user.email}</div>
             <div>Member since {dateFormat(user.createdAt, 'mmm yyyy')}</div>
           </div>
         </Fade>
