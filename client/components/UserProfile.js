@@ -63,7 +63,7 @@ const UserProfile = props => {
         <img src="/gifs/hud44.gif" alt="hud44" />
       </div>
 
-      <Fade delay={4000}>
+      <Fade bottom delay={5000}>
         <div className="jarvis-msg-container">
           <img
             src="/images/jarvis-word-box.png"
