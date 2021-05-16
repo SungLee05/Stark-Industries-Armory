@@ -18,7 +18,8 @@ import {
   Checkout,
   PostCheckout,
   StripeFailure,
-  UnderConstruction
+  UnderConstruction,
+  Page404
 } from './components'
 
 import {me} from './store'
@@ -50,6 +51,7 @@ class Routes extends Component {
             path="/underconstruction"
             component={UnderConstruction}
           />
+          <Route exact path="/pagenotfound" component={Page404} />
 
           {admin && (
             <Switch>

@@ -16,3 +16,4 @@ export {default as StripeFailure} from './StripeFailure'
 export {
   default as UnderConstruction
 } from './underconstruction/UnderConstruction'
+export {default as Page404} from './Page404'

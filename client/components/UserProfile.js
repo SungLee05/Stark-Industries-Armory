@@ -1,18 +1,31 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {me} from '../store/user'
 import {connect, useDispatch} from 'react-redux'
 import dateFormat from 'dateformat'
 import Clock from './clock/Clock'
 import HexagonMenu from './hexmenu/HexagonMenu'
+import {jarvisMessageList} from '../jarvisMessages'
 
 import Fade from 'react-reveal/Fade'
 
 const UserProfile = props => {
   const dispatch = useDispatch()
   const {user} = props
+  const [message, setMessage] = useState('')
+  let currentMsgIdx = -1
 
   useEffect(() => {
     dispatch(me())
+
+    const msgIteration = setInterval(() => {
+      currentMsgIdx++
+      if (currentMsgIdx >= jarvisMessageList.length) {
+        currentMsgIdx = 0
+      }
+      setMessage(jarvisMessageList[currentMsgIdx])
+    }, 10000)
+
+    return () => clearInterval(msgIteration)
   }, [])
 
   return (
@@ -32,7 +45,6 @@ const UserProfile = props => {
       <div id="hud10-container">
         <img src="/gifs/hud10.gif" alt="hud2" />
       </div>
-
       <div id="hud33-container">
         <img src="/gifs/hud33.gif" alt="hud33" />
       </div>
@@ -51,10 +63,17 @@ const UserProfile = props => {
       <div id="hud44-container">
         <img src="/gifs/hud44.gif" alt="hud44" />
       </div>
+
+      <div className="jarvis-msg-container">
+        <div>{message}</div>
+      </div>
+
       <div id="profile-clock">
         <Clock />
       </div>
+
       <HexagonMenu user={user} />
+
       <div className="profile-info-wrapper">
         <Fade>
           <div className="profile-info-container">
