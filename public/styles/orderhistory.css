@@ -20,22 +20,46 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
+  font-size: 1.5rem;
 }
 
 .order-history-content-wrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: center;
+  margin-left: 1.25rem;
+}
+
+.order-history-img-wrapper {
+  height: 11rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .order-history-qty-price-wrapper {
-  width: 15%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: left;
+}
+
+.order-history-address-wrapper,
+.order-history-status-wrapper {
+  height: 100%;
+  width: 20rem;
+}
+
+.order-history-address-wrapper {
+  margin-left: 9rem;
+}
+
+.order-history-status-wrapper {
+  margin-left: 7.2rem;
 }

@@ -35,7 +35,7 @@ const OrderHistory = props => {
                       </div>
 
                       <div>
-                        total:
+                        Total:
                         {accounting.formatMoney(
                           order.products.reduce(
                             (acc, product) =>
@@ -52,23 +52,35 @@ const OrderHistory = props => {
                         return (
                           <div key={product.id}>
                             <div className="order-history-subheader-wrapper">
-                              <div>{product.name}</div>
-                              <div>Shipping Info</div>
-                              <div>Package Status</div>
+                              <div
+                                style={{marginLeft: '7.75rem', width: '10rem'}}
+                              >
+                                {product.name}
+                              </div>
+                              <div style={{marginLeft: '11.25rem'}}>
+                                Shipping Info
+                              </div>
+                              <div style={{marginLeft: '15rem'}}>
+                                Package Status
+                              </div>
                             </div>
 
                             <div className="order-history-content-wrapper">
-                              <img src={product.imageUrl} height="300" />
-
+                              <div className="order-history-img-wrapper">
+                                <img src={product.imageUrl} height="170" />
+                              </div>
                               <div className="order-history-qty-price-wrapper">
-                                <div>
-                                  Quantity: {product.orderHistory.quantity}
-                                </div>
+                                <div>Qty: {product.orderHistory.quantity}</div>
                                 <div>Price: ${product.price}</div>
                               </div>
 
-                              <div>ADDRESS HERE</div>
-                              <div>PACKAGE STATUS HERE</div>
+                              <div className="order-history-address-wrapper">
+                                <div>ADDRESS HERE</div>
+                              </div>
+
+                              <div className="order-history-status-wrapper">
+                                <div>PACKAGE STATUS HERE</div>
+                              </div>
                             </div>
                           </div>
                         )
