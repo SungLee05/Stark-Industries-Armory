@@ -1,5 +1,41 @@
-.orderhistory-main-container {
+.order-history-main-container {
   height: 90vh;
   margin-top: 10vh;
   width: 100%;
+}
+.order-history-wrapper {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.order-history-header-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-history-subheader-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-history-content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-history-qty-price-wrapper {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
