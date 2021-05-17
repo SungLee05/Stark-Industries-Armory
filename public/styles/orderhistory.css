@@ -29,7 +29,6 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: left;
   align-items: center;
   margin-left: 1.25rem;
 }
@@ -48,6 +47,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: left;
+  margin-left: 1.25rem;
 }
 
 .order-history-address-wrapper,
@@ -57,9 +57,10 @@
 }
 
 .order-history-address-wrapper {
-  margin-left: 9rem;
+  margin-left: 8.7rem;
 }
 
 .order-history-status-wrapper {
   margin-left: 7.2rem;
+  margin-right: 1.7rem;
 }
