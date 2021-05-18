@@ -68,10 +68,6 @@ const OrderHistory = props => {
                         )
                         const oneDayInMs = 86400000
 
-                        // if ordered date + 1 day > today = confirmed
-                        // if ordered date + 1 day < today && today < estimatedArrivalTime = shipped
-                        // if estimatedArrivalTime < today = delivered
-
                         const confirmedBorderColor =
                           new Date(order.updatedAt).getTime() + oneDayInMs >
                           new Date().getTime()
@@ -137,9 +133,7 @@ const OrderHistory = props => {
                               <div className="order-history-qty-price-wrapper">
                                 <div>Qty: {product.orderHistory.quantity}</div>
                                 <div>
-                                  Price: ${accounting.formatMoney(
-                                    product.price
-                                  )}
+                                  Price: {accounting.formatMoney(product.price)}
                                 </div>
                               </div>
 
