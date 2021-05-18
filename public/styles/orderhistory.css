@@ -112,7 +112,7 @@
 
 .track-status-box-left,
 .track-status-box-middle,
-.track-status-box-right {
+#track-status-box-right {
   padding: 1.25rem 2rem 0rem 2rem;
   background-color: rgb(75, 75, 75);
   position: relative;
@@ -153,7 +153,7 @@
   border-left: 10px solid rgb(75, 75, 75);
   border-right: none;
 }
-.track-status-box-right::after {
+#track-status-box-right::after {
   content: '';
   position: absolute;
   right: 74px;
@@ -162,4 +162,8 @@
   border-bottom: 10px solid rgb(75, 75, 75);
   border-left: 10px solid black;
   border-right: none;
+}
+
+#track-status-delivered {
+  color: rgb(75, 75, 75);
 }

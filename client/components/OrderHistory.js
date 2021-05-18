@@ -21,8 +21,6 @@ const OrderHistory = props => {
 
   useEffect(
     () => {
-      const trackStatus = () => {}
-
       dispatch(getOrderHistory(props.match.params.id))
     },
     [getOrderHistory]
@@ -102,18 +100,66 @@ const OrderHistory = props => {
                                     <div className="track-status-confirmed">
                                       Confirmed
                                     </div>
-                                    <div className="track-status-shipped">
+
+                                    <div
+                                      className="track-status-shipped"
+                                      style={{
+                                        color:
+                                          estimatedArrivalDate(
+                                            order.updatedAt,
+                                            5
+                                          ).getTime() > new Date().getTime()
+                                            ? 'lime'
+                                            : 'rgb(75,75,75)'
+                                      }}
+                                    >
                                       Shipped
                                     </div>
-                                    <div className="track-status-delivered">
+
+                                    <div
+                                      id="track-status-delivered"
+                                      style={{
+                                        color:
+                                          estimatedArrivalDate(
+                                            order.updatedAt,
+                                            5
+                                          ).getTime() < new Date().getTime()
+                                            ? 'lime'
+                                            : 'rgb(75,75,75)'
+                                      }}
+                                    >
                                       Delivered
                                     </div>
                                   </div>
 
                                   <div className="track-status-wrapper">
                                     <div className="track-status-box-left" />
-                                    <div className="track-status-box-middle" />
-                                    <div className="track-status-box-right" />
+
+                                    <div
+                                      className="track-status-box-middle"
+                                      style={{
+                                        backgroundColor:
+                                          estimatedArrivalDate(
+                                            order.updatedAt,
+                                            5
+                                          ).getTime() > new Date().getTime()
+                                            ? 'lime'
+                                            : 'rgb(75,75,75)'
+                                      }}
+                                    />
+
+                                    <div
+                                      id="track-status-box-right"
+                                      style={{
+                                        backgroundColor:
+                                          estimatedArrivalDate(
+                                            order.updatedAt,
+                                            5
+                                          ).getTime() < new Date().getTime()
+                                            ? 'lime'
+                                            : 'rgb(75,75,75)'
+                                      }}
+                                    />
                                   </div>
                                 </div>
 
