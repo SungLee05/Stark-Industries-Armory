@@ -92,6 +92,7 @@ router.get('/orderHistory', async (req, res, next) => {
   try {
     const orderHistory = await Order.findAll({
       where: {userId: userId, processed: true},
+      order: [['id', 'DESC']],
       include: {model: Product}
     })
     res.json(orderHistory)

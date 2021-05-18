@@ -107,13 +107,14 @@
   font-weight: 500;
   font-size: 0.8rem;
   width: 100%;
+  color: rgb(75, 75, 75);
 }
 
 .track-status-box-left,
 .track-status-box-middle,
 .track-status-box-right {
   padding: 1.25rem 2rem 0rem 2rem;
-  background-color: yellow;
+  background-color: rgb(75, 75, 75);
   position: relative;
   margin: 0.5rem;
   float: left;
@@ -127,7 +128,7 @@
   top: 0px;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid yellow;
+  border-left: 10px solid rgb(75, 75, 75);
   border-right: none;
 }
 
@@ -136,8 +137,8 @@
   position: absolute;
   right: 74px;
   top: 0px;
-  border-top: 10px solid yellow;
-  border-bottom: 10px solid yellow;
+  border-top: 10px solid rgb(75, 75, 75);
+  border-bottom: 10px solid rgb(75, 75, 75);
   border-left: 10px solid black;
   border-right: none;
 }
@@ -149,7 +150,7 @@
   top: 0px;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid yellow;
+  border-left: 10px solid rgb(75, 75, 75);
   border-right: none;
 }
 .track-status-box-right::after {
@@ -157,8 +158,8 @@
   position: absolute;
   right: 74px;
   top: 0px;
-  border-top: 10px solid yellow;
-  border-bottom: 10px solid yellow;
+  border-top: 10px solid rgb(75, 75, 75);
+  border-bottom: 10px solid rgb(75, 75, 75);
   border-left: 10px solid black;
   border-right: none;
 }
