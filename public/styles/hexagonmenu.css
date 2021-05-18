@@ -69,6 +69,12 @@
   align-items: center;
 }
 
+#hex-text {
+  position: relative;
+  top: 6rem;
+  text-align: center;
+}
+
 #hex-item-7,
 #hex-item-8,
 #hex-item-9,

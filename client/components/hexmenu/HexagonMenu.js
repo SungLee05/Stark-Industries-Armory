@@ -1,5 +1,5 @@
 /* eslint-disable max-statements */
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {logout} from '../../store'
@@ -11,13 +11,16 @@ import {SiGoogleanalytics} from 'react-icons/si'
 
 const HexagonMenu = ({user}) => {
   const dispatch = useDispatch()
+  const [open, setOpen] = useState(false)
+  const [hexText, setHexText] = useState('OPEN')
 
-  let open = false
   const expand = () => {
     if (open === false) {
       document.getElementById('hex-main-container').style.transform =
         'perspective(200px) rotateY(0deg) rotateX(10deg) translate(-5rem, -10rem)'
       document.getElementById('hex-icon').style.transform = 'rotate(120deg)'
+      document.getElementById('hex-text').style.transform =
+        'translate(-3px, 0px);'
 
       // 1st layer
       document.getElementById('hex-item-1').style.transform =
@@ -52,11 +55,12 @@ const HexagonMenu = ({user}) => {
       document.getElementById('hex-item-10').style.zIndex = '3'
       document.getElementById('hex-item-11').style.zIndex = '3'
       document.getElementById('hex-item-12').style.zIndex = '3'
-
-      open = true
+      setHexText('CLOSE')
+      setOpen(true)
     } else {
       document.getElementById('hex-main-container').style.transform = ''
-      document.getElementById('hex-icon').style.transform = `rotate(0deg)`
+      document.getElementById('hex-icon').style.transform = 'rotate(0deg)'
+      document.getElementById('hex-text').style.transform = ''
 
       document.getElementById('hex-item-1').style.transform = 'translateY(0)'
       document.getElementById('hex-item-2').style.transform = 'translate(0)'
@@ -78,7 +82,8 @@ const HexagonMenu = ({user}) => {
       document.getElementById('hex-item-11').style.zIndex = '-1'
       document.getElementById('hex-item-12').style.zIndex = '-1'
 
-      open = false
+      setHexText('OPEN')
+      setOpen(false)
     }
   }
 
@@ -89,6 +94,7 @@ const HexagonMenu = ({user}) => {
           <div id="hex-icon">
             <img src="/images/arc-reactor.png" id="profile-arc-reactor" />
           </div>
+          <div id="hex-text">{hexText}</div>
         </div>
 
         <div className="hex-menu" id="hex-menus">

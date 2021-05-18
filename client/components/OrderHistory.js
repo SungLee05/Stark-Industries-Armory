@@ -136,7 +136,11 @@ const OrderHistory = props => {
                               </div>
                               <div className="order-history-qty-price-wrapper">
                                 <div>Qty: {product.orderHistory.quantity}</div>
-                                <div>Price: ${product.price}</div>
+                                <div>
+                                  Price: ${accounting.formatMoney(
+                                    product.price
+                                  )}
+                                </div>
                               </div>
 
                               <div className="order-history-address-wrapper">
