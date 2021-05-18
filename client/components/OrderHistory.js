@@ -61,6 +61,21 @@ const OrderHistory = props => {
 
                     <div>
                       {order.products.map(product => {
+                        const estimatedArrivalTime = estimatedArrivalDate(
+                          order.updatedAt,
+                          5
+                        )
+
+                        const shippedBorderColor =
+                          estimatedArrivalTime.getTime() > new Date().getTime()
+                            ? '10px solid lime'
+                            : '10px solid rgb(75,75,75)'
+
+                        const deliveredBorderColor =
+                          estimatedArrivalTime.getTime() < new Date().getTime()
+                            ? '10px solid lime'
+                            : '10px solid rgb(75,75,75)'
+
                         return (
                           <div
                             key={product.id}
@@ -105,10 +120,8 @@ const OrderHistory = props => {
                                       className="track-status-shipped"
                                       style={{
                                         color:
-                                          estimatedArrivalDate(
-                                            order.updatedAt,
-                                            5
-                                          ).getTime() > new Date().getTime()
+                                          estimatedArrivalTime.getTime() >
+                                          new Date().getTime()
                                             ? 'lime'
                                             : 'rgb(75,75,75)'
                                       }}
@@ -120,10 +133,8 @@ const OrderHistory = props => {
                                       id="track-status-delivered"
                                       style={{
                                         color:
-                                          estimatedArrivalDate(
-                                            order.updatedAt,
-                                            5
-                                          ).getTime() < new Date().getTime()
+                                          estimatedArrivalTime.getTime() <
+                                          new Date().getTime()
                                             ? 'lime'
                                             : 'rgb(75,75,75)'
                                       }}
@@ -134,30 +145,45 @@ const OrderHistory = props => {
 
                                   <div className="track-status-wrapper">
                                     <div className="track-status-box-left" />
+                                    <div id="track-status-box-left-after" />
 
+                                    <div
+                                      id="track-status-box-middle-before"
+                                      style={{
+                                        borderTop: shippedBorderColor,
+                                        borderBottom: shippedBorderColor
+                                      }}
+                                    />
                                     <div
                                       className="track-status-box-middle"
                                       style={{
                                         backgroundColor:
-                                          estimatedArrivalDate(
-                                            order.updatedAt,
-                                            5
-                                          ).getTime() > new Date().getTime()
+                                          estimatedArrivalTime.getTime() >
+                                          new Date().getTime()
                                             ? 'lime'
                                             : 'rgb(75,75,75)'
                                       }}
+                                    />
+                                    <div
+                                      id="track-status-box-middle-after"
+                                      style={{borderLeft: shippedBorderColor}}
                                     />
 
                                     <div
                                       id="track-status-box-right"
                                       style={{
                                         backgroundColor:
-                                          estimatedArrivalDate(
-                                            order.updatedAt,
-                                            5
-                                          ).getTime() < new Date().getTime()
+                                          estimatedArrivalTime.getTime() <
+                                          new Date().getTime()
                                             ? 'lime'
                                             : 'rgb(75,75,75)'
+                                      }}
+                                    />
+                                    <div
+                                      id="track-status-box-right-after"
+                                      style={{
+                                        borderTop: deliveredBorderColor,
+                                        borderBottom: deliveredBorderColor
                                       }}
                                     />
                                   </div>
@@ -172,7 +198,7 @@ const OrderHistory = props => {
                                 >
                                   Estimated Arrival:{' '}
                                   {dateFormat(
-                                    estimatedArrivalDate(order.updatedAt, 5),
+                                    estimatedArrivalTime,
                                     'ddd, mmm d'
                                   )}
                                 </div>
