@@ -33,6 +33,8 @@ User Cart Page<br/>
 <img src="/public/images/UserCart.png" width="800"><br/>
 Checkout Feature<br/>
 <img src="/public/images/CheckoutFeature.png" width="800"><br/>
+Order History Page<br/>
+<img src='/public/images/OrderHistoryPage.png' width='800'><br/>
 
 ## TECHSTACK
 
