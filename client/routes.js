@@ -52,8 +52,6 @@ class Routes extends Component {
             path="/underconstruction"
             component={UnderConstruction}
           />
-          <Route exact path="/pagenotfound" component={Page404} />
-
           {admin && (
             <Switch>
               <Route exact path="/profile" component={UserProfile} />
