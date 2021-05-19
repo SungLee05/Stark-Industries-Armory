@@ -10,6 +10,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  font-size: 1.2rem;
 }
 
 .checkout-back-link-container {
@@ -44,11 +45,12 @@
 .checkout-back-link-btn {
   width: 8rem;
   z-index: 2;
+  font-size: 1rem;
 }
 
 #post-guest-checkout-container {
   width: 40rem;
   text-align: center;
   margin: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }

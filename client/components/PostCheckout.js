@@ -31,10 +31,16 @@ export const PostCheckout = props => {
         ) : (
           <div id="post-guest-checkout-container">
             <div>
-              To experience the full checkout system with payment processing and
-              confirmation email, <br />please register here{' '}
+              To experience the full checkout system with <br />payment
+              processing and confirmation email, <br />please register here{' '}
               <Link to="/signup">
-                <strong>REGISTER</strong>.
+                <strong
+                  style={{
+                    color: '#fbca03'
+                  }}
+                >
+                  REGISTER
+                </strong>.
               </Link>
             </div>
           </div>
