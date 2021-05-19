@@ -7,6 +7,10 @@
   top: 10%;
   z-index: 2;
 }
+.cart-main-container h1 {
+  margin-left: 16.31rem;
+}
+
 .cart-info-container {
   display: flex;
   flex-direction: row;
@@ -201,6 +205,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .cart-empty {
   padding: 0;
@@ -208,10 +213,11 @@
   box-sizing: border-box;
   text-align: center;
   z-index: 10;
-  font-size: 3rem;
+  font-size: 2rem;
   padding-bottom: 1rem;
   font-weight: 300;
   letter-spacing: 0.4rem;
+  margin-top: 8rem;
 }
 
 .ReactModal__Overlay {

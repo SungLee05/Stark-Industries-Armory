@@ -45,3 +45,10 @@
   width: 8rem;
   z-index: 2;
 }
+
+#post-guest-checkout-container {
+  width: 40rem;
+  text-align: center;
+  margin: 2rem;
+  font-size: 1.5rem;
+}

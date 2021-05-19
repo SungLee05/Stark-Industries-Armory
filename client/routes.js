@@ -46,6 +46,7 @@ class Routes extends Component {
             path="/guest/shoppingcart"
             component={GuestShoppingCart}
           />
+          <Route exact path="/thank-you" component={PostCheckout} />
           <Route
             exact
             path="/underconstruction"

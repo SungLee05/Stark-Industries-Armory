@@ -48,13 +48,6 @@ const UserShoppingCart = props => {
     return Number(num).toFixed(2)
   }
 
-  useEffect(
-    () => {
-      loadUserCart(userId)
-    },
-    [loadUserCart]
-  )
-
   const startCheckout = async total => {
     const {data: clientSecrets} = await axios.post('/stripe/secret', {
       total: Math.round(total * 100)
@@ -84,6 +77,14 @@ const UserShoppingCart = props => {
       props.history.push('/stripe-failure', result.error.message)
     }
   }
+
+  useEffect(
+    () => {
+      loadUserCart(userId)
+    },
+    [loadUserCart]
+  )
+
   return (
     <>
       <div className="ironman-gif-container">
@@ -97,155 +98,166 @@ const UserShoppingCart = props => {
                 <div className="cart-empty">
                   There are no orders to fulfill.
                 </div>
+                <Link
+                  className="cart-back-link"
+                  id="cart-back-link-OH"
+                  to="/allproducts"
+                >
+                  <BsChevronDoubleLeft />
+                  <div className="cart-back-btn">Back to Armory</div>
+                </Link>
               </Fade>
             </div>
           ) : (
-            <div>
-              {userCart.map(product => (
-                <div key={Math.random()} className="cart-info-container">
-                  <div className="cart-glass-container">
-                    <div className="cart-img-wrapper">
-                      <img src={product.singleInfoImageUrl} height="150" />
-                    </div>
-
-                    <div className="cart-name-wrapper">
-                      <div className="cart-fullname">{product.fullName}</div>
-                    </div>
-
-                    <div className="cart-quantity-container">
-                      <div style={{padding: '1rem', width: '1rem'}}>
-                        {product.orders[0].orderHistory.quantity}
+            <>
+              <h1>ORDER DETAIL</h1>
+              <div>
+                {userCart.map(product => (
+                  <div key={Math.random()} className="cart-info-container">
+                    <div className="cart-glass-container">
+                      <div className="cart-img-wrapper">
+                        <img src={product.singleInfoImageUrl} height="150" />
                       </div>
 
-                      <div className="increment-decrement-container">
-                        <button
-                          className="cart-btn"
-                          type="button"
-                          value="increment"
-                          onClick={() =>
-                            increaseQty(product.id, product.orders[0].id)
-                          }
-                        >
-                          <CgMathPlus />
-                        </button>
-                        <button
-                          className="cart-btn"
-                          type="button"
-                          value="decrement"
-                          onClick={() =>
-                            decreaseQty(
-                              product.id,
-                              product.orders[0].id,
-                              userId
-                            )
-                          }
-                        >
-                          <CgMathMinus />
-                        </button>
+                      <div className="cart-name-wrapper">
+                        <div className="cart-fullname">{product.fullName}</div>
+                      </div>
+
+                      <div className="cart-quantity-container">
+                        <div style={{padding: '1rem', width: '1rem'}}>
+                          {product.orders[0].orderHistory.quantity}
+                        </div>
+
+                        <div className="increment-decrement-container">
+                          <button
+                            className="cart-btn"
+                            type="button"
+                            value="increment"
+                            onClick={() =>
+                              increaseQty(product.id, product.orders[0].id)
+                            }
+                          >
+                            <CgMathPlus />
+                          </button>
+                          <button
+                            className="cart-btn"
+                            type="button"
+                            value="decrement"
+                            onClick={() =>
+                              decreaseQty(
+                                product.id,
+                                product.orders[0].id,
+                                userId
+                              )
+                            }
+                          >
+                            <CgMathMinus />
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="cart-price-wrapper">
+                        <div>
+                          {accounting.formatMoney(
+                            roundDecimal(product.price * product.quantity)
+                          )}
+                        </div>
                       </div>
                     </div>
 
-                    <div className="cart-price-wrapper">
-                      <div>
-                        {accounting.formatMoney(
-                          roundDecimal(product.price * product.quantity)
-                        )}
-                      </div>
+                    <div className="remove-btn-container">
+                      <button
+                        className="cart-btn"
+                        type="button"
+                        onClick={() => deleteFromUserCart(product.id, userId)}
+                      >
+                        <AiOutlineClose />
+                      </button>
                     </div>
                   </div>
+                ))}
 
-                  <div className="remove-btn-container">
-                    <button
-                      className="cart-btn"
-                      type="button"
-                      onClick={() => deleteFromUserCart(product.id, userId)}
-                    >
-                      <AiOutlineClose />
-                    </button>
+                <div className="cart-subtotal-container">
+                  <div className="cart-subtotal-wrapper">
+                    <Link className="cart-back-link" to="/allproducts">
+                      <BsChevronDoubleLeft />
+                      <div className="cart-back-btn">Back to Armory</div>
+                    </Link>
+                    <div style={{marginRight: '2rem'}}>TOTAL :</div>
+
+                    <div style={{width: '10rem', textAlign: 'center'}}>
+                      {accounting.formatMoney(
+                        userCart
+                          .reduce(
+                            (acc, product) =>
+                              acc +
+                              product.price *
+                                product.orders[0].orderHistory.quantity,
+                            0
+                          )
+                          .toFixed(2)
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-
-              <div className="cart-subtotal-container">
-                <div className="cart-subtotal-wrapper">
-                  <Link className="cart-back-link" to="/allproducts">
-                    <BsChevronDoubleLeft />
-                    <div className="cart-back-btn">Back to Armory</div>
-                  </Link>
-                  <div style={{marginRight: '2rem'}}>TOTAL :</div>
-
-                  <div style={{width: '10rem', textAlign: 'center'}}>
-                    {accounting.formatMoney(
-                      userCart
-                        .reduce(
-                          (acc, product) =>
-                            acc +
-                            product.price *
-                              product.orders[0].orderHistory.quantity,
-                          0
-                        )
-                        .toFixed(2)
-                    )}
-                  </div>
-                </div>
-                <button
-                  className="checkout-btn"
-                  type="submit"
-                  onClick={() =>
-                    startCheckout(
-                      userCart
-                        .reduce(
-                          (acc, product) =>
-                            acc +
-                            product.price *
-                              product.orders[0].orderHistory.quantity,
-                          0
-                        )
-                        .toFixed(2)
-                    )
-                  }
-                >
-                  Checkout
-                </button>
-
-                <Modal
-                  className="modal-container"
-                  isOpen={paymentOpen}
-                  onRequestClose={hideCheckout}
-                  style={{
-                    overlay: {
-                      backgroundColor: 'transparent'
-                    },
-                    content: {
-                      backgroundColor: 'rgba(70,190,200,0.25)'
+                  <button
+                    className="checkout-btn"
+                    type="submit"
+                    onClick={() =>
+                      startCheckout(
+                        userCart
+                          .reduce(
+                            (acc, product) =>
+                              acc +
+                              product.price *
+                                product.orders[0].orderHistory.quantity,
+                            0
+                          )
+                          .toFixed(2)
+                      )
                     }
-                  }}
-                >
-                  {paymentOpen && (
-                    <Flip top delay={1500}>
-                      <Elements stripe={stripePromise}>
-                        <Checkout
-                          user={user}
-                          cart={userCart}
-                          total={userCart
-                            .reduce(
-                              (acc, product) =>
-                                acc +
-                                product.price *
-                                  product.orders[0].orderHistory.quantity,
-                              0
-                            )
-                            .toFixed(2)}
-                          clientSecret={clientSecret}
-                          cancel={hideCheckout}
-                          pushToThankYouPage={pushToThankYouPage}
-                        />
-                      </Elements>
-                    </Flip>
-                  )}
-                </Modal>
+                  >
+                    Checkout
+                  </button>
+
+                  <Modal
+                    className="modal-container"
+                    isOpen={paymentOpen}
+                    onRequestClose={hideCheckout}
+                    style={{
+                      overlay: {
+                        backgroundColor: 'transparent'
+                      },
+                      content: {
+                        backgroundColor: 'rgba(70,190,200,0.25)'
+                      }
+                    }}
+                  >
+                    {paymentOpen && (
+                      <Flip top delay={1500}>
+                        <Elements stripe={stripePromise}>
+                          <Checkout
+                            user={user}
+                            cart={userCart}
+                            total={userCart
+                              .reduce(
+                                (acc, product) =>
+                                  acc +
+                                  product.price *
+                                    product.orders[0].orderHistory.quantity,
+                                0
+                              )
+                              .toFixed(2)}
+                            clientSecret={clientSecret}
+                            cancel={hideCheckout}
+                            pushToThankYouPage={pushToThankYouPage}
+                          />
+                        </Elements>
+                      </Flip>
+                    )}
+                  </Modal>
+                </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       </div>
