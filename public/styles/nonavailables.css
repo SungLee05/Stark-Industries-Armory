@@ -52,16 +52,48 @@
   align-items: center;
 }
 
-.page404-wrapper {
-  height: 100%;
+.page404-img-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+  height: 90vh;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+}
+.page404-img {
+  filter: brightness(0.5);
+  position: absolute;
+  height: 100%;
 }
 
-.page404-wrapper h1 {
-  font-size: 3rem;
+.page404-wrapper {
+  height: 50%;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+  position: absolute;
+  left: 13%;
+  top: 20%;
+}
+
+#text-not-found {
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 0.2rem;
+  margin: 0;
+  position: absolute;
+  left: 35.5%;
+  top: 77.5%;
+}
+#text-404 {
+  font-size: 16rem;
+  height: 10rem;
+  text-align: center;
+  line-height: 1;
+  font-weight: 400;
+  opacity: 0.2;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
 }
