@@ -40,8 +40,9 @@ export const PostCheckout = props => {
                   }}
                 >
                   REGISTER
-                </strong>.
+                </strong>
               </Link>
+              .
             </div>
           </div>
         )}
