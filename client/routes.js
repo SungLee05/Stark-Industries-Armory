@@ -73,6 +73,7 @@ class Routes extends Component {
               <Route exact path="/checkout" component={Checkout} />
               <Route exact path="/thank-you" component={PostCheckout} />
               <Route exact path="/stripe-failure" component={StripeFailure} />
+              <Route path="*" component={Page404} />
             </Switch>
           )}
 
@@ -95,10 +96,11 @@ class Routes extends Component {
               <Route exact path="/checkout" component={Checkout} />
               <Route exact path="/thank-you" component={PostCheckout} />
               <Route exact path="/stripe-failure" component={StripeFailure} />
+              <Route path="*" component={Page404} />
             </Switch>
           )}
 
-          <Route component={Page404} />
+          <Route path="*" component={Page404} />
         </Switch>
       </div>
     )
