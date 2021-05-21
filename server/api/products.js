@@ -21,7 +21,7 @@ router.get('/:productId', async (req, res, next) => {
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/', adminAuth, async (req, res, next) => {
   try {
     const [product, created] = await Product.findOrCreate({
       where: {
@@ -37,7 +37,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
-router.put('/', async (req, res, next) => {
+router.put('/', adminAuth, async (req, res, next) => {
   const productId = req.body.productId
   try {
     const product = await Product.findByPk(productId)
@@ -52,7 +52,7 @@ router.put('/', async (req, res, next) => {
   }
 })
 
-router.delete('/:productId', async (req, res, next) => {
+router.delete('/:productId', adminAuth, async (req, res, next) => {
   const productId = req.params.productId
   try {
     await Product.destroy({
