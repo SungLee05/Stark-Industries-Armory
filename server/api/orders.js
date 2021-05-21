@@ -1,9 +1,8 @@
 const router = require('express').Router()
 const {Order, Product, OrderHistory} = require('../db/models')
-const adminAuth = require('../auth/adminAuth')
 const userAuth = require('../auth/userAuth')
 
-router.get('/cart', async (req, res, next) => {
+router.get('/cart', userAuth, async (req, res, next) => {
   try {
     const order = await Product.findAll({
       include: {
@@ -20,7 +19,7 @@ router.get('/cart', async (req, res, next) => {
   }
 })
 
-router.put('/cart/:action', async (req, res, next) => {
+router.put('/cart/:action', userAuth, async (req, res, next) => {
   const productId = req.body.ProductId
   const orderId = req.body.OrderId
   try {
@@ -42,7 +41,7 @@ router.put('/cart/:action', async (req, res, next) => {
   }
 })
 
-router.post('/cart', async (req, res, next) => {
+router.post('/cart', userAuth, async (req, res, next) => {
   const productId = req.body.Product.id
   const userId = req.body.userId
   try {
@@ -74,7 +73,7 @@ router.post('/cart', async (req, res, next) => {
   }
 })
 
-router.delete('/cart/:productId', async (req, res, next) => {
+router.delete('/cart/:productId', userAuth, async (req, res, next) => {
   const productId = req.params.productId
   const userId = req.user.id
   try {
@@ -104,7 +103,7 @@ router.get('/orderHistory', userAuth, async (req, res, next) => {
   }
 })
 
-router.put('/checkout', async (req, res, next) => {
+router.put('/checkout', userAuth, async (req, res, next) => {
   const userId = req.user.id
   try {
     const currentOrder = await Order.findOne({

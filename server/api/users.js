@@ -14,7 +14,7 @@ router.get('/', adminAuth, async (req, res, next) => {
   }
 })
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', adminAuth, async (req, res, next) => {
   const userId = req.params.id
   try {
     await User.destroy({
@@ -37,7 +37,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
-router.put('/', async (req, res, next) => {
+router.put('/', adminAuth, async (req, res, next) => {
   const userId = req.body.user.id
   const adminRight = req.body.adminRight
   try {
