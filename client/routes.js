@@ -52,6 +52,7 @@ class Routes extends Component {
             path="/underconstruction"
             component={UnderConstruction}
           />
+
           {admin && (
             <Switch>
               <Route exact path="/profile" component={UserProfile} />
@@ -96,6 +97,7 @@ class Routes extends Component {
               <Route exact path="/stripe-failure" component={StripeFailure} />
             </Switch>
           )}
+
           <Route component={Page404} />
         </Switch>
       </div>
