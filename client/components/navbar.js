@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react'
+/* eslint-disable complexity */
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
@@ -35,15 +36,32 @@ const Navbar = ({
   return (
     <div className="navbar-BG">
       <nav className="navbar-container">
-        <Link to="/allproducts" className="logo-link-container">
-          <div className="logo-container">
-            <img
-              src="/starkIndustriesLogo.png"
-              style={{width: '10rem'}}
-              alt="company-logo"
-            />
-          </div>
-        </Link>
+        {admin ? (
+          <Link
+            to="/allproducts"
+            className="logo-link-container"
+            style={{marginRight: '20rem'}}
+          >
+            <div className="logo-container">
+              <img
+                src="/starkIndustriesLogo.png"
+                style={{width: '10rem'}}
+                alt="company-logo"
+              />
+            </div>
+          </Link>
+        ) : (
+          <Link to="/allproducts" className="logo-link-container">
+            <div className="logo-container">
+              <img
+                src="/starkIndustriesLogo.png"
+                style={{width: '10rem'}}
+                alt="company-logo"
+              />
+            </div>
+          </Link>
+        )}
+
         {isLoggedIn ? (
           <div className="link-container">
             <Link to="/" className="link-style">
