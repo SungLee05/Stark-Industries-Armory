@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const {Order, Product, OrderHistory} = require('../db/models')
 const adminAuth = require('../auth/adminAuth')
+const userAuth = require('../auth/userAuth')
 
 router.get('/cart', async (req, res, next) => {
   try {
@@ -88,24 +89,18 @@ router.delete('/cart/:productId', async (req, res, next) => {
   }
 })
 
-router.get('/orderHistory', async (req, res, next) => {
+router.get('/orderHistory', userAuth, async (req, res, next) => {
   const userId = req.user.id
 
-  if (!req.user || !userId) {
-    return res
-      .status(401)
-      .send('User Access Required: Not authorized to view this content')
-  } else {
-    try {
-      const orderHistory = await Order.findAll({
-        where: {userId: userId, processed: true},
-        order: [['id', 'DESC']],
-        include: {model: Product}
-      })
-      res.json(orderHistory)
-    } catch (err) {
-      next(err)
-    }
+  try {
+    const orderHistory = await Order.findAll({
+      where: {userId: userId, processed: true},
+      order: [['id', 'DESC']],
+      include: {model: Product}
+    })
+    res.json(orderHistory)
+  } catch (err) {
+    next(err)
   }
 })
 
