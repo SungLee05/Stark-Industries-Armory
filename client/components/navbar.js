@@ -8,7 +8,7 @@ import {IconButton, Badge} from '@material-ui/core'
 import {ShoppingCart} from '@material-ui/icons'
 import {getUserShoppingCart} from '../store/userShoppingCart'
 import {getGuestShoppingCart} from '../store/guestShoppingCart'
-import * as FaIcons from 'react-icons/fa'
+import MenuBurger from './menuburger/MenuBurger'
 
 const Navbar = ({
   handleClick,
@@ -176,6 +176,8 @@ const Navbar = ({
           </div>
         )}
       </nav>
+
+      <MenuBurger />
     </div>
   )
 }
