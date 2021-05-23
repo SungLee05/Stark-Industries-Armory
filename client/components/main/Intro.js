@@ -8,16 +8,7 @@ const Intro = () => {
         <div className="block">
           <div className="about-us-text-container">
             at
-            <strong
-              style={{
-                fontSize: '2.5rem',
-                fontStyle: 'italic',
-                letterSpacing: '0.1rem',
-                marginRight: '0.5rem'
-              }}
-            >
-              stark industries
-            </strong>
+            <strong id="intro-text">stark industries</strong>
           </div>
         </div>
 
@@ -30,12 +21,7 @@ const Intro = () => {
         <div className="block">
           <div className="about-us-text-container">
             advanced
-            <strong
-              className="pseudo"
-              style={{letterSpacing: '0.1rem', fontSize: '2.5rem'}}
-            >
-              pseudo-armor.
-            </strong>
+            <strong className="pseudo">pseudo-armor.</strong>
           </div>
         </div>
       </div>

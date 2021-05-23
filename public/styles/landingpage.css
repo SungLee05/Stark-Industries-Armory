@@ -25,6 +25,8 @@
   height: 10rem;
 }
 .pseudo {
+  letter-spacing: 0.1rem;
+  font-size: 2.5rem;
   color: rgb(155, 11, 11);
 }
 .about-us-text-container {
@@ -33,7 +35,12 @@
   justify-content: flex-end;
   align-items: center;
 }
-
+#intro-text {
+  font-size: 2.5rem;
+  font-style: italic;
+  letter-spacing: 0.1rem;
+  margin-right: 0.5rem;
+}
 .directory {
   height: 100vh;
 }
@@ -127,5 +134,57 @@
   }
   100% {
     transform: translateX(100%);
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .intro {
+    height: 90vh;
+    margin-top: 10vh;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .introImg {
+    width: 57rem;
+    left: -157%;
+    position: relative;
+  }
+
+  .about-us {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 20%;
+    left: 0;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    height: 20rem;
+  }
+
+  .about-us-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #intro-text {
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  .pseudo {
+    font-size: 1rem;
+  }
+
+  #robotics-link {
+    font-size: 6rem;
   }
 }
