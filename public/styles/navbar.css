@@ -22,8 +22,7 @@
 .logo-link-container {
   display: flex;
   width: 12rem;
-  margin-right: 40rem;
-  margin-left: 5rem;
+  margin-right: 20rem;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
@@ -32,7 +31,7 @@
   display: flex;
   width: 50%;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: center;
 }
 .logo-container {
@@ -43,9 +42,10 @@
   align-items: center;
 }
 .link-style {
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
   color: white;
   font-weight: 200;
+  padding-right: 1.3rem;
 }
 .link-style::after {
   content: '';

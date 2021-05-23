@@ -8,6 +8,7 @@ import {IconButton, Badge} from '@material-ui/core'
 import {ShoppingCart} from '@material-ui/icons'
 import {getUserShoppingCart} from '../store/userShoppingCart'
 import {getGuestShoppingCart} from '../store/guestShoppingCart'
+import * as FaIcons from 'react-icons/fa'
 
 const Navbar = ({
   handleClick,
@@ -45,7 +46,7 @@ const Navbar = ({
             <div className="logo-container">
               <img
                 src="/starkIndustriesLogo.png"
-                id="company-logo"
+                className="company-logo"
                 alt="company-logo"
               />
             </div>
@@ -94,7 +95,7 @@ const Navbar = ({
               color="inherit"
               style={{
                 fontSize: '0.5rem',
-                padding: '0 0',
+                padding: '0 1.3rem 0 0',
                 alignSelf: 'center',
                 margin: '0 0'
               }}
@@ -140,7 +141,7 @@ const Navbar = ({
               color="inherit"
               style={{
                 fontSize: '0.5rem',
-                padding: '0 0',
+                padding: '0 1.3rem 0 0',
                 alignSelf: 'center',
                 margin: '0 0'
               }}
