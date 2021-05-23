@@ -112,12 +112,12 @@
   background-color: rgb(147, 0, 0);
 }
 .block div:before {
-  /* animation-delay: 30s; */
+  animation-delay: 5s;
   animation: reveal 4s ease forwards;
 }
 .block div:after {
-  background-color: #fff;
-  /* animation-delay: 30s; */
+  background-color: white;
+  animation-delay: 5s;
   animation: base 3.5s ease forwards;
 }
 @keyframes reveal {
@@ -137,33 +137,43 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media (max-width: 325px) {
   .intro {
-    height: 90vh;
-    margin-top: 10vh;
     overflow: hidden;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .introImg {
-    width: 57rem;
-    left: -157%;
-    position: relative;
+    height: auto;
+    width: 290%;
+    margin-right: 26rem;
+    filter: opacity(0.2);
+  }
+
+  .block div:after {
+    background-color: rgb(49, 49, 49);
+    animation-delay: 5s;
+    animation: base 3.5s ease forwards;
   }
 
   .about-us {
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    top: 12%;
-    font-size: 1rem;
+    justify-content: center;
+    top: 40%;
+    font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
-    font-weight: 200;
+    font-weight: 600;
     text-transform: uppercase;
     text-align: center;
-    color: black;
-    height: 25rem;
+    color: white;
+    height: 10rem;
+    width: 80%;
+    align-items: center;
+    line-height: 1.6rem;
   }
 
   .about-us-text-container {
@@ -171,35 +181,67 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    letter-spacing: 0;
+    margin-bottom: 2rem;
   }
 
   #intro-text {
     font-size: 1.5rem;
     font-style: italic;
-    margin: 0 auto;
+    margin-right: 0;
   }
 
   #intro-text-2 {
-    font-weight: 600;
-    letter-spacing: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    line-height: 1.5rem;
   }
 
   #intro-text-3 {
-    margin-top: 18rem;
-    font-weight: 600;
-    font-size: 2rem;
-    letter-spacing: 0;
   }
 
   .pseudo {
-    font-size: 1.7rem;
-    text-align: center;
-    width: 100%;
-    color: rgb(115, 11, 11);
+    font-size: 3.5rem;
+    color: rgb(155, 11, 11);
+    line-height: 2.5rem;
   }
 
   #robotics-link {
-    font-size: 6rem;
+    display: inline-block;
+    line-height: 6rem;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 135%;
+    left: 4%;
+    font-size: 4.8rem;
+    padding-right: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.55rem;
+    z-index: 2;
+    width: fit-content;
+  }
+  .directory {
+    height: 90vh;
+  }
+  .wrap {
+    overflow: hidden;
+  }
+  .item {
+    position: relative;
+    width: 300%;
+    height: auto;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    filter: blur(0.09rem);
+    -webkit-filter: blur(0.05rem) brightness(90%);
+    left: -110%;
   }
 }

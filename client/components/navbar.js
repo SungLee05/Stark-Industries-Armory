@@ -45,7 +45,7 @@ const Navbar = ({
             <div className="logo-container">
               <img
                 src="/starkIndustriesLogo.png"
-                style={{width: '10rem'}}
+                id="company-logo"
                 alt="company-logo"
               />
             </div>
@@ -55,8 +55,8 @@ const Navbar = ({
             <div className="logo-container">
               <img
                 src="/starkIndustriesLogo.png"
-                style={{width: '10rem'}}
                 alt="company-logo"
+                className="company-logo"
               />
             </div>
           </Link>

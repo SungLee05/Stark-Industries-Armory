@@ -14,7 +14,7 @@ const Intro = () => {
 
         <div className="block">
           <div className="about-us-text-container" id="intro-text-2">
-            we design, manufacture, <br />and deliver
+            we design, manufacture, and deliver
           </div>
         </div>
 
