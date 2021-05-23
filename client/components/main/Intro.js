@@ -13,13 +13,13 @@ const Intro = () => {
         </div>
 
         <div className="block">
-          <div className="about-us-text-container">
-            we design, manufacture, and deliver
+          <div className="about-us-text-container" id="intro-text-2">
+            we design, manufacture, <br />and deliver
           </div>
         </div>
 
         <div className="block">
-          <div className="about-us-text-container">
+          <div className="about-us-text-container" id="intro-text-3">
             advanced
             <strong className="pseudo">pseudo-armor.</strong>
           </div>

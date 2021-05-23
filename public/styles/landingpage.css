@@ -155,16 +155,15 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    top: 20%;
-    left: 0;
+    justify-content: flex-start;
+    top: 12%;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
     text-transform: uppercase;
     text-align: center;
     color: black;
-    height: 20rem;
+    height: 25rem;
   }
 
   .about-us-text-container {
@@ -176,12 +175,28 @@
   }
 
   #intro-text {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-style: italic;
+    margin: 0 auto;
+  }
+
+  #intro-text-2 {
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  #intro-text-3 {
+    margin-top: 18rem;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 0;
   }
 
   .pseudo {
-    font-size: 1rem;
+    font-size: 1.7rem;
+    text-align: center;
+    width: 100%;
+    color: rgb(115, 11, 11);
   }
 
   #robotics-link {
