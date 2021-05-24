@@ -30,13 +30,8 @@ const Login = props => {
                   name={name}
                   className="form-container"
                 >
-                  <div>
-                    <label
-                      htmlFor="email"
-                      style={{fontSize: '1rem', marginLeft: '2rem'}}
-                    >
-                      Email
-                    </label>
+                  <div className="label-container">
+                    <label htmlFor="email">Email</label>
                     <input
                       name="email"
                       type="text"
@@ -44,13 +39,8 @@ const Login = props => {
                       className="formInput"
                     />
                   </div>
-                  <div>
-                    <label
-                      htmlFor="password"
-                      style={{fontSize: '1rem', marginLeft: '2rem'}}
-                    >
-                      Password
-                    </label>
+                  <div className="label-container">
+                    <label htmlFor="password">Password</label>
                     <input
                       name="password"
                       type="password"

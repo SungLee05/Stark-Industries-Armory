@@ -174,3 +174,51 @@ select:-webkit-autofill:focus {
 .social-icons:before {
   width: 0;
 }
+
+.label-container label {
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+
+@media (max-width: 325px) {
+  .login-BG {
+    background-blend-mode: darken;
+  }
+  .form-container {
+    width: 100%;
+  }
+
+  .formWrap {
+    padding: 2rem;
+    top: 13%;
+  }
+
+  .login-wrap {
+    height: 20rem;
+  }
+
+  .login-wrap h2 {
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+  }
+
+  .label-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .label-container label {
+    margin: 0 auto;
+  }
+
+  .loginBtn-container {
+    margin-top: 1rem;
+  }
+
+  .loginBtn {
+    width: 75%;
+    border-radius: 2rem;
+  }
+}
