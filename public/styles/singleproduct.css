@@ -205,6 +205,11 @@
     width: 7rem;
     padding: 0.25rem;
   }
+  .order-btn:hover {
+    margin: 0;
+    width: 7rem;
+    padding: 0.25rem;
+  }
 
   .single-product-back-link-container {
     margin-top: 0;
