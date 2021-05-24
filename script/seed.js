@@ -31,7 +31,8 @@ async function seed() {
         name: 'MK1',
         fullName: 'MARK I',
         price: 999.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/mk1-transparent.png?alt=media&token=b481a66d-72e6-4501-bd4b-59dd439e6c95',
         singleInfoImageUrl:
@@ -42,7 +43,8 @@ async function seed() {
         name: 'MK2',
         fullName: 'MARK II',
         price: 9999.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/mk2-transparent.png?alt=media&token=a3ce7583-5571-4782-97d2-41eb2ea25f27',
         singleInfoImageUrl:
@@ -53,7 +55,8 @@ async function seed() {
         name: 'MK3',
         fullName: 'MARK III',
         price: 9999.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/mk3-transparent.png?alt=media&token=80022e98-9a60-455f-bcc9-2036a56d306b',
         singleInfoImageUrl:
@@ -64,7 +67,8 @@ async function seed() {
         name: 'MK5',
         fullName: 'MARK V',
         price: 9999.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/mark%20V.png?alt=media&token=7e2f3e5c-7f7d-4c0b-ad69-df5765a0cd14',
         singleInfoImageUrl:
@@ -75,7 +79,8 @@ async function seed() {
         name: 'MK42',
         fullName: 'MARK XLII',
         price: 10999.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/mk42-transparent.png?alt=media&token=9f6ffe42-8267-4e94-b19d-4b84d932129c',
         singleInfoImageUrl:
@@ -86,7 +91,8 @@ async function seed() {
         name: 'MK43',
         fullName: 'MARK XLIII',
         price: 10999.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/mk43-transparent.png?alt=media&token=ccabc477-2369-4464-9d33-5e4ab7ab2116',
         singleInfoImageUrl:
@@ -97,7 +103,8 @@ async function seed() {
         name: 'MK46',
         fullName: 'MARK XLVI',
         price: 10999.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/MK46-transparent.png?alt=media&token=16e10954-93c6-488a-8dfb-2bf9fe7b00df',
         singleInfoImageUrl:
@@ -108,7 +115,8 @@ async function seed() {
         name: 'MK47',
         fullName: 'MARK XLVII',
         price: 50000.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/mk47-transparent.png?alt=media&token=dc90caf9-4e6d-42bc-95f2-2c6c34400dea',
         singleInfoImageUrl:
@@ -119,7 +127,8 @@ async function seed() {
         name: 'MK50',
         fullName: 'MARK L',
         price: 99000.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/MK50-transparent.png?alt=media&token=388ce123-ab6b-408d-bc6b-1cd40939a758',
         singleInfoImageUrl:
@@ -130,7 +139,8 @@ async function seed() {
         name: 'MK85',
         fullName: 'MARK LXXXV',
         price: 100000.0,
-        description: faker.lorem.sentences(),
+        description:
+          'Iste repellat minima ratione magni ut quod itaque beatae. Molestias repellat in veritatis eum. Exercitationem doloremque et dolores quidem. Dolor quibusdam debitis minima sequi quam et est pariatur.',
         imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/stark-industries-armory.appspot.com/o/mk85-transparent.png?alt=media&token=cc1fa3d4-7bd2-4aa2-845f-d4e4aedf81f2',
         singleInfoImageUrl:
