@@ -264,7 +264,7 @@
     font-size: 1.1rem;
   }
 
-  #empty-cart-back-link {
+  .empty-cart-back-link {
     margin: 0;
     font-size: 1rem;
     width: 100%;
@@ -275,7 +275,7 @@
     align-items: center;
   }
 
-  #empty-cart-back-link svg {
+  .empty-cart-back-link svg {
     padding: 0.25rem;
     border-radius: 50%;
     border-width: 1px;
@@ -350,7 +350,8 @@
   .checkout-btn:hover {
     margin: 0;
     width: 7rem;
-    padding: 0.25rem;
+    padding: 0.44rem;
+    margin-right: 1.1rem;
   }
 
   .cart-glass-container {

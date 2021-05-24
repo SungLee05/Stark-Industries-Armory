@@ -49,3 +49,24 @@
 .StripeElement {
   margin: 1rem 0;
 }
+
+@media (max-width: 325px) {
+  .modal-container {
+    width: 90%;
+    height: 50vh;
+    padding: 1.25rem;
+  }
+
+  .modal-container label {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .modal-container button {
+    margin: 0;
+  }
+
+  .InputContainer input {
+    font-size: 1rem;
+  }
+}

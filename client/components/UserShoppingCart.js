@@ -98,13 +98,9 @@ const UserShoppingCart = props => {
                 <div className="cart-empty">
                   There are no orders to fulfill.
                 </div>
-                <Link
-                  className="cart-back-link"
-                  id="cart-back-link-OH"
-                  to="/allproducts"
-                >
+                <Link className="empty-cart-back-link" to="/allproducts">
                   <BsChevronDoubleLeft />
-                  <div className="cart-back-btn">Back to Armory</div>
+                  <div className="empty-cart-back-btn">Back to Armory</div>
                 </Link>
               </Fade>
             </div>
@@ -183,9 +179,9 @@ const UserShoppingCart = props => {
                       <BsChevronDoubleLeft />
                       <div className="cart-back-btn">Back to Armory</div>
                     </Link>
-                    <div style={{marginRight: '2rem'}}>TOTAL :</div>
+                    <div className="cart-total-text">TOTAL :</div>
 
-                    <div style={{width: '10rem', textAlign: 'center'}}>
+                    <div className="cart-total-price">
                       {accounting.formatMoney(
                         userCart
                           .reduce(
