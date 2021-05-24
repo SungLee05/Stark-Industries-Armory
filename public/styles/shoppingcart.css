@@ -209,8 +209,6 @@
   flex-direction: column;
 }
 .cart-empty {
-  padding: 0;
-  margin: 0 auto;
   box-sizing: border-box;
   text-align: center;
   z-index: 10;
@@ -228,4 +226,29 @@
 
 .ReactModal__Overlay--after-open {
   opacity: 1;
+}
+
+@media (max-width: 325px) {
+  .cart-empty-container {
+    overflow: hidden;
+  }
+
+  .cart-empty {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    width: 90%;
+    margin-top: 20rem;
+  }
+
+  .ironman {
+    width: 150%;
+    height: 50%;
+    margin-bottom: 5rem;
+  }
+
+  #cart-back-link-OH {
+    margin-bottom: 5rem;
+    margin-top: 0;
+    font-size: 1rem;
+  }
 }

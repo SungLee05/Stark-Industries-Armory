@@ -218,3 +218,11 @@
   width: 34.5%;
   left: 33%;
 }
+
+@media (max-width: 325px) {
+  #cart-back-link-OH {
+    margin-bottom: 5rem;
+    margin-top: 0;
+    font-size: 1rem;
+  }
+}
