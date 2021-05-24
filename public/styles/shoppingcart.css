@@ -248,7 +248,7 @@
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
     width: 90%;
-    margin-top: 20rem;
+    margin-top: 12rem;
   }
 
   .ironman {
@@ -257,11 +257,32 @@
     margin-bottom: 5rem;
   }
 
-  #cart-back-link-OH {
-    margin-bottom: 5rem;
-    margin-top: 0;
-    font-size: 1rem;
+  .empty-cart-back-btn {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: rgb(255, 212, 124);
+    font-size: 1.1rem;
   }
+
+  #empty-cart-back-link {
+    margin: 0;
+    font-size: 1rem;
+    width: 100%;
+    left: 15%;
+    bottom: -6.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #empty-cart-back-link svg {
+    padding: 0.25rem;
+    border-radius: 50%;
+    border-width: 1px;
+    background-color: rgb(255, 212, 124);
+    color: black;
+  }
+
   .login-wrap {
     background: rgba(0, 0, 0, 0.5);
   }
@@ -275,13 +296,14 @@
     align-items: flex-end;
     width: 100%;
     margin: 0;
+    padding-bottom: 2rem;
   }
 
   .cart-subtotal-wrapper {
     justify-content: center;
     align-items: unset;
     font-size: 1.2rem;
-    padding: 2rem 1rem 1rem 0;
+    padding: 2rem 1.15rem 1rem 0;
   }
 
   .cart-back-btn {
@@ -290,9 +312,8 @@
 
   .cart-back-link {
     margin-right: 0%;
-    position: absolute;
-    left: 8%;
-    bottom: 34%;
+    position: relative;
+    left: -17.5%;
     width: 32px;
     height: 32px;
   }
@@ -308,14 +329,17 @@
   }
 
   .cart-total-price {
-    width: 6rem;
+    width: 9rem;
     font-size: 1rem;
     font-weight: 900;
+    align-self: center;
+    text-align: end;
   }
   .cart-total-text {
-    margin-right: 1rem;
+    margin: 0;
     font-size: 1rem;
     font-weight: 900;
+    align-self: center;
   }
   .checkout-btn {
     margin: 0;
@@ -339,6 +363,9 @@
   .cart-name-wrapper {
     margin: 0;
     font-size: 1.1rem;
+  }
+  .cart-fullname {
+    background-color: rgb(253, 212, 132);
   }
   .cart-quantity-container {
     margin: 0;

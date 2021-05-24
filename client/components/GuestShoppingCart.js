@@ -58,13 +58,9 @@ const GuestShoppingCart = props => {
                 <div className="cart-empty">
                   There are no orders to fulfill.
                 </div>
-                <Link
-                  className="cart-back-link"
-                  id="cart-back-link-OH"
-                  to="/allproducts"
-                >
+                <Link id="empty-cart-back-link" to="/allproducts">
                   <BsChevronDoubleLeft />
-                  <div className="cart-back-btn">Back to Armory</div>
+                  <div className="empty-cart-back-btn">Back to Armory</div>
                 </Link>
               </Fade>
             </div>
