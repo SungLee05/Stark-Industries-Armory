@@ -21,7 +21,9 @@ export const PostCheckout = props => {
           Payment Succeeded!
         </span>
         <br />
-        Thank you for choosing Stark Industries Armory.
+        <div className="post-checkout-thankyou-text">
+          Thank you for choosing Stark Industries Armory.
+        </div>
         <br />
         <div>
           Your total today was <strong>{accounting.formatMoney(total)}.</strong>
