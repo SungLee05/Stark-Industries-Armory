@@ -52,7 +52,10 @@ const MenuBurger = ({handleClick, isLoggedIn, admin, userId}) => {
             <Link to="/allproducts" className="bar-link-style">
               ARMORY
             </Link>
-            <Link to={`/user/${userId}/orderhistory`} className="link-style">
+            <Link
+              to={`/user/${userId}/orderhistory`}
+              className="bar-link-style"
+            >
               ORDER HISTORY
             </Link>
             <Link
@@ -62,7 +65,7 @@ const MenuBurger = ({handleClick, isLoggedIn, admin, userId}) => {
               ORDERS
             </Link>
 
-            <a href="#" onClick={handleClick} className="link-style">
+            <a href="#" onClick={handleClick} className="bar-link-style">
               LOGOUT
             </a>
           </>
