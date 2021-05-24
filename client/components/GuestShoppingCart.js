@@ -84,7 +84,7 @@ const GuestShoppingCart = props => {
                       </div>
 
                       <div className="cart-quantity-container">
-                        <div style={{padding: '1rem', width: '1rem'}}>
+                        <div className="cart-quantity-text">
                           {product.quantity}
                         </div>
 
@@ -135,9 +135,9 @@ const GuestShoppingCart = props => {
                       <BsChevronDoubleLeft />
                       <div className="cart-back-btn">Back to Armory</div>
                     </Link>
-                    <div style={{marginRight: '2rem'}}>TOTAL :</div>
+                    <div className="cart-total-text">TOTAL :</div>
 
-                    <div style={{width: '10rem', textAlign: 'center'}}>
+                    <div className="cart-total-price">
                       {accounting.formatMoney(
                         guestCart
                           .reduce(

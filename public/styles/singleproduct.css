@@ -220,7 +220,14 @@
   .single-product-cart-back-link {
     margin-right: 0%;
     position: absolute;
-    left: 20%;
-    bottom: -4.5%;
+    left: 15%;
+    bottom: -6.5%;
+  }
+
+  .single-product-cart-back-link svg {
+    border-radius: 50%;
+    border-width: 1px;
+    background-color: rgb(255, 212, 124);
+    color: black;
   }
 }

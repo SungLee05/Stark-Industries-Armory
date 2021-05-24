@@ -228,6 +228,17 @@
   opacity: 1;
 }
 
+.cart-total-text {
+  margin-right: 2rem;
+}
+.cart-total-price {
+  width: 10rem;
+  text-align: center;
+}
+.cart-quantity-text {
+  padding: 1rem;
+  width: 1rem;
+}
 @media (max-width: 325px) {
   .cart-empty-container {
     overflow: hidden;
@@ -253,5 +264,107 @@
   }
   .login-wrap {
     background: rgba(0, 0, 0, 0.5);
+  }
+
+  .cart-main-container h1 {
+    margin: 0;
+    text-align: center;
+  }
+  .cart-subtotal-container {
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    margin: 0;
+  }
+
+  .cart-subtotal-wrapper {
+    justify-content: center;
+    align-items: unset;
+    font-size: 1.2rem;
+    padding: 2rem 1rem 1rem 0;
+  }
+
+  .cart-back-btn {
+    display: none;
+  }
+
+  .cart-back-link {
+    margin-right: 0%;
+    position: absolute;
+    left: 8%;
+    bottom: 34%;
+    width: 32px;
+    height: 32px;
+  }
+
+  .cart-back-link svg {
+    border-radius: 50%;
+    border-width: 1px;
+    background-color: rgba(70, 190, 200, 0.6);
+    color: #dcdcdc;
+  }
+  .cart-subtotal-wrapper svg {
+    padding: 5px;
+  }
+
+  .cart-total-price {
+    width: 6rem;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  .cart-total-text {
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  .checkout-btn {
+    margin: 0;
+    width: 7rem;
+    padding: 0.44rem;
+    margin-right: 1.1rem;
+  }
+  .checkout-btn:hover {
+    margin: 0;
+    width: 7rem;
+    padding: 0.25rem;
+  }
+
+  .cart-glass-container {
+    margin: 0;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: space-evenly;
+    align-items: flex-end;
+  }
+  .cart-name-wrapper {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  .cart-quantity-container {
+    margin: 0;
+    font-size: 1.1rem;
+    width: 10rem;
+    justify-content: center;
+  }
+  .increment-decrement-container {
+    flex-direction: row;
+  }
+  .cart-quantity-text {
+    padding: 0;
+    margin-right: 1rem;
+  }
+  .cart-price-wrapper {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .cart-img-wrapper {
+    margin: 0;
+    position: absolute;
+    left: -5%;
+    top: 5%;
+  }
+  .remove-btn-container {
+    height: 100%;
+    margin: auto 1rem;
   }
 }
