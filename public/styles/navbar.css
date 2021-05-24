@@ -43,7 +43,7 @@
 }
 .link-style {
   letter-spacing: 0.05rem;
-  color: white;
+  color: rgb(220, 220, 220);
   font-weight: 200;
   padding-right: 1.3rem;
 }
@@ -102,7 +102,7 @@
   #menu-bar-open {
     padding-right: 2rem;
     z-index: 10;
-    color: white;
+    color: rgb(220, 220, 220);
   }
   #menu-bar-close {
     display: none;
@@ -121,7 +121,7 @@
     position: absolute;
     width: 100%;
     font-size: 1.5rem;
-    background-color: white;
+    background-color: rgb(220, 220, 220);
     margin-top: 90vh;
     transform: translateX(100%);
     transition: all 0.5s ease-in-out 0s;

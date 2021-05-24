@@ -116,7 +116,7 @@
   animation: reveal 4s ease forwards;
 }
 .block div:after {
-  background-color: white;
+  background-color: rgb(220, 220, 220);
   animation-delay: 5s;
   animation: base 3.5s ease forwards;
 }
@@ -169,7 +169,7 @@
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
-    color: white;
+    color: rgb(220, 220, 220);
     height: 10rem;
     width: 80%;
     align-items: center;
@@ -197,7 +197,7 @@
     width: 100%;
     font-size: 1.5rem;
     font-weight: 500;
-    color: white;
+    color: rgb(220, 220, 220);
     line-height: 2rem;
   }
 

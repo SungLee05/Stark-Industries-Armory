@@ -66,7 +66,7 @@ h2 {
   width: 100%;
   padding: 0;
   margin: 1rem;
-  color: white;
+  color: rgb(220, 220, 220);
 }
 .loginBtn-container {
   display: flex;
@@ -76,7 +76,7 @@ h2 {
 .loginBtn {
   margin-top: 1rem;
   margin-bottom: 1rem;
-  color: white;
+  color: rgb(220, 220, 220);
   font-weight: 400;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
@@ -92,7 +92,7 @@ h2 {
   font-family: 'Poppins', sans-serif;
 }
 .loginBtn:hover {
-  background-color: white;
+  background-color: rgb(220, 220, 220);
   color: black;
   letter-spacing: 0.2rem;
   transition: ease-in-out 0.1s;
@@ -119,7 +119,7 @@ h2 {
   text-align: center;
   border: none;
   outline: none;
-  color: white;
+  color: rgb(220, 220, 220);
   border-radius: 2rem;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -133,7 +133,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: rgb(220, 220, 220);
   transition: background-color 1000s ease-in-out 0s;
   font-size: 1rem;
 }
@@ -144,10 +144,10 @@ select:-webkit-autofill:focus {
   opacity: 1;
 }
 :-ms-input-placeholder {
-  color: white;
+  color: rgb(220, 220, 220);
 }
 ::-ms-input-placeholder {
-  color: white;
+  color: rgb(220, 220, 220);
 }
 
 .socialSignin {
@@ -169,7 +169,7 @@ select:-webkit-autofill:focus {
   border-radius: 50%;
   margin-left: 0.8rem;
   margin-right: 0.8rem;
-  color: white;
+  color: rgb(220, 220, 220);
 }
 .social-icons:before {
   width: 0;

@@ -77,8 +77,7 @@ const Signup = props => {
                       <GrFacebookOption
                         className="social-icons"
                         style={{
-                          backgroundColor: 'rgb(60,83,154)',
-                          color: 'white'
+                          backgroundColor: 'rgb(60,83,154)'
                         }}
                       />
                     </a>

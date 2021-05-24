@@ -55,20 +55,45 @@
 
 .product-price {
   font-size: 1.5rem;
-  color: white;
+  color: rgb(220, 220, 220);
   font-family: 'Bebas Neue', cursive;
   z-index: 10;
   letter-spacing: 0.3rem;
 }
 
 .swiper-pagination .swiper-pagination-bullet {
-  --swiper-theme-color: white;
-  color: white;
-  background: white;
-  background-color: white;
+  --swiper-theme-color: rgb(220, 220, 220);
+  color: rgb(220, 220, 220);
+  background: rgb(220, 220, 220);
+  background-color: rgb(220, 220, 220);
   opacity: 1;
 }
 
 .swiper-pagination {
   margin-bottom: 4rem;
+}
+
+@media (max-width: 325px) {
+  .products-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .product-container {
+    height: 90%;
+    margin-top: 1.5rem;
+  }
+
+  .swiper-container {
+    height: 100%;
+  }
+
+  .product-img {
+    width: 50%;
+    height: 70%;
+  }
+
+  .swiper-pagination {
+    margin-bottom: 2rem;
+  }
 }

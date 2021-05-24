@@ -38,6 +38,24 @@ const ProductCard = props => {
           modifier: 1,
           slideShadows: false
         }}
+        breakpoints={{
+          700: {
+            spaceBetween: 0,
+            slidesPerView: 4
+          },
+          500: {
+            spaceBetween: 0,
+            slidesPerView: 4
+          },
+          411: {
+            spaceBetween: 0,
+            slidesPerView: 4
+          },
+          300: {
+            spaceBetween: 0,
+            slidesPerView: 1
+          }
+        }}
       >
         {products.map(product => (
           <SwiperSlide key={product.id}>
