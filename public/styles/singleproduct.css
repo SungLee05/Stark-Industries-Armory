@@ -147,6 +147,12 @@
   z-index: 2;
 }
 @media (max-width: 325px) {
+  #jarvis-container {
+    overflow: hidden;
+  }
+  #jarvis {
+    width: unset;
+  }
   .product-img-container {
     padding: 0;
     left: unset;
