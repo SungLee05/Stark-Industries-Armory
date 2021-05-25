@@ -146,42 +146,48 @@ const OrderHistory = props => {
                                 key={product.id}
                                 className="order-history-glass-container"
                               >
-                                <div className="order-history-subheader-wrapper">
-                                  <div
-                                    style={{marginLeft: '9rem', width: '10rem'}}
-                                  >
-                                    {product.name}
-                                  </div>
-                                  <div style={{marginLeft: '10.25rem'}}>
-                                    Shipping Info
-                                  </div>
-                                  <div style={{marginLeft: '14rem'}}>
-                                    Package Status
-                                  </div>
-                                </div>
-
                                 <div className="order-history-content-wrapper">
                                   <div className="order-history-img-wrapper">
                                     <img src={product.imageUrl} height="170" />
                                   </div>
                                   <div className="order-history-qty-price-wrapper">
-                                    <div>
-                                      Qty: {product.orderHistory.quantity}
+                                    <div className="order-history-subheader">
+                                      {product.name}
                                     </div>
-                                    <div>
-                                      Price:{' '}
-                                      {accounting.formatMoney(product.price)}
+
+                                    <div className="OH-info-container">
+                                      <div>
+                                        Qty: {product.orderHistory.quantity}
+                                      </div>
+                                      <div>
+                                        Price:{' '}
+                                        {accounting.formatMoney(product.price)}
+                                      </div>
                                     </div>
                                   </div>
 
                                   <div className="order-history-address-wrapper">
-                                    <div>{streetName}</div>
-                                    <div>
-                                      {cityName + ', ' + state + ' ' + zipCode}
+                                    <div className="order-history-subheader">
+                                      Shipping Info
+                                    </div>
+
+                                    <div className="OH-info-container">
+                                      <div>{streetName}</div>
+                                      <div>
+                                        {cityName +
+                                          ', ' +
+                                          state +
+                                          ' ' +
+                                          zipCode}
+                                      </div>
                                     </div>
                                   </div>
 
                                   <div className="order-history-status-wrapper">
+                                    <div id="OH-package-status-title">
+                                      Package Status
+                                    </div>
+
                                     <div className="track-status-container">
                                       <div className="track-status-wrapper">
                                         <div
@@ -261,7 +267,6 @@ const OrderHistory = props => {
                                         />
                                       </div>
                                     </div>
-
                                     <div
                                       style={{
                                         fontSize: '0.8rem',
