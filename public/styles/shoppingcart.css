@@ -34,6 +34,7 @@
   box-sizing: border-box;
   overflow: hidden;
   backdrop-filter: blur(0.3rem);
+  -webkit-backdrop-filter: blur(0.3rem);
   z-index: 3;
   margin-left: 8rem;
 }
