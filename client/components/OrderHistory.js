@@ -167,11 +167,11 @@ const OrderHistory = props => {
                                   </div>
 
                                   <div className="order-history-address-wrapper">
-                                    <div className="order-history-subheader">
+                                    <div className="order-history-subheader-shipping">
                                       Shipping Info
                                     </div>
 
-                                    <div className="OH-info-container">
+                                    <div className="OH-info-container-address">
                                       <div>{streetName}</div>
                                       <div>
                                         {cityName +

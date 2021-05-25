@@ -70,7 +70,9 @@
   overflow: hidden;
   backdrop-filter: blur(0.3rem);
 }
-.order-history-subheader {
+
+.order-history-subheader,
+.order-history-subheader-shipping {
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.8);
   height: 2.5rem;
@@ -223,7 +225,8 @@
   left: 33%;
 }
 
-.OH-info-container {
+.OH-info-container,
+.OH-info-container-address {
   margin-bottom: 32px;
   margin-top: 1rem;
 }
@@ -247,5 +250,75 @@
     font-size: 1rem;
     flex-direction: column;
     justify-content: center;
+  }
+  .order-history-glass-container {
+    height: 95vh;
+    background: linear-gradient(
+      150deg,
+      rgba(0, 199, 255, 0.3),
+      rgba(0, 199, 255, 0.1),
+      rgba(0, 0, 0, 0.1)
+    );
+  }
+  .order-history-content-wrapper {
+    flex-direction: column;
+    margin: 1rem 0 0 0;
+  }
+  .order-history-qty-price-wrapper {
+    margin: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .OH-info-container {
+    margin: 0 0 0 1rem;
+    text-align: center;
+  }
+  .order-history-subheader {
+    font-size: 1.5rem;
+    height: unset;
+    color: #fbca03;
+  }
+  .order-history-address-wrapper {
+    margin: 0;
+    width: 100%;
+  }
+  .order-history-subheader-shipping {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.2rem;
+  }
+  .OH-info-container-address {
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .order-history-status-wrapper {
+    margin: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+  #OH-package-status-title {
+    margin: 0;
+    text-align: center;
+    font-size: 1.1rem;
+    height: unset;
+    letter-spacing: 0.2rem;
+  }
+  #track-status-box-left-after {
+    right: 10.55rem;
+  }
+  #track-status-box-middle-before {
+    right: 9.55rem;
+  }
+  #track-status-box-middle-after {
+    right: 5.16rem;
+  }
+  #track-status-box-right-after {
+    right: 4.16rem;
   }
 }
