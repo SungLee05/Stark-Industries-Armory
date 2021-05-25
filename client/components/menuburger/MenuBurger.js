@@ -10,7 +10,6 @@ const MenuBurger = ({handleClick, isLoggedIn, admin, userId}) => {
   const [open, setOpen] = useState(false)
 
   const openRightNavBar = () => {
-    console.log('openbarClicked!')
     if (open === false) {
       document.getElementById('right-navbar-container').style.transform =
         'translateX(0%)'

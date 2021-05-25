@@ -32,7 +32,7 @@ router.put('/cart/:action', userAuth, async (req, res, next) => {
     if (req.params.action === 'increment') {
       await orderItem.increment('quantity')
     }
-    if (req.params.action === 'decrement') {
+    if (req.params.action === 'decrement' && orderItem.quantity > 1) {
       await orderItem.decrement('quantity')
     }
     res.json(orderItem)
