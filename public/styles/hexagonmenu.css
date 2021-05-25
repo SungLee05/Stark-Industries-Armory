@@ -171,3 +171,10 @@
     filter: brightness(1);
   }
 }
+
+@media (max-width: 325px) {
+  #hex-main-container {
+    top: 70%;
+    left: 55%;
+  }
+}
