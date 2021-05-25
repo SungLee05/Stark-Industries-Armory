@@ -116,4 +116,24 @@
     font-size: 1.2rem;
     margin: 2rem 0 5rem 0;
   }
+  .page404-img {
+    left: -120%;
+  }
+  .page404-wrapper {
+    height: 100%;
+    width: 100%;
+    top: unset;
+    left: unset;
+    align-items: center;
+  }
+  #text-404 {
+    font-size: 8rem;
+    height: 8rem;
+    margin: 0 0 10rem 0;
+  }
+  #text-not-found {
+    font-size: 1rem;
+    left: 12.5%;
+    top: 42.75%;
+  }
 }
