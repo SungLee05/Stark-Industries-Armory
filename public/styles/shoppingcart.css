@@ -253,7 +253,8 @@
   padding: 1rem;
   width: 1rem;
 }
-@media (max-width: 325px) {
+
+@media (max-width: 375px) {
   .cart-empty-container {
     overflow: hidden;
   }
@@ -261,8 +262,9 @@
   .cart-empty {
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
-    width: 90%;
-    margin-top: 12rem;
+    width: 80%;
+    margin: 0;
+    padding-bottom: 6rem;
   }
 
   .ironman {
@@ -408,5 +410,13 @@
   .remove-btn-container {
     height: 100%;
     margin: auto 1rem;
+  }
+}
+
+@media (max-width: 325px) {
+  .cart-empty {
+    width: 80%;
+    margin-top: 12rem;
+    padding-bottom: 1rem;
   }
 }
