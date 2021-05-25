@@ -10,7 +10,7 @@ const CARD_ELEMENT_OPTIONS = {
       color: '#e8e8e8e4',
       fontFamily: '"Poppins", sans-serif',
       fontSmoothing: 'antialiased',
-      fontSize: '18px',
+      fontSize: '15px',
       '::placeholder': {
         color: '#aab7c4'
       }
@@ -70,7 +70,7 @@ const Checkout = ({
         Payment Method
         <CardElement options={CARD_ELEMENT_OPTIONS} />
       </label>
-      <div>
+      <div className="payment-btn-container">
         <button
           type="button"
           variant="outlined"

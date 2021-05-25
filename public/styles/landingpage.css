@@ -116,7 +116,7 @@
   animation: reveal 4s ease forwards;
 }
 .block div:after {
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(251, 251, 251);
   animation-delay: 5s;
   animation: base 3.5s ease forwards;
 }
