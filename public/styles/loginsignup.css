@@ -180,7 +180,7 @@ select:-webkit-autofill:focus {
   margin-left: 2rem;
 }
 
-@media (max-width: 325px) {
+@media (max-width: 375px) {
   .login-BG {
     background-blend-mode: darken;
   }
@@ -189,17 +189,24 @@ select:-webkit-autofill:focus {
   }
 
   .formWrap {
-    padding: 2rem;
+    padding: 0;
+    margin: 1.5rem;
+    backdrop-filter: none;
     top: 13%;
   }
 
   .login-wrap {
-    height: 20rem;
+    height: 25rem;
+    padding: 1rem;
+    backdrop-filter: none;
+    margin: 3rem auto;
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .login-wrap h2 {
     letter-spacing: 0.2rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 400;
   }
 
   .label-container {
@@ -211,6 +218,7 @@ select:-webkit-autofill:focus {
 
   .label-container label {
     margin: 0 auto;
+    font-size: 1.2rem;
   }
 
   .loginBtn-container {
@@ -220,5 +228,49 @@ select:-webkit-autofill:focus {
   .loginBtn {
     width: 75%;
     border-radius: 2rem;
+    font-size: 1.2rem;
+    padding: 0.25rem;
+  }
+
+  .loginBtn:hover {
+    width: 75%;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    padding: 0.25rem;
+  }
+
+  .formInput {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 325px) {
+  .login-wrap {
+    height: 20rem;
+    padding: 2rem;
+    backdrop-filter: blur(0.5rem);
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+  }
+  .login-wrap h2 {
+    font-weight: 200;
+    font-size: 1.5rem;
+  }
+  .label-container label {
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+  .formWrap {
+    padding: 0;
+    margin: 1.5rem;
+    backdrop-filter: blur(1.5px);
+    top: 13%;
+  }
+  .formInput {
+    font-size: 1rem;
+  }
+  .loginBtn {
+    font-size: 1rem;
+    padding: 0.5rem;
   }
 }
