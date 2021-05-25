@@ -96,3 +96,24 @@
   color: rgba(255, 255, 255, 0.15);
   position: absolute;
 }
+
+@media (max-width: 325px) {
+  .UC-background-img {
+    width: unset;
+    height: 100%;
+    top: unset;
+    left: -55%;
+  }
+  .under-construction-wrapper {
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    top: unset;
+    left: unset;
+    text-align: center;
+  }
+  .under-construction-wrapper h1 {
+    font-size: 1.2rem;
+    margin: 2rem 0 5rem 0;
+  }
+}
