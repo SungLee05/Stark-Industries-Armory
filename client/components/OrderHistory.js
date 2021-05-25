@@ -49,13 +49,9 @@ const OrderHistory = props => {
                   <div className="order-history-empty">
                     No orders have been made for your account.
                   </div>
-                  <Link
-                    className="cart-back-link"
-                    id="cart-back-link-OH"
-                    to="/allproducts"
-                  >
+                  <Link id="cart-back-link-OH" to="/allproducts">
                     <BsChevronDoubleLeft />
-                    <div className="cart-back-btn">Back to Armory</div>
+                    <div className="cart-back-btn-OH">Back to Armory</div>
                   </Link>
                 </Fade>
               </div>
