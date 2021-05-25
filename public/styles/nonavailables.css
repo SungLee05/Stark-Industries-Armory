@@ -115,6 +115,7 @@
   .under-construction-wrapper h1 {
     font-size: 1.2rem;
     margin: 2rem 0 5rem 0;
+    font-weight: 300;
   }
   .page404-img {
     left: -120%;
