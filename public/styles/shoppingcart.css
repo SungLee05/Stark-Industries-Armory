@@ -327,7 +327,7 @@
   }
 
   .cart-back-link {
-    margin-right: 0%;
+    margin-right: 2rem;
     position: relative;
     left: -17.5%;
     width: 32px;
@@ -345,7 +345,7 @@
   }
 
   .cart-total-price {
-    width: 9rem;
+    width: 8rem;
     font-size: 1rem;
     font-weight: 900;
     align-self: center;
@@ -431,5 +431,11 @@
   }
   .checkout-btn {
     margin-right: 1.1rem;
+  }
+  .cart-back-link {
+    margin-right: 0;
+  }
+  .cart-total-price {
+    width: 9rem;
   }
 }
