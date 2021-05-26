@@ -310,6 +310,7 @@
     width: 100%;
     margin: 0;
     padding-bottom: 2rem;
+    z-index: 10;
   }
 
   .cart-subtotal-wrapper {
@@ -329,7 +330,7 @@
     left: -17.5%;
     width: 32px;
     height: 32px;
-    z-index: 5;
+    z-index: 10;
   }
 
   .cart-back-link svg {
