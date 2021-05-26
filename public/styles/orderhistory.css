@@ -238,13 +238,13 @@
 
 @media (max-width: 375px) {
   .ironman-OH-wallpaper-container {
-    height: 100vh;
+    height: 90vh;
   }
 
   .ironman-OH {
     width: 100%;
-    height: auto;
-    margin-bottom: 22rem;
+    height: 90%;
+    margin-bottom: 20rem;
     position: unset;
   }
 
