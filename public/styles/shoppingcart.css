@@ -256,19 +256,16 @@
 }
 
 @media (max-width: 375px) {
-  .ironman-gif-container {
-    height: 100%;
-  }
   .cart-empty-container {
     overflow: hidden;
-    height: 100%;
+    position: fixed;
   }
 
   .cart-empty {
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
     width: 80%;
-    margin-top: 6rem;
+    margin-top: 14rem;
     padding-bottom: 1rem;
   }
 
@@ -303,10 +300,7 @@
     background-color: rgb(255, 212, 124);
     color: black;
   }
-  .cart-main-container {
-    height: 100%;
-    display: flex;
-  }
+
   .cart-main-container h1 {
     margin: 0;
     text-align: center;
