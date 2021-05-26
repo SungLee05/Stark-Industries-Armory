@@ -270,7 +270,7 @@
 
   .ironman {
     width: 150%;
-    height: 50%;
+    height: 45%;
     margin-bottom: 5rem;
   }
 
@@ -439,5 +439,10 @@
   }
   .cart-total-price {
     width: 9rem;
+  }
+  .ironman {
+    width: 150%;
+    height: 50%;
+    margin-bottom: 5rem;
   }
 }
