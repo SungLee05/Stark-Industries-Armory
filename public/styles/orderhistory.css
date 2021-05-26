@@ -282,19 +282,25 @@
     font-size: 1.1rem;
   }
 
+  .order-history-wrapper {
+    padding: 0;
+  }
+
   .order-history-header-wrapper {
     font-size: 1rem;
     flex-direction: column;
     justify-content: center;
   }
+
   .order-history-glass-container {
-    height: 95vh;
+    height: 100%;
     background: linear-gradient(
       150deg,
       rgba(0, 199, 255, 0.3),
       rgba(0, 199, 255, 0.1),
       rgba(0, 0, 0, 0.1)
     );
+    padding-bottom: 2rem;
   }
   .order-history-content-wrapper {
     flex-direction: column;
@@ -332,11 +338,10 @@
     text-align: center;
   }
   .order-history-status-wrapper {
-    margin: 0;
+    margin: 1rem 0 0 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    margin-top: 1rem;
-    padding: 0.5rem;
+    padding: 1.25rem 0.5rem;
   }
   #OH-package-status-title {
     margin: 0;
@@ -345,6 +350,30 @@
     height: unset;
     letter-spacing: 0.2rem;
   }
+
+  #track-status-box-left-after {
+    right: 12.32rem;
+  }
+  #track-status-box-middle-before {
+    right: 11.32rem;
+  }
+  #track-status-box-middle-after {
+    right: 6.064rem;
+  }
+  #track-status-box-right-after {
+    right: 5.064rem;
+  }
+}
+
+@media (max-width: 325px) {
+  .ironman-OH {
+    margin-bottom: 16rem;
+  }
+
+  .order-history-status-wrapper {
+    padding: 0.5rem;
+  }
+
   #track-status-box-left-after {
     right: 10.55rem;
   }
@@ -356,11 +385,5 @@
   }
   #track-status-box-right-after {
     right: 4.16rem;
-  }
-}
-
-@media (max-width: 325px) {
-  .ironman-OH {
-    margin-bottom: 16rem;
   }
 }
