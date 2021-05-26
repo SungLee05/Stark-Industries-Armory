@@ -256,6 +256,14 @@
 }
 
 @media (max-width: 375px) {
+  .ironman-gif-container {
+    height: 80vh;
+  }
+  .cart-main-container {
+    height: 80vh;
+    top: 0%;
+  }
+
   .cart-empty-container {
     overflow: hidden;
     position: fixed;
