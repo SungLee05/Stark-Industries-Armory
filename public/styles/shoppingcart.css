@@ -257,8 +257,15 @@
 
 @media (max-width: 375px) {
   .ironman-gif-container {
-    height: 85vh;
+    height: 90vh;
   }
+
+  .ironman {
+    width: 100%;
+    height: 40%;
+    margin-bottom: 5rem;
+  }
+
   .cart-main-container {
     height: 80vh;
     top: 0%;
@@ -275,12 +282,6 @@
     width: 80%;
     margin-top: 14rem;
     padding-bottom: 1rem;
-  }
-
-  .ironman {
-    width: 150%;
-    height: 45%;
-    margin-bottom: 5rem;
   }
 
   .empty-cart-back-btn {
