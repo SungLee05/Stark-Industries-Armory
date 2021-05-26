@@ -236,13 +236,16 @@
   margin-top: 1rem;
 }
 
-@media (max-width: 325px) {
+@media (max-width: 375px) {
+  .ironman-OH-wallpaper-container {
+    height: 100vh;
+  }
+
   .ironman-OH {
     width: 100%;
-    height: 110%;
-    margin-bottom: 5rem;
-    top: -24.5%;
-    left: 0;
+    height: auto;
+    margin-bottom: 22rem;
+    position: unset;
   }
 
   .order-history-empty {
@@ -353,5 +356,11 @@
   }
   #track-status-box-right-after {
     right: 4.16rem;
+  }
+}
+
+@media (max-width: 325px) {
+  .ironman-OH {
+    margin-bottom: 16rem;
   }
 }
