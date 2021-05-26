@@ -283,7 +283,7 @@
   left: 20%;
 }
 
-@media (max-width: 325px) {
+@media (max-width: 375px) {
   #hud1-container,
   #hud5-container,
   #hud6-container,
@@ -305,7 +305,7 @@
     height: 30rem;
   }
   #hud10-container {
-    width: 20rem;
+    width: 100%;
     height: 20rem;
     left: 0%;
     top: 0%;
@@ -321,9 +321,9 @@
     display: none;
   }
   .jarvis-msg {
-    top: 40%;
+    top: 39%;
     width: 15rem;
-    left: -15%;
+    left: -12%;
     font-size: 0.8rem;
   }
 
@@ -346,5 +346,14 @@
   }
   .profile-info-container {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 325px) {
+  .jarvis-msg {
+    top: 40%;
+    width: 15rem;
+    left: -15%;
+    font-size: 0.8rem;
   }
 }
