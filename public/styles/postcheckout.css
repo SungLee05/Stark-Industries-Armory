@@ -55,10 +55,10 @@
   font-size: 1.2rem;
 }
 
-@media (max-width: 325px) {
+@media (max-width: 375px) {
   .post-checkout-wrapper {
     font-size: 1rem;
-    margin: 0 3rem;
+    margin: 0 5rem;
     text-align: center;
   }
 
@@ -69,7 +69,7 @@
   }
 
   .checkout-back-link-container {
-    margin-top: 2rem;
+    margin: 2rem 0 5rem 0;
   }
 
   .checkout-back-link-btn {
@@ -96,5 +96,14 @@
     border-width: 1px;
     background-color: rgb(255, 212, 124);
     color: black;
+  }
+}
+
+@media (max-width: 325px) {
+  .post-checkout-wrapper {
+    margin: 0 3rem;
+  }
+  .checkout-back-link-container {
+    margin: 2rem auto;
   }
 }

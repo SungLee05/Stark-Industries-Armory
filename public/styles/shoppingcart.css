@@ -264,8 +264,8 @@
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
     width: 80%;
-    margin: 0;
-    padding-bottom: 6rem;
+    margin-top: 14rem;
+    padding-bottom: 1rem;
   }
 
   .ironman {
@@ -298,10 +298,6 @@
     border-width: 1px;
     background-color: rgb(255, 212, 124);
     color: black;
-  }
-
-  .login-wrap {
-    background: rgba(0, 0, 0, 0.5);
   }
 
   .cart-main-container h1 {
@@ -369,7 +365,7 @@
     margin: 0;
     width: 7rem;
     padding: 0.44rem;
-    margin-right: 1.1rem;
+    margin-right: 2rem;
   }
 
   .cart-glass-container {
@@ -418,9 +414,7 @@
 
 @media (max-width: 325px) {
   .cart-empty {
-    width: 80%;
     margin-top: 12rem;
-    padding-bottom: 1rem;
   }
   .cart-img-wrapper {
     left: -8%;
