@@ -54,6 +54,7 @@
   .modal-container {
     width: 90%;
     padding: 1.25rem;
+    -webkit-backdrop-filter: blur(0.5rem);
   }
 
   .modal-container label {

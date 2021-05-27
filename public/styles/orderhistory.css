@@ -45,6 +45,11 @@
 .cart-back-btn-OH {
   z-index: 2;
 }
+.order-history-wrapper {
+  width: 85%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
 .order-history-header-wrapper {
   width: 100%;
   display: flex;
@@ -244,6 +249,11 @@
     top: 0%;
     margin-top: 10vh;
   }
+  .order-history-main-container h1 {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+  }
 
   .order-history-empty-container {
     overflow: hidden;
@@ -350,16 +360,16 @@
   }
 
   #track-status-box-left-after {
-    right: 12.32rem;
+    right: 13.34rem;
   }
   #track-status-box-middle-before {
-    right: 11.32rem;
+    right: 11.9rem;
   }
   #track-status-box-middle-after {
-    right: 6.064rem;
+    right: 6.65rem;
   }
   #track-status-box-right-after {
-    right: 5.064rem;
+    right: 5.28rem;
   }
 }
 
@@ -379,15 +389,15 @@
   }
 
   #track-status-box-left-after {
-    right: 10.55rem;
+    right: 11.21rem;
   }
   #track-status-box-middle-before {
-    right: 9.55rem;
+    right: 10.22rem;
   }
   #track-status-box-middle-after {
-    right: 5.16rem;
+    right: 5.533rem;
   }
   #track-status-box-right-after {
-    right: 4.16rem;
+    right: 4.6rem;
   }
 }

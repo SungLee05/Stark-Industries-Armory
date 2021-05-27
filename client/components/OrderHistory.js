@@ -57,7 +57,7 @@ const OrderHistory = props => {
               <div>
                 {history.map(order => {
                   return (
-                    <div key={order.id}>
+                    <div className="order-history-wrapper" key={order.id}>
                       <br />
 
                       <div className="order-history-header-wrapper">
