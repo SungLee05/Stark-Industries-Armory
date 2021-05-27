@@ -366,6 +366,10 @@
 }
 
 @media (max-width: 325px) {
+  .order-history-empty {
+    margin-top: 18rem;
+  }
+
   .ironman-OH {
     width: 150%;
     height: 50%;
