@@ -259,7 +259,8 @@
 
 @media (max-width: 375px) {
   .ironman-gif-container {
-    height: 90vh;
+    height: 85vh;
+    position: fixed;
   }
 
   .ironman {
@@ -269,7 +270,7 @@
   }
 
   .cart-main-container {
-    height: 80vh;
+    height: 75vh;
     top: 0%;
     margin-top: 10vh;
   }
@@ -277,13 +278,14 @@
   .cart-empty-container {
     overflow: hidden;
     position: fixed;
+    height: 75%;
   }
 
   .cart-empty {
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
     width: 80%;
-    margin: 25rem 0 0 0;
+    margin: 15rem 0 0 0;
   }
 
   .empty-cart-back-btn {
