@@ -288,7 +288,7 @@
     width: 100%;
     height: 75vh;
     margin-top: 10vh;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
   }
 
@@ -359,9 +359,18 @@
 
 @media (max-width: 325px) {
   .jarvis-msg {
-    top: 40%;
+    top: 20%;
     width: 15rem;
     left: -15%;
     font-size: 0.8rem;
+  }
+  #hud10-container {
+    height: 14rem;
+  }
+  #hud10-container img {
+    height: 25rem;
+  }
+  .profile-info-container {
+    font-size: 0.65rem;
   }
 }

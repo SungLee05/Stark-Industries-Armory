@@ -165,11 +165,6 @@
     border-radius: 0;
   }
 
-  .product-img {
-    width: 63%;
-    height: 70%;
-  }
-
   .single-product-container {
     margin: 10vh 0;
   }
@@ -260,9 +255,5 @@
   .single-product-cart-back-link {
     left: 5%;
     bottom: -5%;
-  }
-  .product-img {
-    width: 50%;
-    height: 70%;
   }
 }
