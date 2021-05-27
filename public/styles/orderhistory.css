@@ -1,17 +1,13 @@
 .order-history-main-container {
   height: 90vh;
-  margin-top: 10vh;
   width: 100%;
   z-index: 2;
-}
-.order-history-wrapper {
-  width: 80vw;
-  margin: 0 auto;
-  padding-bottom: 3rem;
+  position: absolute;
+  top: 10%;
 }
 
 .order-history-empty-container {
-  height: 84vh;
+  height: 90vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -233,27 +229,40 @@
 }
 
 @media (max-width: 375px) {
-  .order-history-main-container {
-    margin-top: 0;
-    position: absolute;
-  }
-
   .ironman-OH-wallpaper-container {
-    height: 90vh;
+    height: 85vh;
   }
 
   .ironman-OH {
     width: 150%;
-    height: 50%;
+    height: 55%;
     margin-bottom: 5rem;
+  }
+
+  .order-history-main-container {
+    height: 75vh;
+    top: 0%;
+    margin-top: 10vh;
+  }
+
+  .order-history-empty-container {
+    overflow: hidden;
+    position: fixed;
+    height: 75%;
   }
 
   .order-history-empty {
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
-    width: 100%;
-    margin: 25rem 0 0 0;
-    z-index: 3;
+    width: 80%;
+    margin: 15rem 0 0 0;
+  }
+
+  .cart-back-btn-OH {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: rgb(255, 212, 124);
+    font-size: 1.1rem;
   }
 
   #cart-back-link-OH {
@@ -273,17 +282,6 @@
     border-width: 1px;
     background-color: rgb(255, 212, 124);
     color: black;
-  }
-
-  .cart-back-btn-OH {
-    margin-left: 1rem;
-    text-decoration: none;
-    color: rgb(255, 212, 124);
-    font-size: 1.1rem;
-  }
-
-  .order-history-wrapper {
-    padding: 0;
   }
 
   .order-history-header-wrapper {
@@ -367,7 +365,7 @@
 
 @media (max-width: 325px) {
   .order-history-empty {
-    margin-top: 18rem;
+    margin-top: 12rem;
   }
 
   .ironman-OH {
