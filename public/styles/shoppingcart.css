@@ -326,10 +326,11 @@
   }
 
   .cart-subtotal-wrapper {
-    justify-content: center;
-    align-items: unset;
+    justify-content: flex-end;
+    align-items: center;
     font-size: 1.2rem;
     padding: 2rem 2rem 1rem 0;
+    width: 100%;
   }
 
   .cart-back-btn {
@@ -337,7 +338,7 @@
   }
 
   .cart-back-link {
-    margin-right: 2rem;
+    margin-right: 0.5rem;
     position: relative;
     left: -17.5%;
     width: 32px;
@@ -435,14 +436,9 @@
   .cart-glass-container {
     height: 30vh;
   }
-  .cart-subtotal-wrapper {
-    padding: 2rem 1.15rem 1rem 0;
-  }
-  .checkout-btn {
-    margin-right: 1.1rem;
-  }
+
   .cart-back-link {
-    margin-right: 0;
+    margin-right: -2rem;
   }
   .cart-total-price {
     width: 9rem;
