@@ -355,6 +355,10 @@
   .profile-info-container {
     font-size: 0.9rem;
   }
+  .hex-container,
+  .hex-menu {
+    opacity: 0.85;
+  }
 }
 
 @media (max-width: 325px) {
