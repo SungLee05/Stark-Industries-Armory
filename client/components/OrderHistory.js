@@ -206,7 +206,7 @@ const OrderHistory = props => {
                                       </div>
                                     </div>
 
-                                    <div className="track-status-wrapper">
+                                    <div className="track-status-bar-wrapper">
                                       <div
                                         className="track-status-box-left"
                                         style={{
