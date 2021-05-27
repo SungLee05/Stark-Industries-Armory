@@ -210,24 +210,20 @@
 
 .ironman-OH-wallpaper-container {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: -1;
   position: fixed;
-  filter: brightness(0.8);
 }
 
 .ironman-OH {
-  height: 120%;
+  width: 50%;
+  height: 55%;
   box-sizing: border-box;
   z-index: 1;
-  position: absolute;
-  top: -22.5%;
-  width: 34.5%;
-  left: 33%;
 }
 
 .OH-info-container,
@@ -237,22 +233,25 @@
 }
 
 @media (max-width: 375px) {
+  .order-history-main-container {
+    margin-top: 0;
+  }
+
   .ironman-OH-wallpaper-container {
     height: 90vh;
   }
 
   .ironman-OH {
-    width: 100%;
-    height: 90%;
-    margin-bottom: 20rem;
-    position: unset;
+    width: 125%;
+    height: 50%;
+    margin-bottom: 5rem;
   }
 
   .order-history-empty {
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
     width: 90%;
-    margin: 17rem 0 0 0;
+    margin: 25rem 0 0 0;
     z-index: 3;
   }
 

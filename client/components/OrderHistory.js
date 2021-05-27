@@ -34,10 +34,7 @@ const OrderHistory = props => {
   return (
     <>
       <div className="ironman-OH-wallpaper-container">
-        <img
-          className="ironman-OH"
-          src="/images/order-history-wallpaper.jpeg"
-        />
+        <img className="ironman-OH" src="/gifs/ironmanOH.gif" />
       </div>
 
       <div className="order-history-main-container">
