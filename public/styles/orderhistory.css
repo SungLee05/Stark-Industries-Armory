@@ -235,6 +235,7 @@
 @media (max-width: 375px) {
   .order-history-main-container {
     margin-top: 0;
+    position: fixed;
   }
 
   .ironman-OH-wallpaper-container {
@@ -242,7 +243,7 @@
   }
 
   .ironman-OH {
-    width: 125%;
+    width: 150%;
     height: 50%;
     margin-bottom: 5rem;
   }
@@ -250,7 +251,7 @@
   .order-history-empty {
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
-    width: 90%;
+    width: 100%;
     margin: 25rem 0 0 0;
     z-index: 3;
   }
@@ -366,7 +367,9 @@
 
 @media (max-width: 325px) {
   .ironman-OH {
-    margin-bottom: 16rem;
+    width: 150%;
+    height: 50%;
+    margin-bottom: 5rem;
   }
 
   .order-history-status-wrapper {
