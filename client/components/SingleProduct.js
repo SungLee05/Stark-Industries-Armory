@@ -105,40 +105,60 @@ const SingleProduct = props => {
               </div>
 
               {!userId ? (
-                <Flip ssrReveal={true} top duration={1500} delay={1500}>
-                  <button
-                    className="order-btn"
-                    type="submit"
-                    onClick={() => addProductToGuestCart(singleProduct)}
-                  >
-                    ORDER
-                  </button>
-                </Flip>
-              ) : (
-                <Flip ssrReveal={true} top duration={1500} delay={1500}>
-                  <button
-                    className="order-btn"
-                    type="submit"
-                    onClick={() => addProductToUserCart(singleProduct, userId)}
-                  >
-                    ORDER
-                  </button>
-                </Flip>
-              )}
-
-              <div className="single-product-back-link-container">
-                <Link
-                  className="single-product-cart-back-link"
-                  to="/allproducts"
-                >
-                  <Flip top duration={1500} delay={1500}>
-                    <BsChevronDoubleLeft />
-                    <div className="single-product-cart-back-btn">
-                      Back to Armory
-                    </div>
+                <div className="order-btn-back-link-wrapper">
+                  <Flip ssrReveal={true} top duration={1500} delay={1500}>
+                    <button
+                      className="order-btn"
+                      type="submit"
+                      onClick={() => addProductToGuestCart(singleProduct)}
+                    >
+                      ORDER
+                    </button>
                   </Flip>
-                </Link>
-              </div>
+
+                  <div className="single-product-back-link-container">
+                    <Link
+                      className="single-product-cart-back-link"
+                      to="/allproducts"
+                    >
+                      <Flip top duration={1500} delay={1500}>
+                        <BsChevronDoubleLeft />
+                        <div className="single-product-cart-back-btn">
+                          Back to Armory
+                        </div>
+                      </Flip>
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                <div className="order-btn-back-link-wrapper">
+                  <Flip ssrReveal={true} top duration={1500} delay={1500}>
+                    <button
+                      className="order-btn"
+                      type="submit"
+                      onClick={() =>
+                        addProductToUserCart(singleProduct, userId)
+                      }
+                    >
+                      ORDER
+                    </button>
+                  </Flip>
+
+                  <div className="single-product-back-link-container">
+                    <Link
+                      className="single-product-cart-back-link"
+                      to="/allproducts"
+                    >
+                      <Flip top duration={1500} delay={1500}>
+                        <BsChevronDoubleLeft />
+                        <div className="single-product-cart-back-btn">
+                          Back to Armory
+                        </div>
+                      </Flip>
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </Fade>
