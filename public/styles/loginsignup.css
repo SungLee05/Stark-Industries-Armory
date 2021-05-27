@@ -183,7 +183,14 @@ select:-webkit-autofill:focus {
 @media (max-width: 375px) {
   .login-BG {
     background-blend-mode: darken;
+    height: 85vh;
+    position: fixed;
   }
+  .signup-BG {
+    height: 85vh;
+    position: fixed;
+  }
+
   .form-container {
     width: 100%;
   }
@@ -192,14 +199,14 @@ select:-webkit-autofill:focus {
     padding: 0;
     margin: 1.5rem;
     backdrop-filter: none;
-    top: 13%;
+    top: 0%;
   }
 
   .login-wrap {
     height: 25rem;
     padding: 1rem;
     backdrop-filter: none;
-    margin: 3rem auto;
+    margin: 5rem 0 0 0;
     background: rgba(0, 0, 0, 0.7);
   }
 
@@ -243,7 +250,11 @@ select:-webkit-autofill:focus {
     font-size: 1.2rem;
   }
 }
-
+@media (max-width: 375px) and (min-height: 812px) {
+  .login-wrap {
+    margin: 7rem 0 0 0;
+  }
+}
 @media (max-width: 325px) {
   .login-wrap {
     height: 20rem;
