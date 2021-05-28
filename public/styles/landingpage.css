@@ -137,7 +137,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .intro {
     overflow: hidden;
     display: flex;
@@ -150,7 +150,7 @@
   .introImg {
     height: 100vh;
     width: 325%;
-    margin-right: 33rem;
+    margin-right: 34rem;
     filter: opacity(0.2);
   }
 

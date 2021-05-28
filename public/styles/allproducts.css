@@ -73,7 +73,7 @@
   margin-bottom: 4rem;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .all-products-container {
     height: 75vh;
   }
@@ -91,13 +91,17 @@
   }
   .product-img {
     width: unset;
-    height: 70%;
+    height: 75%;
   }
   .swiper-pagination {
     margin-bottom: 2rem;
   }
 }
-
+@media (max-width: 375px) {
+  .product-img {
+    height: 70%;
+  }
+}
 @media (max-width: 325px) {
   .products-container {
     display: flex;
