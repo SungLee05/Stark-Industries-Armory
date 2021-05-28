@@ -241,7 +241,7 @@
   width: 1rem;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .ironman-gif-container {
     height: 85vh;
   }
@@ -314,8 +314,11 @@
     justify-content: flex-end;
     align-items: center;
     font-size: 1.2rem;
-    padding: 2rem 2rem 1rem 0;
+    padding: 2rem 3.75rem 1rem 0;
     width: 100%;
+  }
+  .cart-subtotal-wrapper svg {
+    padding: 5px;
   }
 
   .cart-back-btn {
@@ -337,9 +340,6 @@
     background-color: rgba(70, 190, 200, 0.6);
     color: #dcdcdc;
   }
-  .cart-subtotal-wrapper svg {
-    padding: 5px;
-  }
 
   .cart-total-price {
     width: 8rem;
@@ -358,13 +358,13 @@
     margin: 0;
     width: 7rem;
     padding: 0.44rem;
-    margin-right: 2rem;
+    margin-right: 3.75rem;
   }
   .checkout-btn:hover {
     margin: 0;
     width: 7rem;
     padding: 0.44rem;
-    margin-right: 2rem;
+    margin-right: 3.75rem;
   }
 
   .cart-glass-container {
@@ -408,6 +408,18 @@
   .remove-btn-container {
     height: 100%;
     margin: auto 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .cart-subtotal-wrapper {
+    padding: 2rem 2rem 1rem 0;
+  }
+  .checkout-btn {
+    margin-right: 2rem;
+  }
+  .checkout-btn:hover {
+    margin-right: 2rem;
   }
 }
 

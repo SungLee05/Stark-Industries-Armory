@@ -242,7 +242,7 @@
   margin-top: 1rem;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .ironman-OH-wallpaper-container {
     height: 85vh;
   }
@@ -382,8 +382,8 @@
     margin-left: 0.65rem;
   }
   .track-status-box-left {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 48px;
+    padding-left: 48px;
     margin-left: 0px;
     width: 0;
   }
@@ -398,8 +398,8 @@
   }
   .track-status-box-middle {
     margin-left: 0;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-right: 48px;
+    padding-left: 48px;
     width: 0;
   }
 
@@ -408,14 +408,29 @@
     left: -0.5rem;
   }
   #track-status-box-right {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 48px;
+    padding-left: 48px;
     margin-right: 0px;
     width: 0;
   }
   #track-status-box-right-after {
-    right: 5rem;
+    right: 6rem;
     position: relative;
+  }
+}
+
+@media (max-width: 375px) {
+  .track-status-box-left {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .track-status-box-middle {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #track-status-box-right {
+    padding-right: 40px;
+    padding-left: 40px;
   }
 }
 

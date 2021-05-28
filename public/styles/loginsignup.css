@@ -180,7 +180,7 @@ select:-webkit-autofill:focus {
   margin-left: 2rem;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .login-BG {
     background-blend-mode: darken;
     height: 85vh;
@@ -206,7 +206,7 @@ select:-webkit-autofill:focus {
     height: 25rem;
     padding: 1rem;
     backdrop-filter: none;
-    margin: 5rem 0 0 0;
+    margin: 7rem 0 0 0;
     background: rgba(0, 0, 0, 0.7);
   }
 
@@ -250,6 +250,13 @@ select:-webkit-autofill:focus {
     font-size: 1.2rem;
   }
 }
+
+@media (max-width: 375px) {
+  .login-wrap {
+    margin: 5rem 0 0 0;
+  }
+}
+
 @media (max-width: 375px) and (min-height: 812px) {
   .login-wrap {
     margin: 7rem 0 0 0;

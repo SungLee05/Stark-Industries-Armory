@@ -283,7 +283,7 @@
   left: 20%;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .profile-main-container {
     width: 100%;
     height: 75vh;
@@ -305,7 +305,7 @@
   }
 
   #hud9-container {
-    left: 0%;
+    left: 10%;
     top: 55%;
     height: 30rem;
   }
@@ -361,6 +361,11 @@
   }
 }
 
+@media (max-width: 375px) {
+  #hud9-container {
+    left: 0%;
+  }
+}
 @media (max-width: 325px) {
   .jarvis-msg {
     top: 20%;
