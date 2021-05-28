@@ -432,6 +432,9 @@
     padding-right: 40px;
     padding-left: 40px;
   }
+  #track-status-box-right-after {
+    right: 6rem;
+  }
 }
 
 @media (max-width: 325px) {
