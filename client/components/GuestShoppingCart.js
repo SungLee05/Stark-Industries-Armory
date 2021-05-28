@@ -72,7 +72,10 @@ const GuestShoppingCart = props => {
                   <div key={Math.random()} className="cart-info-container">
                     <div className="cart-glass-container">
                       <div className="cart-img-wrapper">
-                        <img src={product.singleInfoImageUrl} height="150" />
+                        <img
+                          src={product.singleInfoImageUrl}
+                          className="cart-img"
+                        />
                       </div>
 
                       <div className="cart-name-wrapper">

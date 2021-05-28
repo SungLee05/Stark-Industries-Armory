@@ -172,6 +172,13 @@
   }
 }
 
+@media (max-width: 540px) {
+  #hex-main-container {
+    top: 40%;
+    left: 65%;
+  }
+}
+
 @media (max-width: 414px) {
   #hex-main-container {
     top: 70%;

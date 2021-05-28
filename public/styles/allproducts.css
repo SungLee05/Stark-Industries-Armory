@@ -73,9 +73,9 @@
   margin-bottom: 4rem;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 540px) {
   .all-products-container {
-    height: 75vh;
+    height: 90vh;
   }
   .products-container {
     display: flex;
@@ -97,6 +97,13 @@
     margin-bottom: 2rem;
   }
 }
+
+@media (max-width: 414px) {
+  .all-products-container {
+    height: 75vh;
+  }
+}
+
 @media (max-width: 375px) {
   .product-img {
     height: 70%;

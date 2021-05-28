@@ -28,8 +28,8 @@ const ProductCard = props => {
           bulletClass: `swiper-pagination-bullet`,
           dynamicBullets: true
         }}
-        spaceBetween={2}
-        slidesPerView={4}
+        spaceBetween={0}
+        slidesPerView={1}
         loop="true"
         coverflowEffect={{
           rotate: 10,
@@ -39,21 +39,17 @@ const ProductCard = props => {
           slideShadows: false
         }}
         breakpoints={{
-          700: {
-            spaceBetween: 0,
-            slidesPerView: 4
-          },
-          500: {
-            spaceBetween: 0,
-            slidesPerView: 4
-          },
-          414: {
-            spaceBetween: 0,
-            slidesPerView: 3
-          },
-          279: {
+          250: {
             spaceBetween: 0,
             slidesPerView: 1
+          },
+          540: {
+            spaceBetween: 0,
+            slidesPerView: 2
+          },
+          700: {
+            spaceBetween: 2,
+            slidesPerView: 4
           }
         }}
       >

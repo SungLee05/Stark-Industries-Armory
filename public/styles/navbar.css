@@ -106,7 +106,7 @@
   }
   #menu-bar-close {
     display: none;
-    padding-right: 2rem;
+    padding-right: 3rem;
     z-index: 10;
     color: rgb(65, 65, 65);
     font-size: 1.4rem;

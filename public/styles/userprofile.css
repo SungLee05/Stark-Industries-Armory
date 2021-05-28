@@ -283,10 +283,10 @@
   left: 20%;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 540px) {
   .profile-main-container {
     width: 100%;
-    height: 75vh;
+    height: 100%;
     margin-top: 10vh;
     position: fixed;
     overflow: hidden;
@@ -305,12 +305,13 @@
   }
 
   #hud9-container {
-    left: 10%;
-    top: 55%;
-    height: 30rem;
+    left: 5%;
+    top: 40%;
+    height: 40rem;
+    width: 20rem;
   }
   #hud9-container img {
-    height: 30rem;
+    height: 40rem;
   }
   #hud10-container {
     width: 100%;
@@ -320,7 +321,7 @@
     transform: none;
   }
   #hud10-container img {
-    height: 33rem;
+    height: 40rem;
   }
   .jarvis-msg-container {
     top: 10%;
@@ -330,17 +331,17 @@
   }
   .jarvis-msg {
     top: 39%;
-    width: 15rem;
-    left: -12%;
-    font-size: 0.8rem;
+    width: 20rem;
+    left: -15%;
+    font-size: 1rem;
   }
 
   #profile-clock {
     width: 100%;
     height: 10rem;
-    font-size: 2.5rem;
+    font-size: 4rem;
     left: unset;
-    top: 75%;
+    top: 55%;
     justify-content: center;
     transform: none;
   }
@@ -361,11 +362,39 @@
   }
 }
 
+@media (max-width: 414px) {
+  .profile-main-container {
+    height: 75vh;
+  }
+  #hud10-container img {
+    height: 33rem;
+  }
+  .jarvis-msg {
+    width: 15rem;
+    left: -12%;
+    font-size: 0.8rem;
+  }
+  #hud9-container {
+    left: 10%;
+    top: 55%;
+    height: 30rem;
+    width: 13rem;
+  }
+  #hud9-container img {
+    height: 30rem;
+  }
+  #profile-clock {
+    font-size: 2.5rem;
+    top: 75%;
+  }
+}
+
 @media (max-width: 375px) {
   #hud9-container {
     left: 0%;
   }
 }
+
 @media (max-width: 325px) {
   .jarvis-msg {
     top: 20%;
