@@ -66,7 +66,7 @@
   display: none;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 1024px) {
   .navbar-container {
     z-index: 10;
     position: fixed;
@@ -100,7 +100,7 @@
     align-items: center;
   }
   #menu-bar-open {
-    padding-right: 2rem;
+    padding-right: 3rem;
     z-index: 10;
     color: rgb(220, 220, 220);
   }
