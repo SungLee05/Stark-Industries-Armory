@@ -119,3 +119,9 @@
     margin-bottom: 2rem;
   }
 }
+
+@media (max-width: 280px) {
+  .product-img {
+    width: 50%;
+  }
+}

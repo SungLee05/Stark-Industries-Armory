@@ -61,12 +61,12 @@ const OrderHistory = props => {
                       <br />
 
                       <div className="order-history-header-wrapper">
-                        <div style={{marginLeft: '1rem'}}>
+                        <div className="order-history-text-1">
                           Order Placed:{' '}
                           {dateFormat(order.updatedAt, 'mmm d, yyyy')}
                         </div>
 
-                        <div style={{marginRight: '1rem'}}>
+                        <div className="order-history-text-2">
                           Total:{' '}
                           {accounting.formatMoney(
                             order.products.reduce(

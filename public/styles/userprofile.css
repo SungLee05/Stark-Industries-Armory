@@ -378,3 +378,9 @@
     font-size: 0.65rem;
   }
 }
+
+@media (max-width: 280px) {
+  .profile-main-container {
+    height: 70vh;
+  }
+}

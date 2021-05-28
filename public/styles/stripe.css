@@ -74,3 +74,28 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 375px) {
+  .modal-container {
+    width: 90%;
+    padding: 1.25rem;
+    -webkit-backdrop-filter: blur(0.5rem);
+  }
+
+  .modal-container label {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .modal-container button {
+    margin: 1rem 0.25rem;
+    font-size: 0.7rem;
+    padding: 0;
+    height: 2rem;
+  }
+
+  .payment-btn-container {
+    display: flex;
+    justify-content: center;
+  }
+}
