@@ -66,7 +66,7 @@
   display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .navbar-container {
     z-index: 10;
     position: fixed;
@@ -103,6 +103,7 @@
     padding-right: 3rem;
     z-index: 10;
     color: rgb(220, 220, 220);
+    cursor: pointer;
   }
   #menu-bar-close {
     display: none;
@@ -111,6 +112,7 @@
     color: rgb(65, 65, 65);
     font-size: 1.4rem;
     font-weight: bolder;
+    cursor: pointer;
   }
   #right-navbar-container {
     display: flex;
@@ -119,7 +121,7 @@
     flex-direction: column;
     height: 100vh;
     position: absolute;
-    width: 100%;
+    width: 50%;
     font-size: 1.5rem;
     background-color: rgb(220, 220, 220);
     margin-top: 0;
@@ -131,5 +133,11 @@
   .bar-link-style {
     color: rgb(65, 65, 65);
     padding: 0.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  #right-navbar-container {
+    width: 100%;
   }
 }

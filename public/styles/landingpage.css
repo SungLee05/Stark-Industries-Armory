@@ -136,8 +136,7 @@
     transform: translateX(100%);
   }
 }
-
-@media (max-width: 540px) {
+@media (max-width: 768px) {
   .intro {
     overflow: hidden;
     display: flex;
@@ -146,10 +145,121 @@
     margin-top: 0;
     height: 100vh;
   }
-
   .introImg {
     height: 100vh;
-    width: 325%;
+    width: auto;
+    margin-right: 40rem;
+    filter: opacity(0.2);
+  }
+  .block div:after {
+    background-color: rgb(49, 49, 49);
+    animation-delay: 5s;
+    animation: base 3.5s ease forwards;
+  }
+  .about-us {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 44%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(220, 220, 220);
+    height: 10rem;
+    width: 80%;
+    align-items: center;
+    line-height: 4rem;
+  }
+  .about-us-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0;
+    margin-bottom: 0rem;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    font-weight: 700;
+  }
+
+  #intro-text {
+    font-size: 5rem;
+    font-style: italic;
+    margin-right: 0;
+    margin-top: 0.5rem;
+    line-height: 0.7;
+    padding: 0 1rem;
+  }
+
+  #intro-text-2 {
+    width: 104%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(220, 220, 220);
+    line-height: 0.8;
+    padding: 0;
+  }
+
+  #intro-text-3 {
+    width: 100%;
+    font-size: 3rem;
+    line-height: 1;
+    margin-top: 3rem;
+  }
+
+  .pseudo {
+    font-size: 8rem;
+    color: rgb(155, 11, 11);
+    line-height: 0.7;
+    margin-bottom: 3rem;
+  }
+  #robotics-link {
+    display: inline-block;
+    line-height: 8rem;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 5%;
+    font-size: 11rem;
+    padding-right: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.9rem;
+    z-index: 2;
+    top: 140%;
+  }
+  .directory {
+    height: 90vh;
+  }
+  .wrap {
+    overflow: hidden;
+  }
+  .item {
+    position: relative;
+    width: 300%;
+    height: auto;
+    float: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    filter: blur(0.09rem);
+    -webkit-filter: blur(0.05rem) brightness(90%);
+    left: -40%;
+  }
+}
+
+@media (max-width: 748px) {
+  #robotics-link {
+    font-size: 9rem;
+  }
+}
+
+@media (max-width: 629px) {
+  .introImg {
     margin-right: 34rem;
     filter: opacity(0.2);
   }
@@ -185,36 +295,37 @@
     align-items: center;
     letter-spacing: 0;
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 2.3rem;
   }
 
   #intro-text {
-    font-size: 3rem;
+    font-size: 4.4rem;
     font-style: italic;
     margin-right: 0;
     margin-top: 0.5rem;
-    line-height: 1;
+    line-height: 0.7;
   }
 
   #intro-text-2 {
     width: 104%;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 2.5rem;
+    font-weight: 600;
     color: rgb(220, 220, 220);
-    line-height: 2rem;
+    line-height: 0.7;
     padding: 0;
   }
 
   #intro-text-3 {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 3rem;
   }
 
   .pseudo {
-    font-size: 3.5rem;
+    font-size: 5rem;
     color: rgb(155, 11, 11);
-    line-height: 2.5rem;
+    line-height: 0.7;
+    margin-bottom: 0;
   }
 
   #robotics-link {
@@ -253,10 +364,33 @@
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 500px) {
   #robotics-link {
     font-size: 5.5rem;
     left: 5%;
+  }
+  #intro-text {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  #intro-text-2 {
+    width: 104%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgb(220, 220, 220);
+    line-height: 2rem;
+    padding: 0;
+  }
+  #intro-text-3 {
+    font-size: 1.5rem;
+  }
+  .pseudo {
+    font-size: 3.5rem;
+    color: rgb(155, 11, 11);
+    line-height: 2.5rem;
+  }
+  .about-us-text-container {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 325px) {
