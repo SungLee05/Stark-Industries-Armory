@@ -147,6 +147,102 @@
   z-index: 2;
 }
 
+@media (max-width: 770px) and (min-height: 1024px) {
+  .single-product-glass {
+    width: 80%;
+  }
+  .product-img-container {
+    margin: 0;
+    padding: 0;
+    height: 32rem;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    position: absolute;
+    left: 13%;
+  }
+  .text-container {
+    margin: 0 auto;
+  }
+  .single-product-name {
+    font-size: 4rem;
+  }
+  .single-product-desc {
+    font-size: 1.3rem;
+  }
+  .single-product-info-container {
+    margin: 7rem 1rem 0 20rem;
+    width: 45%;
+  }
+  .single-product-price {
+    margin: 2rem 1rem 0 20rem;
+    font-size: 1.5rem;
+  }
+  .single-product-back-link-container {
+    margin-top: 0;
+  }
+  .single-product-cart-back-link {
+    margin: 1rem 0.75rem;
+  }
+  .order-btn-back-link-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 2rem;
+  }
+  .order-btn {
+    margin: 1rem 1.65rem;
+    width: 5rem;
+  }
+}
+
+@media (max-width: 770px) and (max-height: 1023px) {
+  .single-product-glass {
+    width: 80%;
+  }
+  .product-img-container {
+    margin: 0;
+    padding: 0;
+    height: 32rem;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    position: absolute;
+    left: 13%;
+  }
+  .text-container {
+    margin: 0 auto;
+  }
+  .single-product-name {
+    font-size: 4rem;
+  }
+  .single-product-desc {
+    font-size: 1.3rem;
+  }
+  .single-product-info-container {
+    margin: 2rem 1rem 0 20rem;
+    width: 45%;
+  }
+  .single-product-price {
+    margin: 2rem 1rem 0 20rem;
+    font-size: 1.5rem;
+  }
+  .single-product-back-link-container {
+    margin-top: 0;
+  }
+  .single-product-cart-back-link {
+    margin: 1rem 0;
+  }
+  .order-btn-back-link-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 2rem;
+  }
+  .order-btn {
+    margin: 1rem 1.65rem;
+    width: 5rem;
+  }
+}
+
 @media (max-width: 540px) {
   #jarvis-container {
     overflow: hidden;
@@ -164,17 +260,14 @@
     height: 25rem;
     z-index: 1;
   }
-
   .product-img-card {
     border-radius: 0;
   }
-
   .single-product-container {
     height: 100%;
     margin: 0;
     position: fixed;
   }
-
   .single-product-glass {
     z-index: 2;
     backdrop-filter: none;
@@ -226,7 +319,6 @@
     width: 7rem;
     padding: 0.5rem;
   }
-
   .single-product-back-link-container {
     margin-top: 0;
   }
@@ -243,7 +335,6 @@
   .single-product-cart-back-link {
     margin-right: 0%;
   }
-
   .single-product-cart-back-link svg {
     border-radius: 50%;
     border-width: 1px;

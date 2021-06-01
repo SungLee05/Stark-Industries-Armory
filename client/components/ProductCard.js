@@ -49,6 +49,10 @@ const ProductCard = props => {
           },
           700: {
             spaceBetween: 2,
+            slidesPerView: 3
+          },
+          1000: {
+            spaceBetween: 0,
             slidesPerView: 4
           }
         }}

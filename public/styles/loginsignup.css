@@ -44,7 +44,7 @@
   padding: 2rem;
   box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.2);
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(21, 21, 21, 0.7);
   overflow: hidden;
   display: flex;
   justify-content: space-evenly;
@@ -55,10 +55,10 @@
   backdrop-filter: blur(0.5rem);
 }
 
-h2 {
+.login-wrap h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.5rem;
@@ -178,6 +178,12 @@ select:-webkit-autofill:focus {
 .label-container label {
   font-size: 1rem;
   margin-left: 2rem;
+}
+
+@media (max-width: 770px) and (min-height: 1024px) {
+  .formWrap {
+    margin: 7rem auto;
+  }
 }
 
 @media (max-width: 540px) {

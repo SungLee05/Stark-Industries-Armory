@@ -73,6 +73,31 @@
   margin-bottom: 4rem;
 }
 
+@media (max-width: 768px) {
+  .all-products-container {
+    height: 90vh;
+  }
+  .products-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .product-container {
+    height: 90%;
+    margin-top: 1.5rem;
+  }
+  .swiper-container {
+    height: 100%;
+  }
+  .product-img {
+    width: unset;
+    height: 75%;
+  }
+  .swiper-pagination {
+    margin-bottom: 2rem;
+  }
+}
+
 @media (max-width: 540px) {
   .all-products-container {
     height: 90vh;
