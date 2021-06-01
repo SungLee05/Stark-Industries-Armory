@@ -259,7 +259,7 @@
     margin-top: 10vh;
   }
   .cart-img {
-    height: 190px;
+    height: 180px;
   }
   .cart-empty-container {
     overflow: hidden;
@@ -372,7 +372,7 @@
     font-size: 1.1rem;
   }
   .cart-fullname {
-    font-size: 2rem;
+    font-size: 1.3rem;
     background-color: rgb(253, 212, 132);
   }
   .cart-quantity-container {
@@ -423,12 +423,7 @@
     width: 8rem;
     font-size: 1rem;
   }
-  .checkout-btn {
-    margin: 0rem;
-  }
-  .checkout-btn:hover {
-    margin: 0rem;
-  }
+
   .cart-back-link {
     margin-right: 0.5rem;
   }

@@ -50,7 +50,7 @@
   margin: 1rem 0;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 540px) {
   .modal-container {
     width: 90%;
     padding: 1.25rem;
@@ -71,10 +71,15 @@
 
   .payment-btn-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 }
 
+@media (max-width: 414px) {
+  .payment-btn-container {
+    justify-content: center;
+  }
+}
 @media (max-width: 375px) {
   .modal-container {
     width: 90%;

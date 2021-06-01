@@ -97,33 +97,23 @@
   position: absolute;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 540px) {
   .page404-container {
-    margin-top: 0;
-    height: 85vh;
     position: fixed;
   }
-  .page404-img-container {
-    height: 85vh;
-  }
   .page404-img {
-    left: -170%;
+    left: -100%;
     top: unset;
-  }
-  .UC-background-img-container {
-    height: 75vh;
   }
   .UC-background-img {
     width: unset;
     height: 125%;
     top: -20%;
-    left: -60%;
+    left: -45%;
   }
   .under-construction-container {
-    height: 75vh;
     position: fixed;
   }
-
   .under-construction-wrapper {
     align-items: center;
     height: 100%;
@@ -145,14 +135,49 @@
     align-items: center;
   }
   #text-404 {
+    font-size: 12rem;
+    height: 11rem;
+    margin: 0;
+    top: 15%;
+    left: 26%;
+  }
+  #text-not-found {
+    font-size: 1.6rem;
+    left: 44%;
+    top: 36%;
+  }
+}
+
+@media (max-width: 414px) {
+  .page404-container {
+    margin-top: 0;
+    height: 85vh;
+  }
+  .page404-img-container {
+    height: 85vh;
+  }
+  .page404-img {
+    left: -170%;
+  }
+  #text-404 {
     font-size: 8rem;
     height: 8rem;
-    margin: 0;
+    top: unset;
+    left: unset;
   }
   #text-not-found {
     font-size: 1rem;
     left: 35.8%;
     top: 49%;
+  }
+  .under-construction-container {
+    height: 75vh;
+  }
+  .UC-background-img-container {
+    height: 75vh;
+  }
+  .UC-background-img {
+    left: -60%;
   }
 }
 
