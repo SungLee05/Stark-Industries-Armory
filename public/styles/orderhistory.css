@@ -377,6 +377,10 @@
     letter-spacing: 0.2rem;
   }
 
+  .track-status-wrapper {
+    justify-content: space-evenly;
+  }
+
   .track-status-bar-wrapper {
     justify-content: center;
     margin-left: 0.65rem;
@@ -420,7 +424,7 @@
 }
 
 @media (max-width: 414px) {
-  .track-status-bar-wrapper {
+  .track-status-wrapper {
     justify-content: center;
   }
 }
