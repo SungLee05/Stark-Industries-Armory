@@ -242,7 +242,7 @@
   margin-top: 1rem;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 540px) {
   .ironman-OH-wallpaper-container {
     height: 85vh;
   }
@@ -416,6 +416,12 @@
   #track-status-box-right-after {
     right: 6rem;
     position: relative;
+  }
+}
+
+@media (max-width: 414px) {
+  .track-status-bar-wrapper {
+    justify-content: center;
   }
 }
 
