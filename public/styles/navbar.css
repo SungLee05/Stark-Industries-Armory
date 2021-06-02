@@ -66,6 +66,29 @@
   display: none;
 }
 
+@media (max-width: 1024px) and (min-height: 1366px) {
+  .navbar-container {
+    z-index: 10;
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+  }
+  .logo-link-container {
+    display: flex;
+    width: 12rem;
+    flex-direction: row;
+  }
+  .company-logo {
+    width: 8rem;
+    position: absolute;
+    left: 5%;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar-container {
     z-index: 10;
@@ -82,6 +105,7 @@
     display: flex;
     width: 12rem;
     flex-direction: row;
+    margin-right: 10rem;
   }
 
   .link-container {

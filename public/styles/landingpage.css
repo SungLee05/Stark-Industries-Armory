@@ -136,6 +136,7 @@
     transform: translateX(100%);
   }
 }
+
 @media (max-width: 1024px) and (min-height: 1366px) {
   .about-us {
     left: unset;
@@ -184,7 +185,7 @@
     letter-spacing: 0;
     margin-bottom: 0rem;
     font-size: 4rem;
-    margin-top: 3rem;
+    margin-top: 6rem;
     font-weight: 700;
   }
 
@@ -197,7 +198,7 @@
     padding: 0 1rem;
     text-align: center;
     margin-bottom: 3rem;
-    color: tan;
+    color: #fbca03;
     letter-spacing: -0.2rem;
   }
 
@@ -220,7 +221,7 @@
   }
 
   .pseudo {
-    font-size: 8rem;
+    font-size: 12rem;
     color: rgb(155, 11, 11);
     line-height: 0.7;
     margin-bottom: 3rem;
@@ -233,7 +234,7 @@
     position: absolute;
     left: 5%;
     font-size: 14rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
