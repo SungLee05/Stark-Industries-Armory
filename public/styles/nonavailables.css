@@ -97,6 +97,57 @@
   position: absolute;
 }
 
+@media (max-width: 1024px) and (min-height: 1366px) {
+  .page404-container {
+    position: fixed;
+  }
+  .page404-img {
+    left: -100%;
+    top: unset;
+  }
+  .UC-background-img {
+    width: unset;
+    height: 125%;
+    top: -20%;
+    left: -45%;
+  }
+  .under-construction-container {
+    position: fixed;
+  }
+  .under-construction-wrapper {
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    top: unset;
+    left: unset;
+    text-align: center;
+  }
+  .under-construction-wrapper h1 {
+    font-size: 2rem;
+    margin: 2rem 1rem 5rem 1rem;
+    font-weight: 400;
+  }
+  .page404-wrapper {
+    height: 100%;
+    width: 100%;
+    top: unset;
+    left: unset;
+    align-items: center;
+  }
+  #text-404 {
+    font-size: 22rem;
+    height: 11rem;
+    margin: 0;
+    top: 16%;
+    left: 30%;
+  }
+  #text-not-found {
+    font-size: 3rem;
+    left: 48%;
+    top: 36%;
+    font-weight: 400;
+  }
+}
 @media (max-width: 770px) and (min-height: 1024px) {
   .page404-container {
     position: fixed;

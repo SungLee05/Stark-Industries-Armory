@@ -180,6 +180,12 @@ select:-webkit-autofill:focus {
   margin-left: 2rem;
 }
 
+@media (max-width: 1024px) and (min-height: 1366px) {
+  .formWrap {
+    margin: 13rem auto;
+  }
+}
+
 @media (max-width: 770px) and (min-height: 1024px) {
   .formWrap {
     margin: 7rem auto;

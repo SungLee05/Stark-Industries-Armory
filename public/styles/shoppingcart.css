@@ -244,6 +244,142 @@
   height: 150px;
 }
 
+@media (max-width: 1024px) and (min-height: 1366px) {
+  .ironman-gif-container {
+    height: 100%;
+  }
+  .ironman {
+    width: 150%;
+    height: 55%;
+    margin-bottom: 5rem;
+  }
+  .cart-empty-container {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+  }
+  .cart-empty {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    width: 100%;
+    margin: 0 0 10rem;
+  }
+  .empty-cart-back-btn {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: rgb(255, 212, 124);
+    font-size: 2rem;
+  }
+  .empty-cart-back-link {
+    margin: 0;
+    font-size: 1.5rem;
+    width: 100%;
+    left: 15%;
+    bottom: -6.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .empty-cart-back-link svg {
+    padding: 0.25rem;
+    border-radius: 50%;
+    border-width: 1px;
+    background-color: rgb(255, 212, 124);
+    color: black;
+    margin-right: 1rem;
+  }
+  .cart-main-container h1 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .cart-glass-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 64rem;
+    height: 10rem;
+    background: linear-gradient(
+      150deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1)
+    );
+    box-sizing: border-box;
+    overflow: hidden;
+    backdrop-filter: blur(0.3rem);
+    -webkit-backdrop-filter: blur(0.3rem);
+    z-index: 3;
+    margin-left: 2rem;
+  }
+  .cart-quantity-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 5rem;
+    font-size: 1.3rem;
+  }
+  .cart-price-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 2rem 0 6rem;
+    width: 10rem;
+    font-size: 1.3rem;
+  }
+  .remove-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16%;
+    height: 160px;
+  }
+  .cart-subtotal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    margin: 5rem 0;
+  }
+  .cart-back-link {
+    color: #e8e8e8e4;
+    margin-right: 22.5rem;
+    z-index: 2;
+  }
+  .cart-total-text {
+    margin-right: 0;
+  }
+  .cart-total-price {
+    width: 10rem;
+    text-align: right;
+    padding-right: 8.7rem;
+  }
+  .checkout-btn {
+    margin: 1rem 8.7rem 0 0;
+    padding: 0.3rem 1rem;
+    font-size: 1.2rem;
+    width: 10rem;
+  }
+  .checkout-btn:hover {
+    margin: 1rem 8.7rem 0 0;
+    padding: 0.3rem 1rem;
+    font-size: 1.2rem;
+    width: 10rem;
+  }
+  .cart-name-wrapper {
+    margin-left: 0;
+  }
+  .cart-fullname {
+    text-align: center;
+  }
+  .cart-back-btn,
+  .cart-total-text,
+  .cart-total-price {
+    font-weight: 600;
+  }
+}
 @media (max-width: 770px) and (min-height: 1024px) {
   .ironman-gif-container {
     height: 100%;
