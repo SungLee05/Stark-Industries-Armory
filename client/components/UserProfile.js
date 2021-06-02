@@ -22,7 +22,7 @@ const UserProfile = props => {
         currentMsgIdx = 0
       }
       setMessage(jarvisMessageList[currentMsgIdx])
-    }, 5000)
+    }, 7000)
 
     return () => clearInterval(msgIteration)
   }, [])

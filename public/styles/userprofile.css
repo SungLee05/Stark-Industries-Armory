@@ -283,6 +283,123 @@
   left: 20%;
 }
 
+@media (max-width: 770px) and (min-height: 1024px) {
+  #hud1-container {
+    left: 72%;
+    top: 14%;
+  }
+  #hud6-container {
+    width: 50rem;
+    height: 50rem;
+    overflow: hidden;
+    position: absolute;
+    left: -30%;
+    top: 40%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transform: perspective(500px) rotateY(30deg) rotateX(50deg);
+    opacity: 0.6;
+  }
+  #hud6-container img {
+    height: 40rem;
+  }
+  #hud9-container {
+    width: 25rem;
+    height: 40rem;
+    overflow: hidden;
+    position: absolute;
+    left: 55.5%;
+    top: 65%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #hud9-container img {
+    height: 45rem;
+  }
+  #hud10-container {
+    width: 15rem;
+    height: 15rem;
+    overflow: hidden;
+    position: absolute;
+    left: 8%;
+    top: 68%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transform: perspective(500px) rotateY(30deg) rotateX(45deg);
+  }
+
+  #hud42-container,
+  #hud44-container {
+    display: none;
+  }
+  #hud43-container {
+    left: 25%;
+    top: 5%;
+  }
+  #hud43-container img {
+    height: 7rem;
+    width: 15rem;
+  }
+  #profile-clock {
+    width: 40rem;
+    height: 20rem;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    z-index: 4;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: none;
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
+    text-align: start;
+    text-shadow: 12px 0px 15px #67c7eb;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .profile-info-wrapper {
+    transform: rotate(-90deg);
+    z-index: 10;
+    top: 58%;
+    left: 60%;
+    position: absolute;
+    width: 30rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .jarvis-word-box {
+    height: 23rem;
+    width: 25rem;
+    position: absolute;
+    top: 15%;
+    left: -19%;
+    transform: perspective(900px) rotateY(180deg) rotateX(0deg);
+    opacity: 0.3;
+  }
+  .jarvis-msg {
+    z-index: 5;
+    top: 50%;
+    position: absolute;
+    width: 25rem;
+    left: -10%;
+    height: 11rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+}
+
 @media (max-width: 540px) {
   .profile-main-container {
     width: 100%;
