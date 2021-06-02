@@ -241,6 +241,79 @@
   margin-bottom: 32px;
   margin-top: 1rem;
 }
+@media (max-width: 1024px) and (min-height: 1366px) {
+  .ironman-OH-wallpaper-container {
+    height: 100%;
+  }
+  .ironman-OH {
+    width: 150%;
+    height: 55%;
+    margin-bottom: 5rem;
+  }
+  .order-history-main-container {
+    height: 100%;
+    top: 0%;
+    margin-top: 10vh;
+  }
+  .order-history-main-container h1 {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .order-history-empty-container {
+    overflow: hidden;
+    position: fixed;
+    height: 75%;
+  }
+  .order-history-empty {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    width: 90%;
+    margin: 19rem 0 0 0;
+    transition: 1s ease-in-out;
+  }
+  .cart-back-btn-OH {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: rgb(255, 212, 124);
+    font-size: 2rem;
+  }
+  #cart-back-link-OH {
+    margin: 9em 0 0;
+    font-size: 1.5rem;
+    width: 100%;
+    left: 15%;
+    bottom: -6.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+  }
+  #cart-back-link-OH svg {
+    padding: 0.25rem;
+    border-radius: 50%;
+    border-width: 1px;
+    background-color: rgb(255, 212, 124);
+    color: black;
+    margin-right: 1rem;
+  }
+  .order-history-qty-price-wrapper {
+    width: 32%;
+  }
+  .order-history-subheader,
+  .order-history-subheader-shipping {
+    font-size: 1.3rem;
+  }
+  .order-history-address-wrapper {
+    margin-left: 0;
+  }
+  #OH-package-status-title {
+    font-size: 1.3rem;
+  }
+  .order-history-status-wrapper {
+    margin-left: 0;
+  }
+}
 
 @media (max-width: 770px) and (min-height: 1024px) {
   .ironman-OH-wallpaper-container {
@@ -279,14 +352,12 @@
     margin: 15rem 0 0 0;
     transition: 1s ease-in-out;
   }
-
   .cart-back-btn-OH {
     margin-left: 1rem;
     text-decoration: none;
     color: rgb(255, 212, 124);
     font-size: 2rem;
   }
-
   #cart-back-link-OH {
     margin: 6rem 0 0;
     font-size: 1.5rem;
@@ -298,7 +369,6 @@
     align-items: center;
     transition: 1s ease-in-out;
   }
-
   #cart-back-link-OH svg {
     padding: 0.25rem;
     border-radius: 50%;

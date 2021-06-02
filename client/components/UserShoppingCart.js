@@ -158,9 +158,7 @@ const UserShoppingCart = props => {
 
                       <div className="cart-price-wrapper">
                         <div>
-                          {accounting.formatMoney(
-                            roundDecimal(product.price * product.quantity)
-                          )}
+                          {accounting.formatMoney(roundDecimal(product.price))}
                         </div>
                       </div>
                     </div>
