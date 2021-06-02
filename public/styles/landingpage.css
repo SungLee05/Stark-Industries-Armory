@@ -136,6 +136,130 @@
     transform: translateX(100%);
   }
 }
+@media (max-width: 1024px) and (min-height: 1366px) {
+  .about-us {
+    left: unset;
+  }
+  .intro {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    height: 100vh;
+  }
+  .introImg {
+    height: 100vh;
+    width: auto;
+    margin-right: 60rem;
+    filter: opacity(0.3);
+  }
+
+  .block div:after {
+    background-color: rgb(49, 49, 49);
+    animation-delay: 5s;
+    animation: base 3.5s ease forwards;
+  }
+  .about-us {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 44%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(220, 220, 220);
+    height: 10rem;
+    width: 80%;
+    align-items: center;
+    line-height: 4rem;
+  }
+  .about-us-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0;
+    margin-bottom: 0rem;
+    font-size: 4rem;
+    margin-top: 3rem;
+    font-weight: 700;
+  }
+
+  #intro-text {
+    font-size: 8rem;
+    font-style: italic;
+    margin-right: 0;
+    margin-top: 1rem;
+    line-height: 0.7;
+    padding: 0 1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: tan;
+    letter-spacing: -0.2rem;
+  }
+
+  #intro-text-2 {
+    width: 100%;
+    font-size: 7rem;
+    font-weight: 700;
+    color: rgb(220, 220, 220);
+    line-height: 0.8;
+    padding: 0;
+    opacity: 0.6;
+    margin: 2rem 0 1rem 0;
+  }
+
+  #intro-text-3 {
+    width: 100%;
+    font-size: 6rem;
+    line-height: 0.7;
+    margin-top: 5rem;
+  }
+
+  .pseudo {
+    font-size: 8rem;
+    color: rgb(155, 11, 11);
+    line-height: 0.7;
+    margin-bottom: 3rem;
+  }
+  #robotics-link {
+    display: inline-block;
+    line-height: 0.75;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 5%;
+    font-size: 14rem;
+    padding-right: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -1.5rem;
+    z-index: 2;
+    top: 121%;
+  }
+  .directory {
+    height: 90vh;
+  }
+  .wrap {
+    overflow: hidden;
+  }
+  .item {
+    position: relative;
+    width: 200%;
+    float: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    filter: blur(0.09rem);
+    -webkit-filter: blur(0.05rem) brightness(90%);
+    left: -40%;
+  }
+}
 @media (max-width: 768px) {
   .about-us {
     left: unset;
