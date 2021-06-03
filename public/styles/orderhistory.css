@@ -281,12 +281,8 @@
   #cart-back-link-OH {
     margin: 9em 0 0;
     font-size: 1.5rem;
-    width: 100%;
     left: 15%;
     bottom: -6.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: 1s ease-in-out;
   }
   #cart-back-link-OH svg {
@@ -364,9 +360,6 @@
     width: 100%;
     left: 15%;
     bottom: -6.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: 1s ease-in-out;
   }
   #cart-back-link-OH svg {
@@ -406,7 +399,6 @@
     width: 100%;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
   }
   .OH-info-container {
     margin: 0 0 0 1rem;
