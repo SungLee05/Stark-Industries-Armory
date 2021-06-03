@@ -162,14 +162,9 @@
     animation: base 3.5s ease forwards;
   }
   .about-us {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     top: 44%;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    text-transform: uppercase;
     text-align: center;
     color: rgb(220, 220, 220);
     height: 10rem;
@@ -178,10 +173,8 @@
     line-height: 4rem;
   }
   .about-us-text-container {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     letter-spacing: 0;
     margin-bottom: 0rem;
     font-size: 4rem;
@@ -191,13 +184,10 @@
 
   #intro-text {
     font-size: 8rem;
-    font-style: italic;
-    margin-right: 0;
-    margin-top: 1rem;
+    margin: 1rem 0 3rem 0;
     line-height: 0.7;
     padding: 0 1rem;
     text-align: center;
-    margin-bottom: 3rem;
     color: #fbca03;
     letter-spacing: -0.2rem;
   }
@@ -227,19 +217,10 @@
     margin-bottom: 3rem;
   }
   #robotics-link {
-    display: inline-block;
     line-height: 0.75;
-    overflow: hidden;
-    color: rgba(0, 0, 0, 0.7);
-    position: absolute;
     left: 5%;
     font-size: 14rem;
-    padding-right: 2rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: -1.5rem;
-    z-index: 2;
     top: 121%;
   }
   .directory {
@@ -249,15 +230,8 @@
     overflow: hidden;
   }
   .item {
-    position: relative;
     width: 200%;
     float: none;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-    filter: blur(0.09rem);
-    -webkit-filter: blur(0.05rem) brightness(90%);
     left: -40%;
   }
 }
@@ -281,42 +255,29 @@
   }
   .block div:after {
     background-color: rgb(49, 49, 49);
-    animation-delay: 5s;
-    animation: base 3.5s ease forwards;
   }
   .about-us {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     top: 44%;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    text-transform: uppercase;
     text-align: center;
     color: rgb(220, 220, 220);
-    height: 10rem;
     width: 80%;
     align-items: center;
     line-height: 4rem;
   }
   .about-us-text-container {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     letter-spacing: 0;
-    margin-bottom: 0rem;
+    margin: 3rem 0 0 0;
     font-size: 2.5rem;
-    margin-top: 3rem;
     font-weight: 700;
   }
 
   #intro-text {
     font-size: 5rem;
-    font-style: italic;
-    margin-right: 0;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0 0 0;
     line-height: 0.7;
     padding: 0 1rem;
   }
@@ -340,24 +301,15 @@
 
   .pseudo {
     font-size: 8rem;
-    color: rgb(155, 11, 11);
     line-height: 0.7;
     margin-bottom: 3rem;
   }
   #robotics-link {
-    display: inline-block;
     line-height: 8rem;
-    overflow: hidden;
-    color: rgba(0, 0, 0, 0.7);
-    position: absolute;
     left: 5%;
     font-size: 11rem;
     padding-right: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: -0.9rem;
-    z-index: 2;
     top: 140%;
   }
   .directory {
@@ -367,16 +319,9 @@
     overflow: hidden;
   }
   .item {
-    position: relative;
     width: 300%;
     height: auto;
     float: none;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-    filter: blur(0.09rem);
-    -webkit-filter: blur(0.05rem) brightness(90%);
     left: -40%;
   }
 }
@@ -390,105 +335,52 @@
 @media (max-width: 629px) {
   .introImg {
     margin-right: 34rem;
-    filter: opacity(0.2);
-  }
-
-  .block div:after {
-    background-color: rgb(49, 49, 49);
-    animation-delay: 5s;
-    animation: base 3.5s ease forwards;
   }
 
   .about-us {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     top: 40%;
     font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    color: rgb(220, 220, 220);
     height: 10rem;
-    width: 80%;
-    align-items: center;
     line-height: 1.6rem;
   }
 
   .about-us-text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    letter-spacing: 0;
     margin-bottom: 2rem;
     font-size: 2.3rem;
   }
 
   #intro-text {
     font-size: 4.4rem;
-    font-style: italic;
-    margin-right: 0;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0 0 0;
     line-height: 0.7;
   }
 
   #intro-text-2 {
     width: 104%;
-    font-size: 2.5rem;
     font-weight: 600;
-    color: rgb(220, 220, 220);
     line-height: 0.7;
-    padding: 0;
   }
 
   #intro-text-3 {
-    width: 100%;
     font-size: 2rem;
     line-height: 3rem;
   }
 
   .pseudo {
     font-size: 5rem;
-    color: rgb(155, 11, 11);
-    line-height: 0.7;
     margin-bottom: 0;
   }
 
   #robotics-link {
     display: inline-block;
     line-height: 6rem;
-    overflow: hidden;
-    color: rgba(0, 0, 0, 0.7);
-    position: absolute;
     left: 7%;
     font-size: 7rem;
-    padding-right: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: -0.55rem;
-    z-index: 2;
-  }
-  .directory {
-    height: 90vh;
-  }
-  .wrap {
-    overflow: hidden;
   }
   .item {
-    position: relative;
-    width: 300%;
-    height: auto;
     float: left;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-    filter: blur(0.09rem);
-    -webkit-filter: blur(0.05rem) brightness(90%);
     left: -110%;
   }
 }
@@ -501,162 +393,66 @@
   }
   #intro-text {
     font-size: 4rem;
-    line-height: 0.7;
   }
   #intro-text-2 {
-    width: 104%;
     font-size: 2.5rem;
     font-weight: 700;
     color: rgb(220, 220, 220);
     line-height: 0.75;
     padding: 0;
-  }
-  #intro-text-3 {
-    font-size: 2rem;
-  }
-  .pseudo {
-    font-size: 5rem;
-    color: rgb(155, 11, 11);
-    line-height: 0.7;
   }
   .about-us-text-container {
     font-size: 1.5rem;
   }
 }
 @media (max-width: 375px) {
-  .intro {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .introImg {
-    height: 100vh;
     width: 290%;
     margin-right: 26rem;
-    filter: opacity(0.2);
   }
-
-  .block div:after {
-    background-color: rgb(49, 49, 49);
-    animation-delay: 5s;
-    animation: base 3.5s ease forwards;
-  }
-
-  .about-us {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    top: 40%;
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    color: rgb(220, 220, 220);
-    height: 10rem;
-    width: 80%;
-    align-items: center;
-    line-height: 1.6rem;
-  }
-
   .about-us-text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 0;
-    margin-bottom: 2rem;
     font-size: 1.5rem;
   }
 
   #intro-text {
     font-size: 3.25rem;
-    line-height: 0.71;
-    font-style: italic;
-    margin-right: 0;
-    margin-top: 0.5rem;
   }
 
   #intro-text-2 {
-    width: 100%;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: rgb(220, 220, 220);
     line-height: 0.75;
-    padding: 0;
   }
 
   #intro-text-3 {
-    width: 100%;
     font-size: 1.5rem;
     line-height: 3rem;
   }
 
   .pseudo {
     font-size: 4.25rem;
-    color: rgb(155, 11, 11);
-    line-height: 0.7;
   }
 
   #robotics-link {
-    display: inline-block;
     line-height: 4rem;
-    overflow: hidden;
-    color: rgba(0, 0, 0, 0.7);
-    position: absolute;
     top: 135%;
     left: 4%;
     font-size: 5.25rem;
     padding-right: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: -0.55rem;
-    z-index: 2;
-    width: fit-content;
-  }
-  .directory {
-    height: 90vh;
-  }
-  .wrap {
-    overflow: hidden;
   }
   .item {
-    position: relative;
     width: 300%;
     height: auto;
-    float: left;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-    filter: blur(0.09rem);
-    -webkit-filter: blur(0.05rem) brightness(90%);
-    left: -110%;
   }
 }
 @media (max-width: 320px) {
   #intro-text {
     font-size: 2.75rem;
-    line-height: 0.71;
-    font-style: italic;
-    margin-right: 0;
-    margin-top: 0.5rem;
   }
   #intro-text-2 {
     width: 100%;
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: rgb(220, 220, 220);
-    line-height: 0.75;
-    padding: 0;
   }
   .pseudo {
     font-size: 3.75rem;
-    color: rgb(155, 11, 11);
     line-height: 2.5rem;
   }
   #robotics-link {
@@ -668,21 +464,12 @@
   #intro-text {
     font-size: 2.5rem;
     line-height: 0.71;
-    font-style: italic;
-    margin-right: 0;
-    margin-top: 0.5rem;
   }
   #intro-text-2 {
-    width: 100%;
     font-size: 2rem;
-    font-weight: 700;
-    color: rgb(220, 220, 220);
-    line-height: 0.75;
-    padding: 0;
   }
   .pseudo {
     font-size: 3.5rem;
-    color: rgb(155, 11, 11);
     line-height: 2.5rem;
   }
   #robotics-link {
