@@ -172,6 +172,16 @@
   }
 }
 
+@media (max-width: 740px) {
+  #hex-main-container {
+    position: absolute;
+    top: 68%;
+    left: 58%;
+    z-index: 5;
+    transition: 1s;
+  }
+}
+
 @media (max-width: 540px) {
   #hex-main-container {
     top: 60%;

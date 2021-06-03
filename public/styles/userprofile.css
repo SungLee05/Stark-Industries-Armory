@@ -7,7 +7,6 @@
   position: absolute;
   overflow: hidden;
 }
-
 .profile-info-container {
   width: 100%;
   display: flex;
@@ -33,7 +32,6 @@
   justify-content: center;
   align-items: center;
 }
-
 #hud1-container {
   width: 9rem;
   height: 9rem;
@@ -51,7 +49,6 @@
 #hud1-container img {
   height: 26rem;
 }
-
 #hud5-container {
   width: 20rem;
   height: 20rem;
@@ -69,14 +66,13 @@
 #hud5-container img {
   height: 20rem;
 }
-
 #hud6-container {
   width: 50rem;
   height: 50rem;
   overflow: hidden;
   position: absolute;
-  left: -5%;
-  top: 10%;
+  left: -15%;
+  top: 25%;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -88,7 +84,6 @@
 #hud6-container img {
   height: 54rem;
 }
-
 #hud9-container {
   width: 13rem;
   height: 30rem;
@@ -104,14 +99,13 @@
 #hud9-container img {
   height: 28rem;
 }
-
 #hud10-container {
   width: 15rem;
   height: 15rem;
   overflow: hidden;
   position: absolute;
-  left: 15%;
-  top: 45%;
+  left: 5%;
+  top: 63%;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -122,7 +116,6 @@
 #hud10-container img {
   height: 30rem;
 }
-
 #hud33-container {
   width: 18rem;
   height: 11rem;
@@ -140,7 +133,6 @@
 #hud33-container img {
   height: 20rem;
 }
-
 #hud34-container {
   width: 1rem;
   height: 24rem;
@@ -154,12 +146,10 @@
   align-items: center;
   opacity: 0.4;
 }
-
 #hud34-container img {
   height: 24rem;
   transform: rotate(90deg);
 }
-
 #hud40-container {
   width: 12rem;
   height: 10rem;
@@ -177,7 +167,6 @@
 #hud40-container img {
   height: 10rem;
 }
-
 #hud42-container {
   width: 24rem;
   height: 10rem;
@@ -196,7 +185,6 @@
   height: 10rem;
   width: 24rem;
 }
-
 #hud43-container {
   width: 24rem;
   height: 10rem;
@@ -215,7 +203,6 @@
   height: 10rem;
   width: 24rem;
 }
-
 #hud44-container {
   width: 24rem;
   height: 15rem;
@@ -230,12 +217,10 @@
   transform: perspective(86px) rotateY(-10deg) rotateX(-4deg);
   opacity: 0.9;
 }
-
 #hud44-container img {
   height: 12rem;
   width: 24rem;
 }
-
 #profile-clock {
   width: 40rem;
   height: 20rem;
@@ -254,7 +239,6 @@
   text-shadow: 12px 0px 15px #67c7eb;
   font-family: 'Orbitron', sans-serif;
 }
-
 .jarvis-msg-container {
   text-align: center;
   position: absolute;
@@ -264,23 +248,189 @@
   width: 24rem;
   z-index: 3;
 }
-
 .jarvis-word-box {
   height: 20rem;
   width: 35rem;
   position: absolute;
-  top: -95%;
-  left: -30%;
+  top: -15%;
+  left: -65%;
   transform: perspective(800px) rotateY(180deg) rotateX(-0deg);
   opacity: 0.3;
 }
-
 .jarvis-msg {
   z-index: 5;
-  top: -60%;
+  top: 15%;
   position: absolute;
   width: 18rem;
-  left: 20%;
+  left: -15%;
+}
+@media (max-width: 1350px) {
+  #hud1-container {
+    left: 78.25%;
+  }
+  #hud5-container {
+    left: 72%;
+  }
+  #hud9-container {
+    top: 38%;
+  }
+  #hud44-container {
+    display: none;
+  }
+  .jarvis-word-box {
+    left: -60%;
+  }
+  .jarvis-msg {
+    left: -10%;
+  }
+}
+@media (max-width: 1280px) {
+  #hud6-container {
+    left: -18%;
+  }
+  .jarvis-word-box {
+    left: -55%;
+  }
+  .jarvis-msg {
+    left: -5%;
+  }
+}
+@media (max-width: 1180px) {
+  #hud42-container {
+    display: none;
+  }
+  #hud43-container {
+    transform: none;
+    width: 35rem;
+    height: 12rem;
+    left: 28%;
+  }
+  #hud43-container img {
+    width: 30rem;
+  }
+  .jarvis-word-box {
+    left: -50%;
+  }
+  .jarvis-msg {
+    left: 0%;
+  }
+}
+@media (max-width: 1125px) {
+  #hud6-container {
+    left: -20%;
+  }
+  #hud1-container {
+    left: 80%;
+  }
+}
+@media (max-width: 1105px) {
+  #hud43-container {
+    transform: none;
+    width: 35rem;
+    height: 12rem;
+    left: 38%;
+  }
+  #hud43-container img {
+    width: 30rem;
+  }
+  .jarvis-word-box {
+    width: 30rem;
+    left: -45%;
+  }
+  .jarvis-msg {
+    left: -8%;
+  }
+  #profile-clock {
+    font-size: 5rem;
+    transform: perspective(310px) rotateY(-28deg) rotateX(0deg);
+    left: 54%;
+  }
+  .profile-info-wrapper {
+    top: 58%;
+    left: 53%;
+    transform: perspective(300px) rotateY(-30deg) skew(0deg, -4deg);
+  }
+  .profile-info-container {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+  }
+}
+@media (max-width: 1025px) {
+  .jarvis-word-box {
+    left: -38%;
+  }
+  .jarvis-msg {
+    left: -1%;
+  }
+  #hud43-container {
+    width: 20rem;
+  }
+  #hud43-container img {
+    width: 20rem;
+  }
+}
+@media (max-width: 910px) {
+  .jarvis-word-box {
+    left: -32%;
+  }
+  .jarvis-msg {
+    left: 6%;
+  }
+  #hud1-container {
+    left: 82%;
+  }
+  #hud43-container {
+    width: 16rem;
+  }
+  #profile-clock {
+    font-size: 4.5rem;
+  }
+  #hud6-container {
+    left: -27%;
+  }
+}
+@media (max-width: 840px) {
+  .jarvis-word-box {
+    left: -28%;
+  }
+  .jarvis-msg {
+    left: 9%;
+  }
+  #hud1-container {
+    left: 82%;
+  }
+}
+@media (max-width: 820px) {
+  #hud9-container {
+    left: 70%;
+  }
+  .profile-info-wrapper {
+    left: 50%;
+  }
+  #profile-clock {
+    left: 52%;
+  }
+}
+@media (max-width: 760px) {
+  .jarvis-word-box {
+    left: -23%;
+  }
+  .jarvis-msg {
+    left: 15%;
+  }
+  #hud6-container {
+    left: -36%;
+  }
+  .profile-info-wrapper {
+    left: 49%;
+  }
+  .profile-info-container {
+    font-size: 0.8rem;
+  }
+  #profile-clock {
+    font-size: 4rem;
+    left: 54%;
+  }
 }
 @media (max-width: 1024px) and (min-height: 1366px) {
   #hud34-container {
@@ -349,14 +499,14 @@
   }
   .jarvis-word-box {
     height: 30rem;
-    width: 35rem;
+    width: 45rem;
     top: -10%;
-    left: -15%;
+    left: -21%;
   }
   .jarvis-msg {
     top: 40%;
     width: 30rem;
-    left: 10%;
+    left: 29%;
     font-size: 1.6rem;
   }
   #profile-clock {
@@ -369,15 +519,20 @@
   #hud44-container {
     display: none;
   }
+  #hud5-container {
+    left: 61%;
+  }
   #hud5-container img {
     height: 25rem;
   }
 }
-
 @media (max-width: 770px) and (min-height: 1024px) {
   #hud1-container {
     left: 72%;
     top: 14%;
+  }
+  #hud5-container {
+    left: 61%;
   }
   #hud6-container {
     left: -30%;
@@ -400,18 +555,22 @@
     top: 68%;
     z-index: 1;
   }
-
   #hud42-container,
   #hud44-container {
     display: none;
   }
   #hud43-container {
-    left: 25%;
-    top: 5%;
+    width: 40rem;
+    height: 30rem;
+    left: 36%;
+    top: 20%;
+    z-index: 0;
+    transform: perspective(500px) rotateY(-30deg);
   }
   #hud43-container img {
-    height: 7rem;
-    width: 15rem;
+    height: 20rem;
+    width: 40rem;
+    filter: brightness(0.5);
   }
   #profile-clock {
     left: 50%;
@@ -441,12 +600,11 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 740px) {
   .profile-main-container {
     height: 100%;
     position: fixed;
   }
-
   #hud1-container,
   #hud5-container,
   #hud6-container,
@@ -458,7 +616,6 @@
   #hud44-container {
     display: none;
   }
-
   #hud9-container {
     left: 5%;
     top: 40%;
@@ -470,7 +627,7 @@
   }
   #hud10-container {
     width: 100%;
-    height: 20rem;
+    height: 21rem;
     left: 0%;
     top: 0%;
     transform: none;
@@ -485,18 +642,17 @@
     display: none;
   }
   .jarvis-msg {
-    top: 39%;
+    top: 25%;
     width: 20rem;
-    left: -15%;
+    left: -5%;
     font-size: 1rem;
   }
-
   #profile-clock {
     width: 100%;
     height: 10rem;
     font-size: 4rem;
-    left: 10%;
-    top: 65%;
+    left: 15%;
+    top: 70%;
     justify-content: center;
     transform: none;
   }
@@ -516,17 +672,40 @@
     opacity: 0.85;
   }
 }
-
+@media (max-width: 660px) {
+  .jarvis-msg {
+    left: -10%;
+  }
+}
+@media (max-width: 560px) {
+  .jarvis-msg {
+    left: -13%;
+  }
+}
+@media (max-width: 540px) {
+  .jarvis-msg {
+    top: 37%;
+    left: -15%;
+  }
+  #profile-clock {
+    width: 100%;
+    left: 10%;
+    top: 65%;
+  }
+}
 @media (max-width: 414px) {
   .profile-main-container {
     height: 75vh;
+  }
+  #hud10-container {
+    height: 19rem;
   }
   #hud10-container img {
     height: 33rem;
   }
   .jarvis-msg {
     width: 15rem;
-    left: -12%;
+    left: -11%;
     font-size: 0.8rem;
   }
   #hud9-container {
@@ -543,13 +722,11 @@
     top: 75%;
   }
 }
-
 @media (max-width: 375px) {
   #hud9-container {
     left: 0%;
   }
 }
-
 @media (max-width: 325px) {
   .jarvis-msg {
     top: 20%;
@@ -567,7 +744,6 @@
     font-size: 0.65rem;
   }
 }
-
 @media (max-width: 280px) {
   .profile-main-container {
     height: 70vh;
