@@ -7,6 +7,7 @@
 .introImg {
   width: 100%;
   height: 93vh;
+  object-fit: cover;
 }
 .about-us {
   position: absolute;
@@ -137,6 +138,45 @@
   }
 }
 
+@media (max-width: 1405px) {
+  .about-us {
+    left: 9.5%;
+  }
+}
+@media (max-width: 1345px) {
+  .about-us {
+    left: 16.5%;
+    letter-spacing: 0.5rem;
+  }
+  #robotics-link {
+    line-height: 12rem;
+    font-size: 16rem;
+  }
+}
+@media (max-width: 1240px) {
+  .about-us {
+    left: 11.5%;
+  }
+}
+@media (max-width: 1085px) {
+  #robotics-link {
+    line-height: 10rem;
+    font-size: 14rem;
+  }
+}
+@media (max-width: 1043px) {
+  .about-us {
+    left: 6.5%;
+    letter-spacing: 0.4rem;
+  }
+}
+@media (max-width: 930px) {
+  #robotics-link {
+    line-height: 9rem;
+    font-size: 12rem;
+  }
+}
+
 @media (max-width: 1024px) and (min-height: 1366px) {
   .about-us {
     left: unset;
@@ -154,6 +194,7 @@
     width: auto;
     margin-right: 60rem;
     filter: opacity(0.3);
+    object-fit: unset;
   }
 
   .block div:after {
@@ -235,7 +276,7 @@
     left: -40%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .about-us {
     left: unset;
   }
@@ -252,6 +293,7 @@
     width: auto;
     margin-right: 40rem;
     filter: opacity(0.2);
+    object-fit: unset;
   }
   .block div:after {
     background-color: rgb(49, 49, 49);
