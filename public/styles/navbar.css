@@ -22,17 +22,18 @@
 .logo-link-container {
   display: flex;
   width: 12rem;
-  margin-right: 20rem;
+  margin: 0 5rem 0 2rem;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
 .link-container {
   display: flex;
-  width: 55%;
+  width: 100%;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  margin: 0 2rem 0 0;
 }
 .logo-container {
   height: 100%;
@@ -66,6 +67,8 @@
   display: none;
 }
 
+@media (max-width: 1055px) {
+}
 @media (max-width: 1024px) and (min-height: 1366px) {
   .navbar-container {
     flex-wrap: nowrap;
@@ -80,7 +83,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 910px) {
   .link-container {
     display: none;
   }
