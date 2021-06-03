@@ -154,13 +154,6 @@
     height: 42rem;
   }
   .product-img-container {
-    margin: 0;
-    padding: 2rem 0 2rem 1.5rem;
-    height: 32rem;
-    display: flex;
-    align-items: center;
-    z-index: 10;
-    position: absolute;
     left: 5%;
   }
   .text-container {
@@ -173,21 +166,12 @@
     height: 70vh;
     width: 80%;
   }
-  .single-product-img {
-    height: 32rem;
-  }
   .product-img-container {
-    margin: 0;
     padding: 0;
-    height: 32rem;
-    display: flex;
-    align-items: center;
-    z-index: 10;
-    position: absolute;
     left: 13%;
   }
   .text-container {
-    margin: 0 auto;
+    margin: 5rem 0 0 33rem;
   }
   .single-product-name {
     font-size: 4rem;
@@ -195,43 +179,27 @@
   .single-product-desc {
     font-size: 1.3rem;
   }
-  .single-product-info-container {
-    margin: 7rem 1rem 0 20rem;
-    width: 45%;
-  }
   .single-product-price {
-    margin: 2rem 1rem 0 20rem;
-    font-size: 1.5rem;
+    margin: 2rem 0 0 0;
   }
-  .single-product-back-link-container {
-    margin-top: 0;
-  }
-  .single-product-cart-back-link {
-    margin: 1rem 0.75rem;
-  }
-  .order-btn-back-link-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-top: 2rem;
+  .single-product-info-container {
+    width: 55%;
+    margin: 1.5rem 0 0 0;
   }
   .order-btn {
-    margin: 1rem 1.65rem;
-    width: 5rem;
+    margin: 1rem 0 0 0;
+  }
+  .single-product-back-link-container {
+    margin-top: 3rem;
   }
 }
 
-@media (max-width: 770px) and (max-height: 1023px) {
+@media (max-width: 767px) {
   .single-product-glass {
     width: 80%;
   }
   .product-img-container {
-    margin: 0;
     padding: 0;
-    height: 32rem;
-    display: flex;
-    align-items: center;
-    z-index: 10;
-    position: absolute;
     left: 13%;
   }
   .text-container {
@@ -260,7 +228,7 @@
   .order-btn-back-link-wrapper {
     display: flex;
     flex-direction: row-reverse;
-    margin-top: 2rem;
+    margin-top: 0;
   }
   .order-btn {
     margin: 1rem 1.65rem;
@@ -271,7 +239,6 @@
 @media (max-width: 540px) {
   #jarvis-container {
     overflow: hidden;
-    width: 100%;
     height: 90vh;
     margin-top: 10vh;
     position: fixed;
@@ -280,7 +247,6 @@
     width: unset;
   }
   .product-img-container {
-    padding: 0;
     left: unset;
     height: 25rem;
     z-index: 1;
@@ -300,7 +266,6 @@
     border: none;
     width: 100%;
     height: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -348,8 +313,6 @@
     margin-top: 0;
   }
   .order-btn-back-link-wrapper {
-    display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     width: 100%;
