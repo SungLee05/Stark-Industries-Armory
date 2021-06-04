@@ -236,7 +236,39 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 766px) {
+  .single-product-glass {
+    height: 70vh;
+    width: 80%;
+  }
+  .product-img-container {
+    padding: 0;
+    left: 13%;
+  }
+  .text-container {
+    margin: 5rem 0 0 33rem;
+  }
+  .single-product-name {
+    font-size: 4rem;
+  }
+  .single-product-desc {
+    width: 95%;
+  }
+  .single-product-price {
+    margin: 2rem 0 0 0;
+  }
+  .single-product-info-container {
+    width: 55%;
+    margin: 1.5rem 0 0 0;
+  }
+  .order-btn {
+    margin: 1rem 0 0 0;
+  }
+  .single-product-back-link-container {
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 725px) {
   #jarvis-container {
     overflow: hidden;
     height: 90vh;
@@ -293,7 +325,7 @@
     align-items: center;
   }
   .text-container {
-    width: 60%;
+    width: 42%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -330,6 +362,11 @@
     color: black;
     padding: 0.5rem;
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 650px) {
+  .text-container {
+    width: 50%;
   }
 }
 
