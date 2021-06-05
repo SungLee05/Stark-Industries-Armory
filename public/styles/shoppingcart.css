@@ -194,8 +194,8 @@
   position: fixed;
 }
 .ironman {
-  width: 50%;
-  height: 55%;
+  width: 50rem;
+  height: 30rem;
   box-sizing: border-box;
   z-index: 1;
 }

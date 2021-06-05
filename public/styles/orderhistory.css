@@ -18,7 +18,7 @@
 }
 .order-history-empty {
   padding: 0;
-  margin: 0 auto;
+  margin: 0 2rem;
   box-sizing: border-box;
   text-align: center;
   z-index: 10;
@@ -34,7 +34,6 @@
 .order-history-text-2 {
   margin-right: 1rem;
 }
-
 #cart-back-link-OH {
   display: flex;
   flex-direction: row;
@@ -45,11 +44,9 @@
   font-size: 1.2rem;
   color: rgb(253, 212, 132);
 }
-
 #cart-back-link-OH svg {
   padding-right: 1rem;
 }
-
 .cart-back-btn-OH {
   z-index: 2;
 }
@@ -72,7 +69,6 @@
   font-size: 1.2rem;
   font-weight: 400;
 }
-
 .order-history-glass-container {
   background: linear-gradient(
     100deg,
@@ -84,7 +80,6 @@
   overflow: hidden;
   backdrop-filter: blur(0.3rem);
 }
-
 .order-history-subheader,
 .order-history-subheader-shipping {
   font-size: 1.5rem;
@@ -92,7 +87,6 @@
   height: 2.5rem;
   font-weight: 500;
 }
-
 #OH-package-status-title {
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.8);
@@ -100,7 +94,6 @@
   font-weight: 500;
   margin-left: 0.4rem;
 }
-
 .order-history-content-wrapper {
   width: 100%;
   display: flex;
@@ -110,7 +103,6 @@
   color: rgba(255, 255, 255, 0.8);
   margin: 1rem 0 1rem 1.25rem;
 }
-
 .order-history-img-wrapper {
   height: 11rem;
   width: 8rem;
@@ -118,7 +110,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .order-history-qty-price-wrapper {
   width: 20%;
   display: flex;
@@ -127,23 +118,19 @@
   text-align: left;
   margin-left: 1.25rem;
 }
-
 .order-history-address-wrapper,
 .order-history-status-wrapper {
   height: 100%;
   width: 20rem;
 }
-
 .order-history-address-wrapper {
   margin-left: 8.7rem;
 }
-
 .order-history-status-wrapper {
   margin-left: 7.2rem;
   margin-right: 1.7rem;
   height: 100%;
 }
-
 .track-status-container {
   display: flex;
   justify-content: space-around;
@@ -153,7 +140,6 @@
   height: 4rem;
   margin-top: 1rem;
 }
-
 .track-status-wrapper,
 .track-status-bar-wrapper {
   display: flex;
@@ -165,7 +151,6 @@
   width: 100%;
   color: rgb(75, 75, 75);
 }
-
 .track-status-box-left,
 .track-status-box-middle,
 #track-status-box-right {
@@ -176,7 +161,6 @@
   float: left;
   width: 1.25rem;
 }
-
 #track-status-box-left-after {
   position: absolute;
   right: 12.82rem;
@@ -185,7 +169,6 @@
   border-left: 10px solid rgb(75, 75, 75);
   border-right: none;
 }
-
 #track-status-box-middle-before {
   position: absolute;
   right: 11.82rem;
@@ -195,7 +178,6 @@
   border-right: none;
   z-index: 2;
 }
-
 #track-status-box-middle-after {
   position: absolute;
   right: 6.57rem;
@@ -204,7 +186,6 @@
   border-left: 10px solid rgb(75, 75, 75);
   border-right: none;
 }
-
 #track-status-box-right-after {
   position: absolute;
   right: 5.6rem;
@@ -213,11 +194,9 @@
   border-left: 10px solid black;
   border-right: none;
 }
-
 #track-status-delivered {
   color: rgb(75, 75, 75);
 }
-
 .ironman-OH-wallpaper-container {
   width: 100%;
   height: 100vh;
@@ -228,14 +207,12 @@
   z-index: -1;
   position: fixed;
 }
-
 .ironman-OH {
-  width: 50%;
-  height: 55%;
+  width: 50rem;
+  height: 30rem;
   box-sizing: border-box;
   z-index: 1;
 }
-
 .OH-info-container,
 .OH-info-container-address {
   margin-bottom: 32px;
@@ -269,7 +246,7 @@
     font-size: 2.5rem;
     letter-spacing: 0.2rem;
     width: 90%;
-    margin: 19rem 0 0 0;
+    margin: 10rem 0 0 0;
     transition: 1s ease-in-out;
   }
   .cart-back-btn-OH {
@@ -279,7 +256,7 @@
     font-size: 2rem;
   }
   #cart-back-link-OH {
-    margin: 9em 0 0;
+    margin: 10rem 0 0;
     font-size: 1.5rem;
     left: 15%;
     bottom: -6.5%;
@@ -311,6 +288,28 @@
   }
 }
 
+@media (max-width: 1293px) {
+  .order-history-address-wrapper,
+  .order-history-status-wrapper {
+    margin-left: 5rem;
+  }
+}
+@media (max-width: 1162px) {
+  .order-history-address-wrapper,
+  .order-history-status-wrapper {
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 1029px) {
+  .order-history-address-wrapper,
+  .order-history-status-wrapper {
+    margin-left: 1rem;
+  }
+  .order-history-address-wrapper,
+  .order-history-qty-price-wrapper {
+    font-size: 0.9rem;
+  }
+}
 @media (max-width: 770px) and (min-height: 1024px) {
   .ironman-OH-wallpaper-container {
     height: 90%;
@@ -484,20 +483,12 @@
   }
 }
 
-@media (max-width: 750px) {
-  .ironman-OH-wallpaper-container {
-    height: 85vh;
-  }
+@media (max-width: 961px) {
   .order-history-text-1 {
     margin-left: 0;
   }
   .order-history-text-2 {
     margin-right: 0;
-  }
-  .ironman-OH {
-    width: 150%;
-    height: 55%;
-    margin-bottom: 5rem;
   }
   .order-history-main-container {
     height: 75vh;
@@ -515,10 +506,10 @@
     height: 75%;
   }
   .order-history-empty {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     letter-spacing: 0.2rem;
     width: 80%;
-    margin: 15rem 0 0 0;
+    margin: 15rem 0 5rem 0;
   }
   .cart-back-btn-OH {
     margin-left: 1rem;
@@ -662,6 +653,17 @@
   .track-status-shipped {
     margin: 0;
   }
+  .ironman-OH-wallpaper-container {
+    height: 85%;
+  }
+  .ironman-OH {
+    width: 150%;
+    height: 55%;
+  }
+  .order-history-empty {
+    font-size: 1.4rem;
+    margin: 5rem 0 3rem 0;
+  }
 }
 
 @media (max-width: 414px) {
@@ -671,6 +673,12 @@
 }
 
 @media (max-width: 375px) {
+  .order-history-empty {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    width: 80%;
+    margin: 5rem 0 3rem 0;
+  }
   .track-status-box-left {
     padding-right: 40px;
     padding-left: 40px;
@@ -690,15 +698,13 @@
 
 @media (max-width: 325px) {
   .order-history-empty {
-    margin-top: 12rem;
+    margin: 4rem 0 3rem 0;
   }
-
   .ironman-OH {
     width: 150%;
     height: 50%;
-    margin-bottom: 5rem;
+    margin-bottom: 0;
   }
-
   .order-history-status-wrapper {
     padding: 0.5rem;
   }
