@@ -23,7 +23,7 @@ router.post('/', async (req, res, next) => {
         ${cart
           .map(item => {
             return `
-            <img src=${item.imageUrl} alt='item-photo' />
+            <img src=${item.imageUrl} alt='item-photo' height=150/>
             <p>${item.name}</p>
             <p>${item.quantity} x $${item.price}</p>
             `
