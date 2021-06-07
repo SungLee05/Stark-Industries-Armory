@@ -300,6 +300,7 @@
   }
   .single-product-info-container {
     margin: 0;
+    width: 100%;
   }
   .single-product-price {
     margin: 0.25rem 0;
