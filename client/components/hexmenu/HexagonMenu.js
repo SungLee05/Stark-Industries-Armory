@@ -125,7 +125,7 @@ const HexagonMenu = ({user}) => {
             <div className="hex-items" id="hex-item-9">
               <Link to="/allproducts" className="hex-link">
                 <img
-                  src="/ironmanicon.png"
+                  src="/images/ironmanicon.png"
                   alt="ironman-icon"
                   id="ironman-icon"
                 />

@@ -45,7 +45,7 @@ const Navbar = ({
           >
             <div className="logo-container">
               <img
-                src="/starkIndustriesLogo.png"
+                src="/images/starkIndustriesLogo.png"
                 className="company-logo"
                 alt="company-logo"
               />
@@ -55,7 +55,7 @@ const Navbar = ({
           <Link to="/allproducts" className="logo-link-container">
             <div className="logo-container">
               <img
-                src="/starkIndustriesLogo.png"
+                src="/images/starkIndustriesLogo.png"
                 alt="company-logo"
                 className="company-logo"
               />

@@ -23,7 +23,7 @@ const Directory = () => {
   return (
     <div className="directory">
       <div className="wrap">
-        <img src="/starkindustriescompound.png" className="item" />
+        <img src="/images/starkindustriescompound.png" className="item" />
         <Link to="/allproducts" id="robotics-link">
           <div id="robotic-link-text">Armory</div>
         </Link>

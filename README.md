@@ -1,6 +1,6 @@
 ## Stark Industries Armory
 
-<img src='public/starkindustriesLOGO.jpg'>
+<img src='public/images/starkindustriesLOGO.jpg'>
 <p>Stark-Industries-Armory designs, manufactures, and delivers advanced pseudo-armor. This is an eCommerce website that mirrors a real-world online shopping experience.
 
 ## Web App Features
@@ -12,6 +12,7 @@
 <li>Fully operative checkout system powered by Stripe (test card # 4242-4242-4242-4242 / any EXP & CVV)</li>
 <li>Order history view that allows users to monitor their purchase activity</li>
 <li>Confirmation emailer enabled through Nodemailer</li>
+<li>Responsive Web Design</li>
 
 ## Checkout my deployed web app (via Heroku) below!
 
@@ -35,6 +36,11 @@ Checkout Feature<br/>
 <img src="/public/images/CheckoutFeature.png" width="800"><br/>
 Order History Page<br/>
 <img src='/public/images/OrderHistoryPage.png' width='800'><br/>
+Responsive Design<br/>
+<img src='/public/images/RWD1.png'>
+<img src='/public/images/RWD2.png'>
+<img src='/public/images/RWD3.png'>
+<img src='/public/images/RWD4.png'><br/>
 
 ## TECHSTACK
 

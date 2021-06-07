@@ -3,7 +3,11 @@ import React from 'react'
 const Intro = () => {
   return (
     <div className="intro">
-      <img src="/ironmanAboutUs.jpeg" alt="introImg" className="introImg" />
+      <img
+        src="/images/ironmanAboutUs.jpeg"
+        alt="introImg"
+        className="introImg"
+      />
       <div className="about-us">
         <div className="block">
           <div className="about-us-text-container">
