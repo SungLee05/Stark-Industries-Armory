@@ -33,3 +33,52 @@ a:hover {
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+
+#lock {
+  display: none;
+}
+.landscape-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+#landscape-starklogo {
+  height: 3rem;
+  width: 12rem;
+}
+.landscape-header {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.landscape-sub {
+  font-style: normal;
+}
+
+@media screen and (min-width: 320px) and (max-width: 796px) and (orientation: landscape) {
+  #lock {
+    display: block;
+  }
+  #html-container {
+    display: none;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 812px) and (orientation: portait) {
+  #lock {
+    display: none;
+  }
+  #html-container {
+    display: block;
+  }
+}
+
+@media screen and (max-height: 412px) and (orientation: landscape) {
+  #lock {
+    display: block;
+  }
+  #html-container {
+    display: none;
+  }
+}
