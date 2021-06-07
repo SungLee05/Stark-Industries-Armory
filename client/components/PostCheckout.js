@@ -22,7 +22,7 @@ export const PostCheckout = props => {
         </span>
         <br />
         <div className="post-checkout-thankyou-text">
-          Thank you for choosing Stark Industries Armory.
+          Thank you for choosing <br />Stark Industries Armory.
         </div>
         <br />
         <div>
