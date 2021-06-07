@@ -37,10 +37,11 @@ Checkout Feature<br/>
 Order History Page<br/>
 <img src='/public/images/OrderHistoryPage.png' width='800'><br/>
 Responsive Design<br/>
-<img src='/public/images/RWD1.png' height='150'>
-<img src='/public/images/RWD2.png' height='150'>
-<img src='/public/images/RWD3.png' height='150'>
-<img src='/public/images/RWD4.png' height='150'><br/>
+<img src='/public/images/RWD1.png' height='300'>
+<img src='/public/images/RWD2.png' height='300'>
+<img src='/public/images/RWD3.png' height='300'>
+<img src='/public/images/RWD4.png' height='300'>
+<img src='/public/images/RWD5.png' height='300'><br/>
 
 ## TECHSTACK
 
