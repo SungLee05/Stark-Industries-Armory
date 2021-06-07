@@ -41,7 +41,10 @@ Responsive Design<br/>
 <img src='/public/images/RWD2.png' height='300'>
 <img src='/public/images/RWD3.png' height='300'>
 <img src='/public/images/RWD4.png' height='300'>
-<img src='/public/images/RWD5.png' height='300'><br/>
+<img src='/public/images/RWD5.png' height='300'>
+<img src='/public/images/RWD6.png' height='300'>
+<img src='/public/images/RWD7.png' height='300'>
+<img src='/public/images/RWD8.png' height='300'><br/>
 
 ## TECHSTACK
 
