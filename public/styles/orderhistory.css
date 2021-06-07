@@ -18,7 +18,7 @@
 }
 .order-history-empty {
   padding: 0;
-  margin: 0 2rem;
+  margin: 11.5rem 2rem 5rem 2rem;
   box-sizing: border-box;
   text-align: center;
   z-index: 10;
@@ -26,7 +26,6 @@
   padding-bottom: 1rem;
   font-weight: 400;
   letter-spacing: 0.4rem;
-  margin-top: 8.5rem;
 }
 .order-history-text-1 {
   margin-left: 1rem;
@@ -220,7 +219,7 @@
 }
 @media (max-width: 1024px) and (min-height: 1366px) {
   .ironman-OH-wallpaper-container {
-    height: 90%;
+    height: 100%;
   }
   .ironman-OH {
     width: 150%;
@@ -246,7 +245,7 @@
     font-size: 2.5rem;
     letter-spacing: 0.2rem;
     width: 90%;
-    margin: 10rem 0 0 0;
+    margin: 20rem 0 0 0;
     transition: 1s ease-in-out;
   }
   .cart-back-btn-OH {
@@ -310,9 +309,172 @@
     font-size: 0.9rem;
   }
 }
+
+@media (max-width: 961px) {
+  .order-history-text-1 {
+    margin-left: 0;
+  }
+  .order-history-text-2 {
+    margin-right: 0;
+  }
+  .order-history-main-container {
+    height: 75vh;
+    top: 0%;
+    margin-top: 10vh;
+  }
+  .order-history-main-container h1 {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .order-history-empty-container {
+    overflow: hidden;
+    position: fixed;
+    height: 75%;
+  }
+  .order-history-empty {
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    width: 80%;
+    margin: 15rem 0 5rem 0;
+  }
+  .cart-back-btn-OH {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: rgb(255, 212, 124);
+    font-size: 1.1rem;
+  }
+  #cart-back-link-OH {
+    margin: 0;
+    font-size: 1rem;
+    width: 100%;
+    left: 15%;
+    bottom: -6.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cart-back-link-OH svg {
+    padding: 0.25rem;
+    border-radius: 50%;
+    border-width: 1px;
+    background-color: rgb(255, 212, 124);
+    color: black;
+  }
+  .order-history-header-wrapper {
+    font-size: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(0.5rem);
+  }
+  .order-history-glass-container {
+    height: 100%;
+    background: linear-gradient(
+      150deg,
+      rgba(0, 199, 255, 0.3),
+      rgba(0, 199, 255, 0.1),
+      rgba(0, 0, 0, 0.1)
+    );
+    padding-bottom: 2rem;
+    -webkit-backdrop-filter: blur(0.5rem);
+  }
+  .order-history-content-wrapper {
+    flex-direction: column;
+    margin: 1rem 0 0 0;
+  }
+  .order-history-qty-price-wrapper {
+    margin: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .OH-info-container {
+    margin: 0 0 0 1rem;
+    text-align: center;
+  }
+  .order-history-subheader {
+    font-size: 1.5rem;
+    height: unset;
+    color: #fbca03;
+  }
+  .order-history-address-wrapper {
+    margin: 0;
+    width: 100%;
+  }
+  .order-history-subheader-shipping {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.2rem;
+  }
+  .OH-info-container-address {
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .order-history-status-wrapper {
+    margin: 1rem 0 0 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.25rem 0.5rem;
+  }
+  #OH-package-status-title {
+    margin: 0;
+    text-align: center;
+    font-size: 1.1rem;
+    height: unset;
+    letter-spacing: 0.2rem;
+  }
+  .track-status-wrapper {
+    justify-content: center;
+  }
+  .track-status-bar-wrapper {
+    justify-content: center;
+    margin-left: 0.65rem;
+  }
+  .track-status-shipped {
+    margin: 0 4rem 0 4rem;
+  }
+  .track-status-box-left {
+    padding-right: 48px;
+    padding-left: 48px;
+    margin-left: 0px;
+    width: 0;
+  }
+  #track-status-box-left-after {
+    right: 0.5rem;
+    position: relative;
+  }
+  #track-status-box-middle-before {
+    right: -0.6rem;
+    position: relative;
+  }
+  .track-status-box-middle {
+    margin-left: 0;
+    padding-right: 48px;
+    padding-left: 48px;
+    width: 0;
+  }
+
+  #track-status-box-middle-after {
+    position: relative;
+    left: -0.5rem;
+  }
+  #track-status-box-right {
+    padding-right: 48px;
+    padding-left: 48px;
+    margin-right: 0px;
+    width: 0;
+  }
+  #track-status-box-right-after {
+    right: 6rem;
+    position: relative;
+  }
+}
 @media (max-width: 770px) and (min-height: 1024px) {
   .ironman-OH-wallpaper-container {
-    height: 90%;
+    height: 100%;
   }
   .order-history-text-1 {
     margin-left: 0;
@@ -482,170 +644,6 @@
     position: relative;
   }
 }
-
-@media (max-width: 961px) {
-  .order-history-text-1 {
-    margin-left: 0;
-  }
-  .order-history-text-2 {
-    margin-right: 0;
-  }
-  .order-history-main-container {
-    height: 75vh;
-    top: 0%;
-    margin-top: 10vh;
-  }
-  .order-history-main-container h1 {
-    width: 85%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .order-history-empty-container {
-    overflow: hidden;
-    position: fixed;
-    height: 75%;
-  }
-  .order-history-empty {
-    font-size: 1.8rem;
-    letter-spacing: 0.2rem;
-    width: 80%;
-    margin: 15rem 0 5rem 0;
-  }
-  .cart-back-btn-OH {
-    margin-left: 1rem;
-    text-decoration: none;
-    color: rgb(255, 212, 124);
-    font-size: 1.1rem;
-  }
-  #cart-back-link-OH {
-    margin: 0;
-    font-size: 1rem;
-    width: 100%;
-    left: 15%;
-    bottom: -6.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #cart-back-link-OH svg {
-    padding: 0.25rem;
-    border-radius: 50%;
-    border-width: 1px;
-    background-color: rgb(255, 212, 124);
-    color: black;
-  }
-  .order-history-header-wrapper {
-    font-size: 1rem;
-    flex-direction: column;
-    justify-content: center;
-    -webkit-backdrop-filter: blur(0.5rem);
-  }
-  .order-history-glass-container {
-    height: 100%;
-    background: linear-gradient(
-      150deg,
-      rgba(0, 199, 255, 0.3),
-      rgba(0, 199, 255, 0.1),
-      rgba(0, 0, 0, 0.1)
-    );
-    padding-bottom: 2rem;
-    -webkit-backdrop-filter: blur(0.5rem);
-  }
-  .order-history-content-wrapper {
-    flex-direction: column;
-    margin: 1rem 0 0 0;
-  }
-  .order-history-qty-price-wrapper {
-    margin: 0;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .OH-info-container {
-    margin: 0 0 0 1rem;
-    text-align: center;
-  }
-  .order-history-subheader {
-    font-size: 1.5rem;
-    height: unset;
-    color: #fbca03;
-  }
-  .order-history-address-wrapper {
-    margin: 0;
-    width: 100%;
-  }
-  .order-history-subheader-shipping {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-    letter-spacing: 0.2rem;
-  }
-  .OH-info-container-address {
-    margin: 0;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  .order-history-status-wrapper {
-    margin: 1rem 0 0 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 1.25rem 0.5rem;
-  }
-  #OH-package-status-title {
-    margin: 0;
-    text-align: center;
-    font-size: 1.1rem;
-    height: unset;
-    letter-spacing: 0.2rem;
-  }
-  .track-status-wrapper {
-    justify-content: center;
-  }
-  .track-status-bar-wrapper {
-    justify-content: center;
-    margin-left: 0.65rem;
-  }
-  .track-status-shipped {
-    margin: 0 4rem 0 4rem;
-  }
-  .track-status-box-left {
-    padding-right: 48px;
-    padding-left: 48px;
-    margin-left: 0px;
-    width: 0;
-  }
-  #track-status-box-left-after {
-    right: 0.5rem;
-    position: relative;
-  }
-  #track-status-box-middle-before {
-    right: -0.6rem;
-    position: relative;
-  }
-  .track-status-box-middle {
-    margin-left: 0;
-    padding-right: 48px;
-    padding-left: 48px;
-    width: 0;
-  }
-
-  #track-status-box-middle-after {
-    position: relative;
-    left: -0.5rem;
-  }
-  #track-status-box-right {
-    padding-right: 48px;
-    padding-left: 48px;
-    margin-right: 0px;
-    width: 0;
-  }
-  #track-status-box-right-after {
-    right: 6rem;
-    position: relative;
-  }
-}
-
 @media (max-width: 540px) {
   .track-status-wrapper {
     justify-content: space-evenly;
@@ -654,7 +652,7 @@
     margin: 0;
   }
   .ironman-OH-wallpaper-container {
-    height: 85%;
+    height: 100%;
   }
   .ironman-OH {
     width: 150%;
@@ -662,7 +660,9 @@
   }
   .order-history-empty {
     font-size: 1.4rem;
-    margin: 5rem 0 3rem 0;
+    letter-spacing: 0.2rem;
+    width: 90%;
+    margin: 13rem 5rem 6rem 5rem;
   }
 }
 
@@ -670,14 +670,23 @@
   .track-status-wrapper {
     justify-content: space-around;
   }
+  .ironman-OH-wallpaper-container {
+    height: 85vh;
+  }
+  .order-history-empty {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    width: 90%;
+    margin: 7rem 5rem 6rem 5rem;
+  }
 }
 
 @media (max-width: 375px) {
   .order-history-empty {
     font-size: 1.2rem;
     letter-spacing: 0.2rem;
-    width: 80%;
-    margin: 5rem 0 3rem 0;
+    width: 90%;
+    margin: 6rem 0 5rem 0;
   }
   .track-status-box-left {
     padding-right: 40px;
