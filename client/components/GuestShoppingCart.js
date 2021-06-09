@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import Fade from 'react-reveal/Fade'
+import Flip from 'react-reveal/Flip'
 
 import {
   increaseProductQtyThunk,
@@ -16,6 +17,16 @@ import {AiOutlineClose} from 'react-icons/ai'
 import {BsChevronDoubleLeft} from 'react-icons/bs'
 import accounting from 'accounting'
 
+import Checkout from './Checkout'
+import {loadStripe} from '@stripe/stripe-js'
+import {Elements} from '@stripe/react-stripe-js'
+import axios from 'axios'
+import Modal from 'react-modal'
+
+const stripePromise = loadStripe(
+  'pk_test_51IFsCyF8Oat62uvTXBKuxWngn5AJoyQk4aA7nTNOST7Y1CONvcFzaYbUZuvM1G5XjxoZHxl3z1ADsSR3lnNVFtlt00k8XT8AHB'
+)
+
 const GuestShoppingCart = props => {
   const {
     products,
@@ -26,19 +37,33 @@ const GuestShoppingCart = props => {
     checkout
   } = props
 
+  const [paymentOpen, setPaymentOpen] = useState(false)
+  const [clientSecret, setClientSecret] = useState('')
+
   const guestCart = products
+  const user = {
+    email: ''
+  }
 
   const roundDecimal = num => {
     return Number(num).toFixed(2)
   }
 
+  const startCheckout = async total => {
+    const {data: clientSecrets} = await axios.post('/stripe/secret', {
+      total: Math.round(total * 100)
+    })
+    setClientSecret(clientSecrets)
+    setPaymentOpen(true)
+  }
+
+  const hideCheckout = () => {
+    setPaymentOpen(false)
+  }
+
   const pushToThankYouPage = total => {
     checkout()
     props.history.push('/thank-you', total)
-  }
-
-  const handleClick = total => {
-    pushToThankYouPage(total)
   }
 
   useEffect(() => {
@@ -151,7 +176,7 @@ const GuestShoppingCart = props => {
                     className="checkout-btn"
                     type="submit"
                     onClick={() => {
-                      handleClick(
+                      startCheckout(
                         guestCart
                           .reduce(
                             (acc, product) =>
@@ -164,6 +189,41 @@ const GuestShoppingCart = props => {
                   >
                     Checkout
                   </button>
+
+                  <Modal
+                    className="modal-container"
+                    isOpen={paymentOpen}
+                    onRequestClose={hideCheckout}
+                    style={{
+                      overlay: {
+                        backgroundColor: 'transparent'
+                      },
+                      content: {
+                        backgroundColor: 'rgba(70,190,200,0.25)'
+                      }
+                    }}
+                  >
+                    {paymentOpen && (
+                      <Flip top delay={1500}>
+                        <Elements stripe={stripePromise}>
+                          <Checkout
+                            user={user}
+                            cart={guestCart}
+                            total={guestCart
+                              .reduce(
+                                (acc, product) =>
+                                  acc + product.price * product.quantity,
+                                0
+                              )
+                              .toFixed(2)}
+                            clientSecret={clientSecret}
+                            cancel={hideCheckout}
+                            pushToThankYouPage={pushToThankYouPage}
+                          />
+                        </Elements>
+                      </Flip>
+                    )}
+                  </Modal>
                 </div>
               </div>
             </>
