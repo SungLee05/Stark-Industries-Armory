@@ -732,10 +732,11 @@
 
 @media (max-width: 414px) {
   .ironman-gif-container {
-    height: 85vh;
+    overflow: hidden;
   }
   .ironman {
-    margin: 0;
+    margin: 0 0 7rem 0;
+    height: 40%;
   }
   .cart-glass-container {
     margin: 0;
