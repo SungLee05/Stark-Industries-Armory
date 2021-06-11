@@ -157,6 +157,8 @@
 @media (max-width: 414px) {
   .all-products-container {
     height: 90vh;
+    position: relative;
+    overflow-x: hidden;
   }
   .swiper-pagination {
     margin-bottom: 10rem;
