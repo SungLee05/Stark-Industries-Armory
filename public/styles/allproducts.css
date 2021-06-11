@@ -25,8 +25,7 @@
 .product-img {
   width: 70%;
   height: 70%;
-  -webkit-box-reflect: below 0px
-    linear-gradient(transparent, transparent, #0006);
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(black));
 }
 .swiper-container.swiper-container-coverflow.swiper-container-3d.swiper-container-initialized.swiper-container-horizontal.swiper-container-pointer-events {
   height: 100%;
