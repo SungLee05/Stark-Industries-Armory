@@ -156,17 +156,10 @@
 
 @media (max-width: 414px) {
   .all-products-container {
-    height: 90vh;
+    height: 85vh;
     margin-top: 0;
     overflow-y: hidden;
   }
-  .products-container {
-    height: 85%;
-    width: 100%;
-    position: fixed;
-    overflow: hidden;
-  }
-
   .product-container {
     margin-top: 7rem;
   }
