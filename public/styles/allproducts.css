@@ -164,7 +164,7 @@
     margin-top: 7rem;
   }
   .swiper-pagination {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -173,7 +173,7 @@
     height: 70%;
   }
   .swiper-pagination {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 }
 @media (max-width: 325px) {
@@ -191,7 +191,7 @@
     height: 50%;
   }
   .swiper-pagination {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 }
 
