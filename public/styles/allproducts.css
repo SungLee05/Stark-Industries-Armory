@@ -160,6 +160,7 @@
     margin-top: 0;
     position: relative;
     overflow-x: hidden;
+    overflow-y: hidden;
   }
   .product-container {
     margin-top: 6rem;
