@@ -150,19 +150,25 @@
 
 @media (max-width: 540px) {
   .product-container {
-    height: 90%;
+    height: 75%;
   }
 }
 
 @media (max-width: 414px) {
   .all-products-container {
-    height: 75vh;
+    height: 90vh;
+  }
+  .swiper-pagination {
+    margin-bottom: 10rem;
   }
 }
 
 @media (max-width: 375px) {
   .product-img {
     height: 70%;
+  }
+  .swiper-pagination {
+    margin-bottom: 7rem;
   }
 }
 @media (max-width: 325px) {
@@ -178,6 +184,9 @@
   .product-img {
     width: 40%;
     height: 60%;
+  }
+  .swiper-pagination {
+    margin-bottom: 4rem;
   }
 }
 
