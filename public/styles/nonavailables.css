@@ -264,7 +264,7 @@
 @media (max-width: 414px) {
   .page404-container {
     margin-top: 0;
-    height: 85vh;
+    height: 100%;
   }
   .page404-img-container {
     height: 85vh;
@@ -284,10 +284,11 @@
     top: 54%;
   }
   .under-construction-container {
-    height: 75vh;
+    height: 100%;
   }
   .UC-background-img-container {
-    height: 75vh;
+    height: -webkit-fill-available;
+    padding: 0 4rem 5rem 0;
   }
   .UC-background-img {
     left: -60%;
