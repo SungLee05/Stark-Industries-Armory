@@ -736,7 +736,7 @@
     overflow: hidden;
   }
   .ironman {
-    margin: 0 0 7rem 0;
+    margin: 0;
     box-sizing: unset;
   }
   .cart-glass-container {
@@ -760,7 +760,7 @@
   }
   .cart-empty {
     width: 80%;
-    margin: 6rem 0 6rem 0;
+    margin: 12rem 0 6rem 0;
   }
   .cart-fullname {
     font-size: 1.1rem;
@@ -784,7 +784,7 @@
     font-size: 1.2rem;
     letter-spacing: 0.2rem;
     width: 80%;
-    margin: 4rem 0 5rem 0;
+    margin: 14rem 0 5rem 0;
   }
   .cart-subtotal-wrapper {
     padding: 2rem 2rem 1rem 0;
