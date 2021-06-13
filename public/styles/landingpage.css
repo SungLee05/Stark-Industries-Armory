@@ -429,9 +429,15 @@
 
 @media (max-width: 500px) {
   #robotics-link {
-    font-size: 6rem;
-    left: 5%;
     line-height: 4.5rem;
+    top: unset;
+    left: unset;
+    font-size: 6rem;
+    padding-right: 0;
+    letter-spacing: -0.55rem;
+    align-self: center;
+    width: 100%;
+    text-align: center;
   }
   #intro-text {
     font-size: 4rem;
@@ -475,14 +481,7 @@
   }
   #robotics-link {
     line-height: 4rem;
-    top: unset;
-    left: unset;
     font-size: 5.25rem;
-    padding-right: 0;
-    letter-spacing: -0.55rem;
-    align-self: center;
-    width: 100%;
-    text-align: center;
   }
   .item {
     width: 300%;
