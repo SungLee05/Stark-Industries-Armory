@@ -149,7 +149,7 @@
 .cart-back-link {
   color: #e8e8e8e4;
   margin-right: 25.4rem;
-  z-index: 2;
+  z-index: 10;
 }
 .cart-back-link,
 .cart-back-link:link,
