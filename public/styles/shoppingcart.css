@@ -600,6 +600,7 @@
     border-width: 1px;
     background-color: rgba(70, 190, 200, 0.6);
     color: #dcdcdc;
+    z-index: 10;
   }
   .cart-subtotal-wrapper {
     padding: 2rem 5rem 1rem 0;
