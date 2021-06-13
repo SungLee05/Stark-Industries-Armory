@@ -697,9 +697,6 @@
   .profile-main-container {
     height: 100%;
   }
-  .profile-info-wrapper {
-    top: 35%;
-  }
   #hud10-container {
     height: 19rem;
   }
@@ -728,10 +725,6 @@
 @media (max-width: 375px) {
   #hud9-container {
     left: 0%;
-    top: 35%;
-  }
-  #profile-clock {
-    top: 46%;
   }
 }
 @media (max-width: 325px) {
