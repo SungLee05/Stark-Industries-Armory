@@ -460,31 +460,29 @@
   .about-us-text-container {
     font-size: 1.5rem;
   }
-
   #intro-text {
     font-size: 3.25rem;
   }
-
   #intro-text-2 {
     line-height: 0.75;
   }
-
   #intro-text-3 {
     font-size: 1.5rem;
     line-height: 3rem;
   }
-
   .pseudo {
     font-size: 4.25rem;
   }
-
   #robotics-link {
     line-height: 4rem;
-    top: 135%;
-    left: 4%;
+    top: unset;
+    left: unset;
     font-size: 5.25rem;
-    padding-right: 1rem;
+    padding-right: 0;
     letter-spacing: -0.55rem;
+    align-self: center;
+    width: 100%;
+    text-align: center;
   }
   .item {
     width: 300%;
