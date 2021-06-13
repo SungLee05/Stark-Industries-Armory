@@ -737,7 +737,8 @@
   }
   .ironman {
     margin: 0 0 7rem 0;
-    height: 40%;
+    height: 45%;
+    box-sizing: unset;
   }
   .cart-glass-container {
     margin: 0;
