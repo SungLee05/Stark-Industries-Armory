@@ -25,7 +25,10 @@ const Directory = () => {
       <div className="wrap">
         <img src="/images/starkindustriescompound.png" className="item" />
         <Link to="/allproducts" id="robotics-link">
-          <div id="robotic-link-text">Armory</div>
+          <div id="robotic-link-text">
+            <div>Stark</div>
+            <div>Armory</div>
+          </div>
         </Link>
       </div>
     </div>
