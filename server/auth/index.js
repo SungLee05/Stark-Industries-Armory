@@ -25,10 +25,16 @@ router.post(
   body('email').isEmail(),
   body('password').isLength({min: 6}),
   async (req, res, next) => {
+    const errors = validationResult(req)
+
     try {
-      const errors = validationResult(req)
-      if (!errors.isEmpty()) {
-        return res.status(401).send('Invalid email address. Please try again.')
+      if (!errors.isEmpty() && errors.errors[0].param === 'email') {
+        return res.status(400).send('Invalid email address. Please try again.')
+      }
+      if (!errors.isEmpty() && errors.errors[0].param === 'password') {
+        return res
+          .status(400)
+          .send('Password must be longer than 6 characters.')
       }
       const user = await User.create(req.body)
       req.login(user, err => (err ? next(err) : res.json(user)))
