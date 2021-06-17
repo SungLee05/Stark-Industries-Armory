@@ -34,7 +34,7 @@ router.post(
       if (!errors.isEmpty() && errors.errors[0].param === 'password') {
         return res
           .status(400)
-          .send('Password must be longer than 6 characters.')
+          .send('Password must be longer than 6 characters. Please try again.')
       }
       const user = await User.create(req.body)
       req.login(user, err => (err ? next(err) : res.json(user)))
